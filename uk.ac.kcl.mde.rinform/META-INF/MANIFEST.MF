@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: uk.ac.kcl.mde.rinform
 Bundle-ManifestVersion: 2
 Bundle-Name: uk.ac.kcl.mde.rinform
 Bundle-Vendor: My Company
@@ -9,21 +10,20 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",
  org.eclipse.emf.ecore,
- org.eclipse.xtext.xbase.lib,
- org.antlr.runtime,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.util,
- org.eclipse.xtend.lib,
- org.eclipse.emf.common
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: uk.ac.kcl.mde.rinform,
- uk.ac.kcl.mde.rinform.services,
- uk.ac.kcl.mde.rinform.rInform.impl,
- uk.ac.kcl.mde.rinform.validation,
- uk.ac.kcl.mde.rinform.parser.antlr.internal,
- uk.ac.kcl.mde.rinform.generator,
- uk.ac.kcl.mde.rinform.scoping,
- uk.ac.kcl.mde.rinform.parser.antlr,
- uk.ac.kcl.mde.rinform.rInform,
- uk.ac.kcl.mde.rinform.serializer,
- uk.ac.kcl.mde.rinform.rInform.util
+Export-Package: uk.ac.kcl.mde.rinform.util,
+ uk.ac.kcl.mde.rinform,
+ uk.ac.kcl.mde.validation,
+ uk.ac.kcl.mde.parser.antlr.internal,
+ uk.ac.kcl.mde.parser.antlr,
+ uk.ac.kcl.mde.scoping,
+ uk.ac.kcl.mde.generator,
+ uk.ac.kcl.mde.serializer,
+ uk.ac.kcl.mde,
+ uk.ac.kcl.mde.services,
+ uk.ac.kcl.mde.rinform.impl
 Import-Package: org.apache.log4j

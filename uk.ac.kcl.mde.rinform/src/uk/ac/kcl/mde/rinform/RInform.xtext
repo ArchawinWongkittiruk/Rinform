@@ -1,9 +1,0 @@
-grammar uk.ac.kcl.mde.rinform.RInform with org.eclipse.xtext.common.Terminals
-
-generate rInform "http://www.ac.uk/kcl/mde/rinform/RInform"
-
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
