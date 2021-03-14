@@ -10,50 +10,50 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.kcl.mde.rinform.Greeting;
 import uk.ac.kcl.mde.rinform.RinformPackage;
+import uk.ac.kcl.mde.rinform.Symbol;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Greeting</b></em>'.
+ * An implementation of the model object '<em><b>Symbol</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.GreetingImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.SymbolImpl#getSymbol <em>Symbol</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeting
+public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getSymbol()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String SYMBOL_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getSymbol()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String symbol = SYMBOL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GreetingImpl()
+  protected SymbolImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   @Override
   protected EClass eStaticClass()
   {
-    return RinformPackage.Literals.GREETING;
+    return RinformPackage.Literals.SYMBOL;
   }
 
   /**
@@ -75,9 +75,9 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
    * @generated
    */
   @Override
-  public String getName()
+  public String getSymbol()
   {
-    return name;
+    return symbol;
   }
 
   /**
@@ -86,12 +86,12 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setSymbol(String newSymbol)
   {
-    String oldName = name;
-    name = newName;
+    String oldSymbol = symbol;
+    symbol = newSymbol;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.GREETING__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.SYMBOL__SYMBOL, oldSymbol, symbol));
   }
 
   /**
@@ -104,8 +104,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case RinformPackage.GREETING__NAME:
-        return getName();
+      case RinformPackage.SYMBOL__SYMBOL:
+        return getSymbol();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case RinformPackage.GREETING__NAME:
-        setName((String)newValue);
+      case RinformPackage.SYMBOL__SYMBOL:
+        setSymbol((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case RinformPackage.GREETING__NAME:
-        setName(NAME_EDEFAULT);
+      case RinformPackage.SYMBOL__SYMBOL:
+        setSymbol(SYMBOL_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case RinformPackage.GREETING__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case RinformPackage.SYMBOL__SYMBOL:
+        return SYMBOL_EDEFAULT == null ? symbol != null : !SYMBOL_EDEFAULT.equals(symbol);
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +171,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (symbol: ");
+    result.append(symbol);
     result.append(')');
     return result.toString();
   }
 
-} //GreetingImpl
+} //SymbolImpl

@@ -10,13 +10,13 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
-import uk.ac.kcl.mde.rinform.Model
+import uk.ac.kcl.mde.rinform.ReverseInformProgram
 
 @ExtendWith(InjectionExtension)
 @InjectWith(RinformInjectorProvider)
 class RinformParsingTest {
 	@Inject
-	ParseHelper<Model> parseHelper
+	ParseHelper<ReverseInformProgram> parseHelper
 	
 	@Test
 	def void loadModel() {

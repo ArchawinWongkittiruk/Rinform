@@ -27,7 +27,7 @@ public class RinformParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "ReverseInformProgram";
 	}
 
 	public RinformGrammarAccess getGrammarAccess() {

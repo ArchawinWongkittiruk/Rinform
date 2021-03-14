@@ -6,11 +6,44 @@
     complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="Rinform" basePackage="uk.ac.kcl.mde" disposableProviderFactory="true"
       fileExtensions="rinform" ecorePackage="Rinform.ecore#/">
-    <genClasses ecoreClass="Rinform.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rinform.ecore#//Model/greetings"/>
+    <genClasses ecoreClass="Rinform.ecore#//ReverseInformProgram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rinform.ecore#//ReverseInformProgram/sentences"/>
     </genClasses>
-    <genClasses ecoreClass="Rinform.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="Rinform.ecore#//SentenceParts"/>
+    <genClasses ecoreClass="Rinform.ecore#//RoomDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rinform.ecore#//RoomDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//RoomDescription">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//RoomDescription/room"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rinform.ecore#//RoomDescription/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//ItemDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rinform.ecore#//ItemDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//ItemDescription">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//ItemDescription/item"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rinform.ecore#//ItemDescription/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//RoomName">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rinform.ecore#//RoomName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//ItemName">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rinform.ecore#//ItemName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//Text">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rinform.ecore#//Text/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//Word">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//Word/word"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//Symbol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//Symbol/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//Dot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//Dot/dot"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//Comma">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//Comma/comma"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

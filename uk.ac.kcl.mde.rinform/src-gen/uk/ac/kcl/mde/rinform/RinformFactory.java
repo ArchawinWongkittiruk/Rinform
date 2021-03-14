@@ -24,22 +24,121 @@ public interface RinformFactory extends EFactory
   RinformFactory eINSTANCE = uk.ac.kcl.mde.rinform.impl.RinformFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>Reverse Inform Program</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>Reverse Inform Program</em>'.
    * @generated
    */
-  Model createModel();
+  ReverseInformProgram createReverseInformProgram();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Sentence Parts</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Sentence Parts</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  SentenceParts createSentenceParts();
+
+  /**
+   * Returns a new object of class '<em>Room Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Room Declaration</em>'.
+   * @generated
+   */
+  RoomDeclaration createRoomDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Room Description</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Room Description</em>'.
+   * @generated
+   */
+  RoomDescription createRoomDescription();
+
+  /**
+   * Returns a new object of class '<em>Item Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Declaration</em>'.
+   * @generated
+   */
+  ItemDeclaration createItemDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Item Description</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Description</em>'.
+   * @generated
+   */
+  ItemDescription createItemDescription();
+
+  /**
+   * Returns a new object of class '<em>Room Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Room Name</em>'.
+   * @generated
+   */
+  RoomName createRoomName();
+
+  /**
+   * Returns a new object of class '<em>Item Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Name</em>'.
+   * @generated
+   */
+  ItemName createItemName();
+
+  /**
+   * Returns a new object of class '<em>Text</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text</em>'.
+   * @generated
+   */
+  Text createText();
+
+  /**
+   * Returns a new object of class '<em>Word</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Word</em>'.
+   * @generated
+   */
+  Word createWord();
+
+  /**
+   * Returns a new object of class '<em>Symbol</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Symbol</em>'.
+   * @generated
+   */
+  Symbol createSymbol();
+
+  /**
+   * Returns a new object of class '<em>Dot</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dot</em>'.
+   * @generated
+   */
+  Dot createDot();
+
+  /**
+   * Returns a new object of class '<em>Comma</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comma</em>'.
+   * @generated
+   */
+  Comma createComma();
 
   /**
    * Returns the package supported by this factory.

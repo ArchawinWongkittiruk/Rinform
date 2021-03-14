@@ -2,8 +2,63 @@ grammar uk.ac.kcl.mde.Rinform with org.eclipse.xtext.common.Terminals
 
 generate rinform "http://www.ac.uk/kcl/mde/Rinform"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+ReverseInformProgram:
+	sentences+=SentenceParts*
+;
+
+SentenceParts:
+	RoomDeclaration | 
+	RoomDescription |
+	ItemDeclaration |
+	ItemDescription | 
+	Text
+;
+
+RoomDeclaration:
+	"["name = Text"]"
+;
+
+RoomDescription:
+	"(["room = [RoomDeclaration]"]" text = Text ")"
+;
+
+
+ItemDeclaration:
+	"{"name = Text"}"
+;
+
+ItemDescription:
+	"({"item = [ItemDeclaration]"}" text = Text ")"
+;
+
+RoomName:
+	name = Text
+;
+
+ItemName:
+	name = Text
+;
+
+Text:
+	text += (Symbol | Word)+
+;
+
+Word:
+	word = ID
+;
+
+Symbol:
+	symbol = ('.' | ',' | ';' | ':' | '-' | '!' | '?' )
+;
+
+Dot:
+	dot = "."
+;
+
+Comma:
+	comma = ","
+;
+
+
+
+

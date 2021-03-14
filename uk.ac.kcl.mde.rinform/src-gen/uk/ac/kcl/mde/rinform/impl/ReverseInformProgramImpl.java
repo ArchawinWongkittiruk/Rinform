@@ -17,41 +17,41 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.kcl.mde.rinform.Greeting;
-import uk.ac.kcl.mde.rinform.Model;
+import uk.ac.kcl.mde.rinform.ReverseInformProgram;
 import uk.ac.kcl.mde.rinform.RinformPackage;
+import uk.ac.kcl.mde.rinform.SentenceParts;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Reverse Inform Program</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.ReverseInformProgramImpl#getSentences <em>Sentences</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class ReverseInformProgramImpl extends MinimalEObjectImpl.Container implements ReverseInformProgram
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The cached value of the '{@link #getSentences() <em>Sentences</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getSentences()
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected EList<SentenceParts> sentences;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected ReverseInformProgramImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return RinformPackage.Literals.MODEL;
+    return RinformPackage.Literals.REVERSE_INFORM_PROGRAM;
   }
 
   /**
@@ -73,13 +73,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public EList<Greeting> getGreetings()
+  public EList<SentenceParts> getSentences()
   {
-    if (greetings == null)
+    if (sentences == null)
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, RinformPackage.MODEL__GREETINGS);
+      sentences = new EObjectContainmentEList<SentenceParts>(SentenceParts.class, this, RinformPackage.REVERSE_INFORM_PROGRAM__SENTENCES);
     }
-    return greetings;
+    return sentences;
   }
 
   /**
@@ -92,8 +92,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RinformPackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+      case RinformPackage.REVERSE_INFORM_PROGRAM__SENTENCES:
+        return ((InternalEList<?>)getSentences()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RinformPackage.MODEL__GREETINGS:
-        return getGreetings();
+      case RinformPackage.REVERSE_INFORM_PROGRAM__SENTENCES:
+        return getSentences();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RinformPackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+      case RinformPackage.REVERSE_INFORM_PROGRAM__SENTENCES:
+        getSentences().clear();
+        getSentences().addAll((Collection<? extends SentenceParts>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RinformPackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case RinformPackage.REVERSE_INFORM_PROGRAM__SENTENCES:
+        getSentences().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +160,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RinformPackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case RinformPackage.REVERSE_INFORM_PROGRAM__SENTENCES:
+        return sentences != null && !sentences.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+} //ReverseInformProgramImpl

@@ -73,17 +73,99 @@ public class RinformSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case RinformPackage.MODEL:
+      case RinformPackage.REVERSE_INFORM_PROGRAM:
       {
-        Model model = (Model)theEObject;
-        T result = caseModel(model);
+        ReverseInformProgram reverseInformProgram = (ReverseInformProgram)theEObject;
+        T result = caseReverseInformProgram(reverseInformProgram);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RinformPackage.GREETING:
+      case RinformPackage.SENTENCE_PARTS:
       {
-        Greeting greeting = (Greeting)theEObject;
-        T result = caseGreeting(greeting);
+        SentenceParts sentenceParts = (SentenceParts)theEObject;
+        T result = caseSentenceParts(sentenceParts);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.ROOM_DECLARATION:
+      {
+        RoomDeclaration roomDeclaration = (RoomDeclaration)theEObject;
+        T result = caseRoomDeclaration(roomDeclaration);
+        if (result == null) result = caseSentenceParts(roomDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.ROOM_DESCRIPTION:
+      {
+        RoomDescription roomDescription = (RoomDescription)theEObject;
+        T result = caseRoomDescription(roomDescription);
+        if (result == null) result = caseSentenceParts(roomDescription);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.ITEM_DECLARATION:
+      {
+        ItemDeclaration itemDeclaration = (ItemDeclaration)theEObject;
+        T result = caseItemDeclaration(itemDeclaration);
+        if (result == null) result = caseSentenceParts(itemDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.ITEM_DESCRIPTION:
+      {
+        ItemDescription itemDescription = (ItemDescription)theEObject;
+        T result = caseItemDescription(itemDescription);
+        if (result == null) result = caseSentenceParts(itemDescription);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.ROOM_NAME:
+      {
+        RoomName roomName = (RoomName)theEObject;
+        T result = caseRoomName(roomName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.ITEM_NAME:
+      {
+        ItemName itemName = (ItemName)theEObject;
+        T result = caseItemName(itemName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.TEXT:
+      {
+        Text text = (Text)theEObject;
+        T result = caseText(text);
+        if (result == null) result = caseSentenceParts(text);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.WORD:
+      {
+        Word word = (Word)theEObject;
+        T result = caseWord(word);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.SYMBOL:
+      {
+        Symbol symbol = (Symbol)theEObject;
+        T result = caseSymbol(symbol);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.DOT:
+      {
+        Dot dot = (Dot)theEObject;
+        T result = caseDot(dot);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.COMMA:
+      {
+        Comma comma = (Comma)theEObject;
+        T result = caseComma(comma);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -92,33 +174,209 @@ public class RinformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Reverse Inform Program</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Reverse Inform Program</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModel(Model object)
+  public T caseReverseInformProgram(ReverseInformProgram object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Sentence Parts</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Sentence Parts</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGreeting(Greeting object)
+  public T caseSentenceParts(SentenceParts object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Room Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Room Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRoomDeclaration(RoomDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Room Description</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Room Description</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRoomDescription(RoomDescription object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Item Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItemDeclaration(ItemDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Item Description</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item Description</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItemDescription(ItemDescription object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Room Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Room Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRoomName(RoomName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Item Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItemName(ItemName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Text</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Text</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseText(Text object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Word</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Word</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWord(Word object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Symbol</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Symbol</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSymbol(Symbol object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dot</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dot</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDot(Dot object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comma</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comma</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComma(Comma object)
   {
     return null;
   }

@@ -10,10 +10,21 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import uk.ac.kcl.mde.rinform.Greeting;
-import uk.ac.kcl.mde.rinform.Model;
+import uk.ac.kcl.mde.rinform.Comma;
+import uk.ac.kcl.mde.rinform.Dot;
+import uk.ac.kcl.mde.rinform.ItemDeclaration;
+import uk.ac.kcl.mde.rinform.ItemDescription;
+import uk.ac.kcl.mde.rinform.ItemName;
+import uk.ac.kcl.mde.rinform.ReverseInformProgram;
 import uk.ac.kcl.mde.rinform.RinformFactory;
 import uk.ac.kcl.mde.rinform.RinformPackage;
+import uk.ac.kcl.mde.rinform.RoomDeclaration;
+import uk.ac.kcl.mde.rinform.RoomDescription;
+import uk.ac.kcl.mde.rinform.RoomName;
+import uk.ac.kcl.mde.rinform.SentenceParts;
+import uk.ac.kcl.mde.rinform.Symbol;
+import uk.ac.kcl.mde.rinform.Text;
+import uk.ac.kcl.mde.rinform.Word;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,14 +39,91 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass modelEClass = null;
+  private EClass reverseInformProgramEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greetingEClass = null;
+  private EClass sentencePartsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass roomDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass roomDescriptionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass itemDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass itemDescriptionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass roomNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass itemNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass symbolEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dotEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass commaEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -106,9 +194,9 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   @Override
-  public EClass getModel()
+  public EClass getReverseInformProgram()
   {
-    return modelEClass;
+    return reverseInformProgramEClass;
   }
 
   /**
@@ -117,9 +205,9 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   @Override
-  public EReference getModel_Greetings()
+  public EReference getReverseInformProgram_Sentences()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EReference)reverseInformProgramEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -128,9 +216,9 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   @Override
-  public EClass getGreeting()
+  public EClass getSentenceParts()
   {
-    return greetingEClass;
+    return sentencePartsEClass;
   }
 
   /**
@@ -139,9 +227,262 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   @Override
-  public EAttribute getGreeting_Name()
+  public EClass getRoomDeclaration()
   {
-    return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+    return roomDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRoomDeclaration_Name()
+  {
+    return (EReference)roomDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRoomDescription()
+  {
+    return roomDescriptionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRoomDescription_Room()
+  {
+    return (EReference)roomDescriptionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRoomDescription_Text()
+  {
+    return (EReference)roomDescriptionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getItemDeclaration()
+  {
+    return itemDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getItemDeclaration_Name()
+  {
+    return (EReference)itemDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getItemDescription()
+  {
+    return itemDescriptionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getItemDescription_Item()
+  {
+    return (EReference)itemDescriptionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getItemDescription_Text()
+  {
+    return (EReference)itemDescriptionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRoomName()
+  {
+    return roomNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRoomName_Name()
+  {
+    return (EReference)roomNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getItemName()
+  {
+    return itemNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getItemName_Name()
+  {
+    return (EReference)itemNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getText()
+  {
+    return textEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getText_Text()
+  {
+    return (EReference)textEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWord()
+  {
+    return wordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWord_Word()
+  {
+    return (EAttribute)wordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSymbol()
+  {
+    return symbolEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSymbol_Symbol()
+  {
+    return (EAttribute)symbolEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDot()
+  {
+    return dotEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDot_Dot()
+  {
+    return (EAttribute)dotEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getComma()
+  {
+    return commaEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComma_Comma()
+  {
+    return (EAttribute)commaEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -175,11 +516,45 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__GREETINGS);
+    reverseInformProgramEClass = createEClass(REVERSE_INFORM_PROGRAM);
+    createEReference(reverseInformProgramEClass, REVERSE_INFORM_PROGRAM__SENTENCES);
 
-    greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__NAME);
+    sentencePartsEClass = createEClass(SENTENCE_PARTS);
+
+    roomDeclarationEClass = createEClass(ROOM_DECLARATION);
+    createEReference(roomDeclarationEClass, ROOM_DECLARATION__NAME);
+
+    roomDescriptionEClass = createEClass(ROOM_DESCRIPTION);
+    createEReference(roomDescriptionEClass, ROOM_DESCRIPTION__ROOM);
+    createEReference(roomDescriptionEClass, ROOM_DESCRIPTION__TEXT);
+
+    itemDeclarationEClass = createEClass(ITEM_DECLARATION);
+    createEReference(itemDeclarationEClass, ITEM_DECLARATION__NAME);
+
+    itemDescriptionEClass = createEClass(ITEM_DESCRIPTION);
+    createEReference(itemDescriptionEClass, ITEM_DESCRIPTION__ITEM);
+    createEReference(itemDescriptionEClass, ITEM_DESCRIPTION__TEXT);
+
+    roomNameEClass = createEClass(ROOM_NAME);
+    createEReference(roomNameEClass, ROOM_NAME__NAME);
+
+    itemNameEClass = createEClass(ITEM_NAME);
+    createEReference(itemNameEClass, ITEM_NAME__NAME);
+
+    textEClass = createEClass(TEXT);
+    createEReference(textEClass, TEXT__TEXT);
+
+    wordEClass = createEClass(WORD);
+    createEAttribute(wordEClass, WORD__WORD);
+
+    symbolEClass = createEClass(SYMBOL);
+    createEAttribute(symbolEClass, SYMBOL__SYMBOL);
+
+    dotEClass = createEClass(DOT);
+    createEAttribute(dotEClass, DOT__DOT);
+
+    commaEClass = createEClass(COMMA);
+    createEAttribute(commaEClass, COMMA__COMMA);
   }
 
   /**
@@ -211,13 +586,52 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    roomDeclarationEClass.getESuperTypes().add(this.getSentenceParts());
+    roomDescriptionEClass.getESuperTypes().add(this.getSentenceParts());
+    itemDeclarationEClass.getESuperTypes().add(this.getSentenceParts());
+    itemDescriptionEClass.getESuperTypes().add(this.getSentenceParts());
+    textEClass.getESuperTypes().add(this.getSentenceParts());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(reverseInformProgramEClass, ReverseInformProgram.class, "ReverseInformProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReverseInformProgram_Sentences(), this.getSentenceParts(), null, "sentences", null, 0, -1, ReverseInformProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(sentencePartsEClass, SentenceParts.class, "SentenceParts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(roomDeclarationEClass, RoomDeclaration.class, "RoomDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRoomDeclaration_Name(), this.getText(), null, "name", null, 0, 1, RoomDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(roomDescriptionEClass, RoomDescription.class, "RoomDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRoomDescription_Room(), this.getRoomDeclaration(), null, "room", null, 0, 1, RoomDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRoomDescription_Text(), this.getText(), null, "text", null, 0, 1, RoomDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(itemDeclarationEClass, ItemDeclaration.class, "ItemDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getItemDeclaration_Name(), this.getText(), null, "name", null, 0, 1, ItemDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(itemDescriptionEClass, ItemDescription.class, "ItemDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getItemDescription_Item(), this.getItemDeclaration(), null, "item", null, 0, 1, ItemDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getItemDescription_Text(), this.getText(), null, "text", null, 0, 1, ItemDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(roomNameEClass, RoomName.class, "RoomName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRoomName_Name(), this.getText(), null, "name", null, 0, 1, RoomName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(itemNameEClass, ItemName.class, "ItemName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getItemName_Name(), this.getText(), null, "name", null, 0, 1, ItemName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getText_Text(), ecorePackage.getEObject(), null, "text", null, 0, -1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wordEClass, Word.class, "Word", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWord_Word(), ecorePackage.getEString(), "word", null, 0, 1, Word.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(symbolEClass, Symbol.class, "Symbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSymbol_Symbol(), ecorePackage.getEString(), "symbol", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dotEClass, Dot.class, "Dot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDot_Dot(), ecorePackage.getEString(), "dot", null, 0, 1, Dot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(commaEClass, Comma.class, "Comma", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getComma_Comma(), ecorePackage.getEString(), "comma", null, 0, 1, Comma.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

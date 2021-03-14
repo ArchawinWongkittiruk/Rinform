@@ -76,14 +76,69 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
     new RinformSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseReverseInformProgram(ReverseInformProgram object)
       {
-        return createModelAdapter();
+        return createReverseInformProgramAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseSentenceParts(SentenceParts object)
       {
-        return createGreetingAdapter();
+        return createSentencePartsAdapter();
+      }
+      @Override
+      public Adapter caseRoomDeclaration(RoomDeclaration object)
+      {
+        return createRoomDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseRoomDescription(RoomDescription object)
+      {
+        return createRoomDescriptionAdapter();
+      }
+      @Override
+      public Adapter caseItemDeclaration(ItemDeclaration object)
+      {
+        return createItemDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseItemDescription(ItemDescription object)
+      {
+        return createItemDescriptionAdapter();
+      }
+      @Override
+      public Adapter caseRoomName(RoomName object)
+      {
+        return createRoomNameAdapter();
+      }
+      @Override
+      public Adapter caseItemName(ItemName object)
+      {
+        return createItemNameAdapter();
+      }
+      @Override
+      public Adapter caseText(Text object)
+      {
+        return createTextAdapter();
+      }
+      @Override
+      public Adapter caseWord(Word object)
+      {
+        return createWordAdapter();
+      }
+      @Override
+      public Adapter caseSymbol(Symbol object)
+      {
+        return createSymbolAdapter();
+      }
+      @Override
+      public Adapter caseDot(Dot object)
+      {
+        return createDotAdapter();
+      }
+      @Override
+      public Adapter caseComma(Comma object)
+      {
+        return createCommaAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -108,31 +163,196 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.ReverseInformProgram <em>Reverse Inform Program</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.mde.rinform.Model
+   * @see uk.ac.kcl.mde.rinform.ReverseInformProgram
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createReverseInformProgramAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.SentenceParts <em>Sentence Parts</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.mde.rinform.Greeting
+   * @see uk.ac.kcl.mde.rinform.SentenceParts
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createSentencePartsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.RoomDeclaration <em>Room Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.RoomDeclaration
+   * @generated
+   */
+  public Adapter createRoomDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.RoomDescription <em>Room Description</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.RoomDescription
+   * @generated
+   */
+  public Adapter createRoomDescriptionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.ItemDeclaration <em>Item Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.ItemDeclaration
+   * @generated
+   */
+  public Adapter createItemDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.ItemDescription <em>Item Description</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.ItemDescription
+   * @generated
+   */
+  public Adapter createItemDescriptionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.RoomName <em>Room Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.RoomName
+   * @generated
+   */
+  public Adapter createRoomNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.ItemName <em>Item Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.ItemName
+   * @generated
+   */
+  public Adapter createItemNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.Text <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.Text
+   * @generated
+   */
+  public Adapter createTextAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.Word <em>Word</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.Word
+   * @generated
+   */
+  public Adapter createWordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.Symbol <em>Symbol</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.Symbol
+   * @generated
+   */
+  public Adapter createSymbolAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.Dot <em>Dot</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.Dot
+   * @generated
+   */
+  public Adapter createDotAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.Comma <em>Comma</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.Comma
+   * @generated
+   */
+  public Adapter createCommaAdapter()
   {
     return null;
   }
