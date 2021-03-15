@@ -2,61 +2,56 @@ grammar uk.ac.kcl.mde.Rinform with org.eclipse.xtext.common.Terminals
 
 generate rinform "http://www.ac.uk/kcl/mde/Rinform"
 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
 ReverseInformProgram:
-	sentences+=SentenceParts*
+	sentences+=SentencePart*
 ;
 
-SentenceParts:
+SentencePart:
 	RoomDeclaration | 
 	RoomDescription |
 	ItemDeclaration |
-	ItemDescription | 
-	Text
+	ItemDescription |
+	Words | Symbol |
+	DirectionStatement
 ;
 
 RoomDeclaration:
-	"["name = Text"]"
+	"[" name = Text "]"
 ;
 
 RoomDescription:
-	"(["room = [RoomDeclaration]"]" text = Text ")"
+	 "(""["room = [RoomDeclaration|Text]"]" description += (Text)+ ")"
 ;
 
 
 ItemDeclaration:
-	"{"name = Text"}"
+	"{""["room = [RoomDeclaration|Text]"]" name = Text "}"
 ;
 
 ItemDescription:
-	"({"item = [ItemDeclaration]"}" text = Text ")"
+	"({"item = [ItemDeclaration|Text]"}" description += (Text)+ ")"
 ;
 
-RoomName:
-	name = Text
+DirectionStatement:
+	"<"room1 = [RoomDeclaration|Text] direction = Direction room2 = [RoomDeclaration|Text]">"
 ;
 
-ItemName:
-	name = Text
+enum Direction:
+	South | North | East | West | Below | Above
 ;
 
-Text:
-	text += (Symbol | Word)+
+Text returns ecore::EString:
+	ID (WS ID)*
 ;
 
-Word:
-	word = ID
+Words: 
+	words += Text+
 ;
 
 Symbol:
-	symbol = ('.' | ',' | ';' | ':' | '-' | '!' | '?' )
-;
-
-Dot:
-	dot = "."
-;
-
-Comma:
-	comma = ","
+	symbol = ('.' | ',' | ';' | ':' | '-' | '!' | '?' | '\'')
 ;
 
 

@@ -20,28 +20,28 @@ package uk.ac.kcl.mde.rinform;
  * @model
  * @generated
  */
-public interface RoomDeclaration extends SentenceParts
+public interface RoomDeclaration extends SentencePart
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(Text)
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
    * @see uk.ac.kcl.mde.rinform.RinformPackage#getRoomDeclaration_Name()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Text getName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.RoomDeclaration#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.RoomDeclaration#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
+   * @param value the new value of the '<em>Name</em>' attribute.
    * @see #getName()
    * @generated
    */
-  void setName(Text value);
+  void setName(String value);
 
 } // RoomDeclaration

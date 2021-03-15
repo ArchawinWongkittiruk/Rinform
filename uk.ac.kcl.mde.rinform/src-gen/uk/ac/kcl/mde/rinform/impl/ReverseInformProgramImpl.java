@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.kcl.mde.rinform.ReverseInformProgram;
 import uk.ac.kcl.mde.rinform.RinformPackage;
-import uk.ac.kcl.mde.rinform.SentenceParts;
+import uk.ac.kcl.mde.rinform.SentencePart;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,7 +44,7 @@ public class ReverseInformProgramImpl extends MinimalEObjectImpl.Container imple
    * @generated
    * @ordered
    */
-  protected EList<SentenceParts> sentences;
+  protected EList<SentencePart> sentences;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,11 +73,11 @@ public class ReverseInformProgramImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public EList<SentenceParts> getSentences()
+  public EList<SentencePart> getSentences()
   {
     if (sentences == null)
     {
-      sentences = new EObjectContainmentEList<SentenceParts>(SentenceParts.class, this, RinformPackage.REVERSE_INFORM_PROGRAM__SENTENCES);
+      sentences = new EObjectContainmentEList<SentencePart>(SentencePart.class, this, RinformPackage.REVERSE_INFORM_PROGRAM__SENTENCES);
     }
     return sentences;
   }
@@ -127,7 +127,7 @@ public class ReverseInformProgramImpl extends MinimalEObjectImpl.Container imple
     {
       case RinformPackage.REVERSE_INFORM_PROGRAM__SENTENCES:
         getSentences().clear();
-        getSentences().addAll((Collection<? extends SentenceParts>)newValue);
+        getSentences().addAll((Collection<? extends SentencePart>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

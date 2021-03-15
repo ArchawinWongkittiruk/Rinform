@@ -13,6 +13,7 @@ package uk.ac.kcl.mde.rinform;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getRoom <em>Room</em>}</li>
  *   <li>{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -20,28 +21,50 @@ package uk.ac.kcl.mde.rinform;
  * @model
  * @generated
  */
-public interface ItemDeclaration extends SentenceParts
+public interface ItemDeclaration extends SentencePart
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
+   * Returns the value of the '<em><b>Room</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(Text)
-   * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDeclaration_Name()
-   * @model containment="true"
+   * @return the value of the '<em>Room</em>' reference.
+   * @see #setRoom(RoomDeclaration)
+   * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDeclaration_Room()
+   * @model
    * @generated
    */
-  Text getName();
+  RoomDeclaration getRoom();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getRoom <em>Room</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
+   * @param value the new value of the '<em>Room</em>' reference.
+   * @see #getRoom()
+   * @generated
+   */
+  void setRoom(RoomDeclaration value);
+
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDeclaration_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
    * @see #getName()
    * @generated
    */
-  void setName(Text value);
+  void setName(String value);
 
 } // ItemDeclaration

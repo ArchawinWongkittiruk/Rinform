@@ -3,18 +3,22 @@
  */
 package uk.ac.kcl.mde.rinform.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+
 import uk.ac.kcl.mde.rinform.RinformPackage;
 import uk.ac.kcl.mde.rinform.RoomDeclaration;
 import uk.ac.kcl.mde.rinform.RoomDescription;
-import uk.ac.kcl.mde.rinform.Text;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,12 +29,12 @@ import uk.ac.kcl.mde.rinform.Text;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.mde.rinform.impl.RoomDescriptionImpl#getRoom <em>Room</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.RoomDescriptionImpl#getText <em>Text</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.RoomDescriptionImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RoomDescriptionImpl extends SentencePartsImpl implements RoomDescription
+public class RoomDescriptionImpl extends SentencePartImpl implements RoomDescription
 {
   /**
    * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
@@ -43,14 +47,14 @@ public class RoomDescriptionImpl extends SentencePartsImpl implements RoomDescri
   protected RoomDeclaration room;
 
   /**
-   * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected Text text;
+  protected EList<String> description;
 
   /**
    * <!-- begin-user-doc -->
@@ -124,64 +128,13 @@ public class RoomDescriptionImpl extends SentencePartsImpl implements RoomDescri
    * @generated
    */
   @Override
-  public Text getText()
+  public EList<String> getDescription()
   {
-    return text;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetText(Text newText, NotificationChain msgs)
-  {
-    Text oldText = text;
-    text = newText;
-    if (eNotificationRequired())
+    if (description == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RinformPackage.ROOM_DESCRIPTION__TEXT, oldText, newText);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      description = new EDataTypeEList<String>(String.class, this, RinformPackage.ROOM_DESCRIPTION__DESCRIPTION);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setText(Text newText)
-  {
-    if (newText != text)
-    {
-      NotificationChain msgs = null;
-      if (text != null)
-        msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RinformPackage.ROOM_DESCRIPTION__TEXT, null, msgs);
-      if (newText != null)
-        msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RinformPackage.ROOM_DESCRIPTION__TEXT, null, msgs);
-      msgs = basicSetText(newText, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.ROOM_DESCRIPTION__TEXT, newText, newText));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case RinformPackage.ROOM_DESCRIPTION__TEXT:
-        return basicSetText(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return description;
   }
 
   /**
@@ -197,8 +150,8 @@ public class RoomDescriptionImpl extends SentencePartsImpl implements RoomDescri
       case RinformPackage.ROOM_DESCRIPTION__ROOM:
         if (resolve) return getRoom();
         return basicGetRoom();
-      case RinformPackage.ROOM_DESCRIPTION__TEXT:
-        return getText();
+      case RinformPackage.ROOM_DESCRIPTION__DESCRIPTION:
+        return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -208,6 +161,7 @@ public class RoomDescriptionImpl extends SentencePartsImpl implements RoomDescri
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -216,8 +170,9 @@ public class RoomDescriptionImpl extends SentencePartsImpl implements RoomDescri
       case RinformPackage.ROOM_DESCRIPTION__ROOM:
         setRoom((RoomDeclaration)newValue);
         return;
-      case RinformPackage.ROOM_DESCRIPTION__TEXT:
-        setText((Text)newValue);
+      case RinformPackage.ROOM_DESCRIPTION__DESCRIPTION:
+        getDescription().clear();
+        getDescription().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,8 +191,8 @@ public class RoomDescriptionImpl extends SentencePartsImpl implements RoomDescri
       case RinformPackage.ROOM_DESCRIPTION__ROOM:
         setRoom((RoomDeclaration)null);
         return;
-      case RinformPackage.ROOM_DESCRIPTION__TEXT:
-        setText((Text)null);
+      case RinformPackage.ROOM_DESCRIPTION__DESCRIPTION:
+        getDescription().clear();
         return;
     }
     super.eUnset(featureID);
@@ -255,10 +210,27 @@ public class RoomDescriptionImpl extends SentencePartsImpl implements RoomDescri
     {
       case RinformPackage.ROOM_DESCRIPTION__ROOM:
         return room != null;
-      case RinformPackage.ROOM_DESCRIPTION__TEXT:
-        return text != null;
+      case RinformPackage.ROOM_DESCRIPTION__DESCRIPTION:
+        return description != null && !description.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (description: ");
+    result.append(description);
+    result.append(')');
+    return result.toString();
   }
 
 } //RoomDescriptionImpl

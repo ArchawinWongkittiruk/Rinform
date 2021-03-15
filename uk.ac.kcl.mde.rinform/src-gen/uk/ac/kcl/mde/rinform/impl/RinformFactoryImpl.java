@@ -4,6 +4,7 @@
 package uk.ac.kcl.mde.rinform.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,20 +67,50 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
     switch (eClass.getClassifierID())
     {
       case RinformPackage.REVERSE_INFORM_PROGRAM: return createReverseInformProgram();
-      case RinformPackage.SENTENCE_PARTS: return createSentenceParts();
+      case RinformPackage.SENTENCE_PART: return createSentencePart();
       case RinformPackage.ROOM_DECLARATION: return createRoomDeclaration();
       case RinformPackage.ROOM_DESCRIPTION: return createRoomDescription();
       case RinformPackage.ITEM_DECLARATION: return createItemDeclaration();
       case RinformPackage.ITEM_DESCRIPTION: return createItemDescription();
-      case RinformPackage.ROOM_NAME: return createRoomName();
-      case RinformPackage.ITEM_NAME: return createItemName();
-      case RinformPackage.TEXT: return createText();
-      case RinformPackage.WORD: return createWord();
+      case RinformPackage.DIRECTION_STATEMENT: return createDirectionStatement();
+      case RinformPackage.WORDS: return createWords();
       case RinformPackage.SYMBOL: return createSymbol();
-      case RinformPackage.DOT: return createDot();
-      case RinformPackage.COMMA: return createComma();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case RinformPackage.DIRECTION:
+        return createDirectionFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case RinformPackage.DIRECTION:
+        return convertDirectionToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -101,10 +132,10 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * @generated
    */
   @Override
-  public SentenceParts createSentenceParts()
+  public SentencePart createSentencePart()
   {
-    SentencePartsImpl sentenceParts = new SentencePartsImpl();
-    return sentenceParts;
+    SentencePartImpl sentencePart = new SentencePartImpl();
+    return sentencePart;
   }
 
   /**
@@ -161,10 +192,10 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * @generated
    */
   @Override
-  public RoomName createRoomName()
+  public DirectionStatement createDirectionStatement()
   {
-    RoomNameImpl roomName = new RoomNameImpl();
-    return roomName;
+    DirectionStatementImpl directionStatement = new DirectionStatementImpl();
+    return directionStatement;
   }
 
   /**
@@ -173,34 +204,10 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * @generated
    */
   @Override
-  public ItemName createItemName()
+  public Words createWords()
   {
-    ItemNameImpl itemName = new ItemNameImpl();
-    return itemName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Text createText()
-  {
-    TextImpl text = new TextImpl();
-    return text;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Word createWord()
-  {
-    WordImpl word = new WordImpl();
-    return word;
+    WordsImpl words = new WordsImpl();
+    return words;
   }
 
   /**
@@ -220,11 +227,11 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public Dot createDot()
+  public Direction createDirectionFromString(EDataType eDataType, String initialValue)
   {
-    DotImpl dot = new DotImpl();
-    return dot;
+    Direction result = Direction.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
   }
 
   /**
@@ -232,11 +239,9 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public Comma createComma()
+  public String convertDirectionToString(EDataType eDataType, Object instanceValue)
   {
-    CommaImpl comma = new CommaImpl();
-    return comma;
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

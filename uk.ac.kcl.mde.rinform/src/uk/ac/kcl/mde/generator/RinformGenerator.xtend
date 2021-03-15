@@ -7,6 +7,15 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import uk.ac.kcl.mde.rinform.ReverseInformProgram
+import uk.ac.kcl.mde.rinform.RoomDeclaration
+import uk.ac.kcl.mde.rinform.RoomDescription
+import uk.ac.kcl.mde.rinform.ItemDeclaration
+import java.util.List
+import java.util.ArrayList
+import uk.ac.kcl.mde.rinform.ItemDescription
+import uk.ac.kcl.mde.rinform.DirectionStatement
+import uk.ac.kcl.mde.rinform.SentencePart
 
 /**
  * Generates code from your model files on save.
@@ -15,11 +24,73 @@ import org.eclipse.xtext.generator.IGeneratorContext
  */
 class RinformGenerator extends AbstractGenerator {
 
+	List<RoomDeclaration> declaredRooms = new ArrayList<RoomDeclaration>()
+	List<ItemDeclaration> declaredItems = new ArrayList<ItemDeclaration>()
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		val model = resource.contents.head as ReverseInformProgram
+		fsa.generateFile(resource.getFileName, model.getGeneratedCode)
+		
+	}
+	def getFileName(Resource resource) {
+		resource.URI.appendFileExtension('txt').lastSegment
+	}
+	
+	def String getGeneratedCode(ReverseInformProgram m){
+		'''
+		«m.sentences.filter(RoomDescription).map[generateInfromCode].join('\n')»
+		«m.sentences.filter(RoomDeclaration).map[generateInfromCode].join('\n')»
+		«m.sentences.filter(ItemDescription).map[generateInfromCode].join('\n')»
+		«m.sentences.filter(ItemDeclaration).map[generateInfromCode].join('\n')»
+		«m.sentences.filter(DirectionStatement).map[generateInfromCode].join('\n')»
+		'''
+	}
+	dispatch def generateInfromCode(SentencePart stmt){''' '''}
+	
+	dispatch def generateInfromCode(RoomDescription stmt){
+		declaredRooms.add(stmt.room)
+		'''«stmt.room.name.toFirstUpper» is a Room. "«stmt.description.getString»"'''	
+	}
+	dispatch def generateInfromCode(RoomDeclaration stmt){
+		stmt.declareRoom
+	}
+	dispatch def generateInfromCode(ItemDescription stmt){
+		declaredItems.add(stmt.item)
+		'''«stmt.item.name» is in «stmt.item.room.name». "«stmt.description.getString»"'''
+	}
+	dispatch def generateInfromCode(ItemDeclaration stmt){
+		if(!declaredItems.contains(stmt)){
+			'''«stmt.name» is in «stmt.room.name».'''
+		}
+		else{
+			''' '''
+		}
+	}
+	dispatch def generateInfromCode(DirectionStatement stmt){'''
+		«stmt.room1.declareRoom»
+		«stmt.room2.declareRoom»
+		«IF stmt.direction.equals("Below") || stmt.direction.equals("Above")»
+			«stmt.direction» «stmt.room1.name» is «stmt.room2.name»
+		«ELSE»
+			«stmt.direction» of «stmt.room1.name» is «stmt.room2.name»
+		«ENDIF»
+		'''
+	}
+	def declareRoom(RoomDeclaration stmt){
+		if(!declaredRooms.contains(stmt)){
+			declaredRooms.add(stmt)
+			'''«stmt.name.toFirstUpper»  is a Room. '''
+		}
+		else{
+			''' '''
+		}
+	}
+	
+	def String getString(List<String> text) {
+		var toReturn = ""
+		for (String word: text){
+			toReturn += word + " "
+		}
+		toReturn
 	}
 }

@@ -1,1 +1,6 @@
-[LivingRoom] is, indeed, ([LivingRoom] a bright and spacious room)
+I walked into the [kitchen]. It was ([kitchen] a dimly lit room with a low ceiling). 
+A massive {[kitchen] knife} is ({knife} lying on the table), in my head I wonder what it is used for. 
+Upstairs there is a small [attic].
+[livingRoom]
+<attic Below kitchen> 
+<livingRoom East kitchen>

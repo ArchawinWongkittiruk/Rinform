@@ -31,27 +31,29 @@ public class RinformParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, RinformGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getSentencePartsAccess().getAlternatives(), "rule__SentenceParts__Alternatives");
-			builder.put(grammarAccess.getTextAccess().getTextAlternatives_0(), "rule__Text__TextAlternatives_0");
+			builder.put(grammarAccess.getSentencePartAccess().getAlternatives(), "rule__SentencePart__Alternatives");
 			builder.put(grammarAccess.getSymbolAccess().getSymbolAlternatives_0(), "rule__Symbol__SymbolAlternatives_0");
+			builder.put(grammarAccess.getDirectionAccess().getAlternatives(), "rule__Direction__Alternatives");
 			builder.put(grammarAccess.getRoomDeclarationAccess().getGroup(), "rule__RoomDeclaration__Group__0");
 			builder.put(grammarAccess.getRoomDescriptionAccess().getGroup(), "rule__RoomDescription__Group__0");
 			builder.put(grammarAccess.getItemDeclarationAccess().getGroup(), "rule__ItemDeclaration__Group__0");
 			builder.put(grammarAccess.getItemDescriptionAccess().getGroup(), "rule__ItemDescription__Group__0");
+			builder.put(grammarAccess.getDirectionStatementAccess().getGroup(), "rule__DirectionStatement__Group__0");
+			builder.put(grammarAccess.getTextAccess().getGroup(), "rule__Text__Group__0");
+			builder.put(grammarAccess.getTextAccess().getGroup_1(), "rule__Text__Group_1__0");
 			builder.put(grammarAccess.getReverseInformProgramAccess().getSentencesAssignment(), "rule__ReverseInformProgram__SentencesAssignment");
 			builder.put(grammarAccess.getRoomDeclarationAccess().getNameAssignment_1(), "rule__RoomDeclaration__NameAssignment_1");
-			builder.put(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_1(), "rule__RoomDescription__RoomAssignment_1");
-			builder.put(grammarAccess.getRoomDescriptionAccess().getTextAssignment_3(), "rule__RoomDescription__TextAssignment_3");
-			builder.put(grammarAccess.getItemDeclarationAccess().getNameAssignment_1(), "rule__ItemDeclaration__NameAssignment_1");
+			builder.put(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_2(), "rule__RoomDescription__RoomAssignment_2");
+			builder.put(grammarAccess.getRoomDescriptionAccess().getDescriptionAssignment_4(), "rule__RoomDescription__DescriptionAssignment_4");
+			builder.put(grammarAccess.getItemDeclarationAccess().getRoomAssignment_2(), "rule__ItemDeclaration__RoomAssignment_2");
+			builder.put(grammarAccess.getItemDeclarationAccess().getNameAssignment_4(), "rule__ItemDeclaration__NameAssignment_4");
 			builder.put(grammarAccess.getItemDescriptionAccess().getItemAssignment_1(), "rule__ItemDescription__ItemAssignment_1");
-			builder.put(grammarAccess.getItemDescriptionAccess().getTextAssignment_3(), "rule__ItemDescription__TextAssignment_3");
-			builder.put(grammarAccess.getRoomNameAccess().getNameAssignment(), "rule__RoomName__NameAssignment");
-			builder.put(grammarAccess.getItemNameAccess().getNameAssignment(), "rule__ItemName__NameAssignment");
-			builder.put(grammarAccess.getTextAccess().getTextAssignment(), "rule__Text__TextAssignment");
-			builder.put(grammarAccess.getWordAccess().getWordAssignment(), "rule__Word__WordAssignment");
+			builder.put(grammarAccess.getItemDescriptionAccess().getDescriptionAssignment_3(), "rule__ItemDescription__DescriptionAssignment_3");
+			builder.put(grammarAccess.getDirectionStatementAccess().getRoom1Assignment_1(), "rule__DirectionStatement__Room1Assignment_1");
+			builder.put(grammarAccess.getDirectionStatementAccess().getDirectionAssignment_2(), "rule__DirectionStatement__DirectionAssignment_2");
+			builder.put(grammarAccess.getDirectionStatementAccess().getRoom2Assignment_3(), "rule__DirectionStatement__Room2Assignment_3");
+			builder.put(grammarAccess.getWordsAccess().getWordsAssignment(), "rule__Words__WordsAssignment");
 			builder.put(grammarAccess.getSymbolAccess().getSymbolAssignment(), "rule__Symbol__SymbolAssignment");
-			builder.put(grammarAccess.getDotAccess().getDotAssignment(), "rule__Dot__DotAssignment");
-			builder.put(grammarAccess.getCommaAccess().getCommaAssignment(), "rule__Comma__CommaAssignment");
 		}
 	}
 	

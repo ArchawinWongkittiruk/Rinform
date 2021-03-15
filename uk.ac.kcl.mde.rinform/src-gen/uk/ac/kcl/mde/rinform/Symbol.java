@@ -3,7 +3,6 @@
  */
 package uk.ac.kcl.mde.rinform;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Symbol extends EObject
+public interface Symbol extends SentencePart
 {
   /**
    * Returns the value of the '<em><b>Symbol</b></em>' attribute.

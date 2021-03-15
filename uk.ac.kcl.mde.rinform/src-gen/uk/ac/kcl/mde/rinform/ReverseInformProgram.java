@@ -27,7 +27,7 @@ public interface ReverseInformProgram extends EObject
 {
   /**
    * Returns the value of the '<em><b>Sentences</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.mde.rinform.SentenceParts}.
+   * The list contents are of type {@link uk.ac.kcl.mde.rinform.SentencePart}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Sentences</em>' containment reference list.
@@ -35,6 +35,6 @@ public interface ReverseInformProgram extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<SentenceParts> getSentences();
+  EList<SentencePart> getSentences();
 
 } // ReverseInformProgram

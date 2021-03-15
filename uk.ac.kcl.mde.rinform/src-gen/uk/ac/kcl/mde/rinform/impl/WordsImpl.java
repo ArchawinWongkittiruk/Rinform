@@ -3,57 +3,48 @@
  */
 package uk.ac.kcl.mde.rinform.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
-import uk.ac.kcl.mde.rinform.Dot;
 import uk.ac.kcl.mde.rinform.RinformPackage;
+import uk.ac.kcl.mde.rinform.Words;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Dot</b></em>'.
+ * An implementation of the model object '<em><b>Words</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.DotImpl#getDot <em>Dot</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.WordsImpl#getWords <em>Words</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DotImpl extends MinimalEObjectImpl.Container implements Dot
+public class WordsImpl extends SentencePartImpl implements Words
 {
   /**
-   * The default value of the '{@link #getDot() <em>Dot</em>}' attribute.
+   * The cached value of the '{@link #getWords() <em>Words</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDot()
+   * @see #getWords()
    * @generated
    * @ordered
    */
-  protected static final String DOT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDot() <em>Dot</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDot()
-   * @generated
-   * @ordered
-   */
-  protected String dot = DOT_EDEFAULT;
+  protected EList<String> words;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DotImpl()
+  protected WordsImpl()
   {
     super();
   }
@@ -66,7 +57,7 @@ public class DotImpl extends MinimalEObjectImpl.Container implements Dot
   @Override
   protected EClass eStaticClass()
   {
-    return RinformPackage.Literals.DOT;
+    return RinformPackage.Literals.WORDS;
   }
 
   /**
@@ -75,23 +66,13 @@ public class DotImpl extends MinimalEObjectImpl.Container implements Dot
    * @generated
    */
   @Override
-  public String getDot()
+  public EList<String> getWords()
   {
-    return dot;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDot(String newDot)
-  {
-    String oldDot = dot;
-    dot = newDot;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.DOT__DOT, oldDot, dot));
+    if (words == null)
+    {
+      words = new EDataTypeEList<String>(String.class, this, RinformPackage.WORDS__WORDS);
+    }
+    return words;
   }
 
   /**
@@ -104,8 +85,8 @@ public class DotImpl extends MinimalEObjectImpl.Container implements Dot
   {
     switch (featureID)
     {
-      case RinformPackage.DOT__DOT:
-        return getDot();
+      case RinformPackage.WORDS__WORDS:
+        return getWords();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,13 +96,15 @@ public class DotImpl extends MinimalEObjectImpl.Container implements Dot
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case RinformPackage.DOT__DOT:
-        setDot((String)newValue);
+      case RinformPackage.WORDS__WORDS:
+        getWords().clear();
+        getWords().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +120,8 @@ public class DotImpl extends MinimalEObjectImpl.Container implements Dot
   {
     switch (featureID)
     {
-      case RinformPackage.DOT__DOT:
-        setDot(DOT_EDEFAULT);
+      case RinformPackage.WORDS__WORDS:
+        getWords().clear();
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +137,8 @@ public class DotImpl extends MinimalEObjectImpl.Container implements Dot
   {
     switch (featureID)
     {
-      case RinformPackage.DOT__DOT:
-        return DOT_EDEFAULT == null ? dot != null : !DOT_EDEFAULT.equals(dot);
+      case RinformPackage.WORDS__WORDS:
+        return words != null && !words.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +154,10 @@ public class DotImpl extends MinimalEObjectImpl.Container implements Dot
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (dot: ");
-    result.append(dot);
+    result.append(" (words: ");
+    result.append(words);
     result.append(')');
     return result.toString();
   }
 
-} //DotImpl
+} //WordsImpl

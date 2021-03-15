@@ -8,23 +8,23 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.kcl.mde.rinform.RinformPackage;
-import uk.ac.kcl.mde.rinform.SentenceParts;
+import uk.ac.kcl.mde.rinform.SentencePart;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sentence Parts</b></em>'.
+ * An implementation of the model object '<em><b>Sentence Part</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class SentencePartsImpl extends MinimalEObjectImpl.Container implements SentenceParts
+public class SentencePartImpl extends MinimalEObjectImpl.Container implements SentencePart
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SentencePartsImpl()
+  protected SentencePartImpl()
   {
     super();
   }
@@ -37,7 +37,7 @@ public class SentencePartsImpl extends MinimalEObjectImpl.Container implements S
   @Override
   protected EClass eStaticClass()
   {
-    return RinformPackage.Literals.SENTENCE_PARTS;
+    return RinformPackage.Literals.SENTENCE_PART;
   }
 
-} //SentencePartsImpl
+} //SentencePartImpl

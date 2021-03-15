@@ -4,16 +4,13 @@
 package uk.ac.kcl.mde.rinform.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.kcl.mde.rinform.RinformPackage;
 import uk.ac.kcl.mde.rinform.RoomDeclaration;
-import uk.ac.kcl.mde.rinform.Text;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,17 +25,27 @@ import uk.ac.kcl.mde.rinform.Text;
  *
  * @generated
  */
-public class RoomDeclarationImpl extends SentencePartsImpl implements RoomDeclaration
+public class RoomDeclarationImpl extends SentencePartImpl implements RoomDeclaration
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected Text name;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,7 +74,7 @@ public class RoomDeclarationImpl extends SentencePartsImpl implements RoomDeclar
    * @generated
    */
   @Override
-  public Text getName()
+  public String getName()
   {
     return name;
   }
@@ -77,54 +84,13 @@ public class RoomDeclarationImpl extends SentencePartsImpl implements RoomDeclar
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(Text newName, NotificationChain msgs)
+  @Override
+  public void setName(String newName)
   {
-    Text oldName = name;
+    String oldName = name;
     name = newName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RinformPackage.ROOM_DECLARATION__NAME, oldName, newName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(Text newName)
-  {
-    if (newName != name)
-    {
-      NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RinformPackage.ROOM_DECLARATION__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RinformPackage.ROOM_DECLARATION__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.ROOM_DECLARATION__NAME, newName, newName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case RinformPackage.ROOM_DECLARATION__NAME:
-        return basicSetName(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.ROOM_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -154,7 +120,7 @@ public class RoomDeclarationImpl extends SentencePartsImpl implements RoomDeclar
     switch (featureID)
     {
       case RinformPackage.ROOM_DECLARATION__NAME:
-        setName((Text)newValue);
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,7 +137,7 @@ public class RoomDeclarationImpl extends SentencePartsImpl implements RoomDeclar
     switch (featureID)
     {
       case RinformPackage.ROOM_DECLARATION__NAME:
-        setName((Text)null);
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -188,9 +154,26 @@ public class RoomDeclarationImpl extends SentencePartsImpl implements RoomDeclar
     switch (featureID)
     {
       case RinformPackage.ROOM_DECLARATION__NAME:
-        return name != null;
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //RoomDeclarationImpl

@@ -1,0 +1,8 @@
+Kitchen is a Room. "a dimly lit room with a low ceiling "
+ 
+Attic  is a Room. 
+LivingRoom  is a Room. 
+knife is in kitchen. "lying on the table "
+Below of attic is kitchen
+
+East of livingRoom is kitchen

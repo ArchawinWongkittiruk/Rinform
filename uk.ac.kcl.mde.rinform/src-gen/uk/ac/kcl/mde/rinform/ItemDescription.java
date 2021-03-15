@@ -3,6 +3,7 @@
  */
 package uk.ac.kcl.mde.rinform;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,14 +15,14 @@ package uk.ac.kcl.mde.rinform;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.mde.rinform.ItemDescription#getItem <em>Item</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.ItemDescription#getText <em>Text</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.ItemDescription#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDescription()
  * @model
  * @generated
  */
-public interface ItemDescription extends SentenceParts
+public interface ItemDescription extends SentencePart
 {
   /**
    * Returns the value of the '<em><b>Item</b></em>' reference.
@@ -46,25 +47,15 @@ public interface ItemDescription extends SentenceParts
   void setItem(ItemDeclaration value);
 
   /**
-   * Returns the value of the '<em><b>Text</b></em>' containment reference.
+   * Returns the value of the '<em><b>Description</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Text</em>' containment reference.
-   * @see #setText(Text)
-   * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDescription_Text()
-   * @model containment="true"
+   * @return the value of the '<em>Description</em>' attribute list.
+   * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDescription_Description()
+   * @model unique="false"
    * @generated
    */
-  Text getText();
-
-  /**
-   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.ItemDescription#getText <em>Text</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Text</em>' containment reference.
-   * @see #getText()
-   * @generated
-   */
-  void setText(Text value);
+  EList<String> getDescription();
 
 } // ItemDescription

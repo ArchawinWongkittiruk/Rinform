@@ -3,43 +3,44 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rinform" nsURI="http://www.ac.uk/kcl/mde/Rinform" nsPrefix="rinform">
   <eClassifiers xsi:type="ecore:EClass" name="ReverseInformProgram">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sentences" upperBound="-1"
-        eType="#//SentenceParts" containment="true"/>
+        eType="#//SentencePart" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SentenceParts"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RoomDeclaration" eSuperTypes="#//SentenceParts">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Text" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SentencePart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoomDeclaration" eSuperTypes="#//SentencePart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RoomDescription" eSuperTypes="#//SentenceParts">
+  <eClassifiers xsi:type="ecore:EClass" name="RoomDescription" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//RoomDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//Text" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemDeclaration" eSuperTypes="#//SentenceParts">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Text" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemDeclaration" eSuperTypes="#//SentencePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//RoomDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemDescription" eSuperTypes="#//SentenceParts">
+  <eClassifiers xsi:type="ecore:EClass" name="ItemDescription" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="item" eType="#//ItemDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//Text" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RoomName">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Text" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectionStatement" eSuperTypes="#//SentencePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room1" eType="#//RoomDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Direction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room2" eType="#//RoomDeclaration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemName">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Text" containment="true"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Direction">
+    <eLiterals name="South" literal="South"/>
+    <eLiterals name="North" value="1" literal="North"/>
+    <eLiterals name="East" value="2" literal="East"/>
+    <eLiterals name="West" value="3" literal="West"/>
+    <eLiterals name="Below" value="4" literal="Below"/>
+    <eLiterals name="Above" value="5" literal="Above"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//SentenceParts">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="text" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Words" eSuperTypes="#//SentencePart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="words" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Word">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="word" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Symbol">
+  <eClassifiers xsi:type="ecore:EClass" name="Symbol" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Dot">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Comma">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comma" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

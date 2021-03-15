@@ -33,13 +33,13 @@ public interface RinformFactory extends EFactory
   ReverseInformProgram createReverseInformProgram();
 
   /**
-   * Returns a new object of class '<em>Sentence Parts</em>'.
+   * Returns a new object of class '<em>Sentence Part</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sentence Parts</em>'.
+   * @return a new object of class '<em>Sentence Part</em>'.
    * @generated
    */
-  SentenceParts createSentenceParts();
+  SentencePart createSentencePart();
 
   /**
    * Returns a new object of class '<em>Room Declaration</em>'.
@@ -78,40 +78,22 @@ public interface RinformFactory extends EFactory
   ItemDescription createItemDescription();
 
   /**
-   * Returns a new object of class '<em>Room Name</em>'.
+   * Returns a new object of class '<em>Direction Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Room Name</em>'.
+   * @return a new object of class '<em>Direction Statement</em>'.
    * @generated
    */
-  RoomName createRoomName();
+  DirectionStatement createDirectionStatement();
 
   /**
-   * Returns a new object of class '<em>Item Name</em>'.
+   * Returns a new object of class '<em>Words</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Item Name</em>'.
+   * @return a new object of class '<em>Words</em>'.
    * @generated
    */
-  ItemName createItemName();
-
-  /**
-   * Returns a new object of class '<em>Text</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text</em>'.
-   * @generated
-   */
-  Text createText();
-
-  /**
-   * Returns a new object of class '<em>Word</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Word</em>'.
-   * @generated
-   */
-  Word createWord();
+  Words createWords();
 
   /**
    * Returns a new object of class '<em>Symbol</em>'.
@@ -121,24 +103,6 @@ public interface RinformFactory extends EFactory
    * @generated
    */
   Symbol createSymbol();
-
-  /**
-   * Returns a new object of class '<em>Dot</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Dot</em>'.
-   * @generated
-   */
-  Dot createDot();
-
-  /**
-   * Returns a new object of class '<em>Comma</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comma</em>'.
-   * @generated
-   */
-  Comma createComma();
 
   /**
    * Returns the package supported by this factory.
