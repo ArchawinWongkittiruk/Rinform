@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xpect
+Bundle-SymbolicName: uk.ac.kcl.inf.mde.rinform.xpect
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: uk.ac.kcl.inf.mde.rinform.xpect
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: uk.ac.kcl.mde.rinform;bundle-version="1.0.0",
+ uk.ac.kcl.mde.rinform.ui;bundle-version="1.0.0",
+ org.eclipse.xpect.xtext.lib;bundle-version="0.2.0"
