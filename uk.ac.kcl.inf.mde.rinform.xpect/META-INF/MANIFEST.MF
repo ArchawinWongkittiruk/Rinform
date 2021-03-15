@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Xpect
-Bundle-SymbolicName: uk.ac.kcl.inf.mde.rinform.xpect
+Bundle-SymbolicName: uk.ac.kcl.mde.rinform.xpect
 Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: uk.ac.kcl.inf.mde.rinform.xpect
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

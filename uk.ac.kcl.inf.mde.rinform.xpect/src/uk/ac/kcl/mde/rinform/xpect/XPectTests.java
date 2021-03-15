@@ -1,4 +1,4 @@
-package uk.ac.kcl.inf.mde.rinform.xpect;
+package uk.ac.kcl.mde.rinform.xpect;
 
 import org.eclipse.xpect.runner.XpectRunner;
 import org.eclipse.xpect.xtext.lib.tests.XtextTests;
