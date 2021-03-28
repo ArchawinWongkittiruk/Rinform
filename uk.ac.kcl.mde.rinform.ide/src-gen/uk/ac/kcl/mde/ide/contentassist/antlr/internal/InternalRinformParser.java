@@ -2186,7 +2186,7 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
             // InternalRinform.g:705:1: ( rule__ItemDeclaration__Group__1__Impl rule__ItemDeclaration__Group__2 )
             // InternalRinform.g:706:2: rule__ItemDeclaration__Group__1__Impl rule__ItemDeclaration__Group__2
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_6);
             rule__ItemDeclaration__Group__1__Impl();
 
             state._fsp--;
@@ -2300,21 +2300,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDeclaration__Group__2__Impl"
-    // InternalRinform.g:740:1: rule__ItemDeclaration__Group__2__Impl : ( '-' ) ;
+    // InternalRinform.g:740:1: rule__ItemDeclaration__Group__2__Impl : ( '-r' ) ;
     public final void rule__ItemDeclaration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:744:1: ( ( '-' ) )
-            // InternalRinform.g:745:1: ( '-' )
+            // InternalRinform.g:744:1: ( ( '-r' ) )
+            // InternalRinform.g:745:1: ( '-r' )
             {
-            // InternalRinform.g:745:1: ( '-' )
-            // InternalRinform.g:746:2: '-'
+            // InternalRinform.g:745:1: ( '-r' )
+            // InternalRinform.g:746:2: '-r'
             {
-             before(grammarAccess.getItemDeclarationAccess().getHyphenMinusKeyword_2()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getItemDeclarationAccess().getHyphenMinusKeyword_2()); 
+             before(grammarAccess.getItemDeclarationAccess().getRKeyword_2()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getItemDeclarationAccess().getRKeyword_2()); 
 
             }
 
@@ -2501,7 +2501,7 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
             // InternalRinform.g:813:1: ( rule__ItemDescription__Group__1__Impl rule__ItemDescription__Group__2 )
             // InternalRinform.g:814:2: rule__ItemDescription__Group__1__Impl rule__ItemDescription__Group__2
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_8);
             rule__ItemDescription__Group__1__Impl();
 
             state._fsp--;
@@ -2934,7 +2934,7 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
             // InternalRinform.g:955:1: ( rule__DirectionStatement__Group__1__Impl rule__DirectionStatement__Group__2 )
             // InternalRinform.g:956:2: rule__DirectionStatement__Group__1__Impl rule__DirectionStatement__Group__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_9);
             rule__DirectionStatement__Group__1__Impl();
 
             state._fsp--;
@@ -3104,7 +3104,7 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
             // InternalRinform.g:1009:1: ( rule__DirectionStatement__Group__3__Impl rule__DirectionStatement__Group__4 )
             // InternalRinform.g:1010:2: rule__DirectionStatement__Group__3__Impl rule__DirectionStatement__Group__4
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_10);
             rule__DirectionStatement__Group__3__Impl();
 
             state._fsp--;
@@ -3259,7 +3259,7 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
             // InternalRinform.g:1063:1: ( rule__Text__Group__0__Impl rule__Text__Group__1 )
             // InternalRinform.g:1064:2: rule__Text__Group__0__Impl rule__Text__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_11);
             rule__Text__Group__0__Impl();
 
             state._fsp--;
@@ -3386,7 +3386,7 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalRinform.g:1104:3: rule__Text__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_13);
+            	    pushFollow(FOLLOW_12);
             	    rule__Text__Group_1__0();
 
             	    state._fsp--;
@@ -4205,11 +4205,10 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000001F80000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000001F80000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000022L});
 
 }

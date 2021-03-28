@@ -152,16 +152,16 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cIKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameTextParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cRoomAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cRoomRoomDeclarationCrossReference_3_0 = (CrossReference)cRoomAssignment_3.eContents().get(0);
 		private final RuleCall cRoomRoomDeclarationTextParserRuleCall_3_0_1 = (RuleCall)cRoomRoomDeclarationCrossReference_3_0.eContents().get(1);
 		
 		//ItemDeclaration:
-		//	"-i" name=Text "-" room=[RoomDeclaration|Text];
+		//	"-i" name=Text "-r" room=[RoomDeclaration|Text];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"-i" name=Text "-" room=[RoomDeclaration|Text]
+		//"-i" name=Text "-r" room=[RoomDeclaration|Text]
 		public Group getGroup() { return cGroup; }
 		
 		//"-i"
@@ -173,8 +173,8 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 		//Text
 		public RuleCall getNameTextParserRuleCall_1_0() { return cNameTextParserRuleCall_1_0; }
 		
-		//"-"
-		public Keyword getHyphenMinusKeyword_2() { return cHyphenMinusKeyword_2; }
+		//"-r"
+		public Keyword getRKeyword_2() { return cRKeyword_2; }
 		
 		//room=[RoomDeclaration|Text]
 		public Assignment getRoomAssignment_3() { return cRoomAssignment_3; }
@@ -531,7 +531,7 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ItemDeclaration:
-	//	"-i" name=Text "-" room=[RoomDeclaration|Text];
+	//	"-i" name=Text "-r" room=[RoomDeclaration|Text];
 	public ItemDeclarationElements getItemDeclarationAccess() {
 		return pItemDeclaration;
 	}

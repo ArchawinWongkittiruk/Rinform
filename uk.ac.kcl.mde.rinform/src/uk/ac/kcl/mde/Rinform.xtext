@@ -25,9 +25,8 @@ RoomDescription:
 	 "("roomDescription += (Text)+ "-r" room = [RoomDeclaration|Text] ")"
 ;
 
-
 ItemDeclaration:
-	"-i" name = Text "-" room = [RoomDeclaration|Text]
+	"-i" name = Text "-r" room = [RoomDeclaration|Text]
 ;
 
 ItemDescription:

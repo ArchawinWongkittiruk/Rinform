@@ -141,10 +141,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:15:7: ( '-' )
-            // InternalRinform.g:15:9: '-'
+            // InternalRinform.g:15:7: ( '<' )
+            // InternalRinform.g:15:9: '<'
             {
-            match('-'); 
+            match('<'); 
 
             }
 
@@ -161,10 +161,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:16:7: ( '<' )
-            // InternalRinform.g:16:9: '<'
+            // InternalRinform.g:16:7: ( '>' )
+            // InternalRinform.g:16:9: '>'
             {
-            match('<'); 
+            match('>'); 
 
             }
 
@@ -181,10 +181,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:17:7: ( '>' )
-            // InternalRinform.g:17:9: '>'
+            // InternalRinform.g:17:7: ( '.' )
+            // InternalRinform.g:17:9: '.'
             {
-            match('>'); 
+            match('.'); 
 
             }
 
@@ -201,10 +201,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:18:7: ( '.' )
-            // InternalRinform.g:18:9: '.'
+            // InternalRinform.g:18:7: ( ',' )
+            // InternalRinform.g:18:9: ','
             {
-            match('.'); 
+            match(','); 
 
             }
 
@@ -221,10 +221,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:19:7: ( ',' )
-            // InternalRinform.g:19:9: ','
+            // InternalRinform.g:19:7: ( ';' )
+            // InternalRinform.g:19:9: ';'
             {
-            match(','); 
+            match(';'); 
 
             }
 
@@ -241,10 +241,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:20:7: ( ';' )
-            // InternalRinform.g:20:9: ';'
+            // InternalRinform.g:20:7: ( ':' )
+            // InternalRinform.g:20:9: ':'
             {
-            match(';'); 
+            match(':'); 
 
             }
 
@@ -261,10 +261,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:21:7: ( ':' )
-            // InternalRinform.g:21:9: ':'
+            // InternalRinform.g:21:7: ( '-' )
+            // InternalRinform.g:21:9: '-'
             {
-            match(':'); 
+            match('-'); 
 
             }
 
@@ -1170,7 +1170,7 @@ public class InternalRinformLexer extends Lexer {
     static final String DFA12_maxS =
         "\1\uffff\1\162\12\uffff\1\uffff\2\157\1\141\2\145\1\142\1\172\2\uffff\1\uffff\1\57\21\uffff\1\165\1\uffff\1\162\2\163\1\154\1\157\4\uffff\4\164\1\157\1\166\2\150\2\172\1\167\1\145\2\172\2\uffff\2\172\4\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\3\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\10\uffff\1\25\1\26\2\uffff\1\32\1\33\1\1\1\4\1\5\1\2\1\3\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\27\1\uffff\1\25\5\uffff\1\26\1\30\1\31\1\32\16\uffff\1\21\1\22\2\uffff\1\17\1\20\1\23\1\24";
+        "\2\uffff\1\2\1\3\1\5\1\6\1\7\1\10\1\11\1\12\1\14\1\15\10\uffff\1\25\1\26\2\uffff\1\32\1\33\1\1\1\4\1\13\1\2\1\3\1\5\1\6\1\7\1\10\1\11\1\12\1\14\1\15\1\16\1\27\1\uffff\1\25\5\uffff\1\26\1\30\1\31\1\32\16\uffff\1\21\1\22\2\uffff\1\17\1\20\1\23\1\24";
     static final String DFA12_specialS =
         "\1\2\13\uffff\1\0\11\uffff\1\1\63\uffff}>";
     static final String[] DFA12_transitionS = {

@@ -325,9 +325,9 @@ ruleItemDeclaration returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='-'
+		otherlv_2='-r'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getItemDeclarationAccess().getHyphenMinusKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getItemDeclarationAccess().getRKeyword_2());
 		}
 		(
 			(

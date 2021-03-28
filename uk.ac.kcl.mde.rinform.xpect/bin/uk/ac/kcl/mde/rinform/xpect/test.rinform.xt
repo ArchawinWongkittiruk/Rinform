@@ -11,9 +11,9 @@ East of LivingRoom is Kitchen
 ---   
  */
 
-I walked into the [kitchen]. It was ([kitchen] a dimly lit room with a low ceiling). 
-A massive {[kitchen] knife} is ({knife} lying on the table), in my head I wonder what it is used for. 
-Upstairs there is a small [attic].
-[livingRoom] 
-<attic Below kitchen>  
-<livingRoom East kitchen>
+I walked into the -r kitchen. It was (a dimly lit room with a low ceiling -r kitchen). 
+A massive -i knife -r kitchen is (lying on the table -i knife), in my head I wonder what it is used for. 
+Upstairs there is a small -r attic.
+-r LivingRoom
+<attic Below kitchen>
+<LivingRoom East kitchen> 

@@ -50,7 +50,7 @@ class RinformGenerator extends AbstractGenerator {
 	
 	dispatch def generateInformCode(RoomDescription stmt){
 		declaredRooms.add(stmt.room)
-		'''«stmt.room.name.toFirstUpper» is a Room. "«stmt.description.getString.toFirstUpper»"'''	
+		'''«stmt.room.name.toFirstUpper» is a Room. "«stmt.roomDescription.getString.toFirstUpper»"'''	
 	}
 	dispatch def generateInformCode(RoomDeclaration stmt){
 		if (!declaredRooms.contains(stmt)){
@@ -59,7 +59,7 @@ class RinformGenerator extends AbstractGenerator {
 	}
 	dispatch def generateInformCode(ItemDescription stmt){
 		declaredItems.add(stmt.item)
-		'''«stmt.item.name.toFirstUpper» is in «stmt.item.room.name.toFirstUpper». "«stmt.description.getString.toFirstUpper»"'''
+		'''«stmt.item.name.toFirstUpper» is in «stmt.item.room.name.toFirstUpper». "«stmt.itemDescription.getString.toFirstUpper»"'''
 	}
 	dispatch def generateInformCode(ItemDeclaration stmt){
 		if(!declaredItems.contains(stmt)){

@@ -743,9 +743,9 @@ rule__ItemDeclaration__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getItemDeclarationAccess().getHyphenMinusKeyword_2()); }
-	'-'
-	{ after(grammarAccess.getItemDeclarationAccess().getHyphenMinusKeyword_2()); }
+	{ before(grammarAccess.getItemDeclarationAccess().getRKeyword_2()); }
+	'-r'
+	{ after(grammarAccess.getItemDeclarationAccess().getRKeyword_2()); }
 )
 ;
 finally {
