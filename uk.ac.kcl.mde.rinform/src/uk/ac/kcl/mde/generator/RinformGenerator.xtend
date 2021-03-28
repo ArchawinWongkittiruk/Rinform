@@ -16,6 +16,7 @@ import java.util.ArrayList
 import uk.ac.kcl.mde.rinform.ItemDescription
 import uk.ac.kcl.mde.rinform.DirectionStatement
 import uk.ac.kcl.mde.rinform.SentencePart
+import uk.ac.kcl.mde.rinform.Direction
 
 /**
  * Generates code from your model files on save.
@@ -38,52 +39,53 @@ class RinformGenerator extends AbstractGenerator {
 	
 	def String getGeneratedCode(ReverseInformProgram m){
 		'''
-		«m.sentences.filter(RoomDescription).map[generateInfromCode].join('\n')»
-		«m.sentences.filter(RoomDeclaration).map[generateInfromCode].join('\n')»
-		«m.sentences.filter(ItemDescription).map[generateInfromCode].join('\n')»
-		«m.sentences.filter(ItemDeclaration).map[generateInfromCode].join('\n')»
-		«m.sentences.filter(DirectionStatement).map[generateInfromCode].join('\n')»
+		«m.sentences.filter(RoomDescription).map[generateInformCode].join('\n')»
+		«m.sentences.filter(RoomDeclaration).map[generateInformCode].join('\n')»
+		«m.sentences.filter(ItemDescription).map[generateInformCode].join('\n')»
+		«m.sentences.filter(ItemDeclaration).map[generateInformCode].join('\n')»
+		«m.sentences.filter(DirectionStatement).map[generateInformCode].join('\n')»
 		'''
 	}
-	dispatch def generateInfromCode(SentencePart stmt){''' '''}
+	dispatch def generateInformCode(SentencePart stmt){''''''}
 	
-	dispatch def generateInfromCode(RoomDescription stmt){
+	dispatch def generateInformCode(RoomDescription stmt){
 		declaredRooms.add(stmt.room)
-		'''«stmt.room.name.toFirstUpper» is a Room. "«stmt.description.getString»"'''	
+		'''«stmt.room.name.toFirstUpper» is a Room. "«stmt.description.getString.toFirstUpper»"'''	
 	}
-	dispatch def generateInfromCode(RoomDeclaration stmt){
-		stmt.declareRoom
+	dispatch def generateInformCode(RoomDeclaration stmt){
+		if (!declaredRooms.contains(stmt)){
+			stmt.declareRoom
+		}	
 	}
-	dispatch def generateInfromCode(ItemDescription stmt){
+	dispatch def generateInformCode(ItemDescription stmt){
 		declaredItems.add(stmt.item)
-		'''«stmt.item.name» is in «stmt.item.room.name». "«stmt.description.getString»"'''
+		'''«stmt.item.name.toFirstUpper» is in «stmt.item.room.name.toFirstUpper». "«stmt.description.getString.toFirstUpper»"'''
 	}
-	dispatch def generateInfromCode(ItemDeclaration stmt){
+	dispatch def generateInformCode(ItemDeclaration stmt){
 		if(!declaredItems.contains(stmt)){
-			'''«stmt.name» is in «stmt.room.name».'''
+			'''«stmt.name.toFirstUpper» is in «stmt.room.name.toFirstUpper».'''
 		}
 		else{
-			''' '''
+			''''''
 		}
 	}
-	dispatch def generateInfromCode(DirectionStatement stmt){'''
-		«stmt.room1.declareRoom»
-		«stmt.room2.declareRoom»
-		«IF stmt.direction.equals("Below") || stmt.direction.equals("Above")»
-			«stmt.direction» «stmt.room1.name» is «stmt.room2.name»
-		«ELSE»
-			«stmt.direction» of «stmt.room1.name» is «stmt.room2.name»
-		«ENDIF»
-		'''
+	dispatch def generateInformCode(DirectionStatement stmt){
+		if(!declaredRooms.contains(stmt.room1)){
+			stmt.room1.declareRoom
+		}			
+		if(!declaredRooms.contains(stmt.room2)){
+			stmt.room2.declareRoom
+		}
+		if( stmt.direction == Direction.BELOW || stmt.direction == Direction.ABOVE){
+			'''«stmt.direction» «stmt.room1.name.toFirstUpper» is «stmt.room2.name.toFirstUpper»'''
+		}
+		else{
+			'''«stmt.direction» of «stmt.room1.name.toFirstUpper» is «stmt.room2.name.toFirstUpper»'''
+		}		
 	}
 	def declareRoom(RoomDeclaration stmt){
-		if(!declaredRooms.contains(stmt)){
-			declaredRooms.add(stmt)
-			'''«stmt.name.toFirstUpper»  is a Room. '''
-		}
-		else{
-			''' '''
-		}
+		declaredRooms.add(stmt)
+		'''«stmt.name.toFirstUpper» is a Room. '''
 	}
 	
 	def String getString(List<String> text) {
@@ -91,6 +93,6 @@ class RinformGenerator extends AbstractGenerator {
 		for (String word: text){
 			toReturn += word + " "
 		}
-		toReturn
+		toReturn.trim()
 	}
 }
