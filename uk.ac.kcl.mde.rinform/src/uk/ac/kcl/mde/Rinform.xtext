@@ -18,20 +18,20 @@ SentencePart:
 ;
 
 RoomDeclaration:
-	"[" name = Text "]"
+	"-r" name = Text 
 ;
 
 RoomDescription:
-	 "(""["room = [RoomDeclaration|Text]"]" description += (Text)+ ")"
+	 "("roomDescription += (Text)+ "-r" room = [RoomDeclaration|Text] ")"
 ;
 
 
 ItemDeclaration:
-	"{""["room = [RoomDeclaration|Text]"]" name = Text "}"
+	"-i" name = Text "-" room = [RoomDeclaration|Text]
 ;
 
 ItemDescription:
-	"({"item = [ItemDeclaration|Text]"}" description += (Text)+ ")"
+	"("itemDescription += (Text)+ "-i" item = [ItemDeclaration|Text] ")"
 ;
 
 DirectionStatement:

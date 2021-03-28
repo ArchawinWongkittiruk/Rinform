@@ -28,14 +28,24 @@ import uk.ac.kcl.mde.rinform.RinformPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.ItemDescriptionImpl#getItemDescription <em>Item Description</em>}</li>
  *   <li>{@link uk.ac.kcl.mde.rinform.impl.ItemDescriptionImpl#getItem <em>Item</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.ItemDescriptionImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ItemDescriptionImpl extends SentencePartImpl implements ItemDescription
 {
+  /**
+   * The cached value of the '{@link #getItemDescription() <em>Item Description</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getItemDescription()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> itemDescription;
+
   /**
    * The cached value of the '{@link #getItem() <em>Item</em>}' reference.
    * <!-- begin-user-doc -->
@@ -45,16 +55,6 @@ public class ItemDescriptionImpl extends SentencePartImpl implements ItemDescrip
    * @ordered
    */
   protected ItemDeclaration item;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> description;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,6 +75,21 @@ public class ItemDescriptionImpl extends SentencePartImpl implements ItemDescrip
   protected EClass eStaticClass()
   {
     return RinformPackage.Literals.ITEM_DESCRIPTION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getItemDescription()
+  {
+    if (itemDescription == null)
+    {
+      itemDescription = new EDataTypeEList<String>(String.class, this, RinformPackage.ITEM_DESCRIPTION__ITEM_DESCRIPTION);
+    }
+    return itemDescription;
   }
 
   /**
@@ -128,30 +143,15 @@ public class ItemDescriptionImpl extends SentencePartImpl implements ItemDescrip
    * @generated
    */
   @Override
-  public EList<String> getDescription()
-  {
-    if (description == null)
-    {
-      description = new EDataTypeEList<String>(String.class, this, RinformPackage.ITEM_DESCRIPTION__DESCRIPTION);
-    }
-    return description;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case RinformPackage.ITEM_DESCRIPTION__ITEM_DESCRIPTION:
+        return getItemDescription();
       case RinformPackage.ITEM_DESCRIPTION__ITEM:
         if (resolve) return getItem();
         return basicGetItem();
-      case RinformPackage.ITEM_DESCRIPTION__DESCRIPTION:
-        return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -167,12 +167,12 @@ public class ItemDescriptionImpl extends SentencePartImpl implements ItemDescrip
   {
     switch (featureID)
     {
+      case RinformPackage.ITEM_DESCRIPTION__ITEM_DESCRIPTION:
+        getItemDescription().clear();
+        getItemDescription().addAll((Collection<? extends String>)newValue);
+        return;
       case RinformPackage.ITEM_DESCRIPTION__ITEM:
         setItem((ItemDeclaration)newValue);
-        return;
-      case RinformPackage.ITEM_DESCRIPTION__DESCRIPTION:
-        getDescription().clear();
-        getDescription().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +188,11 @@ public class ItemDescriptionImpl extends SentencePartImpl implements ItemDescrip
   {
     switch (featureID)
     {
+      case RinformPackage.ITEM_DESCRIPTION__ITEM_DESCRIPTION:
+        getItemDescription().clear();
+        return;
       case RinformPackage.ITEM_DESCRIPTION__ITEM:
         setItem((ItemDeclaration)null);
-        return;
-      case RinformPackage.ITEM_DESCRIPTION__DESCRIPTION:
-        getDescription().clear();
         return;
     }
     super.eUnset(featureID);
@@ -208,10 +208,10 @@ public class ItemDescriptionImpl extends SentencePartImpl implements ItemDescrip
   {
     switch (featureID)
     {
+      case RinformPackage.ITEM_DESCRIPTION__ITEM_DESCRIPTION:
+        return itemDescription != null && !itemDescription.isEmpty();
       case RinformPackage.ITEM_DESCRIPTION__ITEM:
         return item != null;
-      case RinformPackage.ITEM_DESCRIPTION__DESCRIPTION:
-        return description != null && !description.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -227,8 +227,8 @@ public class ItemDescriptionImpl extends SentencePartImpl implements ItemDescrip
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (description: ");
-    result.append(description);
+    result.append(" (itemDescription: ");
+    result.append(itemDescription);
     result.append(')');
     return result.toString();
   }

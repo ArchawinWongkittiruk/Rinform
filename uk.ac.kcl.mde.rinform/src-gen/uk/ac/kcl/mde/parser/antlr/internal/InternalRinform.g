@@ -194,9 +194,9 @@ ruleRoomDeclaration returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='['
+		otherlv_0='-r'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getRoomDeclarationAccess().getLeftSquareBracketKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getRoomDeclarationAccess().getRKeyword_0());
 		}
 		(
 			(
@@ -217,10 +217,6 @@ ruleRoomDeclaration returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2=']'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getRoomDeclarationAccess().getRightSquareBracketKeyword_2());
-		}
 	)
 ;
 
@@ -244,9 +240,28 @@ ruleRoomDescription returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getRoomDescriptionAccess().getLeftParenthesisKeyword_0());
 		}
-		otherlv_1='['
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionTextParserRuleCall_1_0());
+				}
+				lv_roomDescription_1_0=ruleText
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRoomDescriptionRule());
+					}
+					add(
+						$current,
+						"roomDescription",
+						lv_roomDescription_1_0,
+						"uk.ac.kcl.mde.Rinform.Text");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+		otherlv_2='-r'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getRoomDescriptionAccess().getLeftSquareBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getRoomDescriptionAccess().getRKeyword_2());
 		}
 		(
 			(
@@ -256,7 +271,7 @@ ruleRoomDescription returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRoomDescriptionAccess().getRoomRoomDeclarationCrossReference_2_0());
+					newCompositeNode(grammarAccess.getRoomDescriptionAccess().getRoomRoomDeclarationCrossReference_3_0());
 				}
 				ruleText
 				{
@@ -264,32 +279,9 @@ ruleRoomDescription returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=']'
+		otherlv_4=')'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getRoomDescriptionAccess().getRightSquareBracketKeyword_3());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getRoomDescriptionAccess().getDescriptionTextParserRuleCall_4_0());
-				}
-				lv_description_4_0=ruleText
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRoomDescriptionRule());
-					}
-					add(
-						$current,
-						"description",
-						lv_description_4_0,
-						"uk.ac.kcl.mde.Rinform.Text");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)+
-		otherlv_5=')'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getRoomDescriptionAccess().getRightParenthesisKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getRoomDescriptionAccess().getRightParenthesisKeyword_4());
 		}
 	)
 ;
@@ -310,13 +302,32 @@ ruleItemDeclaration returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='{'
+		otherlv_0='-i'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getItemDeclarationAccess().getLeftCurlyBracketKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getItemDeclarationAccess().getIKeyword_0());
 		}
-		otherlv_1='['
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleText
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getItemDeclarationRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"uk.ac.kcl.mde.Rinform.Text");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='-'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getItemDeclarationAccess().getLeftSquareBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getItemDeclarationAccess().getHyphenMinusKeyword_2());
 		}
 		(
 			(
@@ -326,7 +337,7 @@ ruleItemDeclaration returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationCrossReference_2_0());
+					newCompositeNode(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationCrossReference_3_0());
 				}
 				ruleText
 				{
@@ -334,33 +345,6 @@ ruleItemDeclaration returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=']'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getItemDeclarationAccess().getRightSquareBracketKeyword_3());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_4_0());
-				}
-				lv_name_4_0=ruleText
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getItemDeclarationRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_4_0,
-						"uk.ac.kcl.mde.Rinform.Text");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_5='}'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getItemDeclarationAccess().getRightCurlyBracketKeyword_5());
-		}
 	)
 ;
 
@@ -380,9 +364,32 @@ ruleItemDescription returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='({'
+		otherlv_0='('
 		{
-			newLeafNode(otherlv_0, grammarAccess.getItemDescriptionAccess().getLeftParenthesisLeftCurlyBracketKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getItemDescriptionAccess().getLeftParenthesisKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getItemDescriptionAccess().getItemDescriptionTextParserRuleCall_1_0());
+				}
+				lv_itemDescription_1_0=ruleText
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getItemDescriptionRule());
+					}
+					add(
+						$current,
+						"itemDescription",
+						lv_itemDescription_1_0,
+						"uk.ac.kcl.mde.Rinform.Text");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+		otherlv_2='-i'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getItemDescriptionAccess().getIKeyword_2());
 		}
 		(
 			(
@@ -392,7 +399,7 @@ ruleItemDescription returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getItemDescriptionAccess().getItemItemDeclarationCrossReference_1_0());
+					newCompositeNode(grammarAccess.getItemDescriptionAccess().getItemItemDeclarationCrossReference_3_0());
 				}
 				ruleText
 				{
@@ -400,29 +407,6 @@ ruleItemDescription returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='}'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getItemDescriptionAccess().getRightCurlyBracketKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getItemDescriptionAccess().getDescriptionTextParserRuleCall_3_0());
-				}
-				lv_description_3_0=ruleText
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getItemDescriptionRule());
-					}
-					add(
-						$current,
-						"description",
-						lv_description_3_0,
-						"uk.ac.kcl.mde.Rinform.Text");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)+
 		otherlv_4=')'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getItemDescriptionAccess().getRightParenthesisKeyword_4());

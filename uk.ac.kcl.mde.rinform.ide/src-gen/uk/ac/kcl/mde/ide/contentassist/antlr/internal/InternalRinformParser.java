@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRinformParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_WS", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ANY_OTHER", "'.'", "','", "';'", "':'", "'-'", "'!'", "'?'", "'\\''", "'South'", "'North'", "'East'", "'West'", "'Below'", "'Above'", "'['", "']'", "'('", "')'", "'{'", "'}'", "'({'", "'<'", "'>'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_WS", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ANY_OTHER", "'.'", "','", "';'", "':'", "'-'", "'!'", "'?'", "'\\''", "'South'", "'North'", "'East'", "'West'", "'Below'", "'Above'", "'-r'", "'('", "')'", "'-i'", "'<'", "'>'"
     };
     public static final int RULE_STRING=7;
     public static final int RULE_SL_COMMENT=9;
@@ -32,14 +32,11 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__33=33;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_ID=4;
     public static final int RULE_WS=5;
     public static final int RULE_ANY_OTHER=10;
@@ -141,7 +138,7 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==RULE_ID||(LA1_0>=11 && LA1_0<=18)||LA1_0==25||LA1_0==27||LA1_0==29||(LA1_0>=31 && LA1_0<=32)) ) {
+                if ( (LA1_0==RULE_ID||(LA1_0>=11 && LA1_0<=18)||(LA1_0>=25 && LA1_0<=26)||(LA1_0>=28 && LA1_0<=29)) ) {
                     alt1=1;
                 }
 
@@ -978,56 +975,7 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
         try {
             // InternalRinform.g:329:1: ( ( ruleRoomDeclaration ) | ( ruleRoomDescription ) | ( ruleItemDeclaration ) | ( ruleItemDescription ) | ( ruleWords ) | ( ruleSymbol ) | ( ruleDirectionStatement ) )
             int alt3=7;
-            switch ( input.LA(1) ) {
-            case 25:
-                {
-                alt3=1;
-                }
-                break;
-            case 27:
-                {
-                alt3=2;
-                }
-                break;
-            case 29:
-                {
-                alt3=3;
-                }
-                break;
-            case 31:
-                {
-                alt3=4;
-                }
-                break;
-            case RULE_ID:
-                {
-                alt3=5;
-                }
-                break;
-            case 11:
-            case 12:
-            case 13:
-            case 14:
-            case 15:
-            case 16:
-            case 17:
-            case 18:
-                {
-                alt3=6;
-                }
-                break;
-            case 32:
-                {
-                alt3=7;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
-
-                throw nvae;
-            }
-
+            alt3 = dfa3.predict(input);
             switch (alt3) {
                 case 1 :
                     // InternalRinform.g:330:2: ( ruleRoomDeclaration )
@@ -1604,21 +1552,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDeclaration__Group__0__Impl"
-    // InternalRinform.g:490:1: rule__RoomDeclaration__Group__0__Impl : ( '[' ) ;
+    // InternalRinform.g:490:1: rule__RoomDeclaration__Group__0__Impl : ( '-r' ) ;
     public final void rule__RoomDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:494:1: ( ( '[' ) )
-            // InternalRinform.g:495:1: ( '[' )
+            // InternalRinform.g:494:1: ( ( '-r' ) )
+            // InternalRinform.g:495:1: ( '-r' )
             {
-            // InternalRinform.g:495:1: ( '[' )
-            // InternalRinform.g:496:2: '['
+            // InternalRinform.g:495:1: ( '-r' )
+            // InternalRinform.g:496:2: '-r'
             {
-             before(grammarAccess.getRoomDeclarationAccess().getLeftSquareBracketKeyword_0()); 
+             before(grammarAccess.getRoomDeclarationAccess().getRKeyword_0()); 
             match(input,25,FOLLOW_2); 
-             after(grammarAccess.getRoomDeclarationAccess().getLeftSquareBracketKeyword_0()); 
+             after(grammarAccess.getRoomDeclarationAccess().getRKeyword_0()); 
 
             }
 
@@ -1641,22 +1589,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDeclaration__Group__1"
-    // InternalRinform.g:505:1: rule__RoomDeclaration__Group__1 : rule__RoomDeclaration__Group__1__Impl rule__RoomDeclaration__Group__2 ;
+    // InternalRinform.g:505:1: rule__RoomDeclaration__Group__1 : rule__RoomDeclaration__Group__1__Impl ;
     public final void rule__RoomDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:509:1: ( rule__RoomDeclaration__Group__1__Impl rule__RoomDeclaration__Group__2 )
-            // InternalRinform.g:510:2: rule__RoomDeclaration__Group__1__Impl rule__RoomDeclaration__Group__2
+            // InternalRinform.g:509:1: ( rule__RoomDeclaration__Group__1__Impl )
+            // InternalRinform.g:510:2: rule__RoomDeclaration__Group__1__Impl
             {
-            pushFollow(FOLLOW_6);
-            rule__RoomDeclaration__Group__1__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__RoomDeclaration__Group__2();
+            rule__RoomDeclaration__Group__1__Impl();
 
             state._fsp--;
 
@@ -1679,21 +1622,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDeclaration__Group__1__Impl"
-    // InternalRinform.g:517:1: rule__RoomDeclaration__Group__1__Impl : ( ( rule__RoomDeclaration__NameAssignment_1 ) ) ;
+    // InternalRinform.g:516:1: rule__RoomDeclaration__Group__1__Impl : ( ( rule__RoomDeclaration__NameAssignment_1 ) ) ;
     public final void rule__RoomDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:521:1: ( ( ( rule__RoomDeclaration__NameAssignment_1 ) ) )
-            // InternalRinform.g:522:1: ( ( rule__RoomDeclaration__NameAssignment_1 ) )
+            // InternalRinform.g:520:1: ( ( ( rule__RoomDeclaration__NameAssignment_1 ) ) )
+            // InternalRinform.g:521:1: ( ( rule__RoomDeclaration__NameAssignment_1 ) )
             {
-            // InternalRinform.g:522:1: ( ( rule__RoomDeclaration__NameAssignment_1 ) )
-            // InternalRinform.g:523:2: ( rule__RoomDeclaration__NameAssignment_1 )
+            // InternalRinform.g:521:1: ( ( rule__RoomDeclaration__NameAssignment_1 ) )
+            // InternalRinform.g:522:2: ( rule__RoomDeclaration__NameAssignment_1 )
             {
              before(grammarAccess.getRoomDeclarationAccess().getNameAssignment_1()); 
-            // InternalRinform.g:524:2: ( rule__RoomDeclaration__NameAssignment_1 )
-            // InternalRinform.g:524:3: rule__RoomDeclaration__NameAssignment_1
+            // InternalRinform.g:523:2: ( rule__RoomDeclaration__NameAssignment_1 )
+            // InternalRinform.g:523:3: rule__RoomDeclaration__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__RoomDeclaration__NameAssignment_1();
@@ -1725,87 +1668,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__RoomDeclaration__Group__1__Impl"
 
 
-    // $ANTLR start "rule__RoomDeclaration__Group__2"
-    // InternalRinform.g:532:1: rule__RoomDeclaration__Group__2 : rule__RoomDeclaration__Group__2__Impl ;
-    public final void rule__RoomDeclaration__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRinform.g:536:1: ( rule__RoomDeclaration__Group__2__Impl )
-            // InternalRinform.g:537:2: rule__RoomDeclaration__Group__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__RoomDeclaration__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RoomDeclaration__Group__2"
-
-
-    // $ANTLR start "rule__RoomDeclaration__Group__2__Impl"
-    // InternalRinform.g:543:1: rule__RoomDeclaration__Group__2__Impl : ( ']' ) ;
-    public final void rule__RoomDeclaration__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRinform.g:547:1: ( ( ']' ) )
-            // InternalRinform.g:548:1: ( ']' )
-            {
-            // InternalRinform.g:548:1: ( ']' )
-            // InternalRinform.g:549:2: ']'
-            {
-             before(grammarAccess.getRoomDeclarationAccess().getRightSquareBracketKeyword_2()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getRoomDeclarationAccess().getRightSquareBracketKeyword_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RoomDeclaration__Group__2__Impl"
-
-
     // $ANTLR start "rule__RoomDescription__Group__0"
-    // InternalRinform.g:559:1: rule__RoomDescription__Group__0 : rule__RoomDescription__Group__0__Impl rule__RoomDescription__Group__1 ;
+    // InternalRinform.g:532:1: rule__RoomDescription__Group__0 : rule__RoomDescription__Group__0__Impl rule__RoomDescription__Group__1 ;
     public final void rule__RoomDescription__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:563:1: ( rule__RoomDescription__Group__0__Impl rule__RoomDescription__Group__1 )
-            // InternalRinform.g:564:2: rule__RoomDescription__Group__0__Impl rule__RoomDescription__Group__1
+            // InternalRinform.g:536:1: ( rule__RoomDescription__Group__0__Impl rule__RoomDescription__Group__1 )
+            // InternalRinform.g:537:2: rule__RoomDescription__Group__0__Impl rule__RoomDescription__Group__1
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_5);
             rule__RoomDescription__Group__0__Impl();
 
             state._fsp--;
@@ -1834,20 +1707,20 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDescription__Group__0__Impl"
-    // InternalRinform.g:571:1: rule__RoomDescription__Group__0__Impl : ( '(' ) ;
+    // InternalRinform.g:544:1: rule__RoomDescription__Group__0__Impl : ( '(' ) ;
     public final void rule__RoomDescription__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:575:1: ( ( '(' ) )
-            // InternalRinform.g:576:1: ( '(' )
+            // InternalRinform.g:548:1: ( ( '(' ) )
+            // InternalRinform.g:549:1: ( '(' )
             {
-            // InternalRinform.g:576:1: ( '(' )
-            // InternalRinform.g:577:2: '('
+            // InternalRinform.g:549:1: ( '(' )
+            // InternalRinform.g:550:2: '('
             {
              before(grammarAccess.getRoomDescriptionAccess().getLeftParenthesisKeyword_0()); 
-            match(input,27,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getRoomDescriptionAccess().getLeftParenthesisKeyword_0()); 
 
             }
@@ -1871,16 +1744,16 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDescription__Group__1"
-    // InternalRinform.g:586:1: rule__RoomDescription__Group__1 : rule__RoomDescription__Group__1__Impl rule__RoomDescription__Group__2 ;
+    // InternalRinform.g:559:1: rule__RoomDescription__Group__1 : rule__RoomDescription__Group__1__Impl rule__RoomDescription__Group__2 ;
     public final void rule__RoomDescription__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:590:1: ( rule__RoomDescription__Group__1__Impl rule__RoomDescription__Group__2 )
-            // InternalRinform.g:591:2: rule__RoomDescription__Group__1__Impl rule__RoomDescription__Group__2
+            // InternalRinform.g:563:1: ( rule__RoomDescription__Group__1__Impl rule__RoomDescription__Group__2 )
+            // InternalRinform.g:564:2: rule__RoomDescription__Group__1__Impl rule__RoomDescription__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__RoomDescription__Group__1__Impl();
 
             state._fsp--;
@@ -1909,21 +1782,74 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDescription__Group__1__Impl"
-    // InternalRinform.g:598:1: rule__RoomDescription__Group__1__Impl : ( '[' ) ;
+    // InternalRinform.g:571:1: rule__RoomDescription__Group__1__Impl : ( ( ( rule__RoomDescription__RoomDescriptionAssignment_1 ) ) ( ( rule__RoomDescription__RoomDescriptionAssignment_1 )* ) ) ;
     public final void rule__RoomDescription__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:602:1: ( ( '[' ) )
-            // InternalRinform.g:603:1: ( '[' )
+            // InternalRinform.g:575:1: ( ( ( ( rule__RoomDescription__RoomDescriptionAssignment_1 ) ) ( ( rule__RoomDescription__RoomDescriptionAssignment_1 )* ) ) )
+            // InternalRinform.g:576:1: ( ( ( rule__RoomDescription__RoomDescriptionAssignment_1 ) ) ( ( rule__RoomDescription__RoomDescriptionAssignment_1 )* ) )
             {
-            // InternalRinform.g:603:1: ( '[' )
-            // InternalRinform.g:604:2: '['
+            // InternalRinform.g:576:1: ( ( ( rule__RoomDescription__RoomDescriptionAssignment_1 ) ) ( ( rule__RoomDescription__RoomDescriptionAssignment_1 )* ) )
+            // InternalRinform.g:577:2: ( ( rule__RoomDescription__RoomDescriptionAssignment_1 ) ) ( ( rule__RoomDescription__RoomDescriptionAssignment_1 )* )
             {
-             before(grammarAccess.getRoomDescriptionAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getRoomDescriptionAccess().getLeftSquareBracketKeyword_1()); 
+            // InternalRinform.g:577:2: ( ( rule__RoomDescription__RoomDescriptionAssignment_1 ) )
+            // InternalRinform.g:578:3: ( rule__RoomDescription__RoomDescriptionAssignment_1 )
+            {
+             before(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionAssignment_1()); 
+            // InternalRinform.g:579:3: ( rule__RoomDescription__RoomDescriptionAssignment_1 )
+            // InternalRinform.g:579:4: rule__RoomDescription__RoomDescriptionAssignment_1
+            {
+            pushFollow(FOLLOW_4);
+            rule__RoomDescription__RoomDescriptionAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionAssignment_1()); 
+
+            }
+
+            // InternalRinform.g:582:2: ( ( rule__RoomDescription__RoomDescriptionAssignment_1 )* )
+            // InternalRinform.g:583:3: ( rule__RoomDescription__RoomDescriptionAssignment_1 )*
+            {
+             before(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionAssignment_1()); 
+            // InternalRinform.g:584:3: ( rule__RoomDescription__RoomDescriptionAssignment_1 )*
+            loop6:
+            do {
+                int alt6=2;
+                int LA6_0 = input.LA(1);
+
+                if ( (LA6_0==RULE_ID) ) {
+                    alt6=1;
+                }
+
+
+                switch (alt6) {
+            	case 1 :
+            	    // InternalRinform.g:584:4: rule__RoomDescription__RoomDescriptionAssignment_1
+            	    {
+            	    pushFollow(FOLLOW_4);
+            	    rule__RoomDescription__RoomDescriptionAssignment_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop6;
+                }
+            } while (true);
+
+             after(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionAssignment_1()); 
+
+            }
+
 
             }
 
@@ -1946,16 +1872,16 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDescription__Group__2"
-    // InternalRinform.g:613:1: rule__RoomDescription__Group__2 : rule__RoomDescription__Group__2__Impl rule__RoomDescription__Group__3 ;
+    // InternalRinform.g:593:1: rule__RoomDescription__Group__2 : rule__RoomDescription__Group__2__Impl rule__RoomDescription__Group__3 ;
     public final void rule__RoomDescription__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:617:1: ( rule__RoomDescription__Group__2__Impl rule__RoomDescription__Group__3 )
-            // InternalRinform.g:618:2: rule__RoomDescription__Group__2__Impl rule__RoomDescription__Group__3
+            // InternalRinform.g:597:1: ( rule__RoomDescription__Group__2__Impl rule__RoomDescription__Group__3 )
+            // InternalRinform.g:598:2: rule__RoomDescription__Group__2__Impl rule__RoomDescription__Group__3
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_5);
             rule__RoomDescription__Group__2__Impl();
 
             state._fsp--;
@@ -1984,31 +1910,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDescription__Group__2__Impl"
-    // InternalRinform.g:625:1: rule__RoomDescription__Group__2__Impl : ( ( rule__RoomDescription__RoomAssignment_2 ) ) ;
+    // InternalRinform.g:605:1: rule__RoomDescription__Group__2__Impl : ( '-r' ) ;
     public final void rule__RoomDescription__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:629:1: ( ( ( rule__RoomDescription__RoomAssignment_2 ) ) )
-            // InternalRinform.g:630:1: ( ( rule__RoomDescription__RoomAssignment_2 ) )
+            // InternalRinform.g:609:1: ( ( '-r' ) )
+            // InternalRinform.g:610:1: ( '-r' )
             {
-            // InternalRinform.g:630:1: ( ( rule__RoomDescription__RoomAssignment_2 ) )
-            // InternalRinform.g:631:2: ( rule__RoomDescription__RoomAssignment_2 )
+            // InternalRinform.g:610:1: ( '-r' )
+            // InternalRinform.g:611:2: '-r'
             {
-             before(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_2()); 
-            // InternalRinform.g:632:2: ( rule__RoomDescription__RoomAssignment_2 )
-            // InternalRinform.g:632:3: rule__RoomDescription__RoomAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__RoomDescription__RoomAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_2()); 
+             before(grammarAccess.getRoomDescriptionAccess().getRKeyword_2()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getRoomDescriptionAccess().getRKeyword_2()); 
 
             }
 
@@ -2031,16 +1947,16 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDescription__Group__3"
-    // InternalRinform.g:640:1: rule__RoomDescription__Group__3 : rule__RoomDescription__Group__3__Impl rule__RoomDescription__Group__4 ;
+    // InternalRinform.g:620:1: rule__RoomDescription__Group__3 : rule__RoomDescription__Group__3__Impl rule__RoomDescription__Group__4 ;
     public final void rule__RoomDescription__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:644:1: ( rule__RoomDescription__Group__3__Impl rule__RoomDescription__Group__4 )
-            // InternalRinform.g:645:2: rule__RoomDescription__Group__3__Impl rule__RoomDescription__Group__4
+            // InternalRinform.g:624:1: ( rule__RoomDescription__Group__3__Impl rule__RoomDescription__Group__4 )
+            // InternalRinform.g:625:2: rule__RoomDescription__Group__3__Impl rule__RoomDescription__Group__4
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_7);
             rule__RoomDescription__Group__3__Impl();
 
             state._fsp--;
@@ -2069,21 +1985,31 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDescription__Group__3__Impl"
-    // InternalRinform.g:652:1: rule__RoomDescription__Group__3__Impl : ( ']' ) ;
+    // InternalRinform.g:632:1: rule__RoomDescription__Group__3__Impl : ( ( rule__RoomDescription__RoomAssignment_3 ) ) ;
     public final void rule__RoomDescription__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:656:1: ( ( ']' ) )
-            // InternalRinform.g:657:1: ( ']' )
+            // InternalRinform.g:636:1: ( ( ( rule__RoomDescription__RoomAssignment_3 ) ) )
+            // InternalRinform.g:637:1: ( ( rule__RoomDescription__RoomAssignment_3 ) )
             {
-            // InternalRinform.g:657:1: ( ']' )
-            // InternalRinform.g:658:2: ']'
+            // InternalRinform.g:637:1: ( ( rule__RoomDescription__RoomAssignment_3 ) )
+            // InternalRinform.g:638:2: ( rule__RoomDescription__RoomAssignment_3 )
             {
-             before(grammarAccess.getRoomDescriptionAccess().getRightSquareBracketKeyword_3()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getRoomDescriptionAccess().getRightSquareBracketKeyword_3()); 
+             before(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_3()); 
+            // InternalRinform.g:639:2: ( rule__RoomDescription__RoomAssignment_3 )
+            // InternalRinform.g:639:3: rule__RoomDescription__RoomAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__RoomDescription__RoomAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_3()); 
 
             }
 
@@ -2106,22 +2032,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDescription__Group__4"
-    // InternalRinform.g:667:1: rule__RoomDescription__Group__4 : rule__RoomDescription__Group__4__Impl rule__RoomDescription__Group__5 ;
+    // InternalRinform.g:647:1: rule__RoomDescription__Group__4 : rule__RoomDescription__Group__4__Impl ;
     public final void rule__RoomDescription__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:671:1: ( rule__RoomDescription__Group__4__Impl rule__RoomDescription__Group__5 )
-            // InternalRinform.g:672:2: rule__RoomDescription__Group__4__Impl rule__RoomDescription__Group__5
+            // InternalRinform.g:651:1: ( rule__RoomDescription__Group__4__Impl )
+            // InternalRinform.g:652:2: rule__RoomDescription__Group__4__Impl
             {
-            pushFollow(FOLLOW_8);
-            rule__RoomDescription__Group__4__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__RoomDescription__Group__5();
+            rule__RoomDescription__Group__4__Impl();
 
             state._fsp--;
 
@@ -2144,74 +2065,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDescription__Group__4__Impl"
-    // InternalRinform.g:679:1: rule__RoomDescription__Group__4__Impl : ( ( ( rule__RoomDescription__DescriptionAssignment_4 ) ) ( ( rule__RoomDescription__DescriptionAssignment_4 )* ) ) ;
+    // InternalRinform.g:658:1: rule__RoomDescription__Group__4__Impl : ( ')' ) ;
     public final void rule__RoomDescription__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:683:1: ( ( ( ( rule__RoomDescription__DescriptionAssignment_4 ) ) ( ( rule__RoomDescription__DescriptionAssignment_4 )* ) ) )
-            // InternalRinform.g:684:1: ( ( ( rule__RoomDescription__DescriptionAssignment_4 ) ) ( ( rule__RoomDescription__DescriptionAssignment_4 )* ) )
+            // InternalRinform.g:662:1: ( ( ')' ) )
+            // InternalRinform.g:663:1: ( ')' )
             {
-            // InternalRinform.g:684:1: ( ( ( rule__RoomDescription__DescriptionAssignment_4 ) ) ( ( rule__RoomDescription__DescriptionAssignment_4 )* ) )
-            // InternalRinform.g:685:2: ( ( rule__RoomDescription__DescriptionAssignment_4 ) ) ( ( rule__RoomDescription__DescriptionAssignment_4 )* )
+            // InternalRinform.g:663:1: ( ')' )
+            // InternalRinform.g:664:2: ')'
             {
-            // InternalRinform.g:685:2: ( ( rule__RoomDescription__DescriptionAssignment_4 ) )
-            // InternalRinform.g:686:3: ( rule__RoomDescription__DescriptionAssignment_4 )
-            {
-             before(grammarAccess.getRoomDescriptionAccess().getDescriptionAssignment_4()); 
-            // InternalRinform.g:687:3: ( rule__RoomDescription__DescriptionAssignment_4 )
-            // InternalRinform.g:687:4: rule__RoomDescription__DescriptionAssignment_4
-            {
-            pushFollow(FOLLOW_4);
-            rule__RoomDescription__DescriptionAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRoomDescriptionAccess().getDescriptionAssignment_4()); 
-
-            }
-
-            // InternalRinform.g:690:2: ( ( rule__RoomDescription__DescriptionAssignment_4 )* )
-            // InternalRinform.g:691:3: ( rule__RoomDescription__DescriptionAssignment_4 )*
-            {
-             before(grammarAccess.getRoomDescriptionAccess().getDescriptionAssignment_4()); 
-            // InternalRinform.g:692:3: ( rule__RoomDescription__DescriptionAssignment_4 )*
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
-
-                if ( (LA6_0==RULE_ID) ) {
-                    alt6=1;
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // InternalRinform.g:692:4: rule__RoomDescription__DescriptionAssignment_4
-            	    {
-            	    pushFollow(FOLLOW_4);
-            	    rule__RoomDescription__DescriptionAssignment_4();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop6;
-                }
-            } while (true);
-
-             after(grammarAccess.getRoomDescriptionAccess().getDescriptionAssignment_4()); 
-
-            }
-
+             before(grammarAccess.getRoomDescriptionAccess().getRightParenthesisKeyword_4()); 
+            match(input,27,FOLLOW_2); 
+             after(grammarAccess.getRoomDescriptionAccess().getRightParenthesisKeyword_4()); 
 
             }
 
@@ -2233,87 +2101,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__RoomDescription__Group__4__Impl"
 
 
-    // $ANTLR start "rule__RoomDescription__Group__5"
-    // InternalRinform.g:701:1: rule__RoomDescription__Group__5 : rule__RoomDescription__Group__5__Impl ;
-    public final void rule__RoomDescription__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRinform.g:705:1: ( rule__RoomDescription__Group__5__Impl )
-            // InternalRinform.g:706:2: rule__RoomDescription__Group__5__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__RoomDescription__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RoomDescription__Group__5"
-
-
-    // $ANTLR start "rule__RoomDescription__Group__5__Impl"
-    // InternalRinform.g:712:1: rule__RoomDescription__Group__5__Impl : ( ')' ) ;
-    public final void rule__RoomDescription__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRinform.g:716:1: ( ( ')' ) )
-            // InternalRinform.g:717:1: ( ')' )
-            {
-            // InternalRinform.g:717:1: ( ')' )
-            // InternalRinform.g:718:2: ')'
-            {
-             before(grammarAccess.getRoomDescriptionAccess().getRightParenthesisKeyword_5()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getRoomDescriptionAccess().getRightParenthesisKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RoomDescription__Group__5__Impl"
-
-
     // $ANTLR start "rule__ItemDeclaration__Group__0"
-    // InternalRinform.g:728:1: rule__ItemDeclaration__Group__0 : rule__ItemDeclaration__Group__0__Impl rule__ItemDeclaration__Group__1 ;
+    // InternalRinform.g:674:1: rule__ItemDeclaration__Group__0 : rule__ItemDeclaration__Group__0__Impl rule__ItemDeclaration__Group__1 ;
     public final void rule__ItemDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:732:1: ( rule__ItemDeclaration__Group__0__Impl rule__ItemDeclaration__Group__1 )
-            // InternalRinform.g:733:2: rule__ItemDeclaration__Group__0__Impl rule__ItemDeclaration__Group__1
+            // InternalRinform.g:678:1: ( rule__ItemDeclaration__Group__0__Impl rule__ItemDeclaration__Group__1 )
+            // InternalRinform.g:679:2: rule__ItemDeclaration__Group__0__Impl rule__ItemDeclaration__Group__1
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_5);
             rule__ItemDeclaration__Group__0__Impl();
 
             state._fsp--;
@@ -2342,21 +2140,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDeclaration__Group__0__Impl"
-    // InternalRinform.g:740:1: rule__ItemDeclaration__Group__0__Impl : ( '{' ) ;
+    // InternalRinform.g:686:1: rule__ItemDeclaration__Group__0__Impl : ( '-i' ) ;
     public final void rule__ItemDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:744:1: ( ( '{' ) )
-            // InternalRinform.g:745:1: ( '{' )
+            // InternalRinform.g:690:1: ( ( '-i' ) )
+            // InternalRinform.g:691:1: ( '-i' )
             {
-            // InternalRinform.g:745:1: ( '{' )
-            // InternalRinform.g:746:2: '{'
+            // InternalRinform.g:691:1: ( '-i' )
+            // InternalRinform.g:692:2: '-i'
             {
-             before(grammarAccess.getItemDeclarationAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,29,FOLLOW_2); 
-             after(grammarAccess.getItemDeclarationAccess().getLeftCurlyBracketKeyword_0()); 
+             before(grammarAccess.getItemDeclarationAccess().getIKeyword_0()); 
+            match(input,28,FOLLOW_2); 
+             after(grammarAccess.getItemDeclarationAccess().getIKeyword_0()); 
 
             }
 
@@ -2379,16 +2177,16 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDeclaration__Group__1"
-    // InternalRinform.g:755:1: rule__ItemDeclaration__Group__1 : rule__ItemDeclaration__Group__1__Impl rule__ItemDeclaration__Group__2 ;
+    // InternalRinform.g:701:1: rule__ItemDeclaration__Group__1 : rule__ItemDeclaration__Group__1__Impl rule__ItemDeclaration__Group__2 ;
     public final void rule__ItemDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:759:1: ( rule__ItemDeclaration__Group__1__Impl rule__ItemDeclaration__Group__2 )
-            // InternalRinform.g:760:2: rule__ItemDeclaration__Group__1__Impl rule__ItemDeclaration__Group__2
+            // InternalRinform.g:705:1: ( rule__ItemDeclaration__Group__1__Impl rule__ItemDeclaration__Group__2 )
+            // InternalRinform.g:706:2: rule__ItemDeclaration__Group__1__Impl rule__ItemDeclaration__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_8);
             rule__ItemDeclaration__Group__1__Impl();
 
             state._fsp--;
@@ -2417,21 +2215,31 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDeclaration__Group__1__Impl"
-    // InternalRinform.g:767:1: rule__ItemDeclaration__Group__1__Impl : ( '[' ) ;
+    // InternalRinform.g:713:1: rule__ItemDeclaration__Group__1__Impl : ( ( rule__ItemDeclaration__NameAssignment_1 ) ) ;
     public final void rule__ItemDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:771:1: ( ( '[' ) )
-            // InternalRinform.g:772:1: ( '[' )
+            // InternalRinform.g:717:1: ( ( ( rule__ItemDeclaration__NameAssignment_1 ) ) )
+            // InternalRinform.g:718:1: ( ( rule__ItemDeclaration__NameAssignment_1 ) )
             {
-            // InternalRinform.g:772:1: ( '[' )
-            // InternalRinform.g:773:2: '['
+            // InternalRinform.g:718:1: ( ( rule__ItemDeclaration__NameAssignment_1 ) )
+            // InternalRinform.g:719:2: ( rule__ItemDeclaration__NameAssignment_1 )
             {
-             before(grammarAccess.getItemDeclarationAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getItemDeclarationAccess().getLeftSquareBracketKeyword_1()); 
+             before(grammarAccess.getItemDeclarationAccess().getNameAssignment_1()); 
+            // InternalRinform.g:720:2: ( rule__ItemDeclaration__NameAssignment_1 )
+            // InternalRinform.g:720:3: rule__ItemDeclaration__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__ItemDeclaration__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getItemDeclarationAccess().getNameAssignment_1()); 
 
             }
 
@@ -2454,16 +2262,16 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDeclaration__Group__2"
-    // InternalRinform.g:782:1: rule__ItemDeclaration__Group__2 : rule__ItemDeclaration__Group__2__Impl rule__ItemDeclaration__Group__3 ;
+    // InternalRinform.g:728:1: rule__ItemDeclaration__Group__2 : rule__ItemDeclaration__Group__2__Impl rule__ItemDeclaration__Group__3 ;
     public final void rule__ItemDeclaration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:786:1: ( rule__ItemDeclaration__Group__2__Impl rule__ItemDeclaration__Group__3 )
-            // InternalRinform.g:787:2: rule__ItemDeclaration__Group__2__Impl rule__ItemDeclaration__Group__3
+            // InternalRinform.g:732:1: ( rule__ItemDeclaration__Group__2__Impl rule__ItemDeclaration__Group__3 )
+            // InternalRinform.g:733:2: rule__ItemDeclaration__Group__2__Impl rule__ItemDeclaration__Group__3
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_5);
             rule__ItemDeclaration__Group__2__Impl();
 
             state._fsp--;
@@ -2492,31 +2300,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDeclaration__Group__2__Impl"
-    // InternalRinform.g:794:1: rule__ItemDeclaration__Group__2__Impl : ( ( rule__ItemDeclaration__RoomAssignment_2 ) ) ;
+    // InternalRinform.g:740:1: rule__ItemDeclaration__Group__2__Impl : ( '-' ) ;
     public final void rule__ItemDeclaration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:798:1: ( ( ( rule__ItemDeclaration__RoomAssignment_2 ) ) )
-            // InternalRinform.g:799:1: ( ( rule__ItemDeclaration__RoomAssignment_2 ) )
+            // InternalRinform.g:744:1: ( ( '-' ) )
+            // InternalRinform.g:745:1: ( '-' )
             {
-            // InternalRinform.g:799:1: ( ( rule__ItemDeclaration__RoomAssignment_2 ) )
-            // InternalRinform.g:800:2: ( rule__ItemDeclaration__RoomAssignment_2 )
+            // InternalRinform.g:745:1: ( '-' )
+            // InternalRinform.g:746:2: '-'
             {
-             before(grammarAccess.getItemDeclarationAccess().getRoomAssignment_2()); 
-            // InternalRinform.g:801:2: ( rule__ItemDeclaration__RoomAssignment_2 )
-            // InternalRinform.g:801:3: rule__ItemDeclaration__RoomAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__ItemDeclaration__RoomAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getItemDeclarationAccess().getRoomAssignment_2()); 
+             before(grammarAccess.getItemDeclarationAccess().getHyphenMinusKeyword_2()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getItemDeclarationAccess().getHyphenMinusKeyword_2()); 
 
             }
 
@@ -2539,22 +2337,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDeclaration__Group__3"
-    // InternalRinform.g:809:1: rule__ItemDeclaration__Group__3 : rule__ItemDeclaration__Group__3__Impl rule__ItemDeclaration__Group__4 ;
+    // InternalRinform.g:755:1: rule__ItemDeclaration__Group__3 : rule__ItemDeclaration__Group__3__Impl ;
     public final void rule__ItemDeclaration__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:813:1: ( rule__ItemDeclaration__Group__3__Impl rule__ItemDeclaration__Group__4 )
-            // InternalRinform.g:814:2: rule__ItemDeclaration__Group__3__Impl rule__ItemDeclaration__Group__4
+            // InternalRinform.g:759:1: ( rule__ItemDeclaration__Group__3__Impl )
+            // InternalRinform.g:760:2: rule__ItemDeclaration__Group__3__Impl
             {
-            pushFollow(FOLLOW_5);
-            rule__ItemDeclaration__Group__3__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__ItemDeclaration__Group__4();
+            rule__ItemDeclaration__Group__3__Impl();
 
             state._fsp--;
 
@@ -2577,21 +2370,31 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDeclaration__Group__3__Impl"
-    // InternalRinform.g:821:1: rule__ItemDeclaration__Group__3__Impl : ( ']' ) ;
+    // InternalRinform.g:766:1: rule__ItemDeclaration__Group__3__Impl : ( ( rule__ItemDeclaration__RoomAssignment_3 ) ) ;
     public final void rule__ItemDeclaration__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:825:1: ( ( ']' ) )
-            // InternalRinform.g:826:1: ( ']' )
+            // InternalRinform.g:770:1: ( ( ( rule__ItemDeclaration__RoomAssignment_3 ) ) )
+            // InternalRinform.g:771:1: ( ( rule__ItemDeclaration__RoomAssignment_3 ) )
             {
-            // InternalRinform.g:826:1: ( ']' )
-            // InternalRinform.g:827:2: ']'
+            // InternalRinform.g:771:1: ( ( rule__ItemDeclaration__RoomAssignment_3 ) )
+            // InternalRinform.g:772:2: ( rule__ItemDeclaration__RoomAssignment_3 )
             {
-             before(grammarAccess.getItemDeclarationAccess().getRightSquareBracketKeyword_3()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getItemDeclarationAccess().getRightSquareBracketKeyword_3()); 
+             before(grammarAccess.getItemDeclarationAccess().getRoomAssignment_3()); 
+            // InternalRinform.g:773:2: ( rule__ItemDeclaration__RoomAssignment_3 )
+            // InternalRinform.g:773:3: rule__ItemDeclaration__RoomAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__ItemDeclaration__RoomAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getItemDeclarationAccess().getRoomAssignment_3()); 
 
             }
 
@@ -2613,170 +2416,15 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ItemDeclaration__Group__3__Impl"
 
 
-    // $ANTLR start "rule__ItemDeclaration__Group__4"
-    // InternalRinform.g:836:1: rule__ItemDeclaration__Group__4 : rule__ItemDeclaration__Group__4__Impl rule__ItemDeclaration__Group__5 ;
-    public final void rule__ItemDeclaration__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRinform.g:840:1: ( rule__ItemDeclaration__Group__4__Impl rule__ItemDeclaration__Group__5 )
-            // InternalRinform.g:841:2: rule__ItemDeclaration__Group__4__Impl rule__ItemDeclaration__Group__5
-            {
-            pushFollow(FOLLOW_9);
-            rule__ItemDeclaration__Group__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ItemDeclaration__Group__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ItemDeclaration__Group__4"
-
-
-    // $ANTLR start "rule__ItemDeclaration__Group__4__Impl"
-    // InternalRinform.g:848:1: rule__ItemDeclaration__Group__4__Impl : ( ( rule__ItemDeclaration__NameAssignment_4 ) ) ;
-    public final void rule__ItemDeclaration__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRinform.g:852:1: ( ( ( rule__ItemDeclaration__NameAssignment_4 ) ) )
-            // InternalRinform.g:853:1: ( ( rule__ItemDeclaration__NameAssignment_4 ) )
-            {
-            // InternalRinform.g:853:1: ( ( rule__ItemDeclaration__NameAssignment_4 ) )
-            // InternalRinform.g:854:2: ( rule__ItemDeclaration__NameAssignment_4 )
-            {
-             before(grammarAccess.getItemDeclarationAccess().getNameAssignment_4()); 
-            // InternalRinform.g:855:2: ( rule__ItemDeclaration__NameAssignment_4 )
-            // InternalRinform.g:855:3: rule__ItemDeclaration__NameAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__ItemDeclaration__NameAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getItemDeclarationAccess().getNameAssignment_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ItemDeclaration__Group__4__Impl"
-
-
-    // $ANTLR start "rule__ItemDeclaration__Group__5"
-    // InternalRinform.g:863:1: rule__ItemDeclaration__Group__5 : rule__ItemDeclaration__Group__5__Impl ;
-    public final void rule__ItemDeclaration__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRinform.g:867:1: ( rule__ItemDeclaration__Group__5__Impl )
-            // InternalRinform.g:868:2: rule__ItemDeclaration__Group__5__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ItemDeclaration__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ItemDeclaration__Group__5"
-
-
-    // $ANTLR start "rule__ItemDeclaration__Group__5__Impl"
-    // InternalRinform.g:874:1: rule__ItemDeclaration__Group__5__Impl : ( '}' ) ;
-    public final void rule__ItemDeclaration__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRinform.g:878:1: ( ( '}' ) )
-            // InternalRinform.g:879:1: ( '}' )
-            {
-            // InternalRinform.g:879:1: ( '}' )
-            // InternalRinform.g:880:2: '}'
-            {
-             before(grammarAccess.getItemDeclarationAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,30,FOLLOW_2); 
-             after(grammarAccess.getItemDeclarationAccess().getRightCurlyBracketKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ItemDeclaration__Group__5__Impl"
-
-
     // $ANTLR start "rule__ItemDescription__Group__0"
-    // InternalRinform.g:890:1: rule__ItemDescription__Group__0 : rule__ItemDescription__Group__0__Impl rule__ItemDescription__Group__1 ;
+    // InternalRinform.g:782:1: rule__ItemDescription__Group__0 : rule__ItemDescription__Group__0__Impl rule__ItemDescription__Group__1 ;
     public final void rule__ItemDescription__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:894:1: ( rule__ItemDescription__Group__0__Impl rule__ItemDescription__Group__1 )
-            // InternalRinform.g:895:2: rule__ItemDescription__Group__0__Impl rule__ItemDescription__Group__1
+            // InternalRinform.g:786:1: ( rule__ItemDescription__Group__0__Impl rule__ItemDescription__Group__1 )
+            // InternalRinform.g:787:2: rule__ItemDescription__Group__0__Impl rule__ItemDescription__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__ItemDescription__Group__0__Impl();
@@ -2807,21 +2455,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDescription__Group__0__Impl"
-    // InternalRinform.g:902:1: rule__ItemDescription__Group__0__Impl : ( '({' ) ;
+    // InternalRinform.g:794:1: rule__ItemDescription__Group__0__Impl : ( '(' ) ;
     public final void rule__ItemDescription__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:906:1: ( ( '({' ) )
-            // InternalRinform.g:907:1: ( '({' )
+            // InternalRinform.g:798:1: ( ( '(' ) )
+            // InternalRinform.g:799:1: ( '(' )
             {
-            // InternalRinform.g:907:1: ( '({' )
-            // InternalRinform.g:908:2: '({'
+            // InternalRinform.g:799:1: ( '(' )
+            // InternalRinform.g:800:2: '('
             {
-             before(grammarAccess.getItemDescriptionAccess().getLeftParenthesisLeftCurlyBracketKeyword_0()); 
-            match(input,31,FOLLOW_2); 
-             after(grammarAccess.getItemDescriptionAccess().getLeftParenthesisLeftCurlyBracketKeyword_0()); 
+             before(grammarAccess.getItemDescriptionAccess().getLeftParenthesisKeyword_0()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getItemDescriptionAccess().getLeftParenthesisKeyword_0()); 
 
             }
 
@@ -2844,14 +2492,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDescription__Group__1"
-    // InternalRinform.g:917:1: rule__ItemDescription__Group__1 : rule__ItemDescription__Group__1__Impl rule__ItemDescription__Group__2 ;
+    // InternalRinform.g:809:1: rule__ItemDescription__Group__1 : rule__ItemDescription__Group__1__Impl rule__ItemDescription__Group__2 ;
     public final void rule__ItemDescription__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:921:1: ( rule__ItemDescription__Group__1__Impl rule__ItemDescription__Group__2 )
-            // InternalRinform.g:922:2: rule__ItemDescription__Group__1__Impl rule__ItemDescription__Group__2
+            // InternalRinform.g:813:1: ( rule__ItemDescription__Group__1__Impl rule__ItemDescription__Group__2 )
+            // InternalRinform.g:814:2: rule__ItemDescription__Group__1__Impl rule__ItemDescription__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__ItemDescription__Group__1__Impl();
@@ -2882,31 +2530,74 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDescription__Group__1__Impl"
-    // InternalRinform.g:929:1: rule__ItemDescription__Group__1__Impl : ( ( rule__ItemDescription__ItemAssignment_1 ) ) ;
+    // InternalRinform.g:821:1: rule__ItemDescription__Group__1__Impl : ( ( ( rule__ItemDescription__ItemDescriptionAssignment_1 ) ) ( ( rule__ItemDescription__ItemDescriptionAssignment_1 )* ) ) ;
     public final void rule__ItemDescription__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:933:1: ( ( ( rule__ItemDescription__ItemAssignment_1 ) ) )
-            // InternalRinform.g:934:1: ( ( rule__ItemDescription__ItemAssignment_1 ) )
+            // InternalRinform.g:825:1: ( ( ( ( rule__ItemDescription__ItemDescriptionAssignment_1 ) ) ( ( rule__ItemDescription__ItemDescriptionAssignment_1 )* ) ) )
+            // InternalRinform.g:826:1: ( ( ( rule__ItemDescription__ItemDescriptionAssignment_1 ) ) ( ( rule__ItemDescription__ItemDescriptionAssignment_1 )* ) )
             {
-            // InternalRinform.g:934:1: ( ( rule__ItemDescription__ItemAssignment_1 ) )
-            // InternalRinform.g:935:2: ( rule__ItemDescription__ItemAssignment_1 )
+            // InternalRinform.g:826:1: ( ( ( rule__ItemDescription__ItemDescriptionAssignment_1 ) ) ( ( rule__ItemDescription__ItemDescriptionAssignment_1 )* ) )
+            // InternalRinform.g:827:2: ( ( rule__ItemDescription__ItemDescriptionAssignment_1 ) ) ( ( rule__ItemDescription__ItemDescriptionAssignment_1 )* )
             {
-             before(grammarAccess.getItemDescriptionAccess().getItemAssignment_1()); 
-            // InternalRinform.g:936:2: ( rule__ItemDescription__ItemAssignment_1 )
-            // InternalRinform.g:936:3: rule__ItemDescription__ItemAssignment_1
+            // InternalRinform.g:827:2: ( ( rule__ItemDescription__ItemDescriptionAssignment_1 ) )
+            // InternalRinform.g:828:3: ( rule__ItemDescription__ItemDescriptionAssignment_1 )
             {
-            pushFollow(FOLLOW_2);
-            rule__ItemDescription__ItemAssignment_1();
+             before(grammarAccess.getItemDescriptionAccess().getItemDescriptionAssignment_1()); 
+            // InternalRinform.g:829:3: ( rule__ItemDescription__ItemDescriptionAssignment_1 )
+            // InternalRinform.g:829:4: rule__ItemDescription__ItemDescriptionAssignment_1
+            {
+            pushFollow(FOLLOW_4);
+            rule__ItemDescription__ItemDescriptionAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getItemDescriptionAccess().getItemAssignment_1()); 
+             after(grammarAccess.getItemDescriptionAccess().getItemDescriptionAssignment_1()); 
+
+            }
+
+            // InternalRinform.g:832:2: ( ( rule__ItemDescription__ItemDescriptionAssignment_1 )* )
+            // InternalRinform.g:833:3: ( rule__ItemDescription__ItemDescriptionAssignment_1 )*
+            {
+             before(grammarAccess.getItemDescriptionAccess().getItemDescriptionAssignment_1()); 
+            // InternalRinform.g:834:3: ( rule__ItemDescription__ItemDescriptionAssignment_1 )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( (LA7_0==RULE_ID) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // InternalRinform.g:834:4: rule__ItemDescription__ItemDescriptionAssignment_1
+            	    {
+            	    pushFollow(FOLLOW_4);
+            	    rule__ItemDescription__ItemDescriptionAssignment_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+             after(grammarAccess.getItemDescriptionAccess().getItemDescriptionAssignment_1()); 
+
+            }
+
 
             }
 
@@ -2929,14 +2620,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDescription__Group__2"
-    // InternalRinform.g:944:1: rule__ItemDescription__Group__2 : rule__ItemDescription__Group__2__Impl rule__ItemDescription__Group__3 ;
+    // InternalRinform.g:843:1: rule__ItemDescription__Group__2 : rule__ItemDescription__Group__2__Impl rule__ItemDescription__Group__3 ;
     public final void rule__ItemDescription__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:948:1: ( rule__ItemDescription__Group__2__Impl rule__ItemDescription__Group__3 )
-            // InternalRinform.g:949:2: rule__ItemDescription__Group__2__Impl rule__ItemDescription__Group__3
+            // InternalRinform.g:847:1: ( rule__ItemDescription__Group__2__Impl rule__ItemDescription__Group__3 )
+            // InternalRinform.g:848:2: rule__ItemDescription__Group__2__Impl rule__ItemDescription__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__ItemDescription__Group__2__Impl();
@@ -2967,21 +2658,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDescription__Group__2__Impl"
-    // InternalRinform.g:956:1: rule__ItemDescription__Group__2__Impl : ( '}' ) ;
+    // InternalRinform.g:855:1: rule__ItemDescription__Group__2__Impl : ( '-i' ) ;
     public final void rule__ItemDescription__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:960:1: ( ( '}' ) )
-            // InternalRinform.g:961:1: ( '}' )
+            // InternalRinform.g:859:1: ( ( '-i' ) )
+            // InternalRinform.g:860:1: ( '-i' )
             {
-            // InternalRinform.g:961:1: ( '}' )
-            // InternalRinform.g:962:2: '}'
+            // InternalRinform.g:860:1: ( '-i' )
+            // InternalRinform.g:861:2: '-i'
             {
-             before(grammarAccess.getItemDescriptionAccess().getRightCurlyBracketKeyword_2()); 
-            match(input,30,FOLLOW_2); 
-             after(grammarAccess.getItemDescriptionAccess().getRightCurlyBracketKeyword_2()); 
+             before(grammarAccess.getItemDescriptionAccess().getIKeyword_2()); 
+            match(input,28,FOLLOW_2); 
+             after(grammarAccess.getItemDescriptionAccess().getIKeyword_2()); 
 
             }
 
@@ -3004,16 +2695,16 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDescription__Group__3"
-    // InternalRinform.g:971:1: rule__ItemDescription__Group__3 : rule__ItemDescription__Group__3__Impl rule__ItemDescription__Group__4 ;
+    // InternalRinform.g:870:1: rule__ItemDescription__Group__3 : rule__ItemDescription__Group__3__Impl rule__ItemDescription__Group__4 ;
     public final void rule__ItemDescription__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:975:1: ( rule__ItemDescription__Group__3__Impl rule__ItemDescription__Group__4 )
-            // InternalRinform.g:976:2: rule__ItemDescription__Group__3__Impl rule__ItemDescription__Group__4
+            // InternalRinform.g:874:1: ( rule__ItemDescription__Group__3__Impl rule__ItemDescription__Group__4 )
+            // InternalRinform.g:875:2: rule__ItemDescription__Group__3__Impl rule__ItemDescription__Group__4
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             rule__ItemDescription__Group__3__Impl();
 
             state._fsp--;
@@ -3042,74 +2733,31 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDescription__Group__3__Impl"
-    // InternalRinform.g:983:1: rule__ItemDescription__Group__3__Impl : ( ( ( rule__ItemDescription__DescriptionAssignment_3 ) ) ( ( rule__ItemDescription__DescriptionAssignment_3 )* ) ) ;
+    // InternalRinform.g:882:1: rule__ItemDescription__Group__3__Impl : ( ( rule__ItemDescription__ItemAssignment_3 ) ) ;
     public final void rule__ItemDescription__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:987:1: ( ( ( ( rule__ItemDescription__DescriptionAssignment_3 ) ) ( ( rule__ItemDescription__DescriptionAssignment_3 )* ) ) )
-            // InternalRinform.g:988:1: ( ( ( rule__ItemDescription__DescriptionAssignment_3 ) ) ( ( rule__ItemDescription__DescriptionAssignment_3 )* ) )
+            // InternalRinform.g:886:1: ( ( ( rule__ItemDescription__ItemAssignment_3 ) ) )
+            // InternalRinform.g:887:1: ( ( rule__ItemDescription__ItemAssignment_3 ) )
             {
-            // InternalRinform.g:988:1: ( ( ( rule__ItemDescription__DescriptionAssignment_3 ) ) ( ( rule__ItemDescription__DescriptionAssignment_3 )* ) )
-            // InternalRinform.g:989:2: ( ( rule__ItemDescription__DescriptionAssignment_3 ) ) ( ( rule__ItemDescription__DescriptionAssignment_3 )* )
+            // InternalRinform.g:887:1: ( ( rule__ItemDescription__ItemAssignment_3 ) )
+            // InternalRinform.g:888:2: ( rule__ItemDescription__ItemAssignment_3 )
             {
-            // InternalRinform.g:989:2: ( ( rule__ItemDescription__DescriptionAssignment_3 ) )
-            // InternalRinform.g:990:3: ( rule__ItemDescription__DescriptionAssignment_3 )
+             before(grammarAccess.getItemDescriptionAccess().getItemAssignment_3()); 
+            // InternalRinform.g:889:2: ( rule__ItemDescription__ItemAssignment_3 )
+            // InternalRinform.g:889:3: rule__ItemDescription__ItemAssignment_3
             {
-             before(grammarAccess.getItemDescriptionAccess().getDescriptionAssignment_3()); 
-            // InternalRinform.g:991:3: ( rule__ItemDescription__DescriptionAssignment_3 )
-            // InternalRinform.g:991:4: rule__ItemDescription__DescriptionAssignment_3
-            {
-            pushFollow(FOLLOW_4);
-            rule__ItemDescription__DescriptionAssignment_3();
+            pushFollow(FOLLOW_2);
+            rule__ItemDescription__ItemAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getItemDescriptionAccess().getDescriptionAssignment_3()); 
-
-            }
-
-            // InternalRinform.g:994:2: ( ( rule__ItemDescription__DescriptionAssignment_3 )* )
-            // InternalRinform.g:995:3: ( rule__ItemDescription__DescriptionAssignment_3 )*
-            {
-             before(grammarAccess.getItemDescriptionAccess().getDescriptionAssignment_3()); 
-            // InternalRinform.g:996:3: ( rule__ItemDescription__DescriptionAssignment_3 )*
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
-
-                if ( (LA7_0==RULE_ID) ) {
-                    alt7=1;
-                }
-
-
-                switch (alt7) {
-            	case 1 :
-            	    // InternalRinform.g:996:4: rule__ItemDescription__DescriptionAssignment_3
-            	    {
-            	    pushFollow(FOLLOW_4);
-            	    rule__ItemDescription__DescriptionAssignment_3();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop7;
-                }
-            } while (true);
-
-             after(grammarAccess.getItemDescriptionAccess().getDescriptionAssignment_3()); 
-
-            }
-
+             after(grammarAccess.getItemDescriptionAccess().getItemAssignment_3()); 
 
             }
 
@@ -3132,14 +2780,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDescription__Group__4"
-    // InternalRinform.g:1005:1: rule__ItemDescription__Group__4 : rule__ItemDescription__Group__4__Impl ;
+    // InternalRinform.g:897:1: rule__ItemDescription__Group__4 : rule__ItemDescription__Group__4__Impl ;
     public final void rule__ItemDescription__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1009:1: ( rule__ItemDescription__Group__4__Impl )
-            // InternalRinform.g:1010:2: rule__ItemDescription__Group__4__Impl
+            // InternalRinform.g:901:1: ( rule__ItemDescription__Group__4__Impl )
+            // InternalRinform.g:902:2: rule__ItemDescription__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ItemDescription__Group__4__Impl();
@@ -3165,20 +2813,20 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ItemDescription__Group__4__Impl"
-    // InternalRinform.g:1016:1: rule__ItemDescription__Group__4__Impl : ( ')' ) ;
+    // InternalRinform.g:908:1: rule__ItemDescription__Group__4__Impl : ( ')' ) ;
     public final void rule__ItemDescription__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1020:1: ( ( ')' ) )
-            // InternalRinform.g:1021:1: ( ')' )
+            // InternalRinform.g:912:1: ( ( ')' ) )
+            // InternalRinform.g:913:1: ( ')' )
             {
-            // InternalRinform.g:1021:1: ( ')' )
-            // InternalRinform.g:1022:2: ')'
+            // InternalRinform.g:913:1: ( ')' )
+            // InternalRinform.g:914:2: ')'
             {
              before(grammarAccess.getItemDescriptionAccess().getRightParenthesisKeyword_4()); 
-            match(input,28,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getItemDescriptionAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -3202,14 +2850,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Group__0"
-    // InternalRinform.g:1032:1: rule__DirectionStatement__Group__0 : rule__DirectionStatement__Group__0__Impl rule__DirectionStatement__Group__1 ;
+    // InternalRinform.g:924:1: rule__DirectionStatement__Group__0 : rule__DirectionStatement__Group__0__Impl rule__DirectionStatement__Group__1 ;
     public final void rule__DirectionStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1036:1: ( rule__DirectionStatement__Group__0__Impl rule__DirectionStatement__Group__1 )
-            // InternalRinform.g:1037:2: rule__DirectionStatement__Group__0__Impl rule__DirectionStatement__Group__1
+            // InternalRinform.g:928:1: ( rule__DirectionStatement__Group__0__Impl rule__DirectionStatement__Group__1 )
+            // InternalRinform.g:929:2: rule__DirectionStatement__Group__0__Impl rule__DirectionStatement__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__DirectionStatement__Group__0__Impl();
@@ -3240,20 +2888,20 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Group__0__Impl"
-    // InternalRinform.g:1044:1: rule__DirectionStatement__Group__0__Impl : ( '<' ) ;
+    // InternalRinform.g:936:1: rule__DirectionStatement__Group__0__Impl : ( '<' ) ;
     public final void rule__DirectionStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1048:1: ( ( '<' ) )
-            // InternalRinform.g:1049:1: ( '<' )
+            // InternalRinform.g:940:1: ( ( '<' ) )
+            // InternalRinform.g:941:1: ( '<' )
             {
-            // InternalRinform.g:1049:1: ( '<' )
-            // InternalRinform.g:1050:2: '<'
+            // InternalRinform.g:941:1: ( '<' )
+            // InternalRinform.g:942:2: '<'
             {
              before(grammarAccess.getDirectionStatementAccess().getLessThanSignKeyword_0()); 
-            match(input,32,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getDirectionStatementAccess().getLessThanSignKeyword_0()); 
 
             }
@@ -3277,14 +2925,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Group__1"
-    // InternalRinform.g:1059:1: rule__DirectionStatement__Group__1 : rule__DirectionStatement__Group__1__Impl rule__DirectionStatement__Group__2 ;
+    // InternalRinform.g:951:1: rule__DirectionStatement__Group__1 : rule__DirectionStatement__Group__1__Impl rule__DirectionStatement__Group__2 ;
     public final void rule__DirectionStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1063:1: ( rule__DirectionStatement__Group__1__Impl rule__DirectionStatement__Group__2 )
-            // InternalRinform.g:1064:2: rule__DirectionStatement__Group__1__Impl rule__DirectionStatement__Group__2
+            // InternalRinform.g:955:1: ( rule__DirectionStatement__Group__1__Impl rule__DirectionStatement__Group__2 )
+            // InternalRinform.g:956:2: rule__DirectionStatement__Group__1__Impl rule__DirectionStatement__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__DirectionStatement__Group__1__Impl();
@@ -3315,21 +2963,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Group__1__Impl"
-    // InternalRinform.g:1071:1: rule__DirectionStatement__Group__1__Impl : ( ( rule__DirectionStatement__Room1Assignment_1 ) ) ;
+    // InternalRinform.g:963:1: rule__DirectionStatement__Group__1__Impl : ( ( rule__DirectionStatement__Room1Assignment_1 ) ) ;
     public final void rule__DirectionStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1075:1: ( ( ( rule__DirectionStatement__Room1Assignment_1 ) ) )
-            // InternalRinform.g:1076:1: ( ( rule__DirectionStatement__Room1Assignment_1 ) )
+            // InternalRinform.g:967:1: ( ( ( rule__DirectionStatement__Room1Assignment_1 ) ) )
+            // InternalRinform.g:968:1: ( ( rule__DirectionStatement__Room1Assignment_1 ) )
             {
-            // InternalRinform.g:1076:1: ( ( rule__DirectionStatement__Room1Assignment_1 ) )
-            // InternalRinform.g:1077:2: ( rule__DirectionStatement__Room1Assignment_1 )
+            // InternalRinform.g:968:1: ( ( rule__DirectionStatement__Room1Assignment_1 ) )
+            // InternalRinform.g:969:2: ( rule__DirectionStatement__Room1Assignment_1 )
             {
              before(grammarAccess.getDirectionStatementAccess().getRoom1Assignment_1()); 
-            // InternalRinform.g:1078:2: ( rule__DirectionStatement__Room1Assignment_1 )
-            // InternalRinform.g:1078:3: rule__DirectionStatement__Room1Assignment_1
+            // InternalRinform.g:970:2: ( rule__DirectionStatement__Room1Assignment_1 )
+            // InternalRinform.g:970:3: rule__DirectionStatement__Room1Assignment_1
             {
             pushFollow(FOLLOW_2);
             rule__DirectionStatement__Room1Assignment_1();
@@ -3362,14 +3010,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Group__2"
-    // InternalRinform.g:1086:1: rule__DirectionStatement__Group__2 : rule__DirectionStatement__Group__2__Impl rule__DirectionStatement__Group__3 ;
+    // InternalRinform.g:978:1: rule__DirectionStatement__Group__2 : rule__DirectionStatement__Group__2__Impl rule__DirectionStatement__Group__3 ;
     public final void rule__DirectionStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1090:1: ( rule__DirectionStatement__Group__2__Impl rule__DirectionStatement__Group__3 )
-            // InternalRinform.g:1091:2: rule__DirectionStatement__Group__2__Impl rule__DirectionStatement__Group__3
+            // InternalRinform.g:982:1: ( rule__DirectionStatement__Group__2__Impl rule__DirectionStatement__Group__3 )
+            // InternalRinform.g:983:2: rule__DirectionStatement__Group__2__Impl rule__DirectionStatement__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__DirectionStatement__Group__2__Impl();
@@ -3400,21 +3048,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Group__2__Impl"
-    // InternalRinform.g:1098:1: rule__DirectionStatement__Group__2__Impl : ( ( rule__DirectionStatement__DirectionAssignment_2 ) ) ;
+    // InternalRinform.g:990:1: rule__DirectionStatement__Group__2__Impl : ( ( rule__DirectionStatement__DirectionAssignment_2 ) ) ;
     public final void rule__DirectionStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1102:1: ( ( ( rule__DirectionStatement__DirectionAssignment_2 ) ) )
-            // InternalRinform.g:1103:1: ( ( rule__DirectionStatement__DirectionAssignment_2 ) )
+            // InternalRinform.g:994:1: ( ( ( rule__DirectionStatement__DirectionAssignment_2 ) ) )
+            // InternalRinform.g:995:1: ( ( rule__DirectionStatement__DirectionAssignment_2 ) )
             {
-            // InternalRinform.g:1103:1: ( ( rule__DirectionStatement__DirectionAssignment_2 ) )
-            // InternalRinform.g:1104:2: ( rule__DirectionStatement__DirectionAssignment_2 )
+            // InternalRinform.g:995:1: ( ( rule__DirectionStatement__DirectionAssignment_2 ) )
+            // InternalRinform.g:996:2: ( rule__DirectionStatement__DirectionAssignment_2 )
             {
              before(grammarAccess.getDirectionStatementAccess().getDirectionAssignment_2()); 
-            // InternalRinform.g:1105:2: ( rule__DirectionStatement__DirectionAssignment_2 )
-            // InternalRinform.g:1105:3: rule__DirectionStatement__DirectionAssignment_2
+            // InternalRinform.g:997:2: ( rule__DirectionStatement__DirectionAssignment_2 )
+            // InternalRinform.g:997:3: rule__DirectionStatement__DirectionAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__DirectionStatement__DirectionAssignment_2();
@@ -3447,14 +3095,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Group__3"
-    // InternalRinform.g:1113:1: rule__DirectionStatement__Group__3 : rule__DirectionStatement__Group__3__Impl rule__DirectionStatement__Group__4 ;
+    // InternalRinform.g:1005:1: rule__DirectionStatement__Group__3 : rule__DirectionStatement__Group__3__Impl rule__DirectionStatement__Group__4 ;
     public final void rule__DirectionStatement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1117:1: ( rule__DirectionStatement__Group__3__Impl rule__DirectionStatement__Group__4 )
-            // InternalRinform.g:1118:2: rule__DirectionStatement__Group__3__Impl rule__DirectionStatement__Group__4
+            // InternalRinform.g:1009:1: ( rule__DirectionStatement__Group__3__Impl rule__DirectionStatement__Group__4 )
+            // InternalRinform.g:1010:2: rule__DirectionStatement__Group__3__Impl rule__DirectionStatement__Group__4
             {
             pushFollow(FOLLOW_11);
             rule__DirectionStatement__Group__3__Impl();
@@ -3485,21 +3133,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Group__3__Impl"
-    // InternalRinform.g:1125:1: rule__DirectionStatement__Group__3__Impl : ( ( rule__DirectionStatement__Room2Assignment_3 ) ) ;
+    // InternalRinform.g:1017:1: rule__DirectionStatement__Group__3__Impl : ( ( rule__DirectionStatement__Room2Assignment_3 ) ) ;
     public final void rule__DirectionStatement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1129:1: ( ( ( rule__DirectionStatement__Room2Assignment_3 ) ) )
-            // InternalRinform.g:1130:1: ( ( rule__DirectionStatement__Room2Assignment_3 ) )
+            // InternalRinform.g:1021:1: ( ( ( rule__DirectionStatement__Room2Assignment_3 ) ) )
+            // InternalRinform.g:1022:1: ( ( rule__DirectionStatement__Room2Assignment_3 ) )
             {
-            // InternalRinform.g:1130:1: ( ( rule__DirectionStatement__Room2Assignment_3 ) )
-            // InternalRinform.g:1131:2: ( rule__DirectionStatement__Room2Assignment_3 )
+            // InternalRinform.g:1022:1: ( ( rule__DirectionStatement__Room2Assignment_3 ) )
+            // InternalRinform.g:1023:2: ( rule__DirectionStatement__Room2Assignment_3 )
             {
              before(grammarAccess.getDirectionStatementAccess().getRoom2Assignment_3()); 
-            // InternalRinform.g:1132:2: ( rule__DirectionStatement__Room2Assignment_3 )
-            // InternalRinform.g:1132:3: rule__DirectionStatement__Room2Assignment_3
+            // InternalRinform.g:1024:2: ( rule__DirectionStatement__Room2Assignment_3 )
+            // InternalRinform.g:1024:3: rule__DirectionStatement__Room2Assignment_3
             {
             pushFollow(FOLLOW_2);
             rule__DirectionStatement__Room2Assignment_3();
@@ -3532,14 +3180,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Group__4"
-    // InternalRinform.g:1140:1: rule__DirectionStatement__Group__4 : rule__DirectionStatement__Group__4__Impl ;
+    // InternalRinform.g:1032:1: rule__DirectionStatement__Group__4 : rule__DirectionStatement__Group__4__Impl ;
     public final void rule__DirectionStatement__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1144:1: ( rule__DirectionStatement__Group__4__Impl )
-            // InternalRinform.g:1145:2: rule__DirectionStatement__Group__4__Impl
+            // InternalRinform.g:1036:1: ( rule__DirectionStatement__Group__4__Impl )
+            // InternalRinform.g:1037:2: rule__DirectionStatement__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DirectionStatement__Group__4__Impl();
@@ -3565,20 +3213,20 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Group__4__Impl"
-    // InternalRinform.g:1151:1: rule__DirectionStatement__Group__4__Impl : ( '>' ) ;
+    // InternalRinform.g:1043:1: rule__DirectionStatement__Group__4__Impl : ( '>' ) ;
     public final void rule__DirectionStatement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1155:1: ( ( '>' ) )
-            // InternalRinform.g:1156:1: ( '>' )
+            // InternalRinform.g:1047:1: ( ( '>' ) )
+            // InternalRinform.g:1048:1: ( '>' )
             {
-            // InternalRinform.g:1156:1: ( '>' )
-            // InternalRinform.g:1157:2: '>'
+            // InternalRinform.g:1048:1: ( '>' )
+            // InternalRinform.g:1049:2: '>'
             {
              before(grammarAccess.getDirectionStatementAccess().getGreaterThanSignKeyword_4()); 
-            match(input,33,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getDirectionStatementAccess().getGreaterThanSignKeyword_4()); 
 
             }
@@ -3602,14 +3250,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Text__Group__0"
-    // InternalRinform.g:1167:1: rule__Text__Group__0 : rule__Text__Group__0__Impl rule__Text__Group__1 ;
+    // InternalRinform.g:1059:1: rule__Text__Group__0 : rule__Text__Group__0__Impl rule__Text__Group__1 ;
     public final void rule__Text__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1171:1: ( rule__Text__Group__0__Impl rule__Text__Group__1 )
-            // InternalRinform.g:1172:2: rule__Text__Group__0__Impl rule__Text__Group__1
+            // InternalRinform.g:1063:1: ( rule__Text__Group__0__Impl rule__Text__Group__1 )
+            // InternalRinform.g:1064:2: rule__Text__Group__0__Impl rule__Text__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Text__Group__0__Impl();
@@ -3640,17 +3288,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Text__Group__0__Impl"
-    // InternalRinform.g:1179:1: rule__Text__Group__0__Impl : ( RULE_ID ) ;
+    // InternalRinform.g:1071:1: rule__Text__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__Text__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1183:1: ( ( RULE_ID ) )
-            // InternalRinform.g:1184:1: ( RULE_ID )
+            // InternalRinform.g:1075:1: ( ( RULE_ID ) )
+            // InternalRinform.g:1076:1: ( RULE_ID )
             {
-            // InternalRinform.g:1184:1: ( RULE_ID )
-            // InternalRinform.g:1185:2: RULE_ID
+            // InternalRinform.g:1076:1: ( RULE_ID )
+            // InternalRinform.g:1077:2: RULE_ID
             {
              before(grammarAccess.getTextAccess().getIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3677,14 +3325,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Text__Group__1"
-    // InternalRinform.g:1194:1: rule__Text__Group__1 : rule__Text__Group__1__Impl ;
+    // InternalRinform.g:1086:1: rule__Text__Group__1 : rule__Text__Group__1__Impl ;
     public final void rule__Text__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1198:1: ( rule__Text__Group__1__Impl )
-            // InternalRinform.g:1199:2: rule__Text__Group__1__Impl
+            // InternalRinform.g:1090:1: ( rule__Text__Group__1__Impl )
+            // InternalRinform.g:1091:2: rule__Text__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Text__Group__1__Impl();
@@ -3710,20 +3358,20 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Text__Group__1__Impl"
-    // InternalRinform.g:1205:1: rule__Text__Group__1__Impl : ( ( rule__Text__Group_1__0 )* ) ;
+    // InternalRinform.g:1097:1: rule__Text__Group__1__Impl : ( ( rule__Text__Group_1__0 )* ) ;
     public final void rule__Text__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1209:1: ( ( ( rule__Text__Group_1__0 )* ) )
-            // InternalRinform.g:1210:1: ( ( rule__Text__Group_1__0 )* )
+            // InternalRinform.g:1101:1: ( ( ( rule__Text__Group_1__0 )* ) )
+            // InternalRinform.g:1102:1: ( ( rule__Text__Group_1__0 )* )
             {
-            // InternalRinform.g:1210:1: ( ( rule__Text__Group_1__0 )* )
-            // InternalRinform.g:1211:2: ( rule__Text__Group_1__0 )*
+            // InternalRinform.g:1102:1: ( ( rule__Text__Group_1__0 )* )
+            // InternalRinform.g:1103:2: ( rule__Text__Group_1__0 )*
             {
              before(grammarAccess.getTextAccess().getGroup_1()); 
-            // InternalRinform.g:1212:2: ( rule__Text__Group_1__0 )*
+            // InternalRinform.g:1104:2: ( rule__Text__Group_1__0 )*
             loop8:
             do {
                 int alt8=2;
@@ -3736,7 +3384,7 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalRinform.g:1212:3: rule__Text__Group_1__0
+            	    // InternalRinform.g:1104:3: rule__Text__Group_1__0
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__Text__Group_1__0();
@@ -3775,14 +3423,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Text__Group_1__0"
-    // InternalRinform.g:1221:1: rule__Text__Group_1__0 : rule__Text__Group_1__0__Impl rule__Text__Group_1__1 ;
+    // InternalRinform.g:1113:1: rule__Text__Group_1__0 : rule__Text__Group_1__0__Impl rule__Text__Group_1__1 ;
     public final void rule__Text__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1225:1: ( rule__Text__Group_1__0__Impl rule__Text__Group_1__1 )
-            // InternalRinform.g:1226:2: rule__Text__Group_1__0__Impl rule__Text__Group_1__1
+            // InternalRinform.g:1117:1: ( rule__Text__Group_1__0__Impl rule__Text__Group_1__1 )
+            // InternalRinform.g:1118:2: rule__Text__Group_1__0__Impl rule__Text__Group_1__1
             {
             pushFollow(FOLLOW_5);
             rule__Text__Group_1__0__Impl();
@@ -3813,17 +3461,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Text__Group_1__0__Impl"
-    // InternalRinform.g:1233:1: rule__Text__Group_1__0__Impl : ( RULE_WS ) ;
+    // InternalRinform.g:1125:1: rule__Text__Group_1__0__Impl : ( RULE_WS ) ;
     public final void rule__Text__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1237:1: ( ( RULE_WS ) )
-            // InternalRinform.g:1238:1: ( RULE_WS )
+            // InternalRinform.g:1129:1: ( ( RULE_WS ) )
+            // InternalRinform.g:1130:1: ( RULE_WS )
             {
-            // InternalRinform.g:1238:1: ( RULE_WS )
-            // InternalRinform.g:1239:2: RULE_WS
+            // InternalRinform.g:1130:1: ( RULE_WS )
+            // InternalRinform.g:1131:2: RULE_WS
             {
              before(grammarAccess.getTextAccess().getWSTerminalRuleCall_1_0()); 
             match(input,RULE_WS,FOLLOW_2); 
@@ -3850,14 +3498,14 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Text__Group_1__1"
-    // InternalRinform.g:1248:1: rule__Text__Group_1__1 : rule__Text__Group_1__1__Impl ;
+    // InternalRinform.g:1140:1: rule__Text__Group_1__1 : rule__Text__Group_1__1__Impl ;
     public final void rule__Text__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1252:1: ( rule__Text__Group_1__1__Impl )
-            // InternalRinform.g:1253:2: rule__Text__Group_1__1__Impl
+            // InternalRinform.g:1144:1: ( rule__Text__Group_1__1__Impl )
+            // InternalRinform.g:1145:2: rule__Text__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Text__Group_1__1__Impl();
@@ -3883,17 +3531,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Text__Group_1__1__Impl"
-    // InternalRinform.g:1259:1: rule__Text__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalRinform.g:1151:1: rule__Text__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__Text__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1263:1: ( ( RULE_ID ) )
-            // InternalRinform.g:1264:1: ( RULE_ID )
+            // InternalRinform.g:1155:1: ( ( RULE_ID ) )
+            // InternalRinform.g:1156:1: ( RULE_ID )
             {
-            // InternalRinform.g:1264:1: ( RULE_ID )
-            // InternalRinform.g:1265:2: RULE_ID
+            // InternalRinform.g:1156:1: ( RULE_ID )
+            // InternalRinform.g:1157:2: RULE_ID
             {
              before(grammarAccess.getTextAccess().getIDTerminalRuleCall_1_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3920,17 +3568,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReverseInformProgram__SentencesAssignment"
-    // InternalRinform.g:1275:1: rule__ReverseInformProgram__SentencesAssignment : ( ruleSentencePart ) ;
+    // InternalRinform.g:1167:1: rule__ReverseInformProgram__SentencesAssignment : ( ruleSentencePart ) ;
     public final void rule__ReverseInformProgram__SentencesAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1279:1: ( ( ruleSentencePart ) )
-            // InternalRinform.g:1280:2: ( ruleSentencePart )
+            // InternalRinform.g:1171:1: ( ( ruleSentencePart ) )
+            // InternalRinform.g:1172:2: ( ruleSentencePart )
             {
-            // InternalRinform.g:1280:2: ( ruleSentencePart )
-            // InternalRinform.g:1281:3: ruleSentencePart
+            // InternalRinform.g:1172:2: ( ruleSentencePart )
+            // InternalRinform.g:1173:3: ruleSentencePart
             {
              before(grammarAccess.getReverseInformProgramAccess().getSentencesSentencePartParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -3961,17 +3609,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RoomDeclaration__NameAssignment_1"
-    // InternalRinform.g:1290:1: rule__RoomDeclaration__NameAssignment_1 : ( ruleText ) ;
+    // InternalRinform.g:1182:1: rule__RoomDeclaration__NameAssignment_1 : ( ruleText ) ;
     public final void rule__RoomDeclaration__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1294:1: ( ( ruleText ) )
-            // InternalRinform.g:1295:2: ( ruleText )
+            // InternalRinform.g:1186:1: ( ( ruleText ) )
+            // InternalRinform.g:1187:2: ( ruleText )
             {
-            // InternalRinform.g:1295:2: ( ruleText )
-            // InternalRinform.g:1296:3: ruleText
+            // InternalRinform.g:1187:2: ( ruleText )
+            // InternalRinform.g:1188:3: ruleText
             {
              before(grammarAccess.getRoomDeclarationAccess().getNameTextParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4001,34 +3649,26 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__RoomDeclaration__NameAssignment_1"
 
 
-    // $ANTLR start "rule__RoomDescription__RoomAssignment_2"
-    // InternalRinform.g:1305:1: rule__RoomDescription__RoomAssignment_2 : ( ( ruleText ) ) ;
-    public final void rule__RoomDescription__RoomAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__RoomDescription__RoomDescriptionAssignment_1"
+    // InternalRinform.g:1197:1: rule__RoomDescription__RoomDescriptionAssignment_1 : ( ruleText ) ;
+    public final void rule__RoomDescription__RoomDescriptionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1309:1: ( ( ( ruleText ) ) )
-            // InternalRinform.g:1310:2: ( ( ruleText ) )
+            // InternalRinform.g:1201:1: ( ( ruleText ) )
+            // InternalRinform.g:1202:2: ( ruleText )
             {
-            // InternalRinform.g:1310:2: ( ( ruleText ) )
-            // InternalRinform.g:1311:3: ( ruleText )
+            // InternalRinform.g:1202:2: ( ruleText )
+            // InternalRinform.g:1203:3: ruleText
             {
-             before(grammarAccess.getRoomDescriptionAccess().getRoomRoomDeclarationCrossReference_2_0()); 
-            // InternalRinform.g:1312:3: ( ruleText )
-            // InternalRinform.g:1313:4: ruleText
-            {
-             before(grammarAccess.getRoomDescriptionAccess().getRoomRoomDeclarationTextParserRuleCall_2_0_1()); 
+             before(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionTextParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleText();
 
             state._fsp--;
 
-             after(grammarAccess.getRoomDescriptionAccess().getRoomRoomDeclarationTextParserRuleCall_2_0_1()); 
-
-            }
-
-             after(grammarAccess.getRoomDescriptionAccess().getRoomRoomDeclarationCrossReference_2_0()); 
+             after(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionTextParserRuleCall_1_0()); 
 
             }
 
@@ -4047,29 +3687,37 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RoomDescription__RoomAssignment_2"
+    // $ANTLR end "rule__RoomDescription__RoomDescriptionAssignment_1"
 
 
-    // $ANTLR start "rule__RoomDescription__DescriptionAssignment_4"
-    // InternalRinform.g:1324:1: rule__RoomDescription__DescriptionAssignment_4 : ( ruleText ) ;
-    public final void rule__RoomDescription__DescriptionAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__RoomDescription__RoomAssignment_3"
+    // InternalRinform.g:1212:1: rule__RoomDescription__RoomAssignment_3 : ( ( ruleText ) ) ;
+    public final void rule__RoomDescription__RoomAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1328:1: ( ( ruleText ) )
-            // InternalRinform.g:1329:2: ( ruleText )
+            // InternalRinform.g:1216:1: ( ( ( ruleText ) ) )
+            // InternalRinform.g:1217:2: ( ( ruleText ) )
             {
-            // InternalRinform.g:1329:2: ( ruleText )
-            // InternalRinform.g:1330:3: ruleText
+            // InternalRinform.g:1217:2: ( ( ruleText ) )
+            // InternalRinform.g:1218:3: ( ruleText )
             {
-             before(grammarAccess.getRoomDescriptionAccess().getDescriptionTextParserRuleCall_4_0()); 
+             before(grammarAccess.getRoomDescriptionAccess().getRoomRoomDeclarationCrossReference_3_0()); 
+            // InternalRinform.g:1219:3: ( ruleText )
+            // InternalRinform.g:1220:4: ruleText
+            {
+             before(grammarAccess.getRoomDescriptionAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
             ruleText();
 
             state._fsp--;
 
-             after(grammarAccess.getRoomDescriptionAccess().getDescriptionTextParserRuleCall_4_0()); 
+             after(grammarAccess.getRoomDescriptionAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1()); 
+
+            }
+
+             after(grammarAccess.getRoomDescriptionAccess().getRoomRoomDeclarationCrossReference_3_0()); 
 
             }
 
@@ -4088,37 +3736,29 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RoomDescription__DescriptionAssignment_4"
+    // $ANTLR end "rule__RoomDescription__RoomAssignment_3"
 
 
-    // $ANTLR start "rule__ItemDeclaration__RoomAssignment_2"
-    // InternalRinform.g:1339:1: rule__ItemDeclaration__RoomAssignment_2 : ( ( ruleText ) ) ;
-    public final void rule__ItemDeclaration__RoomAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__ItemDeclaration__NameAssignment_1"
+    // InternalRinform.g:1231:1: rule__ItemDeclaration__NameAssignment_1 : ( ruleText ) ;
+    public final void rule__ItemDeclaration__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1343:1: ( ( ( ruleText ) ) )
-            // InternalRinform.g:1344:2: ( ( ruleText ) )
+            // InternalRinform.g:1235:1: ( ( ruleText ) )
+            // InternalRinform.g:1236:2: ( ruleText )
             {
-            // InternalRinform.g:1344:2: ( ( ruleText ) )
-            // InternalRinform.g:1345:3: ( ruleText )
+            // InternalRinform.g:1236:2: ( ruleText )
+            // InternalRinform.g:1237:3: ruleText
             {
-             before(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationCrossReference_2_0()); 
-            // InternalRinform.g:1346:3: ( ruleText )
-            // InternalRinform.g:1347:4: ruleText
-            {
-             before(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_2_0_1()); 
+             before(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleText();
 
             state._fsp--;
 
-             after(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_2_0_1()); 
-
-            }
-
-             after(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationCrossReference_2_0()); 
+             after(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_1_0()); 
 
             }
 
@@ -4137,29 +3777,37 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ItemDeclaration__RoomAssignment_2"
+    // $ANTLR end "rule__ItemDeclaration__NameAssignment_1"
 
 
-    // $ANTLR start "rule__ItemDeclaration__NameAssignment_4"
-    // InternalRinform.g:1358:1: rule__ItemDeclaration__NameAssignment_4 : ( ruleText ) ;
-    public final void rule__ItemDeclaration__NameAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ItemDeclaration__RoomAssignment_3"
+    // InternalRinform.g:1246:1: rule__ItemDeclaration__RoomAssignment_3 : ( ( ruleText ) ) ;
+    public final void rule__ItemDeclaration__RoomAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1362:1: ( ( ruleText ) )
-            // InternalRinform.g:1363:2: ( ruleText )
+            // InternalRinform.g:1250:1: ( ( ( ruleText ) ) )
+            // InternalRinform.g:1251:2: ( ( ruleText ) )
             {
-            // InternalRinform.g:1363:2: ( ruleText )
-            // InternalRinform.g:1364:3: ruleText
+            // InternalRinform.g:1251:2: ( ( ruleText ) )
+            // InternalRinform.g:1252:3: ( ruleText )
             {
-             before(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_4_0()); 
+             before(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationCrossReference_3_0()); 
+            // InternalRinform.g:1253:3: ( ruleText )
+            // InternalRinform.g:1254:4: ruleText
+            {
+             before(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
             ruleText();
 
             state._fsp--;
 
-             after(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_4_0()); 
+             after(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1()); 
+
+            }
+
+             after(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationCrossReference_3_0()); 
 
             }
 
@@ -4178,37 +3826,29 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ItemDeclaration__NameAssignment_4"
+    // $ANTLR end "rule__ItemDeclaration__RoomAssignment_3"
 
 
-    // $ANTLR start "rule__ItemDescription__ItemAssignment_1"
-    // InternalRinform.g:1373:1: rule__ItemDescription__ItemAssignment_1 : ( ( ruleText ) ) ;
-    public final void rule__ItemDescription__ItemAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ItemDescription__ItemDescriptionAssignment_1"
+    // InternalRinform.g:1265:1: rule__ItemDescription__ItemDescriptionAssignment_1 : ( ruleText ) ;
+    public final void rule__ItemDescription__ItemDescriptionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1377:1: ( ( ( ruleText ) ) )
-            // InternalRinform.g:1378:2: ( ( ruleText ) )
+            // InternalRinform.g:1269:1: ( ( ruleText ) )
+            // InternalRinform.g:1270:2: ( ruleText )
             {
-            // InternalRinform.g:1378:2: ( ( ruleText ) )
-            // InternalRinform.g:1379:3: ( ruleText )
+            // InternalRinform.g:1270:2: ( ruleText )
+            // InternalRinform.g:1271:3: ruleText
             {
-             before(grammarAccess.getItemDescriptionAccess().getItemItemDeclarationCrossReference_1_0()); 
-            // InternalRinform.g:1380:3: ( ruleText )
-            // InternalRinform.g:1381:4: ruleText
-            {
-             before(grammarAccess.getItemDescriptionAccess().getItemItemDeclarationTextParserRuleCall_1_0_1()); 
+             before(grammarAccess.getItemDescriptionAccess().getItemDescriptionTextParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleText();
 
             state._fsp--;
 
-             after(grammarAccess.getItemDescriptionAccess().getItemItemDeclarationTextParserRuleCall_1_0_1()); 
-
-            }
-
-             after(grammarAccess.getItemDescriptionAccess().getItemItemDeclarationCrossReference_1_0()); 
+             after(grammarAccess.getItemDescriptionAccess().getItemDescriptionTextParserRuleCall_1_0()); 
 
             }
 
@@ -4227,29 +3867,37 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ItemDescription__ItemAssignment_1"
+    // $ANTLR end "rule__ItemDescription__ItemDescriptionAssignment_1"
 
 
-    // $ANTLR start "rule__ItemDescription__DescriptionAssignment_3"
-    // InternalRinform.g:1392:1: rule__ItemDescription__DescriptionAssignment_3 : ( ruleText ) ;
-    public final void rule__ItemDescription__DescriptionAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__ItemDescription__ItemAssignment_3"
+    // InternalRinform.g:1280:1: rule__ItemDescription__ItemAssignment_3 : ( ( ruleText ) ) ;
+    public final void rule__ItemDescription__ItemAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1396:1: ( ( ruleText ) )
-            // InternalRinform.g:1397:2: ( ruleText )
+            // InternalRinform.g:1284:1: ( ( ( ruleText ) ) )
+            // InternalRinform.g:1285:2: ( ( ruleText ) )
             {
-            // InternalRinform.g:1397:2: ( ruleText )
-            // InternalRinform.g:1398:3: ruleText
+            // InternalRinform.g:1285:2: ( ( ruleText ) )
+            // InternalRinform.g:1286:3: ( ruleText )
             {
-             before(grammarAccess.getItemDescriptionAccess().getDescriptionTextParserRuleCall_3_0()); 
+             before(grammarAccess.getItemDescriptionAccess().getItemItemDeclarationCrossReference_3_0()); 
+            // InternalRinform.g:1287:3: ( ruleText )
+            // InternalRinform.g:1288:4: ruleText
+            {
+             before(grammarAccess.getItemDescriptionAccess().getItemItemDeclarationTextParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
             ruleText();
 
             state._fsp--;
 
-             after(grammarAccess.getItemDescriptionAccess().getDescriptionTextParserRuleCall_3_0()); 
+             after(grammarAccess.getItemDescriptionAccess().getItemItemDeclarationTextParserRuleCall_3_0_1()); 
+
+            }
+
+             after(grammarAccess.getItemDescriptionAccess().getItemItemDeclarationCrossReference_3_0()); 
 
             }
 
@@ -4268,25 +3916,25 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ItemDescription__DescriptionAssignment_3"
+    // $ANTLR end "rule__ItemDescription__ItemAssignment_3"
 
 
     // $ANTLR start "rule__DirectionStatement__Room1Assignment_1"
-    // InternalRinform.g:1407:1: rule__DirectionStatement__Room1Assignment_1 : ( ( ruleText ) ) ;
+    // InternalRinform.g:1299:1: rule__DirectionStatement__Room1Assignment_1 : ( ( ruleText ) ) ;
     public final void rule__DirectionStatement__Room1Assignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1411:1: ( ( ( ruleText ) ) )
-            // InternalRinform.g:1412:2: ( ( ruleText ) )
+            // InternalRinform.g:1303:1: ( ( ( ruleText ) ) )
+            // InternalRinform.g:1304:2: ( ( ruleText ) )
             {
-            // InternalRinform.g:1412:2: ( ( ruleText ) )
-            // InternalRinform.g:1413:3: ( ruleText )
+            // InternalRinform.g:1304:2: ( ( ruleText ) )
+            // InternalRinform.g:1305:3: ( ruleText )
             {
              before(grammarAccess.getDirectionStatementAccess().getRoom1RoomDeclarationCrossReference_1_0()); 
-            // InternalRinform.g:1414:3: ( ruleText )
-            // InternalRinform.g:1415:4: ruleText
+            // InternalRinform.g:1306:3: ( ruleText )
+            // InternalRinform.g:1307:4: ruleText
             {
              before(grammarAccess.getDirectionStatementAccess().getRoom1RoomDeclarationTextParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -4321,17 +3969,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__DirectionAssignment_2"
-    // InternalRinform.g:1426:1: rule__DirectionStatement__DirectionAssignment_2 : ( ruleDirection ) ;
+    // InternalRinform.g:1318:1: rule__DirectionStatement__DirectionAssignment_2 : ( ruleDirection ) ;
     public final void rule__DirectionStatement__DirectionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1430:1: ( ( ruleDirection ) )
-            // InternalRinform.g:1431:2: ( ruleDirection )
+            // InternalRinform.g:1322:1: ( ( ruleDirection ) )
+            // InternalRinform.g:1323:2: ( ruleDirection )
             {
-            // InternalRinform.g:1431:2: ( ruleDirection )
-            // InternalRinform.g:1432:3: ruleDirection
+            // InternalRinform.g:1323:2: ( ruleDirection )
+            // InternalRinform.g:1324:3: ruleDirection
             {
              before(grammarAccess.getDirectionStatementAccess().getDirectionDirectionEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4362,21 +4010,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DirectionStatement__Room2Assignment_3"
-    // InternalRinform.g:1441:1: rule__DirectionStatement__Room2Assignment_3 : ( ( ruleText ) ) ;
+    // InternalRinform.g:1333:1: rule__DirectionStatement__Room2Assignment_3 : ( ( ruleText ) ) ;
     public final void rule__DirectionStatement__Room2Assignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1445:1: ( ( ( ruleText ) ) )
-            // InternalRinform.g:1446:2: ( ( ruleText ) )
+            // InternalRinform.g:1337:1: ( ( ( ruleText ) ) )
+            // InternalRinform.g:1338:2: ( ( ruleText ) )
             {
-            // InternalRinform.g:1446:2: ( ( ruleText ) )
-            // InternalRinform.g:1447:3: ( ruleText )
+            // InternalRinform.g:1338:2: ( ( ruleText ) )
+            // InternalRinform.g:1339:3: ( ruleText )
             {
              before(grammarAccess.getDirectionStatementAccess().getRoom2RoomDeclarationCrossReference_3_0()); 
-            // InternalRinform.g:1448:3: ( ruleText )
-            // InternalRinform.g:1449:4: ruleText
+            // InternalRinform.g:1340:3: ( ruleText )
+            // InternalRinform.g:1341:4: ruleText
             {
              before(grammarAccess.getDirectionStatementAccess().getRoom2RoomDeclarationTextParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
@@ -4411,17 +4059,17 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Words__WordsAssignment"
-    // InternalRinform.g:1460:1: rule__Words__WordsAssignment : ( ruleText ) ;
+    // InternalRinform.g:1352:1: rule__Words__WordsAssignment : ( ruleText ) ;
     public final void rule__Words__WordsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1464:1: ( ( ruleText ) )
-            // InternalRinform.g:1465:2: ( ruleText )
+            // InternalRinform.g:1356:1: ( ( ruleText ) )
+            // InternalRinform.g:1357:2: ( ruleText )
             {
-            // InternalRinform.g:1465:2: ( ruleText )
-            // InternalRinform.g:1466:3: ruleText
+            // InternalRinform.g:1357:2: ( ruleText )
+            // InternalRinform.g:1358:3: ruleText
             {
              before(grammarAccess.getWordsAccess().getWordsTextParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -4452,21 +4100,21 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Symbol__SymbolAssignment"
-    // InternalRinform.g:1475:1: rule__Symbol__SymbolAssignment : ( ( rule__Symbol__SymbolAlternatives_0 ) ) ;
+    // InternalRinform.g:1367:1: rule__Symbol__SymbolAssignment : ( ( rule__Symbol__SymbolAlternatives_0 ) ) ;
     public final void rule__Symbol__SymbolAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRinform.g:1479:1: ( ( ( rule__Symbol__SymbolAlternatives_0 ) ) )
-            // InternalRinform.g:1480:2: ( ( rule__Symbol__SymbolAlternatives_0 ) )
+            // InternalRinform.g:1371:1: ( ( ( rule__Symbol__SymbolAlternatives_0 ) ) )
+            // InternalRinform.g:1372:2: ( ( rule__Symbol__SymbolAlternatives_0 ) )
             {
-            // InternalRinform.g:1480:2: ( ( rule__Symbol__SymbolAlternatives_0 ) )
-            // InternalRinform.g:1481:3: ( rule__Symbol__SymbolAlternatives_0 )
+            // InternalRinform.g:1372:2: ( ( rule__Symbol__SymbolAlternatives_0 ) )
+            // InternalRinform.g:1373:3: ( rule__Symbol__SymbolAlternatives_0 )
             {
              before(grammarAccess.getSymbolAccess().getSymbolAlternatives_0()); 
-            // InternalRinform.g:1482:3: ( rule__Symbol__SymbolAlternatives_0 )
-            // InternalRinform.g:1482:4: rule__Symbol__SymbolAlternatives_0
+            // InternalRinform.g:1374:3: ( rule__Symbol__SymbolAlternatives_0 )
+            // InternalRinform.g:1374:4: rule__Symbol__SymbolAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Symbol__SymbolAlternatives_0();
@@ -4500,19 +4148,67 @@ public class InternalRinformParser extends AbstractInternalContentAssistParser {
     // Delegated rules
 
 
+    protected DFA3 dfa3 = new DFA3(this);
+    static final String dfa_1s = "\17\uffff";
+    static final String dfa_2s = "\1\4\1\uffff\1\4\4\uffff\3\4\2\uffff\3\4";
+    static final String dfa_3s = "\1\35\1\uffff\1\4\4\uffff\1\34\1\4\1\34\2\uffff\1\34\1\4\1\34";
+    static final String dfa_4s = "\1\uffff\1\1\1\uffff\1\3\1\5\1\6\1\7\3\uffff\1\4\1\2\3\uffff";
+    static final String dfa_5s = "\17\uffff}>";
+    static final String[] dfa_6s = {
+            "\1\4\6\uffff\10\5\6\uffff\1\1\1\2\1\uffff\1\3\1\6",
+            "",
+            "\1\7",
+            "",
+            "",
+            "",
+            "",
+            "\1\11\1\10\23\uffff\1\13\2\uffff\1\12",
+            "\1\14",
+            "\1\11\1\15\23\uffff\1\13\2\uffff\1\12",
+            "",
+            "",
+            "\1\11\1\10\23\uffff\1\13\2\uffff\1\12",
+            "\1\16",
+            "\1\11\1\15\23\uffff\1\13\2\uffff\1\12"
+    };
+
+    static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
+    static final char[] dfa_2 = DFA.unpackEncodedStringToUnsignedChars(dfa_2s);
+    static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
+    static final short[] dfa_4 = DFA.unpackEncodedString(dfa_4s);
+    static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
+    static final short[][] dfa_6 = unpackEncodedStringArray(dfa_6s);
+
+    class DFA3 extends DFA {
+
+        public DFA3(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 3;
+            this.eot = dfa_1;
+            this.eof = dfa_1;
+            this.min = dfa_2;
+            this.max = dfa_3;
+            this.accept = dfa_4;
+            this.special = dfa_5;
+            this.transition = dfa_6;
+        }
+        public String getDescription() {
+            return "325:1: rule__SentencePart__Alternatives : ( ( ruleRoomDeclaration ) | ( ruleRoomDescription ) | ( ruleItemDeclaration ) | ( ruleItemDescription ) | ( ruleWords ) | ( ruleSymbol ) | ( ruleDirectionStatement ) );";
+        }
+    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000001AA07F812L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000003607F812L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000001F80000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000022L});
 

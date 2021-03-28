@@ -144,22 +144,22 @@ public interface RinformPackage extends EPackage
   int ROOM_DESCRIPTION = 3;
 
   /**
+   * The feature id for the '<em><b>Room Description</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOM_DESCRIPTION__ROOM_DESCRIPTION = SENTENCE_PART_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Room</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ROOM_DESCRIPTION__ROOM = SENTENCE_PART_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Description</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ROOM_DESCRIPTION__DESCRIPTION = SENTENCE_PART_FEATURE_COUNT + 1;
+  int ROOM_DESCRIPTION__ROOM = SENTENCE_PART_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Room Description</em>' class.
@@ -181,22 +181,22 @@ public interface RinformPackage extends EPackage
   int ITEM_DECLARATION = 4;
 
   /**
-   * The feature id for the '<em><b>Room</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITEM_DECLARATION__ROOM = SENTENCE_PART_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ITEM_DECLARATION__NAME = SENTENCE_PART_FEATURE_COUNT + 1;
+  int ITEM_DECLARATION__NAME = SENTENCE_PART_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Room</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITEM_DECLARATION__ROOM = SENTENCE_PART_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Item Declaration</em>' class.
@@ -218,22 +218,22 @@ public interface RinformPackage extends EPackage
   int ITEM_DESCRIPTION = 5;
 
   /**
+   * The feature id for the '<em><b>Item Description</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITEM_DESCRIPTION__ITEM_DESCRIPTION = SENTENCE_PART_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Item</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ITEM_DESCRIPTION__ITEM = SENTENCE_PART_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Description</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITEM_DESCRIPTION__DESCRIPTION = SENTENCE_PART_FEATURE_COUNT + 1;
+  int ITEM_DESCRIPTION__ITEM = SENTENCE_PART_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Item Description</em>' class.
@@ -420,6 +420,17 @@ public interface RinformPackage extends EPackage
   EClass getRoomDescription();
 
   /**
+   * Returns the meta object for the attribute list '{@link uk.ac.kcl.mde.rinform.RoomDescription#getRoomDescription <em>Room Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Room Description</em>'.
+   * @see uk.ac.kcl.mde.rinform.RoomDescription#getRoomDescription()
+   * @see #getRoomDescription()
+   * @generated
+   */
+  EAttribute getRoomDescription_RoomDescription();
+
+  /**
    * Returns the meta object for the reference '{@link uk.ac.kcl.mde.rinform.RoomDescription#getRoom <em>Room</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -431,17 +442,6 @@ public interface RinformPackage extends EPackage
   EReference getRoomDescription_Room();
 
   /**
-   * Returns the meta object for the attribute list '{@link uk.ac.kcl.mde.rinform.RoomDescription#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Description</em>'.
-   * @see uk.ac.kcl.mde.rinform.RoomDescription#getDescription()
-   * @see #getRoomDescription()
-   * @generated
-   */
-  EAttribute getRoomDescription_Description();
-
-  /**
    * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.ItemDeclaration <em>Item Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -450,17 +450,6 @@ public interface RinformPackage extends EPackage
    * @generated
    */
   EClass getItemDeclaration();
-
-  /**
-   * Returns the meta object for the reference '{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getRoom <em>Room</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Room</em>'.
-   * @see uk.ac.kcl.mde.rinform.ItemDeclaration#getRoom()
-   * @see #getItemDeclaration()
-   * @generated
-   */
-  EReference getItemDeclaration_Room();
 
   /**
    * Returns the meta object for the attribute '{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getName <em>Name</em>}'.
@@ -474,6 +463,17 @@ public interface RinformPackage extends EPackage
   EAttribute getItemDeclaration_Name();
 
   /**
+   * Returns the meta object for the reference '{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getRoom <em>Room</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Room</em>'.
+   * @see uk.ac.kcl.mde.rinform.ItemDeclaration#getRoom()
+   * @see #getItemDeclaration()
+   * @generated
+   */
+  EReference getItemDeclaration_Room();
+
+  /**
    * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.ItemDescription <em>Item Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -482,6 +482,17 @@ public interface RinformPackage extends EPackage
    * @generated
    */
   EClass getItemDescription();
+
+  /**
+   * Returns the meta object for the attribute list '{@link uk.ac.kcl.mde.rinform.ItemDescription#getItemDescription <em>Item Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Item Description</em>'.
+   * @see uk.ac.kcl.mde.rinform.ItemDescription#getItemDescription()
+   * @see #getItemDescription()
+   * @generated
+   */
+  EAttribute getItemDescription_ItemDescription();
 
   /**
    * Returns the meta object for the reference '{@link uk.ac.kcl.mde.rinform.ItemDescription#getItem <em>Item</em>}'.
@@ -493,17 +504,6 @@ public interface RinformPackage extends EPackage
    * @generated
    */
   EReference getItemDescription_Item();
-
-  /**
-   * Returns the meta object for the attribute list '{@link uk.ac.kcl.mde.rinform.ItemDescription#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Description</em>'.
-   * @see uk.ac.kcl.mde.rinform.ItemDescription#getDescription()
-   * @see #getItemDescription()
-   * @generated
-   */
-  EAttribute getItemDescription_Description();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.DirectionStatement <em>Direction Statement</em>}'.
@@ -680,20 +680,20 @@ public interface RinformPackage extends EPackage
     EClass ROOM_DESCRIPTION = eINSTANCE.getRoomDescription();
 
     /**
+     * The meta object literal for the '<em><b>Room Description</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ROOM_DESCRIPTION__ROOM_DESCRIPTION = eINSTANCE.getRoomDescription_RoomDescription();
+
+    /**
      * The meta object literal for the '<em><b>Room</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference ROOM_DESCRIPTION__ROOM = eINSTANCE.getRoomDescription_Room();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ROOM_DESCRIPTION__DESCRIPTION = eINSTANCE.getRoomDescription_Description();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.ItemDeclarationImpl <em>Item Declaration</em>}' class.
@@ -706,20 +706,20 @@ public interface RinformPackage extends EPackage
     EClass ITEM_DECLARATION = eINSTANCE.getItemDeclaration();
 
     /**
-     * The meta object literal for the '<em><b>Room</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ITEM_DECLARATION__ROOM = eINSTANCE.getItemDeclaration_Room();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute ITEM_DECLARATION__NAME = eINSTANCE.getItemDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Room</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ITEM_DECLARATION__ROOM = eINSTANCE.getItemDeclaration_Room();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.ItemDescriptionImpl <em>Item Description</em>}' class.
@@ -732,20 +732,20 @@ public interface RinformPackage extends EPackage
     EClass ITEM_DESCRIPTION = eINSTANCE.getItemDescription();
 
     /**
+     * The meta object literal for the '<em><b>Item Description</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ITEM_DESCRIPTION__ITEM_DESCRIPTION = eINSTANCE.getItemDescription_ItemDescription();
+
+    /**
      * The meta object literal for the '<em><b>Item</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference ITEM_DESCRIPTION__ITEM = eINSTANCE.getItemDescription_Item();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ITEM_DESCRIPTION__DESCRIPTION = eINSTANCE.getItemDescription_Description();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.DirectionStatementImpl <em>Direction Statement</em>}' class.

@@ -14,8 +14,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.kcl.mde.rinform.ItemDescription#getItemDescription <em>Item Description</em>}</li>
  *   <li>{@link uk.ac.kcl.mde.rinform.ItemDescription#getItem <em>Item</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.ItemDescription#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDescription()
@@ -24,6 +24,18 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ItemDescription extends SentencePart
 {
+  /**
+   * Returns the value of the '<em><b>Item Description</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Item Description</em>' attribute list.
+   * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDescription_ItemDescription()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getItemDescription();
+
   /**
    * Returns the value of the '<em><b>Item</b></em>' reference.
    * <!-- begin-user-doc -->
@@ -45,17 +57,5 @@ public interface ItemDescription extends SentencePart
    * @generated
    */
   void setItem(ItemDeclaration value);
-
-  /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute list.
-   * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDescription_Description()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getDescription();
 
 } // ItemDescription

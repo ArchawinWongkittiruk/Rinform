@@ -43,12 +43,12 @@ public class RinformParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTextAccess().getGroup_1(), "rule__Text__Group_1__0");
 			builder.put(grammarAccess.getReverseInformProgramAccess().getSentencesAssignment(), "rule__ReverseInformProgram__SentencesAssignment");
 			builder.put(grammarAccess.getRoomDeclarationAccess().getNameAssignment_1(), "rule__RoomDeclaration__NameAssignment_1");
-			builder.put(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_2(), "rule__RoomDescription__RoomAssignment_2");
-			builder.put(grammarAccess.getRoomDescriptionAccess().getDescriptionAssignment_4(), "rule__RoomDescription__DescriptionAssignment_4");
-			builder.put(grammarAccess.getItemDeclarationAccess().getRoomAssignment_2(), "rule__ItemDeclaration__RoomAssignment_2");
-			builder.put(grammarAccess.getItemDeclarationAccess().getNameAssignment_4(), "rule__ItemDeclaration__NameAssignment_4");
-			builder.put(grammarAccess.getItemDescriptionAccess().getItemAssignment_1(), "rule__ItemDescription__ItemAssignment_1");
-			builder.put(grammarAccess.getItemDescriptionAccess().getDescriptionAssignment_3(), "rule__ItemDescription__DescriptionAssignment_3");
+			builder.put(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionAssignment_1(), "rule__RoomDescription__RoomDescriptionAssignment_1");
+			builder.put(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_3(), "rule__RoomDescription__RoomAssignment_3");
+			builder.put(grammarAccess.getItemDeclarationAccess().getNameAssignment_1(), "rule__ItemDeclaration__NameAssignment_1");
+			builder.put(grammarAccess.getItemDeclarationAccess().getRoomAssignment_3(), "rule__ItemDeclaration__RoomAssignment_3");
+			builder.put(grammarAccess.getItemDescriptionAccess().getItemDescriptionAssignment_1(), "rule__ItemDescription__ItemDescriptionAssignment_1");
+			builder.put(grammarAccess.getItemDescriptionAccess().getItemAssignment_3(), "rule__ItemDescription__ItemAssignment_3");
 			builder.put(grammarAccess.getDirectionStatementAccess().getRoom1Assignment_1(), "rule__DirectionStatement__Room1Assignment_1");
 			builder.put(grammarAccess.getDirectionStatementAccess().getDirectionAssignment_2(), "rule__DirectionStatement__DirectionAssignment_2");
 			builder.put(grammarAccess.getDirectionStatementAccess().getRoom2Assignment_3(), "rule__DirectionStatement__Room2Assignment_3");

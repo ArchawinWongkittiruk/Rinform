@@ -99,18 +99,18 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ItemDeclaration returns ItemDeclaration
 	 *
 	 * Constraint:
-	 *     (room=[RoomDeclaration|Text] name=Text)
+	 *     (name=Text room=[RoomDeclaration|Text])
 	 */
 	protected void sequence_ItemDeclaration(ISerializationContext context, ItemDeclaration semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM));
 			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_2_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_DECLARATION__ROOM, false));
-		feeder.accept(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_4_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_DECLARATION__ROOM, false));
 		feeder.finish();
 	}
 	
@@ -121,7 +121,7 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ItemDescription returns ItemDescription
 	 *
 	 * Constraint:
-	 *     (item=[ItemDeclaration|Text] description+=Text+)
+	 *     (itemDescription+=Text+ item=[ItemDeclaration|Text])
 	 */
 	protected void sequence_ItemDescription(ISerializationContext context, ItemDescription semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -165,7 +165,7 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     RoomDescription returns RoomDescription
 	 *
 	 * Constraint:
-	 *     (room=[RoomDeclaration|Text] description+=Text+)
+	 *     (roomDescription+=Text+ room=[RoomDeclaration|Text])
 	 */
 	protected void sequence_RoomDescription(ISerializationContext context, RoomDescription semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

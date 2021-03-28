@@ -28,14 +28,24 @@ import uk.ac.kcl.mde.rinform.RoomDescription;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.RoomDescriptionImpl#getRoomDescription <em>Room Description</em>}</li>
  *   <li>{@link uk.ac.kcl.mde.rinform.impl.RoomDescriptionImpl#getRoom <em>Room</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.RoomDescriptionImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RoomDescriptionImpl extends SentencePartImpl implements RoomDescription
 {
+  /**
+   * The cached value of the '{@link #getRoomDescription() <em>Room Description</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRoomDescription()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> roomDescription;
+
   /**
    * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
    * <!-- begin-user-doc -->
@@ -45,16 +55,6 @@ public class RoomDescriptionImpl extends SentencePartImpl implements RoomDescrip
    * @ordered
    */
   protected RoomDeclaration room;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> description;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,6 +75,21 @@ public class RoomDescriptionImpl extends SentencePartImpl implements RoomDescrip
   protected EClass eStaticClass()
   {
     return RinformPackage.Literals.ROOM_DESCRIPTION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getRoomDescription()
+  {
+    if (roomDescription == null)
+    {
+      roomDescription = new EDataTypeEList<String>(String.class, this, RinformPackage.ROOM_DESCRIPTION__ROOM_DESCRIPTION);
+    }
+    return roomDescription;
   }
 
   /**
@@ -128,30 +143,15 @@ public class RoomDescriptionImpl extends SentencePartImpl implements RoomDescrip
    * @generated
    */
   @Override
-  public EList<String> getDescription()
-  {
-    if (description == null)
-    {
-      description = new EDataTypeEList<String>(String.class, this, RinformPackage.ROOM_DESCRIPTION__DESCRIPTION);
-    }
-    return description;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case RinformPackage.ROOM_DESCRIPTION__ROOM_DESCRIPTION:
+        return getRoomDescription();
       case RinformPackage.ROOM_DESCRIPTION__ROOM:
         if (resolve) return getRoom();
         return basicGetRoom();
-      case RinformPackage.ROOM_DESCRIPTION__DESCRIPTION:
-        return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -167,12 +167,12 @@ public class RoomDescriptionImpl extends SentencePartImpl implements RoomDescrip
   {
     switch (featureID)
     {
+      case RinformPackage.ROOM_DESCRIPTION__ROOM_DESCRIPTION:
+        getRoomDescription().clear();
+        getRoomDescription().addAll((Collection<? extends String>)newValue);
+        return;
       case RinformPackage.ROOM_DESCRIPTION__ROOM:
         setRoom((RoomDeclaration)newValue);
-        return;
-      case RinformPackage.ROOM_DESCRIPTION__DESCRIPTION:
-        getDescription().clear();
-        getDescription().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +188,11 @@ public class RoomDescriptionImpl extends SentencePartImpl implements RoomDescrip
   {
     switch (featureID)
     {
+      case RinformPackage.ROOM_DESCRIPTION__ROOM_DESCRIPTION:
+        getRoomDescription().clear();
+        return;
       case RinformPackage.ROOM_DESCRIPTION__ROOM:
         setRoom((RoomDeclaration)null);
-        return;
-      case RinformPackage.ROOM_DESCRIPTION__DESCRIPTION:
-        getDescription().clear();
         return;
     }
     super.eUnset(featureID);
@@ -208,10 +208,10 @@ public class RoomDescriptionImpl extends SentencePartImpl implements RoomDescrip
   {
     switch (featureID)
     {
+      case RinformPackage.ROOM_DESCRIPTION__ROOM_DESCRIPTION:
+        return roomDescription != null && !roomDescription.isEmpty();
       case RinformPackage.ROOM_DESCRIPTION__ROOM:
         return room != null;
-      case RinformPackage.ROOM_DESCRIPTION__DESCRIPTION:
-        return description != null && !description.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -227,8 +227,8 @@ public class RoomDescriptionImpl extends SentencePartImpl implements RoomDescrip
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (description: ");
-    result.append(description);
+    result.append(" (roomDescription: ");
+    result.append(roomDescription);
     result.append(')');
     return result.toString();
   }

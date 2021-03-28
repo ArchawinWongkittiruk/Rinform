@@ -14,8 +14,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.kcl.mde.rinform.RoomDescription#getRoomDescription <em>Room Description</em>}</li>
  *   <li>{@link uk.ac.kcl.mde.rinform.RoomDescription#getRoom <em>Room</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.RoomDescription#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.mde.rinform.RinformPackage#getRoomDescription()
@@ -24,6 +24,18 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface RoomDescription extends SentencePart
 {
+  /**
+   * Returns the value of the '<em><b>Room Description</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Room Description</em>' attribute list.
+   * @see uk.ac.kcl.mde.rinform.RinformPackage#getRoomDescription_RoomDescription()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getRoomDescription();
+
   /**
    * Returns the value of the '<em><b>Room</b></em>' reference.
    * <!-- begin-user-doc -->
@@ -45,17 +57,5 @@ public interface RoomDescription extends SentencePart
    * @generated
    */
   void setRoom(RoomDeclaration value);
-
-  /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute list.
-   * @see uk.ac.kcl.mde.rinform.RinformPackage#getRoomDescription_Description()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getDescription();
 
 } // RoomDescription

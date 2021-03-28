@@ -1,7 +1,0 @@
-Kitchen is a Room. "A dimly lit room with a low ceiling"
-null
-Attic is a Room. 
-LivingRoom is a Room. 
-Knife is in Kitchen. "Lying on the table"
-Below Attic is Kitchen
-East of LivingRoom is Kitchen
