@@ -103,6 +103,24 @@ public class RinformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RinformPackage.CONTAINER_DECLARATION:
+      {
+        ContainerDeclaration containerDeclaration = (ContainerDeclaration)theEObject;
+        T result = caseContainerDeclaration(containerDeclaration);
+        if (result == null) result = caseItemDeclaration(containerDeclaration);
+        if (result == null) result = caseSentencePart(containerDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.ITEM_IN_CONTAINER_DECLARATION:
+      {
+        ItemInContainerDeclaration itemInContainerDeclaration = (ItemInContainerDeclaration)theEObject;
+        T result = caseItemInContainerDeclaration(itemInContainerDeclaration);
+        if (result == null) result = caseItemDeclaration(itemInContainerDeclaration);
+        if (result == null) result = caseSentencePart(itemInContainerDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case RinformPackage.ITEM_DECLARATION:
       {
         ItemDeclaration itemDeclaration = (ItemDeclaration)theEObject;
@@ -207,6 +225,38 @@ public class RinformSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRoomDescription(RoomDescription object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Container Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Container Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseContainerDeclaration(ContainerDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Item In Container Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item In Container Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItemInContainerDeclaration(ItemInContainerDeclaration object)
   {
     return null;
   }

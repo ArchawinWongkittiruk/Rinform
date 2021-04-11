@@ -14,6 +14,10 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//RoomDeclaration"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerDeclaration" eSuperTypes="#//ItemDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemInContainerDeclaration" eSuperTypes="#//ItemDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//ContainerDeclaration"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ItemDeclaration" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//RoomDeclaration"/>

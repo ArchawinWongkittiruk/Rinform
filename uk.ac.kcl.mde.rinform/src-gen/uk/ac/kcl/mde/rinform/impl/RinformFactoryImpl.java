@@ -70,6 +70,8 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
       case RinformPackage.SENTENCE_PART: return createSentencePart();
       case RinformPackage.ROOM_DECLARATION: return createRoomDeclaration();
       case RinformPackage.ROOM_DESCRIPTION: return createRoomDescription();
+      case RinformPackage.CONTAINER_DECLARATION: return createContainerDeclaration();
+      case RinformPackage.ITEM_IN_CONTAINER_DECLARATION: return createItemInContainerDeclaration();
       case RinformPackage.ITEM_DECLARATION: return createItemDeclaration();
       case RinformPackage.ITEM_DESCRIPTION: return createItemDescription();
       case RinformPackage.DIRECTION_STATEMENT: return createDirectionStatement();
@@ -160,6 +162,30 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
   {
     RoomDescriptionImpl roomDescription = new RoomDescriptionImpl();
     return roomDescription;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ContainerDeclaration createContainerDeclaration()
+  {
+    ContainerDeclarationImpl containerDeclaration = new ContainerDeclarationImpl();
+    return containerDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ItemInContainerDeclaration createItemInContainerDeclaration()
+  {
+    ItemInContainerDeclarationImpl itemInContainerDeclaration = new ItemInContainerDeclarationImpl();
+    return itemInContainerDeclaration;
   }
 
   /**

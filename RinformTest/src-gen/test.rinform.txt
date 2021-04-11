@@ -3,5 +3,8 @@ null
 Attic is a Room. 
 LivingRoom is a Room. 
 Knife is in Kitchen. "Lying on the table"
+
+Cupboard is in LivingRoom.
+Bread is in Cupboard
 Below Attic is Kitchen
 East of LivingRoom is Kitchen

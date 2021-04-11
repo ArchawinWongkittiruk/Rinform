@@ -14,9 +14,11 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import uk.ac.kcl.mde.rinform.ContainerDeclaration;
 import uk.ac.kcl.mde.rinform.DirectionStatement;
 import uk.ac.kcl.mde.rinform.ItemDeclaration;
 import uk.ac.kcl.mde.rinform.ItemDescription;
+import uk.ac.kcl.mde.rinform.ItemInContainerDeclaration;
 import uk.ac.kcl.mde.rinform.ReverseInformProgram;
 import uk.ac.kcl.mde.rinform.RinformPackage;
 import uk.ac.kcl.mde.rinform.RoomDeclaration;
@@ -39,6 +41,9 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == RinformPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case RinformPackage.CONTAINER_DECLARATION:
+				sequence_ContainerDeclaration(context, (ContainerDeclaration) semanticObject); 
+				return; 
 			case RinformPackage.DIRECTION_STATEMENT:
 				sequence_DirectionStatement(context, (DirectionStatement) semanticObject); 
 				return; 
@@ -47,6 +52,9 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case RinformPackage.ITEM_DESCRIPTION:
 				sequence_ItemDescription(context, (ItemDescription) semanticObject); 
+				return; 
+			case RinformPackage.ITEM_IN_CONTAINER_DECLARATION:
+				sequence_ItemInContainerDeclaration(context, (ItemInContainerDeclaration) semanticObject); 
 				return; 
 			case RinformPackage.REVERSE_INFORM_PROGRAM:
 				sequence_ReverseInformProgram(context, (ReverseInformProgram) semanticObject); 
@@ -67,6 +75,29 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     SentencePart returns ContainerDeclaration
+	 *     ContainerDeclaration returns ContainerDeclaration
+	 *     ItemDeclaration returns ContainerDeclaration
+	 *
+	 * Constraint:
+	 *     (name=Text room=[RoomDeclaration|Text])
+	 */
+	protected void sequence_ContainerDeclaration(ISerializationContext context, ContainerDeclaration semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getContainerDeclarationAccess().getNameTextParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getContainerDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_DECLARATION__ROOM, false));
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -109,8 +140,8 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_DECLARATION__ROOM, false));
+		feeder.accept(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_0_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_0_3_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_DECLARATION__ROOM, false));
 		feeder.finish();
 	}
 	
@@ -125,6 +156,29 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_ItemDescription(ISerializationContext context, ItemDescription semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SentencePart returns ItemInContainerDeclaration
+	 *     ItemInContainerDeclaration returns ItemInContainerDeclaration
+	 *     ItemDeclaration returns ItemInContainerDeclaration
+	 *
+	 * Constraint:
+	 *     (name=Text container=[ContainerDeclaration|Text])
+	 */
+	protected void sequence_ItemInContainerDeclaration(ISerializationContext context, ItemInContainerDeclaration semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_IN_CONTAINER_DECLARATION__CONTAINER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_IN_CONTAINER_DECLARATION__CONTAINER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getItemInContainerDeclarationAccess().getNameTextParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getItemInContainerDeclarationAccess().getContainerContainerDeclarationTextParserRuleCall_3_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_IN_CONTAINER_DECLARATION__CONTAINER, false));
+		feeder.finish();
 	}
 	
 	

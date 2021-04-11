@@ -25,20 +25,16 @@ RoomDescription:
 	 "("roomDescription += (Text)+ "-r" room = [RoomDeclaration|Text] ")"
 ;
 
-//ContainerDeclaration:
-//	"-c" name = Text "-r" room = [RoomDeclaration|Text]
-//;
-//
-//ItemInContainerDeclaration:
-//	"-i" name = Text "-c" container = [ContainerDeclaration|Text]
-//;
-//
-//ItemDeclaration:
-//	"-i" name = Text "-r" room = [RoomDeclaration|Text] | ItemInContainerDeclaration | ContainerDeclaration
-//;
+ContainerDeclaration:
+	"-c" name = Text "-r" room = [RoomDeclaration|Text]
+;
+
+ItemInContainerDeclaration:
+	"-i" name = Text "-c" container = [ContainerDeclaration|Text]
+;
 
 ItemDeclaration:
-	"-i" name = Text "-r" room = [RoomDeclaration|Text]
+	"-i" name = Text "-r" room = [RoomDeclaration|Text] | ItemInContainerDeclaration | ContainerDeclaration
 ;
 
 ItemDescription:

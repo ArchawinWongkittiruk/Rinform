@@ -17,6 +17,7 @@ import uk.ac.kcl.mde.rinform.ItemDescription
 import uk.ac.kcl.mde.rinform.DirectionStatement
 import uk.ac.kcl.mde.rinform.SentencePart
 import uk.ac.kcl.mde.rinform.Direction
+import uk.ac.kcl.mde.rinform.ItemInContainerDeclaration
 
 /**
  * Generates code from your model files on save.
@@ -67,6 +68,11 @@ class RinformGenerator extends AbstractGenerator {
 		}
 		else{
 			''''''
+		}
+	}
+	dispatch def generateInformCode(ItemInContainerDeclaration stmt) {
+		if (!declaredItems.contains(stmt)) {
+			'''«stmt.name.toFirstUpper» is in «stmt.container.name.toFirstUpper»'''
 		}
 	}
 	dispatch def generateInformCode(DirectionStatement stmt){

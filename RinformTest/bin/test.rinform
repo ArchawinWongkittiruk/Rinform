@@ -1,6 +1,8 @@
 I walked into the -r kitchen. It was (a dimly lit room with a low ceiling -r kitchen). 
 A massive -i knife -r kitchen is (lying on the table -i knife), in my head I wonder what it is used for. 
 Upstairs there is a small -r attic.
--r LivingRoom 
+-r LivingRoom
+-c Cupboard -r LivingRoom
+-i bread -c Cupboard
 <attic Below kitchen>
 <LivingRoom East kitchen> 
