@@ -48,15 +48,18 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRoomDescriptionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cItemDeclarationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cItemDescriptionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cWordsParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cSymbolParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cDirectionStatementParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cPersonDeclarationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cPersonDescriptionParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cWordsParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cDirectionStatementParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//SentencePart:
-		//	RoomDeclaration | RoomDescription | ItemDeclaration | ItemDescription | Words | Symbol | DirectionStatement;
+		//	RoomDeclaration | RoomDescription | ItemDeclaration | ItemDescription | PersonDeclaration | PersonDescription | Words
+		//	| DirectionStatement;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//RoomDeclaration | RoomDescription | ItemDeclaration | ItemDescription | Words | Symbol | DirectionStatement
+		//RoomDeclaration | RoomDescription | ItemDeclaration | ItemDescription | PersonDeclaration | PersonDescription | Words |
+		//DirectionStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//RoomDeclaration
@@ -71,14 +74,17 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 		//ItemDescription
 		public RuleCall getItemDescriptionParserRuleCall_3() { return cItemDescriptionParserRuleCall_3; }
 		
-		//Words
-		public RuleCall getWordsParserRuleCall_4() { return cWordsParserRuleCall_4; }
+		//PersonDeclaration
+		public RuleCall getPersonDeclarationParserRuleCall_4() { return cPersonDeclarationParserRuleCall_4; }
 		
-		//Symbol
-		public RuleCall getSymbolParserRuleCall_5() { return cSymbolParserRuleCall_5; }
+		//PersonDescription
+		public RuleCall getPersonDescriptionParserRuleCall_5() { return cPersonDescriptionParserRuleCall_5; }
+		
+		//Words
+		public RuleCall getWordsParserRuleCall_6() { return cWordsParserRuleCall_6; }
 		
 		//DirectionStatement
-		public RuleCall getDirectionStatementParserRuleCall_6() { return cDirectionStatementParserRuleCall_6; }
+		public RuleCall getDirectionStatementParserRuleCall_7() { return cDirectionStatementParserRuleCall_7; }
 	}
 	public class RoomDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.mde.Rinform.RoomDeclaration");
@@ -185,6 +191,45 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 		//Text
 		public RuleCall getRoomRoomDeclarationTextParserRuleCall_3_0_1() { return cRoomRoomDeclarationTextParserRuleCall_3_0_1; }
 	}
+	public class ItemInRoomDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.mde.Rinform.ItemInRoomDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameTextParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cRKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cRoomAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cRoomRoomDeclarationCrossReference_3_0 = (CrossReference)cRoomAssignment_3.eContents().get(0);
+		private final RuleCall cRoomRoomDeclarationTextParserRuleCall_3_0_1 = (RuleCall)cRoomRoomDeclarationCrossReference_3_0.eContents().get(1);
+		
+		//ItemInRoomDeclaration:
+		//	"-i" name=Text "-r" room=[RoomDeclaration|Text];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"-i" name=Text "-r" room=[RoomDeclaration|Text]
+		public Group getGroup() { return cGroup; }
+		
+		//"-i"
+		public Keyword getIKeyword_0() { return cIKeyword_0; }
+		
+		//name=Text
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//Text
+		public RuleCall getNameTextParserRuleCall_1_0() { return cNameTextParserRuleCall_1_0; }
+		
+		//"-r"
+		public Keyword getRKeyword_2() { return cRKeyword_2; }
+		
+		//room=[RoomDeclaration|Text]
+		public Assignment getRoomAssignment_3() { return cRoomAssignment_3; }
+		
+		//[RoomDeclaration|Text]
+		public CrossReference getRoomRoomDeclarationCrossReference_3_0() { return cRoomRoomDeclarationCrossReference_3_0; }
+		
+		//Text
+		public RuleCall getRoomRoomDeclarationTextParserRuleCall_3_0_1() { return cRoomRoomDeclarationTextParserRuleCall_3_0_1; }
+	}
 	public class ItemInContainerDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.mde.Rinform.ItemInContainerDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -227,53 +272,25 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 	public class ItemDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.mde.Rinform.ItemDeclaration");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cIKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNameTextParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
-		private final Keyword cRKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Assignment cRoomAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
-		private final CrossReference cRoomRoomDeclarationCrossReference_0_3_0 = (CrossReference)cRoomAssignment_0_3.eContents().get(0);
-		private final RuleCall cRoomRoomDeclarationTextParserRuleCall_0_3_0_1 = (RuleCall)cRoomRoomDeclarationCrossReference_0_3_0.eContents().get(1);
-		private final RuleCall cItemInContainerDeclarationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cContainerDeclarationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cItemInRoomDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cContainerDeclarationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cItemInContainerDeclarationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//ItemDeclaration:
-		//	"-i" name=Text "-r" room=[RoomDeclaration|Text] | ItemInContainerDeclaration | ContainerDeclaration;
+		//	ItemInRoomDeclaration | ContainerDeclaration | ItemInContainerDeclaration;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"-i" name=Text "-r" room=[RoomDeclaration|Text] | ItemInContainerDeclaration | ContainerDeclaration
+		//ItemInRoomDeclaration | ContainerDeclaration | ItemInContainerDeclaration
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//"-i" name=Text "-r" room=[RoomDeclaration|Text]
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//"-i"
-		public Keyword getIKeyword_0_0() { return cIKeyword_0_0; }
-		
-		//name=Text
-		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
-		
-		//Text
-		public RuleCall getNameTextParserRuleCall_0_1_0() { return cNameTextParserRuleCall_0_1_0; }
-		
-		//"-r"
-		public Keyword getRKeyword_0_2() { return cRKeyword_0_2; }
-		
-		//room=[RoomDeclaration|Text]
-		public Assignment getRoomAssignment_0_3() { return cRoomAssignment_0_3; }
-		
-		//[RoomDeclaration|Text]
-		public CrossReference getRoomRoomDeclarationCrossReference_0_3_0() { return cRoomRoomDeclarationCrossReference_0_3_0; }
-		
-		//Text
-		public RuleCall getRoomRoomDeclarationTextParserRuleCall_0_3_0_1() { return cRoomRoomDeclarationTextParserRuleCall_0_3_0_1; }
-		
-		//ItemInContainerDeclaration
-		public RuleCall getItemInContainerDeclarationParserRuleCall_1() { return cItemInContainerDeclarationParserRuleCall_1; }
+		//ItemInRoomDeclaration
+		public RuleCall getItemInRoomDeclarationParserRuleCall_0() { return cItemInRoomDeclarationParserRuleCall_0; }
 		
 		//ContainerDeclaration
-		public RuleCall getContainerDeclarationParserRuleCall_2() { return cContainerDeclarationParserRuleCall_2; }
+		public RuleCall getContainerDeclarationParserRuleCall_1() { return cContainerDeclarationParserRuleCall_1; }
+		
+		//ItemInContainerDeclaration
+		public RuleCall getItemInContainerDeclarationParserRuleCall_2() { return cItemInContainerDeclarationParserRuleCall_2; }
 	}
 	public class ItemDescriptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.mde.Rinform.ItemDescription");
@@ -314,6 +331,88 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Text
 		public RuleCall getItemItemDeclarationTextParserRuleCall_3_0_1() { return cItemItemDeclarationTextParserRuleCall_3_0_1; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+	}
+	public class PersonDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.mde.Rinform.PersonDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameTextParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cRKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cRoomAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cRoomRoomDeclarationCrossReference_3_0 = (CrossReference)cRoomAssignment_3.eContents().get(0);
+		private final RuleCall cRoomRoomDeclarationTextParserRuleCall_3_0_1 = (RuleCall)cRoomRoomDeclarationCrossReference_3_0.eContents().get(1);
+		
+		//PersonDeclaration:
+		//	"-p" name=Text "-r" room=[RoomDeclaration|Text];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"-p" name=Text "-r" room=[RoomDeclaration|Text]
+		public Group getGroup() { return cGroup; }
+		
+		//"-p"
+		public Keyword getPKeyword_0() { return cPKeyword_0; }
+		
+		//name=Text
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//Text
+		public RuleCall getNameTextParserRuleCall_1_0() { return cNameTextParserRuleCall_1_0; }
+		
+		//"-r"
+		public Keyword getRKeyword_2() { return cRKeyword_2; }
+		
+		//room=[RoomDeclaration|Text]
+		public Assignment getRoomAssignment_3() { return cRoomAssignment_3; }
+		
+		//[RoomDeclaration|Text]
+		public CrossReference getRoomRoomDeclarationCrossReference_3_0() { return cRoomRoomDeclarationCrossReference_3_0; }
+		
+		//Text
+		public RuleCall getRoomRoomDeclarationTextParserRuleCall_3_0_1() { return cRoomRoomDeclarationTextParserRuleCall_3_0_1; }
+	}
+	public class PersonDescriptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.mde.Rinform.PersonDescription");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cPersonDescriptionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPersonDescriptionTextParserRuleCall_1_0 = (RuleCall)cPersonDescriptionAssignment_1.eContents().get(0);
+		private final Keyword cPKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPersonAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cPersonPersonDeclarationCrossReference_3_0 = (CrossReference)cPersonAssignment_3.eContents().get(0);
+		private final RuleCall cPersonPersonDeclarationTextParserRuleCall_3_0_1 = (RuleCall)cPersonPersonDeclarationCrossReference_3_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//PersonDescription:
+		//	"(" personDescription+=Text+ "-p" person=[PersonDeclaration|Text] ")";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"(" personDescription+=Text+ "-p" person=[PersonDeclaration|Text] ")"
+		public Group getGroup() { return cGroup; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
+		
+		//personDescription+=Text+
+		public Assignment getPersonDescriptionAssignment_1() { return cPersonDescriptionAssignment_1; }
+		
+		//Text
+		public RuleCall getPersonDescriptionTextParserRuleCall_1_0() { return cPersonDescriptionTextParserRuleCall_1_0; }
+		
+		//"-p"
+		public Keyword getPKeyword_2() { return cPKeyword_2; }
+		
+		//person=[PersonDeclaration|Text]
+		public Assignment getPersonAssignment_3() { return cPersonAssignment_3; }
+		
+		//[PersonDeclaration|Text]
+		public CrossReference getPersonPersonDeclarationCrossReference_3_0() { return cPersonPersonDeclarationCrossReference_3_0; }
+		
+		//Text
+		public RuleCall getPersonPersonDeclarationTextParserRuleCall_3_0_1() { return cPersonPersonDeclarationTextParserRuleCall_3_0_1; }
 		
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
@@ -524,9 +623,12 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 	private final RoomDeclarationElements pRoomDeclaration;
 	private final RoomDescriptionElements pRoomDescription;
 	private final ContainerDeclarationElements pContainerDeclaration;
+	private final ItemInRoomDeclarationElements pItemInRoomDeclaration;
 	private final ItemInContainerDeclarationElements pItemInContainerDeclaration;
 	private final ItemDeclarationElements pItemDeclaration;
 	private final ItemDescriptionElements pItemDescription;
+	private final PersonDeclarationElements pPersonDeclaration;
+	private final PersonDescriptionElements pPersonDescription;
 	private final DirectionStatementElements pDirectionStatement;
 	private final DirectionElements eDirection;
 	private final TextElements pText;
@@ -547,9 +649,12 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRoomDeclaration = new RoomDeclarationElements();
 		this.pRoomDescription = new RoomDescriptionElements();
 		this.pContainerDeclaration = new ContainerDeclarationElements();
+		this.pItemInRoomDeclaration = new ItemInRoomDeclarationElements();
 		this.pItemInContainerDeclaration = new ItemInContainerDeclarationElements();
 		this.pItemDeclaration = new ItemDeclarationElements();
 		this.pItemDescription = new ItemDescriptionElements();
+		this.pPersonDeclaration = new PersonDeclarationElements();
+		this.pPersonDescription = new PersonDescriptionElements();
 		this.pDirectionStatement = new DirectionStatementElements();
 		this.eDirection = new DirectionElements();
 		this.pText = new TextElements();
@@ -595,7 +700,8 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SentencePart:
-	//	RoomDeclaration | RoomDescription | ItemDeclaration | ItemDescription | Words | Symbol | DirectionStatement;
+	//	RoomDeclaration | RoomDescription | ItemDeclaration | ItemDescription | PersonDeclaration | PersonDescription | Words
+	//	| DirectionStatement;
 	public SentencePartElements getSentencePartAccess() {
 		return pSentencePart;
 	}
@@ -634,6 +740,16 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 		return getContainerDeclarationAccess().getRule();
 	}
 	
+	//ItemInRoomDeclaration:
+	//	"-i" name=Text "-r" room=[RoomDeclaration|Text];
+	public ItemInRoomDeclarationElements getItemInRoomDeclarationAccess() {
+		return pItemInRoomDeclaration;
+	}
+	
+	public ParserRule getItemInRoomDeclarationRule() {
+		return getItemInRoomDeclarationAccess().getRule();
+	}
+	
 	//ItemInContainerDeclaration:
 	//	"-i" name=Text "-c" container=[ContainerDeclaration|Text];
 	public ItemInContainerDeclarationElements getItemInContainerDeclarationAccess() {
@@ -645,7 +761,7 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ItemDeclaration:
-	//	"-i" name=Text "-r" room=[RoomDeclaration|Text] | ItemInContainerDeclaration | ContainerDeclaration;
+	//	ItemInRoomDeclaration | ContainerDeclaration | ItemInContainerDeclaration;
 	public ItemDeclarationElements getItemDeclarationAccess() {
 		return pItemDeclaration;
 	}
@@ -662,6 +778,26 @@ public class RinformGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getItemDescriptionRule() {
 		return getItemDescriptionAccess().getRule();
+	}
+	
+	//PersonDeclaration:
+	//	"-p" name=Text "-r" room=[RoomDeclaration|Text];
+	public PersonDeclarationElements getPersonDeclarationAccess() {
+		return pPersonDeclaration;
+	}
+	
+	public ParserRule getPersonDeclarationRule() {
+		return getPersonDeclarationAccess().getRule();
+	}
+	
+	//PersonDescription:
+	//	"(" personDescription+=Text+ "-p" person=[PersonDeclaration|Text] ")";
+	public PersonDescriptionElements getPersonDescriptionAccess() {
+		return pPersonDescription;
+	}
+	
+	public ParserRule getPersonDescriptionRule() {
+		return getPersonDescriptionAccess().getRule();
 	}
 	
 	//DirectionStatement:

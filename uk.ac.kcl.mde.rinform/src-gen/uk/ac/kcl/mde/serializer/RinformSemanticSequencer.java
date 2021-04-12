@@ -16,9 +16,11 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import uk.ac.kcl.mde.rinform.ContainerDeclaration;
 import uk.ac.kcl.mde.rinform.DirectionStatement;
-import uk.ac.kcl.mde.rinform.ItemDeclaration;
 import uk.ac.kcl.mde.rinform.ItemDescription;
 import uk.ac.kcl.mde.rinform.ItemInContainerDeclaration;
+import uk.ac.kcl.mde.rinform.ItemInRoomDeclaration;
+import uk.ac.kcl.mde.rinform.PersonDeclaration;
+import uk.ac.kcl.mde.rinform.PersonDescription;
 import uk.ac.kcl.mde.rinform.ReverseInformProgram;
 import uk.ac.kcl.mde.rinform.RinformPackage;
 import uk.ac.kcl.mde.rinform.RoomDeclaration;
@@ -47,14 +49,20 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case RinformPackage.DIRECTION_STATEMENT:
 				sequence_DirectionStatement(context, (DirectionStatement) semanticObject); 
 				return; 
-			case RinformPackage.ITEM_DECLARATION:
-				sequence_ItemDeclaration(context, (ItemDeclaration) semanticObject); 
-				return; 
 			case RinformPackage.ITEM_DESCRIPTION:
 				sequence_ItemDescription(context, (ItemDescription) semanticObject); 
 				return; 
 			case RinformPackage.ITEM_IN_CONTAINER_DECLARATION:
 				sequence_ItemInContainerDeclaration(context, (ItemInContainerDeclaration) semanticObject); 
+				return; 
+			case RinformPackage.ITEM_IN_ROOM_DECLARATION:
+				sequence_ItemInRoomDeclaration(context, (ItemInRoomDeclaration) semanticObject); 
+				return; 
+			case RinformPackage.PERSON_DECLARATION:
+				sequence_PersonDeclaration(context, (PersonDeclaration) semanticObject); 
+				return; 
+			case RinformPackage.PERSON_DESCRIPTION:
+				sequence_PersonDescription(context, (PersonDescription) semanticObject); 
 				return; 
 			case RinformPackage.REVERSE_INFORM_PROGRAM:
 				sequence_ReverseInformProgram(context, (ReverseInformProgram) semanticObject); 
@@ -89,12 +97,12 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME));
-			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM));
+			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.CONTAINER_DECLARATION__ROOM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.CONTAINER_DECLARATION__ROOM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getContainerDeclarationAccess().getNameTextParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getContainerDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_DECLARATION__ROOM, false));
+		feeder.accept(grammarAccess.getContainerDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1(), semanticObject.eGet(RinformPackage.Literals.CONTAINER_DECLARATION__ROOM, false));
 		feeder.finish();
 	}
 	
@@ -120,28 +128,6 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getDirectionStatementAccess().getRoom1RoomDeclarationTextParserRuleCall_1_0_1(), semanticObject.eGet(RinformPackage.Literals.DIRECTION_STATEMENT__ROOM1, false));
 		feeder.accept(grammarAccess.getDirectionStatementAccess().getDirectionDirectionEnumRuleCall_2_0(), semanticObject.getDirection());
 		feeder.accept(grammarAccess.getDirectionStatementAccess().getRoom2RoomDeclarationTextParserRuleCall_3_0_1(), semanticObject.eGet(RinformPackage.Literals.DIRECTION_STATEMENT__ROOM2, false));
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     SentencePart returns ItemDeclaration
-	 *     ItemDeclaration returns ItemDeclaration
-	 *
-	 * Constraint:
-	 *     (name=Text room=[RoomDeclaration|Text])
-	 */
-	protected void sequence_ItemDeclaration(ISerializationContext context, ItemDeclaration semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME));
-			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__ROOM));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_0_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_0_3_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_DECLARATION__ROOM, false));
 		feeder.finish();
 	}
 	
@@ -179,6 +165,64 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getItemInContainerDeclarationAccess().getNameTextParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getItemInContainerDeclarationAccess().getContainerContainerDeclarationTextParserRuleCall_3_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_IN_CONTAINER_DECLARATION__CONTAINER, false));
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SentencePart returns ItemInRoomDeclaration
+	 *     ItemInRoomDeclaration returns ItemInRoomDeclaration
+	 *     ItemDeclaration returns ItemInRoomDeclaration
+	 *
+	 * Constraint:
+	 *     (name=Text room=[RoomDeclaration|Text])
+	 */
+	protected void sequence_ItemInRoomDeclaration(ISerializationContext context, ItemInRoomDeclaration semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.ITEM_IN_ROOM_DECLARATION__ROOM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.ITEM_IN_ROOM_DECLARATION__ROOM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getItemInRoomDeclarationAccess().getNameTextParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getItemInRoomDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_IN_ROOM_DECLARATION__ROOM, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SentencePart returns PersonDeclaration
+	 *     PersonDeclaration returns PersonDeclaration
+	 *
+	 * Constraint:
+	 *     (name=Text room=[RoomDeclaration|Text])
+	 */
+	protected void sequence_PersonDeclaration(ISerializationContext context, PersonDeclaration semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.PERSON_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.PERSON_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, RinformPackage.Literals.PERSON_DECLARATION__ROOM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RinformPackage.Literals.PERSON_DECLARATION__ROOM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPersonDeclarationAccess().getNameTextParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getPersonDeclarationAccess().getRoomRoomDeclarationTextParserRuleCall_3_0_1(), semanticObject.eGet(RinformPackage.Literals.PERSON_DECLARATION__ROOM, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SentencePart returns PersonDescription
+	 *     PersonDescription returns PersonDescription
+	 *
+	 * Constraint:
+	 *     (personDescription+=Text+ person=[PersonDeclaration|Text])
+	 */
+	protected void sequence_PersonDescription(ISerializationContext context, PersonDescription semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -228,7 +272,6 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     SentencePart returns Symbol
 	 *     Symbol returns Symbol
 	 *
 	 * Constraint:

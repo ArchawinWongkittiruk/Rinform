@@ -71,9 +71,12 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
       case RinformPackage.ROOM_DECLARATION: return createRoomDeclaration();
       case RinformPackage.ROOM_DESCRIPTION: return createRoomDescription();
       case RinformPackage.CONTAINER_DECLARATION: return createContainerDeclaration();
+      case RinformPackage.ITEM_IN_ROOM_DECLARATION: return createItemInRoomDeclaration();
       case RinformPackage.ITEM_IN_CONTAINER_DECLARATION: return createItemInContainerDeclaration();
       case RinformPackage.ITEM_DECLARATION: return createItemDeclaration();
       case RinformPackage.ITEM_DESCRIPTION: return createItemDescription();
+      case RinformPackage.PERSON_DECLARATION: return createPersonDeclaration();
+      case RinformPackage.PERSON_DESCRIPTION: return createPersonDescription();
       case RinformPackage.DIRECTION_STATEMENT: return createDirectionStatement();
       case RinformPackage.WORDS: return createWords();
       case RinformPackage.SYMBOL: return createSymbol();
@@ -182,6 +185,18 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * @generated
    */
   @Override
+  public ItemInRoomDeclaration createItemInRoomDeclaration()
+  {
+    ItemInRoomDeclarationImpl itemInRoomDeclaration = new ItemInRoomDeclarationImpl();
+    return itemInRoomDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ItemInContainerDeclaration createItemInContainerDeclaration()
   {
     ItemInContainerDeclarationImpl itemInContainerDeclaration = new ItemInContainerDeclarationImpl();
@@ -210,6 +225,30 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
   {
     ItemDescriptionImpl itemDescription = new ItemDescriptionImpl();
     return itemDescription;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PersonDeclaration createPersonDeclaration()
+  {
+    PersonDeclarationImpl personDeclaration = new PersonDeclarationImpl();
+    return personDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PersonDescription createPersonDescription()
+  {
+    PersonDescriptionImpl personDescription = new PersonDescriptionImpl();
+    return personDescription;
   }
 
   /**

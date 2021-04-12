@@ -6,54 +6,45 @@ package uk.ac.kcl.mde.rinform.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import uk.ac.kcl.mde.rinform.ItemInRoomDeclaration;
 import uk.ac.kcl.mde.rinform.RinformPackage;
-import uk.ac.kcl.mde.rinform.Symbol;
+import uk.ac.kcl.mde.rinform.RoomDeclaration;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Symbol</b></em>'.
+ * An implementation of the model object '<em><b>Item In Room Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.SymbolImpl#getSymbol <em>Symbol</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.ItemInRoomDeclarationImpl#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol
+public class ItemInRoomDeclarationImpl extends ItemDeclarationImpl implements ItemInRoomDeclaration
 {
   /**
-   * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
+   * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSymbol()
+   * @see #getRoom()
    * @generated
    * @ordered
    */
-  protected static final String SYMBOL_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSymbol()
-   * @generated
-   * @ordered
-   */
-  protected String symbol = SYMBOL_EDEFAULT;
+  protected RoomDeclaration room;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SymbolImpl()
+  protected ItemInRoomDeclarationImpl()
   {
     super();
   }
@@ -66,7 +57,7 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol
   @Override
   protected EClass eStaticClass()
   {
-    return RinformPackage.Literals.SYMBOL;
+    return RinformPackage.Literals.ITEM_IN_ROOM_DECLARATION;
   }
 
   /**
@@ -75,9 +66,29 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol
    * @generated
    */
   @Override
-  public String getSymbol()
+  public RoomDeclaration getRoom()
   {
-    return symbol;
+    if (room != null && room.eIsProxy())
+    {
+      InternalEObject oldRoom = (InternalEObject)room;
+      room = (RoomDeclaration)eResolveProxy(oldRoom);
+      if (room != oldRoom)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RinformPackage.ITEM_IN_ROOM_DECLARATION__ROOM, oldRoom, room));
+      }
+    }
+    return room;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RoomDeclaration basicGetRoom()
+  {
+    return room;
   }
 
   /**
@@ -86,12 +97,12 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol
    * @generated
    */
   @Override
-  public void setSymbol(String newSymbol)
+  public void setRoom(RoomDeclaration newRoom)
   {
-    String oldSymbol = symbol;
-    symbol = newSymbol;
+    RoomDeclaration oldRoom = room;
+    room = newRoom;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.SYMBOL__SYMBOL, oldSymbol, symbol));
+      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.ITEM_IN_ROOM_DECLARATION__ROOM, oldRoom, room));
   }
 
   /**
@@ -104,8 +115,9 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol
   {
     switch (featureID)
     {
-      case RinformPackage.SYMBOL__SYMBOL:
-        return getSymbol();
+      case RinformPackage.ITEM_IN_ROOM_DECLARATION__ROOM:
+        if (resolve) return getRoom();
+        return basicGetRoom();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +132,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol
   {
     switch (featureID)
     {
-      case RinformPackage.SYMBOL__SYMBOL:
-        setSymbol((String)newValue);
+      case RinformPackage.ITEM_IN_ROOM_DECLARATION__ROOM:
+        setRoom((RoomDeclaration)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +149,8 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol
   {
     switch (featureID)
     {
-      case RinformPackage.SYMBOL__SYMBOL:
-        setSymbol(SYMBOL_EDEFAULT);
+      case RinformPackage.ITEM_IN_ROOM_DECLARATION__ROOM:
+        setRoom((RoomDeclaration)null);
         return;
     }
     super.eUnset(featureID);
@@ -154,27 +166,10 @@ public class SymbolImpl extends MinimalEObjectImpl.Container implements Symbol
   {
     switch (featureID)
     {
-      case RinformPackage.SYMBOL__SYMBOL:
-        return SYMBOL_EDEFAULT == null ? symbol != null : !SYMBOL_EDEFAULT.equals(symbol);
+      case RinformPackage.ITEM_IN_ROOM_DECLARATION__ROOM:
+        return room != null;
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (symbol: ");
-    result.append(symbol);
-    result.append(')');
-    return result.toString();
-  }
-
-} //SymbolImpl
+} //ItemInRoomDeclarationImpl
