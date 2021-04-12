@@ -10,25 +10,46 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.kcl.mde.rinform.ContainerDeclaration;
+import uk.ac.kcl.mde.rinform.PersonDeclaration;
 import uk.ac.kcl.mde.rinform.RinformPackage;
 import uk.ac.kcl.mde.rinform.RoomDeclaration;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Container Declaration</b></em>'.
+ * An implementation of the model object '<em><b>Person Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.ContainerDeclarationImpl#getRoom <em>Room</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.PersonDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.PersonDeclarationImpl#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ContainerDeclarationImpl extends ItemDeclarationImpl implements ContainerDeclaration
+public class PersonDeclarationImpl extends SentencePartImpl implements PersonDeclaration
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
    * <!-- begin-user-doc -->
@@ -44,7 +65,7 @@ public class ContainerDeclarationImpl extends ItemDeclarationImpl implements Con
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ContainerDeclarationImpl()
+  protected PersonDeclarationImpl()
   {
     super();
   }
@@ -57,7 +78,32 @@ public class ContainerDeclarationImpl extends ItemDeclarationImpl implements Con
   @Override
   protected EClass eStaticClass()
   {
-    return RinformPackage.Literals.CONTAINER_DECLARATION;
+    return RinformPackage.Literals.PERSON_DECLARATION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.PERSON_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -75,7 +121,7 @@ public class ContainerDeclarationImpl extends ItemDeclarationImpl implements Con
       if (room != oldRoom)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RinformPackage.CONTAINER_DECLARATION__ROOM, oldRoom, room));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RinformPackage.PERSON_DECLARATION__ROOM, oldRoom, room));
       }
     }
     return room;
@@ -102,7 +148,7 @@ public class ContainerDeclarationImpl extends ItemDeclarationImpl implements Con
     RoomDeclaration oldRoom = room;
     room = newRoom;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.CONTAINER_DECLARATION__ROOM, oldRoom, room));
+      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.PERSON_DECLARATION__ROOM, oldRoom, room));
   }
 
   /**
@@ -115,7 +161,9 @@ public class ContainerDeclarationImpl extends ItemDeclarationImpl implements Con
   {
     switch (featureID)
     {
-      case RinformPackage.CONTAINER_DECLARATION__ROOM:
+      case RinformPackage.PERSON_DECLARATION__NAME:
+        return getName();
+      case RinformPackage.PERSON_DECLARATION__ROOM:
         if (resolve) return getRoom();
         return basicGetRoom();
     }
@@ -132,7 +180,10 @@ public class ContainerDeclarationImpl extends ItemDeclarationImpl implements Con
   {
     switch (featureID)
     {
-      case RinformPackage.CONTAINER_DECLARATION__ROOM:
+      case RinformPackage.PERSON_DECLARATION__NAME:
+        setName((String)newValue);
+        return;
+      case RinformPackage.PERSON_DECLARATION__ROOM:
         setRoom((RoomDeclaration)newValue);
         return;
     }
@@ -149,7 +200,10 @@ public class ContainerDeclarationImpl extends ItemDeclarationImpl implements Con
   {
     switch (featureID)
     {
-      case RinformPackage.CONTAINER_DECLARATION__ROOM:
+      case RinformPackage.PERSON_DECLARATION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case RinformPackage.PERSON_DECLARATION__ROOM:
         setRoom((RoomDeclaration)null);
         return;
     }
@@ -166,10 +220,29 @@ public class ContainerDeclarationImpl extends ItemDeclarationImpl implements Con
   {
     switch (featureID)
     {
-      case RinformPackage.CONTAINER_DECLARATION__ROOM:
+      case RinformPackage.PERSON_DECLARATION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case RinformPackage.PERSON_DECLARATION__ROOM:
         return room != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ContainerDeclarationImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
+
+} //PersonDeclarationImpl

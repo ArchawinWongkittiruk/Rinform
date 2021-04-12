@@ -112,6 +112,15 @@ public class RinformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RinformPackage.ITEM_IN_ROOM_DECLARATION:
+      {
+        ItemInRoomDeclaration itemInRoomDeclaration = (ItemInRoomDeclaration)theEObject;
+        T result = caseItemInRoomDeclaration(itemInRoomDeclaration);
+        if (result == null) result = caseItemDeclaration(itemInRoomDeclaration);
+        if (result == null) result = caseSentencePart(itemInRoomDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case RinformPackage.ITEM_IN_CONTAINER_DECLARATION:
       {
         ItemInContainerDeclaration itemInContainerDeclaration = (ItemInContainerDeclaration)theEObject;
@@ -137,6 +146,22 @@ public class RinformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RinformPackage.PERSON_DECLARATION:
+      {
+        PersonDeclaration personDeclaration = (PersonDeclaration)theEObject;
+        T result = casePersonDeclaration(personDeclaration);
+        if (result == null) result = caseSentencePart(personDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.PERSON_DESCRIPTION:
+      {
+        PersonDescription personDescription = (PersonDescription)theEObject;
+        T result = casePersonDescription(personDescription);
+        if (result == null) result = caseSentencePart(personDescription);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case RinformPackage.DIRECTION_STATEMENT:
       {
         DirectionStatement directionStatement = (DirectionStatement)theEObject;
@@ -157,7 +182,6 @@ public class RinformSwitch<T> extends Switch<T>
       {
         Symbol symbol = (Symbol)theEObject;
         T result = caseSymbol(symbol);
-        if (result == null) result = caseSentencePart(symbol);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -246,6 +270,22 @@ public class RinformSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Item In Room Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item In Room Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItemInRoomDeclaration(ItemInRoomDeclaration object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Item In Container Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -289,6 +329,38 @@ public class RinformSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseItemDescription(ItemDescription object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Person Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Person Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePersonDeclaration(PersonDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Person Description</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Person Description</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePersonDescription(PersonDescription object)
   {
     return null;
   }

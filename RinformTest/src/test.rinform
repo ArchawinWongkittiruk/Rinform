@@ -1,8 +1,12 @@
 I walked into the -r kitchen. It was (a dimly lit room with a low ceiling -r kitchen). 
 A massive -i knife -r kitchen is (lying on the table -i knife), in my head I wonder what it is used for. 
 Upstairs there is a small -r attic.
+-r Bedroom
 -r LivingRoom
--c Cupboard -r LivingRoom
--i bread -c Cupboard
-<attic Below kitchen>
+-c Cupboard -r LivingRoom (big -i Cupboard)
+-i bread -c Cupboard (crunchy -i bread)
+-i toast -c Cupboard 
+-i chair -r kitchen (has four legs -i chair)
+I look at -p Frodo -r LivingRoom (has blue eyes -p Frodo)
+<attic Below kitchen> 
 <LivingRoom East kitchen> 

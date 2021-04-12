@@ -13,7 +13,9 @@ SentencePart:
 	RoomDescription |
 	ItemDeclaration |
 	ItemDescription |
-	Words | Symbol |
+	PersonDeclaration |
+	PersonDescription |
+	Words |
 	DirectionStatement
 ;
 
@@ -29,16 +31,28 @@ ContainerDeclaration:
 	"-c" name = Text "-r" room = [RoomDeclaration|Text]
 ;
 
+ItemInRoomDeclaration:
+	"-i" name = Text "-r" room = [RoomDeclaration|Text]
+;
+
 ItemInContainerDeclaration:
 	"-i" name = Text "-c" container = [ContainerDeclaration|Text]
 ;
 
 ItemDeclaration:
-	"-i" name = Text "-r" room = [RoomDeclaration|Text] | ItemInContainerDeclaration | ContainerDeclaration
+	ItemInRoomDeclaration | ContainerDeclaration | ItemInContainerDeclaration
 ;
 
 ItemDescription:
 	"("itemDescription += (Text)+ "-i" item = [ItemDeclaration|Text] ")"
+;
+
+PersonDeclaration:
+	"-p" name = Text "-r" room = [RoomDeclaration|Text]
+;
+
+PersonDescription:
+	"("personDescription += (Text)+ "-p" person = [PersonDeclaration|Text] ")"
 ;
 
 DirectionStatement:
@@ -60,7 +74,3 @@ Words:
 Symbol:
 	symbol = ('.' | ',' | ';' | ':' | '-' | '!' | '?' | '\'')
 ;
-
-
-
-

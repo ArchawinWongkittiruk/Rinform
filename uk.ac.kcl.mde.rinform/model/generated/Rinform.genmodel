@@ -25,17 +25,29 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//RoomDescription/roomDescription"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//RoomDescription/room"/>
     </genClasses>
-    <genClasses ecoreClass="Rinform.ecore#//ContainerDeclaration"/>
+    <genClasses ecoreClass="Rinform.ecore#//ContainerDeclaration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//ContainerDeclaration/room"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//ItemInRoomDeclaration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//ItemInRoomDeclaration/room"/>
+    </genClasses>
     <genClasses ecoreClass="Rinform.ecore#//ItemInContainerDeclaration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//ItemInContainerDeclaration/container"/>
     </genClasses>
     <genClasses ecoreClass="Rinform.ecore#//ItemDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//ItemDeclaration/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//ItemDeclaration/room"/>
     </genClasses>
     <genClasses ecoreClass="Rinform.ecore#//ItemDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//ItemDescription/itemDescription"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//ItemDescription/item"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//PersonDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//PersonDeclaration/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//PersonDeclaration/room"/>
+    </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//PersonDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//PersonDescription/personDescription"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//PersonDescription/person"/>
     </genClasses>
     <genClasses ecoreClass="Rinform.ecore#//DirectionStatement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//DirectionStatement/room1"/>

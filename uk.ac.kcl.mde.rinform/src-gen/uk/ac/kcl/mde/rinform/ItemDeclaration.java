@@ -14,7 +14,6 @@ package uk.ac.kcl.mde.rinform;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDeclaration()
@@ -44,27 +43,5 @@ public interface ItemDeclaration extends SentencePart
    * @generated
    */
   void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Room</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Room</em>' reference.
-   * @see #setRoom(RoomDeclaration)
-   * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemDeclaration_Room()
-   * @model
-   * @generated
-   */
-  RoomDeclaration getRoom();
-
-  /**
-   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.ItemDeclaration#getRoom <em>Room</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Room</em>' reference.
-   * @see #getRoom()
-   * @generated
-   */
-  void setRoom(RoomDeclaration value);
 
 } // ItemDeclaration

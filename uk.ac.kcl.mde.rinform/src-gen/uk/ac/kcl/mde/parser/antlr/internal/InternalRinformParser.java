@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRinformParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_WS", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ANY_OTHER", "'-r'", "'('", "')'", "'-c'", "'-i'", "'<'", "'>'", "'.'", "','", "';'", "':'", "'-'", "'!'", "'?'", "'\\''", "'South'", "'North'", "'East'", "'West'", "'Below'", "'Above'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_WS", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ANY_OTHER", "'-r'", "'('", "')'", "'-c'", "'-i'", "'-p'", "'<'", "'>'", "'South'", "'North'", "'East'", "'West'", "'Below'", "'Above'"
     };
     public static final int RULE_STRING=7;
     public static final int RULE_SL_COMMENT=9;
@@ -36,21 +36,14 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
     public static final int RULE_ID=4;
     public static final int RULE_WS=5;
     public static final int RULE_ANY_OTHER=10;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
     public static final int RULE_INT=6;
-    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
     public static final int T__24=24;
-    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -150,7 +143,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==RULE_ID||(LA1_0>=11 && LA1_0<=12)||(LA1_0>=14 && LA1_0<=16)||(LA1_0>=18 && LA1_0<=25)) ) {
+                if ( (LA1_0==RULE_ID||(LA1_0>=11 && LA1_0<=12)||(LA1_0>=14 && LA1_0<=17)) ) {
                     alt1=1;
                 }
 
@@ -249,7 +242,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSentencePart"
-    // InternalRinform.g:108:1: ruleSentencePart returns [EObject current=null] : (this_RoomDeclaration_0= ruleRoomDeclaration | this_RoomDescription_1= ruleRoomDescription | this_ItemDeclaration_2= ruleItemDeclaration | this_ItemDescription_3= ruleItemDescription | this_Words_4= ruleWords | this_Symbol_5= ruleSymbol | this_DirectionStatement_6= ruleDirectionStatement ) ;
+    // InternalRinform.g:108:1: ruleSentencePart returns [EObject current=null] : (this_RoomDeclaration_0= ruleRoomDeclaration | this_RoomDescription_1= ruleRoomDescription | this_ItemDeclaration_2= ruleItemDeclaration | this_ItemDescription_3= ruleItemDescription | this_PersonDeclaration_4= rulePersonDeclaration | this_PersonDescription_5= rulePersonDescription | this_Words_6= ruleWords | this_DirectionStatement_7= ruleDirectionStatement ) ;
     public final EObject ruleSentencePart() throws RecognitionException {
         EObject current = null;
 
@@ -261,22 +254,24 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
         EObject this_ItemDescription_3 = null;
 
-        EObject this_Words_4 = null;
+        EObject this_PersonDeclaration_4 = null;
 
-        EObject this_Symbol_5 = null;
+        EObject this_PersonDescription_5 = null;
 
-        EObject this_DirectionStatement_6 = null;
+        EObject this_Words_6 = null;
+
+        EObject this_DirectionStatement_7 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRinform.g:114:2: ( (this_RoomDeclaration_0= ruleRoomDeclaration | this_RoomDescription_1= ruleRoomDescription | this_ItemDeclaration_2= ruleItemDeclaration | this_ItemDescription_3= ruleItemDescription | this_Words_4= ruleWords | this_Symbol_5= ruleSymbol | this_DirectionStatement_6= ruleDirectionStatement ) )
-            // InternalRinform.g:115:2: (this_RoomDeclaration_0= ruleRoomDeclaration | this_RoomDescription_1= ruleRoomDescription | this_ItemDeclaration_2= ruleItemDeclaration | this_ItemDescription_3= ruleItemDescription | this_Words_4= ruleWords | this_Symbol_5= ruleSymbol | this_DirectionStatement_6= ruleDirectionStatement )
+            // InternalRinform.g:114:2: ( (this_RoomDeclaration_0= ruleRoomDeclaration | this_RoomDescription_1= ruleRoomDescription | this_ItemDeclaration_2= ruleItemDeclaration | this_ItemDescription_3= ruleItemDescription | this_PersonDeclaration_4= rulePersonDeclaration | this_PersonDescription_5= rulePersonDescription | this_Words_6= ruleWords | this_DirectionStatement_7= ruleDirectionStatement ) )
+            // InternalRinform.g:115:2: (this_RoomDeclaration_0= ruleRoomDeclaration | this_RoomDescription_1= ruleRoomDescription | this_ItemDeclaration_2= ruleItemDeclaration | this_ItemDescription_3= ruleItemDescription | this_PersonDeclaration_4= rulePersonDeclaration | this_PersonDescription_5= rulePersonDescription | this_Words_6= ruleWords | this_DirectionStatement_7= ruleDirectionStatement )
             {
-            // InternalRinform.g:115:2: (this_RoomDeclaration_0= ruleRoomDeclaration | this_RoomDescription_1= ruleRoomDescription | this_ItemDeclaration_2= ruleItemDeclaration | this_ItemDescription_3= ruleItemDescription | this_Words_4= ruleWords | this_Symbol_5= ruleSymbol | this_DirectionStatement_6= ruleDirectionStatement )
-            int alt2=7;
+            // InternalRinform.g:115:2: (this_RoomDeclaration_0= ruleRoomDeclaration | this_RoomDescription_1= ruleRoomDescription | this_ItemDeclaration_2= ruleItemDeclaration | this_ItemDescription_3= ruleItemDescription | this_PersonDeclaration_4= rulePersonDeclaration | this_PersonDescription_5= rulePersonDescription | this_Words_6= ruleWords | this_DirectionStatement_7= ruleDirectionStatement )
+            int alt2=8;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
@@ -352,54 +347,72 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalRinform.g:152:3: this_Words_4= ruleWords
+                    // InternalRinform.g:152:3: this_PersonDeclaration_4= rulePersonDeclaration
                     {
 
-                    			newCompositeNode(grammarAccess.getSentencePartAccess().getWordsParserRuleCall_4());
+                    			newCompositeNode(grammarAccess.getSentencePartAccess().getPersonDeclarationParserRuleCall_4());
                     		
                     pushFollow(FOLLOW_2);
-                    this_Words_4=ruleWords();
+                    this_PersonDeclaration_4=rulePersonDeclaration();
 
                     state._fsp--;
 
 
-                    			current = this_Words_4;
+                    			current = this_PersonDeclaration_4;
                     			afterParserOrEnumRuleCall();
                     		
 
                     }
                     break;
                 case 6 :
-                    // InternalRinform.g:161:3: this_Symbol_5= ruleSymbol
+                    // InternalRinform.g:161:3: this_PersonDescription_5= rulePersonDescription
                     {
 
-                    			newCompositeNode(grammarAccess.getSentencePartAccess().getSymbolParserRuleCall_5());
+                    			newCompositeNode(grammarAccess.getSentencePartAccess().getPersonDescriptionParserRuleCall_5());
                     		
                     pushFollow(FOLLOW_2);
-                    this_Symbol_5=ruleSymbol();
+                    this_PersonDescription_5=rulePersonDescription();
 
                     state._fsp--;
 
 
-                    			current = this_Symbol_5;
+                    			current = this_PersonDescription_5;
                     			afterParserOrEnumRuleCall();
                     		
 
                     }
                     break;
                 case 7 :
-                    // InternalRinform.g:170:3: this_DirectionStatement_6= ruleDirectionStatement
+                    // InternalRinform.g:170:3: this_Words_6= ruleWords
                     {
 
-                    			newCompositeNode(grammarAccess.getSentencePartAccess().getDirectionStatementParserRuleCall_6());
+                    			newCompositeNode(grammarAccess.getSentencePartAccess().getWordsParserRuleCall_6());
                     		
                     pushFollow(FOLLOW_2);
-                    this_DirectionStatement_6=ruleDirectionStatement();
+                    this_Words_6=ruleWords();
 
                     state._fsp--;
 
 
-                    			current = this_DirectionStatement_6;
+                    			current = this_Words_6;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 8 :
+                    // InternalRinform.g:179:3: this_DirectionStatement_7= ruleDirectionStatement
+                    {
+
+                    			newCompositeNode(grammarAccess.getSentencePartAccess().getDirectionStatementParserRuleCall_7());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_DirectionStatement_7=ruleDirectionStatement();
+
+                    state._fsp--;
+
+
+                    			current = this_DirectionStatement_7;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -428,7 +441,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRoomDeclaration"
-    // InternalRinform.g:182:1: entryRuleRoomDeclaration returns [EObject current=null] : iv_ruleRoomDeclaration= ruleRoomDeclaration EOF ;
+    // InternalRinform.g:191:1: entryRuleRoomDeclaration returns [EObject current=null] : iv_ruleRoomDeclaration= ruleRoomDeclaration EOF ;
     public final EObject entryRuleRoomDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -436,8 +449,8 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRinform.g:182:56: (iv_ruleRoomDeclaration= ruleRoomDeclaration EOF )
-            // InternalRinform.g:183:2: iv_ruleRoomDeclaration= ruleRoomDeclaration EOF
+            // InternalRinform.g:191:56: (iv_ruleRoomDeclaration= ruleRoomDeclaration EOF )
+            // InternalRinform.g:192:2: iv_ruleRoomDeclaration= ruleRoomDeclaration EOF
             {
              newCompositeNode(grammarAccess.getRoomDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -464,7 +477,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRoomDeclaration"
-    // InternalRinform.g:189:1: ruleRoomDeclaration returns [EObject current=null] : (otherlv_0= '-r' ( (lv_name_1_0= ruleText ) ) ) ;
+    // InternalRinform.g:198:1: ruleRoomDeclaration returns [EObject current=null] : (otherlv_0= '-r' ( (lv_name_1_0= ruleText ) ) ) ;
     public final EObject ruleRoomDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -476,21 +489,21 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRinform.g:195:2: ( (otherlv_0= '-r' ( (lv_name_1_0= ruleText ) ) ) )
-            // InternalRinform.g:196:2: (otherlv_0= '-r' ( (lv_name_1_0= ruleText ) ) )
+            // InternalRinform.g:204:2: ( (otherlv_0= '-r' ( (lv_name_1_0= ruleText ) ) ) )
+            // InternalRinform.g:205:2: (otherlv_0= '-r' ( (lv_name_1_0= ruleText ) ) )
             {
-            // InternalRinform.g:196:2: (otherlv_0= '-r' ( (lv_name_1_0= ruleText ) ) )
-            // InternalRinform.g:197:3: otherlv_0= '-r' ( (lv_name_1_0= ruleText ) )
+            // InternalRinform.g:205:2: (otherlv_0= '-r' ( (lv_name_1_0= ruleText ) ) )
+            // InternalRinform.g:206:3: otherlv_0= '-r' ( (lv_name_1_0= ruleText ) )
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRoomDeclarationAccess().getRKeyword_0());
             		
-            // InternalRinform.g:201:3: ( (lv_name_1_0= ruleText ) )
-            // InternalRinform.g:202:4: (lv_name_1_0= ruleText )
+            // InternalRinform.g:210:3: ( (lv_name_1_0= ruleText ) )
+            // InternalRinform.g:211:4: (lv_name_1_0= ruleText )
             {
-            // InternalRinform.g:202:4: (lv_name_1_0= ruleText )
-            // InternalRinform.g:203:5: lv_name_1_0= ruleText
+            // InternalRinform.g:211:4: (lv_name_1_0= ruleText )
+            // InternalRinform.g:212:5: lv_name_1_0= ruleText
             {
 
             					newCompositeNode(grammarAccess.getRoomDeclarationAccess().getNameTextParserRuleCall_1_0());
@@ -540,7 +553,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRoomDescription"
-    // InternalRinform.g:224:1: entryRuleRoomDescription returns [EObject current=null] : iv_ruleRoomDescription= ruleRoomDescription EOF ;
+    // InternalRinform.g:233:1: entryRuleRoomDescription returns [EObject current=null] : iv_ruleRoomDescription= ruleRoomDescription EOF ;
     public final EObject entryRuleRoomDescription() throws RecognitionException {
         EObject current = null;
 
@@ -548,8 +561,8 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRinform.g:224:56: (iv_ruleRoomDescription= ruleRoomDescription EOF )
-            // InternalRinform.g:225:2: iv_ruleRoomDescription= ruleRoomDescription EOF
+            // InternalRinform.g:233:56: (iv_ruleRoomDescription= ruleRoomDescription EOF )
+            // InternalRinform.g:234:2: iv_ruleRoomDescription= ruleRoomDescription EOF
             {
              newCompositeNode(grammarAccess.getRoomDescriptionRule()); 
             pushFollow(FOLLOW_1);
@@ -576,7 +589,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRoomDescription"
-    // InternalRinform.g:231:1: ruleRoomDescription returns [EObject current=null] : (otherlv_0= '(' ( (lv_roomDescription_1_0= ruleText ) )+ otherlv_2= '-r' ( ( ruleText ) ) otherlv_4= ')' ) ;
+    // InternalRinform.g:240:1: ruleRoomDescription returns [EObject current=null] : (otherlv_0= '(' ( (lv_roomDescription_1_0= ruleText ) )+ otherlv_2= '-r' ( ( ruleText ) ) otherlv_4= ')' ) ;
     public final EObject ruleRoomDescription() throws RecognitionException {
         EObject current = null;
 
@@ -590,17 +603,17 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRinform.g:237:2: ( (otherlv_0= '(' ( (lv_roomDescription_1_0= ruleText ) )+ otherlv_2= '-r' ( ( ruleText ) ) otherlv_4= ')' ) )
-            // InternalRinform.g:238:2: (otherlv_0= '(' ( (lv_roomDescription_1_0= ruleText ) )+ otherlv_2= '-r' ( ( ruleText ) ) otherlv_4= ')' )
+            // InternalRinform.g:246:2: ( (otherlv_0= '(' ( (lv_roomDescription_1_0= ruleText ) )+ otherlv_2= '-r' ( ( ruleText ) ) otherlv_4= ')' ) )
+            // InternalRinform.g:247:2: (otherlv_0= '(' ( (lv_roomDescription_1_0= ruleText ) )+ otherlv_2= '-r' ( ( ruleText ) ) otherlv_4= ')' )
             {
-            // InternalRinform.g:238:2: (otherlv_0= '(' ( (lv_roomDescription_1_0= ruleText ) )+ otherlv_2= '-r' ( ( ruleText ) ) otherlv_4= ')' )
-            // InternalRinform.g:239:3: otherlv_0= '(' ( (lv_roomDescription_1_0= ruleText ) )+ otherlv_2= '-r' ( ( ruleText ) ) otherlv_4= ')'
+            // InternalRinform.g:247:2: (otherlv_0= '(' ( (lv_roomDescription_1_0= ruleText ) )+ otherlv_2= '-r' ( ( ruleText ) ) otherlv_4= ')' )
+            // InternalRinform.g:248:3: otherlv_0= '(' ( (lv_roomDescription_1_0= ruleText ) )+ otherlv_2= '-r' ( ( ruleText ) ) otherlv_4= ')'
             {
             otherlv_0=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRoomDescriptionAccess().getLeftParenthesisKeyword_0());
             		
-            // InternalRinform.g:243:3: ( (lv_roomDescription_1_0= ruleText ) )+
+            // InternalRinform.g:252:3: ( (lv_roomDescription_1_0= ruleText ) )+
             int cnt3=0;
             loop3:
             do {
@@ -614,10 +627,10 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalRinform.g:244:4: (lv_roomDescription_1_0= ruleText )
+            	    // InternalRinform.g:253:4: (lv_roomDescription_1_0= ruleText )
             	    {
-            	    // InternalRinform.g:244:4: (lv_roomDescription_1_0= ruleText )
-            	    // InternalRinform.g:245:5: lv_roomDescription_1_0= ruleText
+            	    // InternalRinform.g:253:4: (lv_roomDescription_1_0= ruleText )
+            	    // InternalRinform.g:254:5: lv_roomDescription_1_0= ruleText
             	    {
 
             	    					newCompositeNode(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionTextParserRuleCall_1_0());
@@ -658,11 +671,11 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getRoomDescriptionAccess().getRKeyword_2());
             		
-            // InternalRinform.g:266:3: ( ( ruleText ) )
-            // InternalRinform.g:267:4: ( ruleText )
+            // InternalRinform.g:275:3: ( ( ruleText ) )
+            // InternalRinform.g:276:4: ( ruleText )
             {
-            // InternalRinform.g:267:4: ( ruleText )
-            // InternalRinform.g:268:5: ruleText
+            // InternalRinform.g:276:4: ( ruleText )
+            // InternalRinform.g:277:5: ruleText
             {
 
             					if (current==null) {
@@ -713,7 +726,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleContainerDeclaration"
-    // InternalRinform.g:290:1: entryRuleContainerDeclaration returns [EObject current=null] : iv_ruleContainerDeclaration= ruleContainerDeclaration EOF ;
+    // InternalRinform.g:299:1: entryRuleContainerDeclaration returns [EObject current=null] : iv_ruleContainerDeclaration= ruleContainerDeclaration EOF ;
     public final EObject entryRuleContainerDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -721,8 +734,8 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRinform.g:290:61: (iv_ruleContainerDeclaration= ruleContainerDeclaration EOF )
-            // InternalRinform.g:291:2: iv_ruleContainerDeclaration= ruleContainerDeclaration EOF
+            // InternalRinform.g:299:61: (iv_ruleContainerDeclaration= ruleContainerDeclaration EOF )
+            // InternalRinform.g:300:2: iv_ruleContainerDeclaration= ruleContainerDeclaration EOF
             {
              newCompositeNode(grammarAccess.getContainerDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -749,7 +762,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContainerDeclaration"
-    // InternalRinform.g:297:1: ruleContainerDeclaration returns [EObject current=null] : (otherlv_0= '-c' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) ;
+    // InternalRinform.g:306:1: ruleContainerDeclaration returns [EObject current=null] : (otherlv_0= '-c' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) ;
     public final EObject ruleContainerDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -762,21 +775,21 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRinform.g:303:2: ( (otherlv_0= '-c' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) )
-            // InternalRinform.g:304:2: (otherlv_0= '-c' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) )
+            // InternalRinform.g:312:2: ( (otherlv_0= '-c' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) )
+            // InternalRinform.g:313:2: (otherlv_0= '-c' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) )
             {
-            // InternalRinform.g:304:2: (otherlv_0= '-c' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) )
-            // InternalRinform.g:305:3: otherlv_0= '-c' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) )
+            // InternalRinform.g:313:2: (otherlv_0= '-c' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) )
+            // InternalRinform.g:314:3: otherlv_0= '-c' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) )
             {
             otherlv_0=(Token)match(input,14,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getContainerDeclarationAccess().getCKeyword_0());
             		
-            // InternalRinform.g:309:3: ( (lv_name_1_0= ruleText ) )
-            // InternalRinform.g:310:4: (lv_name_1_0= ruleText )
+            // InternalRinform.g:318:3: ( (lv_name_1_0= ruleText ) )
+            // InternalRinform.g:319:4: (lv_name_1_0= ruleText )
             {
-            // InternalRinform.g:310:4: (lv_name_1_0= ruleText )
-            // InternalRinform.g:311:5: lv_name_1_0= ruleText
+            // InternalRinform.g:319:4: (lv_name_1_0= ruleText )
+            // InternalRinform.g:320:5: lv_name_1_0= ruleText
             {
 
             					newCompositeNode(grammarAccess.getContainerDeclarationAccess().getNameTextParserRuleCall_1_0());
@@ -807,11 +820,11 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getContainerDeclarationAccess().getRKeyword_2());
             		
-            // InternalRinform.g:332:3: ( ( ruleText ) )
-            // InternalRinform.g:333:4: ( ruleText )
+            // InternalRinform.g:341:3: ( ( ruleText ) )
+            // InternalRinform.g:342:4: ( ruleText )
             {
-            // InternalRinform.g:333:4: ( ruleText )
-            // InternalRinform.g:334:5: ruleText
+            // InternalRinform.g:342:4: ( ruleText )
+            // InternalRinform.g:343:5: ruleText
             {
 
             					if (current==null) {
@@ -857,8 +870,153 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleContainerDeclaration"
 
 
+    // $ANTLR start "entryRuleItemInRoomDeclaration"
+    // InternalRinform.g:361:1: entryRuleItemInRoomDeclaration returns [EObject current=null] : iv_ruleItemInRoomDeclaration= ruleItemInRoomDeclaration EOF ;
+    public final EObject entryRuleItemInRoomDeclaration() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleItemInRoomDeclaration = null;
+
+
+        try {
+            // InternalRinform.g:361:62: (iv_ruleItemInRoomDeclaration= ruleItemInRoomDeclaration EOF )
+            // InternalRinform.g:362:2: iv_ruleItemInRoomDeclaration= ruleItemInRoomDeclaration EOF
+            {
+             newCompositeNode(grammarAccess.getItemInRoomDeclarationRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleItemInRoomDeclaration=ruleItemInRoomDeclaration();
+
+            state._fsp--;
+
+             current =iv_ruleItemInRoomDeclaration; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleItemInRoomDeclaration"
+
+
+    // $ANTLR start "ruleItemInRoomDeclaration"
+    // InternalRinform.g:368:1: ruleItemInRoomDeclaration returns [EObject current=null] : (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) ;
+    public final EObject ruleItemInRoomDeclaration() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalRinform.g:374:2: ( (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) )
+            // InternalRinform.g:375:2: (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) )
+            {
+            // InternalRinform.g:375:2: (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) )
+            // InternalRinform.g:376:3: otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) )
+            {
+            otherlv_0=(Token)match(input,15,FOLLOW_4); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getItemInRoomDeclarationAccess().getIKeyword_0());
+            		
+            // InternalRinform.g:380:3: ( (lv_name_1_0= ruleText ) )
+            // InternalRinform.g:381:4: (lv_name_1_0= ruleText )
+            {
+            // InternalRinform.g:381:4: (lv_name_1_0= ruleText )
+            // InternalRinform.g:382:5: lv_name_1_0= ruleText
+            {
+
+            					newCompositeNode(grammarAccess.getItemInRoomDeclarationAccess().getNameTextParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_7);
+            lv_name_1_0=ruleText();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getItemInRoomDeclarationRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"uk.ac.kcl.mde.Rinform.Text");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,11,FOLLOW_4); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getItemInRoomDeclarationAccess().getRKeyword_2());
+            		
+            // InternalRinform.g:403:3: ( ( ruleText ) )
+            // InternalRinform.g:404:4: ( ruleText )
+            {
+            // InternalRinform.g:404:4: ( ruleText )
+            // InternalRinform.g:405:5: ruleText
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getItemInRoomDeclarationRule());
+            					}
+            				
+
+            					newCompositeNode(grammarAccess.getItemInRoomDeclarationAccess().getRoomRoomDeclarationCrossReference_3_0());
+            				
+            pushFollow(FOLLOW_2);
+            ruleText();
+
+            state._fsp--;
+
+
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleItemInRoomDeclaration"
+
+
     // $ANTLR start "entryRuleItemInContainerDeclaration"
-    // InternalRinform.g:352:1: entryRuleItemInContainerDeclaration returns [EObject current=null] : iv_ruleItemInContainerDeclaration= ruleItemInContainerDeclaration EOF ;
+    // InternalRinform.g:423:1: entryRuleItemInContainerDeclaration returns [EObject current=null] : iv_ruleItemInContainerDeclaration= ruleItemInContainerDeclaration EOF ;
     public final EObject entryRuleItemInContainerDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -866,8 +1024,8 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRinform.g:352:67: (iv_ruleItemInContainerDeclaration= ruleItemInContainerDeclaration EOF )
-            // InternalRinform.g:353:2: iv_ruleItemInContainerDeclaration= ruleItemInContainerDeclaration EOF
+            // InternalRinform.g:423:67: (iv_ruleItemInContainerDeclaration= ruleItemInContainerDeclaration EOF )
+            // InternalRinform.g:424:2: iv_ruleItemInContainerDeclaration= ruleItemInContainerDeclaration EOF
             {
              newCompositeNode(grammarAccess.getItemInContainerDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -894,7 +1052,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleItemInContainerDeclaration"
-    // InternalRinform.g:359:1: ruleItemInContainerDeclaration returns [EObject current=null] : (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-c' ( ( ruleText ) ) ) ;
+    // InternalRinform.g:430:1: ruleItemInContainerDeclaration returns [EObject current=null] : (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-c' ( ( ruleText ) ) ) ;
     public final EObject ruleItemInContainerDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -907,21 +1065,21 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRinform.g:365:2: ( (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-c' ( ( ruleText ) ) ) )
-            // InternalRinform.g:366:2: (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-c' ( ( ruleText ) ) )
+            // InternalRinform.g:436:2: ( (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-c' ( ( ruleText ) ) ) )
+            // InternalRinform.g:437:2: (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-c' ( ( ruleText ) ) )
             {
-            // InternalRinform.g:366:2: (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-c' ( ( ruleText ) ) )
-            // InternalRinform.g:367:3: otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-c' ( ( ruleText ) )
+            // InternalRinform.g:437:2: (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-c' ( ( ruleText ) ) )
+            // InternalRinform.g:438:3: otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-c' ( ( ruleText ) )
             {
             otherlv_0=(Token)match(input,15,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getItemInContainerDeclarationAccess().getIKeyword_0());
             		
-            // InternalRinform.g:371:3: ( (lv_name_1_0= ruleText ) )
-            // InternalRinform.g:372:4: (lv_name_1_0= ruleText )
+            // InternalRinform.g:442:3: ( (lv_name_1_0= ruleText ) )
+            // InternalRinform.g:443:4: (lv_name_1_0= ruleText )
             {
-            // InternalRinform.g:372:4: (lv_name_1_0= ruleText )
-            // InternalRinform.g:373:5: lv_name_1_0= ruleText
+            // InternalRinform.g:443:4: (lv_name_1_0= ruleText )
+            // InternalRinform.g:444:5: lv_name_1_0= ruleText
             {
 
             					newCompositeNode(grammarAccess.getItemInContainerDeclarationAccess().getNameTextParserRuleCall_1_0());
@@ -952,11 +1110,11 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getItemInContainerDeclarationAccess().getCKeyword_2());
             		
-            // InternalRinform.g:394:3: ( ( ruleText ) )
-            // InternalRinform.g:395:4: ( ruleText )
+            // InternalRinform.g:465:3: ( ( ruleText ) )
+            // InternalRinform.g:466:4: ( ruleText )
             {
-            // InternalRinform.g:395:4: ( ruleText )
-            // InternalRinform.g:396:5: ruleText
+            // InternalRinform.g:466:4: ( ruleText )
+            // InternalRinform.g:467:5: ruleText
             {
 
             					if (current==null) {
@@ -1003,7 +1161,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleItemDeclaration"
-    // InternalRinform.g:414:1: entryRuleItemDeclaration returns [EObject current=null] : iv_ruleItemDeclaration= ruleItemDeclaration EOF ;
+    // InternalRinform.g:485:1: entryRuleItemDeclaration returns [EObject current=null] : iv_ruleItemDeclaration= ruleItemDeclaration EOF ;
     public final EObject entryRuleItemDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -1011,8 +1169,8 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRinform.g:414:56: (iv_ruleItemDeclaration= ruleItemDeclaration EOF )
-            // InternalRinform.g:415:2: iv_ruleItemDeclaration= ruleItemDeclaration EOF
+            // InternalRinform.g:485:56: (iv_ruleItemDeclaration= ruleItemDeclaration EOF )
+            // InternalRinform.g:486:2: iv_ruleItemDeclaration= ruleItemDeclaration EOF
             {
              newCompositeNode(grammarAccess.getItemDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -1039,140 +1197,77 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleItemDeclaration"
-    // InternalRinform.g:421:1: ruleItemDeclaration returns [EObject current=null] : ( (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) | this_ItemInContainerDeclaration_4= ruleItemInContainerDeclaration | this_ContainerDeclaration_5= ruleContainerDeclaration ) ;
+    // InternalRinform.g:492:1: ruleItemDeclaration returns [EObject current=null] : (this_ItemInRoomDeclaration_0= ruleItemInRoomDeclaration | this_ContainerDeclaration_1= ruleContainerDeclaration | this_ItemInContainerDeclaration_2= ruleItemInContainerDeclaration ) ;
     public final EObject ruleItemDeclaration() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token otherlv_2=null;
-        AntlrDatatypeRuleToken lv_name_1_0 = null;
+        EObject this_ItemInRoomDeclaration_0 = null;
 
-        EObject this_ItemInContainerDeclaration_4 = null;
+        EObject this_ContainerDeclaration_1 = null;
 
-        EObject this_ContainerDeclaration_5 = null;
+        EObject this_ItemInContainerDeclaration_2 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRinform.g:427:2: ( ( (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) | this_ItemInContainerDeclaration_4= ruleItemInContainerDeclaration | this_ContainerDeclaration_5= ruleContainerDeclaration ) )
-            // InternalRinform.g:428:2: ( (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) | this_ItemInContainerDeclaration_4= ruleItemInContainerDeclaration | this_ContainerDeclaration_5= ruleContainerDeclaration )
+            // InternalRinform.g:498:2: ( (this_ItemInRoomDeclaration_0= ruleItemInRoomDeclaration | this_ContainerDeclaration_1= ruleContainerDeclaration | this_ItemInContainerDeclaration_2= ruleItemInContainerDeclaration ) )
+            // InternalRinform.g:499:2: (this_ItemInRoomDeclaration_0= ruleItemInRoomDeclaration | this_ContainerDeclaration_1= ruleContainerDeclaration | this_ItemInContainerDeclaration_2= ruleItemInContainerDeclaration )
             {
-            // InternalRinform.g:428:2: ( (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) | this_ItemInContainerDeclaration_4= ruleItemInContainerDeclaration | this_ContainerDeclaration_5= ruleContainerDeclaration )
+            // InternalRinform.g:499:2: (this_ItemInRoomDeclaration_0= ruleItemInRoomDeclaration | this_ContainerDeclaration_1= ruleContainerDeclaration | this_ItemInContainerDeclaration_2= ruleItemInContainerDeclaration )
             int alt4=3;
             alt4 = dfa4.predict(input);
             switch (alt4) {
                 case 1 :
-                    // InternalRinform.g:429:3: (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) )
-                    {
-                    // InternalRinform.g:429:3: (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) )
-                    // InternalRinform.g:430:4: otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) )
-                    {
-                    otherlv_0=(Token)match(input,15,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_0, grammarAccess.getItemDeclarationAccess().getIKeyword_0_0());
-                    			
-                    // InternalRinform.g:434:4: ( (lv_name_1_0= ruleText ) )
-                    // InternalRinform.g:435:5: (lv_name_1_0= ruleText )
-                    {
-                    // InternalRinform.g:435:5: (lv_name_1_0= ruleText )
-                    // InternalRinform.g:436:6: lv_name_1_0= ruleText
+                    // InternalRinform.g:500:3: this_ItemInRoomDeclaration_0= ruleItemInRoomDeclaration
                     {
 
-                    						newCompositeNode(grammarAccess.getItemDeclarationAccess().getNameTextParserRuleCall_0_1_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    lv_name_1_0=ruleText();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getItemDeclarationRule());
-                    						}
-                    						set(
-                    							current,
-                    							"name",
-                    							lv_name_1_0,
-                    							"uk.ac.kcl.mde.Rinform.Text");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    otherlv_2=(Token)match(input,11,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_2, grammarAccess.getItemDeclarationAccess().getRKeyword_0_2());
-                    			
-                    // InternalRinform.g:457:4: ( ( ruleText ) )
-                    // InternalRinform.g:458:5: ( ruleText )
-                    {
-                    // InternalRinform.g:458:5: ( ruleText )
-                    // InternalRinform.g:459:6: ruleText
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getItemDeclarationRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getItemDeclarationAccess().getRoomRoomDeclarationCrossReference_0_3_0());
-                    					
+                    			newCompositeNode(grammarAccess.getItemDeclarationAccess().getItemInRoomDeclarationParserRuleCall_0());
+                    		
                     pushFollow(FOLLOW_2);
-                    ruleText();
+                    this_ItemInRoomDeclaration_0=ruleItemInRoomDeclaration();
 
                     state._fsp--;
 
 
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-
+                    			current = this_ItemInRoomDeclaration_0;
+                    			afterParserOrEnumRuleCall();
+                    		
 
                     }
                     break;
                 case 2 :
-                    // InternalRinform.g:475:3: this_ItemInContainerDeclaration_4= ruleItemInContainerDeclaration
+                    // InternalRinform.g:509:3: this_ContainerDeclaration_1= ruleContainerDeclaration
                     {
 
-                    			newCompositeNode(grammarAccess.getItemDeclarationAccess().getItemInContainerDeclarationParserRuleCall_1());
+                    			newCompositeNode(grammarAccess.getItemDeclarationAccess().getContainerDeclarationParserRuleCall_1());
                     		
                     pushFollow(FOLLOW_2);
-                    this_ItemInContainerDeclaration_4=ruleItemInContainerDeclaration();
+                    this_ContainerDeclaration_1=ruleContainerDeclaration();
 
                     state._fsp--;
 
 
-                    			current = this_ItemInContainerDeclaration_4;
+                    			current = this_ContainerDeclaration_1;
                     			afterParserOrEnumRuleCall();
                     		
 
                     }
                     break;
                 case 3 :
-                    // InternalRinform.g:484:3: this_ContainerDeclaration_5= ruleContainerDeclaration
+                    // InternalRinform.g:518:3: this_ItemInContainerDeclaration_2= ruleItemInContainerDeclaration
                     {
 
-                    			newCompositeNode(grammarAccess.getItemDeclarationAccess().getContainerDeclarationParserRuleCall_2());
+                    			newCompositeNode(grammarAccess.getItemDeclarationAccess().getItemInContainerDeclarationParserRuleCall_2());
                     		
                     pushFollow(FOLLOW_2);
-                    this_ContainerDeclaration_5=ruleContainerDeclaration();
+                    this_ItemInContainerDeclaration_2=ruleItemInContainerDeclaration();
 
                     state._fsp--;
 
 
-                    			current = this_ContainerDeclaration_5;
+                    			current = this_ItemInContainerDeclaration_2;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -1201,7 +1296,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleItemDescription"
-    // InternalRinform.g:496:1: entryRuleItemDescription returns [EObject current=null] : iv_ruleItemDescription= ruleItemDescription EOF ;
+    // InternalRinform.g:530:1: entryRuleItemDescription returns [EObject current=null] : iv_ruleItemDescription= ruleItemDescription EOF ;
     public final EObject entryRuleItemDescription() throws RecognitionException {
         EObject current = null;
 
@@ -1209,8 +1304,8 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRinform.g:496:56: (iv_ruleItemDescription= ruleItemDescription EOF )
-            // InternalRinform.g:497:2: iv_ruleItemDescription= ruleItemDescription EOF
+            // InternalRinform.g:530:56: (iv_ruleItemDescription= ruleItemDescription EOF )
+            // InternalRinform.g:531:2: iv_ruleItemDescription= ruleItemDescription EOF
             {
              newCompositeNode(grammarAccess.getItemDescriptionRule()); 
             pushFollow(FOLLOW_1);
@@ -1237,7 +1332,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleItemDescription"
-    // InternalRinform.g:503:1: ruleItemDescription returns [EObject current=null] : (otherlv_0= '(' ( (lv_itemDescription_1_0= ruleText ) )+ otherlv_2= '-i' ( ( ruleText ) ) otherlv_4= ')' ) ;
+    // InternalRinform.g:537:1: ruleItemDescription returns [EObject current=null] : (otherlv_0= '(' ( (lv_itemDescription_1_0= ruleText ) )+ otherlv_2= '-i' ( ( ruleText ) ) otherlv_4= ')' ) ;
     public final EObject ruleItemDescription() throws RecognitionException {
         EObject current = null;
 
@@ -1251,17 +1346,17 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRinform.g:509:2: ( (otherlv_0= '(' ( (lv_itemDescription_1_0= ruleText ) )+ otherlv_2= '-i' ( ( ruleText ) ) otherlv_4= ')' ) )
-            // InternalRinform.g:510:2: (otherlv_0= '(' ( (lv_itemDescription_1_0= ruleText ) )+ otherlv_2= '-i' ( ( ruleText ) ) otherlv_4= ')' )
+            // InternalRinform.g:543:2: ( (otherlv_0= '(' ( (lv_itemDescription_1_0= ruleText ) )+ otherlv_2= '-i' ( ( ruleText ) ) otherlv_4= ')' ) )
+            // InternalRinform.g:544:2: (otherlv_0= '(' ( (lv_itemDescription_1_0= ruleText ) )+ otherlv_2= '-i' ( ( ruleText ) ) otherlv_4= ')' )
             {
-            // InternalRinform.g:510:2: (otherlv_0= '(' ( (lv_itemDescription_1_0= ruleText ) )+ otherlv_2= '-i' ( ( ruleText ) ) otherlv_4= ')' )
-            // InternalRinform.g:511:3: otherlv_0= '(' ( (lv_itemDescription_1_0= ruleText ) )+ otherlv_2= '-i' ( ( ruleText ) ) otherlv_4= ')'
+            // InternalRinform.g:544:2: (otherlv_0= '(' ( (lv_itemDescription_1_0= ruleText ) )+ otherlv_2= '-i' ( ( ruleText ) ) otherlv_4= ')' )
+            // InternalRinform.g:545:3: otherlv_0= '(' ( (lv_itemDescription_1_0= ruleText ) )+ otherlv_2= '-i' ( ( ruleText ) ) otherlv_4= ')'
             {
             otherlv_0=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getItemDescriptionAccess().getLeftParenthesisKeyword_0());
             		
-            // InternalRinform.g:515:3: ( (lv_itemDescription_1_0= ruleText ) )+
+            // InternalRinform.g:549:3: ( (lv_itemDescription_1_0= ruleText ) )+
             int cnt5=0;
             loop5:
             do {
@@ -1275,10 +1370,10 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalRinform.g:516:4: (lv_itemDescription_1_0= ruleText )
+            	    // InternalRinform.g:550:4: (lv_itemDescription_1_0= ruleText )
             	    {
-            	    // InternalRinform.g:516:4: (lv_itemDescription_1_0= ruleText )
-            	    // InternalRinform.g:517:5: lv_itemDescription_1_0= ruleText
+            	    // InternalRinform.g:550:4: (lv_itemDescription_1_0= ruleText )
+            	    // InternalRinform.g:551:5: lv_itemDescription_1_0= ruleText
             	    {
 
             	    					newCompositeNode(grammarAccess.getItemDescriptionAccess().getItemDescriptionTextParserRuleCall_1_0());
@@ -1319,11 +1414,11 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getItemDescriptionAccess().getIKeyword_2());
             		
-            // InternalRinform.g:538:3: ( ( ruleText ) )
-            // InternalRinform.g:539:4: ( ruleText )
+            // InternalRinform.g:572:3: ( ( ruleText ) )
+            // InternalRinform.g:573:4: ( ruleText )
             {
-            // InternalRinform.g:539:4: ( ruleText )
-            // InternalRinform.g:540:5: ruleText
+            // InternalRinform.g:573:4: ( ruleText )
+            // InternalRinform.g:574:5: ruleText
             {
 
             					if (current==null) {
@@ -1373,8 +1468,326 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleItemDescription"
 
 
+    // $ANTLR start "entryRulePersonDeclaration"
+    // InternalRinform.g:596:1: entryRulePersonDeclaration returns [EObject current=null] : iv_rulePersonDeclaration= rulePersonDeclaration EOF ;
+    public final EObject entryRulePersonDeclaration() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePersonDeclaration = null;
+
+
+        try {
+            // InternalRinform.g:596:58: (iv_rulePersonDeclaration= rulePersonDeclaration EOF )
+            // InternalRinform.g:597:2: iv_rulePersonDeclaration= rulePersonDeclaration EOF
+            {
+             newCompositeNode(grammarAccess.getPersonDeclarationRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePersonDeclaration=rulePersonDeclaration();
+
+            state._fsp--;
+
+             current =iv_rulePersonDeclaration; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePersonDeclaration"
+
+
+    // $ANTLR start "rulePersonDeclaration"
+    // InternalRinform.g:603:1: rulePersonDeclaration returns [EObject current=null] : (otherlv_0= '-p' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) ;
+    public final EObject rulePersonDeclaration() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalRinform.g:609:2: ( (otherlv_0= '-p' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) )
+            // InternalRinform.g:610:2: (otherlv_0= '-p' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) )
+            {
+            // InternalRinform.g:610:2: (otherlv_0= '-p' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) )
+            // InternalRinform.g:611:3: otherlv_0= '-p' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) )
+            {
+            otherlv_0=(Token)match(input,16,FOLLOW_4); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getPersonDeclarationAccess().getPKeyword_0());
+            		
+            // InternalRinform.g:615:3: ( (lv_name_1_0= ruleText ) )
+            // InternalRinform.g:616:4: (lv_name_1_0= ruleText )
+            {
+            // InternalRinform.g:616:4: (lv_name_1_0= ruleText )
+            // InternalRinform.g:617:5: lv_name_1_0= ruleText
+            {
+
+            					newCompositeNode(grammarAccess.getPersonDeclarationAccess().getNameTextParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_7);
+            lv_name_1_0=ruleText();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getPersonDeclarationRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"uk.ac.kcl.mde.Rinform.Text");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,11,FOLLOW_4); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getPersonDeclarationAccess().getRKeyword_2());
+            		
+            // InternalRinform.g:638:3: ( ( ruleText ) )
+            // InternalRinform.g:639:4: ( ruleText )
+            {
+            // InternalRinform.g:639:4: ( ruleText )
+            // InternalRinform.g:640:5: ruleText
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPersonDeclarationRule());
+            					}
+            				
+
+            					newCompositeNode(grammarAccess.getPersonDeclarationAccess().getRoomRoomDeclarationCrossReference_3_0());
+            				
+            pushFollow(FOLLOW_2);
+            ruleText();
+
+            state._fsp--;
+
+
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePersonDeclaration"
+
+
+    // $ANTLR start "entryRulePersonDescription"
+    // InternalRinform.g:658:1: entryRulePersonDescription returns [EObject current=null] : iv_rulePersonDescription= rulePersonDescription EOF ;
+    public final EObject entryRulePersonDescription() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePersonDescription = null;
+
+
+        try {
+            // InternalRinform.g:658:58: (iv_rulePersonDescription= rulePersonDescription EOF )
+            // InternalRinform.g:659:2: iv_rulePersonDescription= rulePersonDescription EOF
+            {
+             newCompositeNode(grammarAccess.getPersonDescriptionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePersonDescription=rulePersonDescription();
+
+            state._fsp--;
+
+             current =iv_rulePersonDescription; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePersonDescription"
+
+
+    // $ANTLR start "rulePersonDescription"
+    // InternalRinform.g:665:1: rulePersonDescription returns [EObject current=null] : (otherlv_0= '(' ( (lv_personDescription_1_0= ruleText ) )+ otherlv_2= '-p' ( ( ruleText ) ) otherlv_4= ')' ) ;
+    public final EObject rulePersonDescription() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        AntlrDatatypeRuleToken lv_personDescription_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalRinform.g:671:2: ( (otherlv_0= '(' ( (lv_personDescription_1_0= ruleText ) )+ otherlv_2= '-p' ( ( ruleText ) ) otherlv_4= ')' ) )
+            // InternalRinform.g:672:2: (otherlv_0= '(' ( (lv_personDescription_1_0= ruleText ) )+ otherlv_2= '-p' ( ( ruleText ) ) otherlv_4= ')' )
+            {
+            // InternalRinform.g:672:2: (otherlv_0= '(' ( (lv_personDescription_1_0= ruleText ) )+ otherlv_2= '-p' ( ( ruleText ) ) otherlv_4= ')' )
+            // InternalRinform.g:673:3: otherlv_0= '(' ( (lv_personDescription_1_0= ruleText ) )+ otherlv_2= '-p' ( ( ruleText ) ) otherlv_4= ')'
+            {
+            otherlv_0=(Token)match(input,12,FOLLOW_4); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getPersonDescriptionAccess().getLeftParenthesisKeyword_0());
+            		
+            // InternalRinform.g:677:3: ( (lv_personDescription_1_0= ruleText ) )+
+            int cnt6=0;
+            loop6:
+            do {
+                int alt6=2;
+                int LA6_0 = input.LA(1);
+
+                if ( (LA6_0==RULE_ID) ) {
+                    alt6=1;
+                }
+
+
+                switch (alt6) {
+            	case 1 :
+            	    // InternalRinform.g:678:4: (lv_personDescription_1_0= ruleText )
+            	    {
+            	    // InternalRinform.g:678:4: (lv_personDescription_1_0= ruleText )
+            	    // InternalRinform.g:679:5: lv_personDescription_1_0= ruleText
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getPersonDescriptionAccess().getPersonDescriptionTextParserRuleCall_1_0());
+            	    				
+            	    pushFollow(FOLLOW_10);
+            	    lv_personDescription_1_0=ruleText();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getPersonDescriptionRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"personDescription",
+            	    						lv_personDescription_1_0,
+            	    						"uk.ac.kcl.mde.Rinform.Text");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt6 >= 1 ) break loop6;
+                        EarlyExitException eee =
+                            new EarlyExitException(6, input);
+                        throw eee;
+                }
+                cnt6++;
+            } while (true);
+
+            otherlv_2=(Token)match(input,16,FOLLOW_4); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getPersonDescriptionAccess().getPKeyword_2());
+            		
+            // InternalRinform.g:700:3: ( ( ruleText ) )
+            // InternalRinform.g:701:4: ( ruleText )
+            {
+            // InternalRinform.g:701:4: ( ruleText )
+            // InternalRinform.g:702:5: ruleText
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPersonDescriptionRule());
+            					}
+            				
+
+            					newCompositeNode(grammarAccess.getPersonDescriptionAccess().getPersonPersonDeclarationCrossReference_3_0());
+            				
+            pushFollow(FOLLOW_6);
+            ruleText();
+
+            state._fsp--;
+
+
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,13,FOLLOW_2); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getPersonDescriptionAccess().getRightParenthesisKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePersonDescription"
+
+
     // $ANTLR start "entryRuleDirectionStatement"
-    // InternalRinform.g:562:1: entryRuleDirectionStatement returns [EObject current=null] : iv_ruleDirectionStatement= ruleDirectionStatement EOF ;
+    // InternalRinform.g:724:1: entryRuleDirectionStatement returns [EObject current=null] : iv_ruleDirectionStatement= ruleDirectionStatement EOF ;
     public final EObject entryRuleDirectionStatement() throws RecognitionException {
         EObject current = null;
 
@@ -1382,8 +1795,8 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRinform.g:562:59: (iv_ruleDirectionStatement= ruleDirectionStatement EOF )
-            // InternalRinform.g:563:2: iv_ruleDirectionStatement= ruleDirectionStatement EOF
+            // InternalRinform.g:724:59: (iv_ruleDirectionStatement= ruleDirectionStatement EOF )
+            // InternalRinform.g:725:2: iv_ruleDirectionStatement= ruleDirectionStatement EOF
             {
              newCompositeNode(grammarAccess.getDirectionStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -1410,7 +1823,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDirectionStatement"
-    // InternalRinform.g:569:1: ruleDirectionStatement returns [EObject current=null] : (otherlv_0= '<' ( ( ruleText ) ) ( (lv_direction_2_0= ruleDirection ) ) ( ( ruleText ) ) otherlv_4= '>' ) ;
+    // InternalRinform.g:731:1: ruleDirectionStatement returns [EObject current=null] : (otherlv_0= '<' ( ( ruleText ) ) ( (lv_direction_2_0= ruleDirection ) ) ( ( ruleText ) ) otherlv_4= '>' ) ;
     public final EObject ruleDirectionStatement() throws RecognitionException {
         EObject current = null;
 
@@ -1423,21 +1836,21 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRinform.g:575:2: ( (otherlv_0= '<' ( ( ruleText ) ) ( (lv_direction_2_0= ruleDirection ) ) ( ( ruleText ) ) otherlv_4= '>' ) )
-            // InternalRinform.g:576:2: (otherlv_0= '<' ( ( ruleText ) ) ( (lv_direction_2_0= ruleDirection ) ) ( ( ruleText ) ) otherlv_4= '>' )
+            // InternalRinform.g:737:2: ( (otherlv_0= '<' ( ( ruleText ) ) ( (lv_direction_2_0= ruleDirection ) ) ( ( ruleText ) ) otherlv_4= '>' ) )
+            // InternalRinform.g:738:2: (otherlv_0= '<' ( ( ruleText ) ) ( (lv_direction_2_0= ruleDirection ) ) ( ( ruleText ) ) otherlv_4= '>' )
             {
-            // InternalRinform.g:576:2: (otherlv_0= '<' ( ( ruleText ) ) ( (lv_direction_2_0= ruleDirection ) ) ( ( ruleText ) ) otherlv_4= '>' )
-            // InternalRinform.g:577:3: otherlv_0= '<' ( ( ruleText ) ) ( (lv_direction_2_0= ruleDirection ) ) ( ( ruleText ) ) otherlv_4= '>'
+            // InternalRinform.g:738:2: (otherlv_0= '<' ( ( ruleText ) ) ( (lv_direction_2_0= ruleDirection ) ) ( ( ruleText ) ) otherlv_4= '>' )
+            // InternalRinform.g:739:3: otherlv_0= '<' ( ( ruleText ) ) ( (lv_direction_2_0= ruleDirection ) ) ( ( ruleText ) ) otherlv_4= '>'
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_4); 
+            otherlv_0=(Token)match(input,17,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDirectionStatementAccess().getLessThanSignKeyword_0());
             		
-            // InternalRinform.g:581:3: ( ( ruleText ) )
-            // InternalRinform.g:582:4: ( ruleText )
+            // InternalRinform.g:743:3: ( ( ruleText ) )
+            // InternalRinform.g:744:4: ( ruleText )
             {
-            // InternalRinform.g:582:4: ( ruleText )
-            // InternalRinform.g:583:5: ruleText
+            // InternalRinform.g:744:4: ( ruleText )
+            // InternalRinform.g:745:5: ruleText
             {
 
             					if (current==null) {
@@ -1447,7 +1860,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getDirectionStatementAccess().getRoom1RoomDeclarationCrossReference_1_0());
             				
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             ruleText();
 
             state._fsp--;
@@ -1461,11 +1874,11 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRinform.g:597:3: ( (lv_direction_2_0= ruleDirection ) )
-            // InternalRinform.g:598:4: (lv_direction_2_0= ruleDirection )
+            // InternalRinform.g:759:3: ( (lv_direction_2_0= ruleDirection ) )
+            // InternalRinform.g:760:4: (lv_direction_2_0= ruleDirection )
             {
-            // InternalRinform.g:598:4: (lv_direction_2_0= ruleDirection )
-            // InternalRinform.g:599:5: lv_direction_2_0= ruleDirection
+            // InternalRinform.g:760:4: (lv_direction_2_0= ruleDirection )
+            // InternalRinform.g:761:5: lv_direction_2_0= ruleDirection
             {
 
             					newCompositeNode(grammarAccess.getDirectionStatementAccess().getDirectionDirectionEnumRuleCall_2_0());
@@ -1492,11 +1905,11 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalRinform.g:616:3: ( ( ruleText ) )
-            // InternalRinform.g:617:4: ( ruleText )
+            // InternalRinform.g:778:3: ( ( ruleText ) )
+            // InternalRinform.g:779:4: ( ruleText )
             {
-            // InternalRinform.g:617:4: ( ruleText )
-            // InternalRinform.g:618:5: ruleText
+            // InternalRinform.g:779:4: ( ruleText )
+            // InternalRinform.g:780:5: ruleText
             {
 
             					if (current==null) {
@@ -1506,7 +1919,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getDirectionStatementAccess().getRoom2RoomDeclarationCrossReference_3_0());
             				
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             ruleText();
 
             state._fsp--;
@@ -1520,7 +1933,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,17,FOLLOW_2); 
+            otherlv_4=(Token)match(input,18,FOLLOW_2); 
 
             			newLeafNode(otherlv_4, grammarAccess.getDirectionStatementAccess().getGreaterThanSignKeyword_4());
             		
@@ -1547,7 +1960,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleText"
-    // InternalRinform.g:640:1: entryRuleText returns [String current=null] : iv_ruleText= ruleText EOF ;
+    // InternalRinform.g:802:1: entryRuleText returns [String current=null] : iv_ruleText= ruleText EOF ;
     public final String entryRuleText() throws RecognitionException {
         String current = null;
 
@@ -1555,8 +1968,8 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRinform.g:640:44: (iv_ruleText= ruleText EOF )
-            // InternalRinform.g:641:2: iv_ruleText= ruleText EOF
+            // InternalRinform.g:802:44: (iv_ruleText= ruleText EOF )
+            // InternalRinform.g:803:2: iv_ruleText= ruleText EOF
             {
              newCompositeNode(grammarAccess.getTextRule()); 
             pushFollow(FOLLOW_1);
@@ -1583,7 +1996,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleText"
-    // InternalRinform.g:647:1: ruleText returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (this_WS_1= RULE_WS this_ID_2= RULE_ID )* ) ;
+    // InternalRinform.g:809:1: ruleText returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (this_WS_1= RULE_WS this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleText() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1595,33 +2008,33 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRinform.g:653:2: ( (this_ID_0= RULE_ID (this_WS_1= RULE_WS this_ID_2= RULE_ID )* ) )
-            // InternalRinform.g:654:2: (this_ID_0= RULE_ID (this_WS_1= RULE_WS this_ID_2= RULE_ID )* )
+            // InternalRinform.g:815:2: ( (this_ID_0= RULE_ID (this_WS_1= RULE_WS this_ID_2= RULE_ID )* ) )
+            // InternalRinform.g:816:2: (this_ID_0= RULE_ID (this_WS_1= RULE_WS this_ID_2= RULE_ID )* )
             {
-            // InternalRinform.g:654:2: (this_ID_0= RULE_ID (this_WS_1= RULE_WS this_ID_2= RULE_ID )* )
-            // InternalRinform.g:655:3: this_ID_0= RULE_ID (this_WS_1= RULE_WS this_ID_2= RULE_ID )*
+            // InternalRinform.g:816:2: (this_ID_0= RULE_ID (this_WS_1= RULE_WS this_ID_2= RULE_ID )* )
+            // InternalRinform.g:817:3: this_ID_0= RULE_ID (this_WS_1= RULE_WS this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_12); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_13); 
 
             			current.merge(this_ID_0);
             		
 
             			newLeafNode(this_ID_0, grammarAccess.getTextAccess().getIDTerminalRuleCall_0());
             		
-            // InternalRinform.g:662:3: (this_WS_1= RULE_WS this_ID_2= RULE_ID )*
-            loop6:
+            // InternalRinform.g:824:3: (this_WS_1= RULE_WS this_ID_2= RULE_ID )*
+            loop7:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( (LA6_0==RULE_WS) ) {
-                    alt6=1;
+                if ( (LA7_0==RULE_WS) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt7) {
             	case 1 :
-            	    // InternalRinform.g:663:4: this_WS_1= RULE_WS this_ID_2= RULE_ID
+            	    // InternalRinform.g:825:4: this_WS_1= RULE_WS this_ID_2= RULE_ID
             	    {
             	    this_WS_1=(Token)match(input,RULE_WS,FOLLOW_4); 
 
@@ -1630,7 +2043,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             	    				newLeafNode(this_WS_1, grammarAccess.getTextAccess().getWSTerminalRuleCall_1_0());
             	    			
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_12); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_13); 
 
             	    				current.merge(this_ID_2);
             	    			
@@ -1642,7 +2055,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop7;
                 }
             } while (true);
 
@@ -1669,7 +2082,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWords"
-    // InternalRinform.g:682:1: entryRuleWords returns [EObject current=null] : iv_ruleWords= ruleWords EOF ;
+    // InternalRinform.g:844:1: entryRuleWords returns [EObject current=null] : iv_ruleWords= ruleWords EOF ;
     public final EObject entryRuleWords() throws RecognitionException {
         EObject current = null;
 
@@ -1677,8 +2090,8 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalRinform.g:682:46: (iv_ruleWords= ruleWords EOF )
-            // InternalRinform.g:683:2: iv_ruleWords= ruleWords EOF
+            // InternalRinform.g:844:46: (iv_ruleWords= ruleWords EOF )
+            // InternalRinform.g:845:2: iv_ruleWords= ruleWords EOF
             {
              newCompositeNode(grammarAccess.getWordsRule()); 
             pushFollow(FOLLOW_1);
@@ -1705,7 +2118,7 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWords"
-    // InternalRinform.g:689:1: ruleWords returns [EObject current=null] : ( (lv_words_0_0= ruleText ) )+ ;
+    // InternalRinform.g:851:1: ruleWords returns [EObject current=null] : ( (lv_words_0_0= ruleText ) )+ ;
     public final EObject ruleWords() throws RecognitionException {
         EObject current = null;
 
@@ -1716,32 +2129,32 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRinform.g:695:2: ( ( (lv_words_0_0= ruleText ) )+ )
-            // InternalRinform.g:696:2: ( (lv_words_0_0= ruleText ) )+
+            // InternalRinform.g:857:2: ( ( (lv_words_0_0= ruleText ) )+ )
+            // InternalRinform.g:858:2: ( (lv_words_0_0= ruleText ) )+
             {
-            // InternalRinform.g:696:2: ( (lv_words_0_0= ruleText ) )+
-            int cnt7=0;
-            loop7:
+            // InternalRinform.g:858:2: ( (lv_words_0_0= ruleText ) )+
+            int cnt8=0;
+            loop8:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA7_0==RULE_ID) ) {
-                    alt7=1;
+                if ( (LA8_0==RULE_ID) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt8) {
             	case 1 :
-            	    // InternalRinform.g:697:3: (lv_words_0_0= ruleText )
+            	    // InternalRinform.g:859:3: (lv_words_0_0= ruleText )
             	    {
-            	    // InternalRinform.g:697:3: (lv_words_0_0= ruleText )
-            	    // InternalRinform.g:698:4: lv_words_0_0= ruleText
+            	    // InternalRinform.g:859:3: (lv_words_0_0= ruleText )
+            	    // InternalRinform.g:860:4: lv_words_0_0= ruleText
             	    {
 
             	    				newCompositeNode(grammarAccess.getWordsAccess().getWordsTextParserRuleCall_0());
             	    			
-            	    pushFollow(FOLLOW_13);
+            	    pushFollow(FOLLOW_14);
             	    lv_words_0_0=ruleText();
 
             	    state._fsp--;
@@ -1765,12 +2178,12 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt7 >= 1 ) break loop7;
+            	    if ( cnt8 >= 1 ) break loop8;
                         EarlyExitException eee =
-                            new EarlyExitException(7, input);
+                            new EarlyExitException(8, input);
                         throw eee;
                 }
-                cnt7++;
+                cnt8++;
             } while (true);
 
 
@@ -1792,278 +2205,8 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleWords"
 
 
-    // $ANTLR start "entryRuleSymbol"
-    // InternalRinform.g:718:1: entryRuleSymbol returns [EObject current=null] : iv_ruleSymbol= ruleSymbol EOF ;
-    public final EObject entryRuleSymbol() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleSymbol = null;
-
-
-        try {
-            // InternalRinform.g:718:47: (iv_ruleSymbol= ruleSymbol EOF )
-            // InternalRinform.g:719:2: iv_ruleSymbol= ruleSymbol EOF
-            {
-             newCompositeNode(grammarAccess.getSymbolRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleSymbol=ruleSymbol();
-
-            state._fsp--;
-
-             current =iv_ruleSymbol; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleSymbol"
-
-
-    // $ANTLR start "ruleSymbol"
-    // InternalRinform.g:725:1: ruleSymbol returns [EObject current=null] : ( ( (lv_symbol_0_1= '.' | lv_symbol_0_2= ',' | lv_symbol_0_3= ';' | lv_symbol_0_4= ':' | lv_symbol_0_5= '-' | lv_symbol_0_6= '!' | lv_symbol_0_7= '?' | lv_symbol_0_8= '\\'' ) ) ) ;
-    public final EObject ruleSymbol() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_symbol_0_1=null;
-        Token lv_symbol_0_2=null;
-        Token lv_symbol_0_3=null;
-        Token lv_symbol_0_4=null;
-        Token lv_symbol_0_5=null;
-        Token lv_symbol_0_6=null;
-        Token lv_symbol_0_7=null;
-        Token lv_symbol_0_8=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalRinform.g:731:2: ( ( ( (lv_symbol_0_1= '.' | lv_symbol_0_2= ',' | lv_symbol_0_3= ';' | lv_symbol_0_4= ':' | lv_symbol_0_5= '-' | lv_symbol_0_6= '!' | lv_symbol_0_7= '?' | lv_symbol_0_8= '\\'' ) ) ) )
-            // InternalRinform.g:732:2: ( ( (lv_symbol_0_1= '.' | lv_symbol_0_2= ',' | lv_symbol_0_3= ';' | lv_symbol_0_4= ':' | lv_symbol_0_5= '-' | lv_symbol_0_6= '!' | lv_symbol_0_7= '?' | lv_symbol_0_8= '\\'' ) ) )
-            {
-            // InternalRinform.g:732:2: ( ( (lv_symbol_0_1= '.' | lv_symbol_0_2= ',' | lv_symbol_0_3= ';' | lv_symbol_0_4= ':' | lv_symbol_0_5= '-' | lv_symbol_0_6= '!' | lv_symbol_0_7= '?' | lv_symbol_0_8= '\\'' ) ) )
-            // InternalRinform.g:733:3: ( (lv_symbol_0_1= '.' | lv_symbol_0_2= ',' | lv_symbol_0_3= ';' | lv_symbol_0_4= ':' | lv_symbol_0_5= '-' | lv_symbol_0_6= '!' | lv_symbol_0_7= '?' | lv_symbol_0_8= '\\'' ) )
-            {
-            // InternalRinform.g:733:3: ( (lv_symbol_0_1= '.' | lv_symbol_0_2= ',' | lv_symbol_0_3= ';' | lv_symbol_0_4= ':' | lv_symbol_0_5= '-' | lv_symbol_0_6= '!' | lv_symbol_0_7= '?' | lv_symbol_0_8= '\\'' ) )
-            // InternalRinform.g:734:4: (lv_symbol_0_1= '.' | lv_symbol_0_2= ',' | lv_symbol_0_3= ';' | lv_symbol_0_4= ':' | lv_symbol_0_5= '-' | lv_symbol_0_6= '!' | lv_symbol_0_7= '?' | lv_symbol_0_8= '\\'' )
-            {
-            // InternalRinform.g:734:4: (lv_symbol_0_1= '.' | lv_symbol_0_2= ',' | lv_symbol_0_3= ';' | lv_symbol_0_4= ':' | lv_symbol_0_5= '-' | lv_symbol_0_6= '!' | lv_symbol_0_7= '?' | lv_symbol_0_8= '\\'' )
-            int alt8=8;
-            switch ( input.LA(1) ) {
-            case 18:
-                {
-                alt8=1;
-                }
-                break;
-            case 19:
-                {
-                alt8=2;
-                }
-                break;
-            case 20:
-                {
-                alt8=3;
-                }
-                break;
-            case 21:
-                {
-                alt8=4;
-                }
-                break;
-            case 22:
-                {
-                alt8=5;
-                }
-                break;
-            case 23:
-                {
-                alt8=6;
-                }
-                break;
-            case 24:
-                {
-                alt8=7;
-                }
-                break;
-            case 25:
-                {
-                alt8=8;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt8) {
-                case 1 :
-                    // InternalRinform.g:735:5: lv_symbol_0_1= '.'
-                    {
-                    lv_symbol_0_1=(Token)match(input,18,FOLLOW_2); 
-
-                    					newLeafNode(lv_symbol_0_1, grammarAccess.getSymbolAccess().getSymbolFullStopKeyword_0_0());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSymbolRule());
-                    					}
-                    					setWithLastConsumed(current, "symbol", lv_symbol_0_1, null);
-                    				
-
-                    }
-                    break;
-                case 2 :
-                    // InternalRinform.g:746:5: lv_symbol_0_2= ','
-                    {
-                    lv_symbol_0_2=(Token)match(input,19,FOLLOW_2); 
-
-                    					newLeafNode(lv_symbol_0_2, grammarAccess.getSymbolAccess().getSymbolCommaKeyword_0_1());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSymbolRule());
-                    					}
-                    					setWithLastConsumed(current, "symbol", lv_symbol_0_2, null);
-                    				
-
-                    }
-                    break;
-                case 3 :
-                    // InternalRinform.g:757:5: lv_symbol_0_3= ';'
-                    {
-                    lv_symbol_0_3=(Token)match(input,20,FOLLOW_2); 
-
-                    					newLeafNode(lv_symbol_0_3, grammarAccess.getSymbolAccess().getSymbolSemicolonKeyword_0_2());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSymbolRule());
-                    					}
-                    					setWithLastConsumed(current, "symbol", lv_symbol_0_3, null);
-                    				
-
-                    }
-                    break;
-                case 4 :
-                    // InternalRinform.g:768:5: lv_symbol_0_4= ':'
-                    {
-                    lv_symbol_0_4=(Token)match(input,21,FOLLOW_2); 
-
-                    					newLeafNode(lv_symbol_0_4, grammarAccess.getSymbolAccess().getSymbolColonKeyword_0_3());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSymbolRule());
-                    					}
-                    					setWithLastConsumed(current, "symbol", lv_symbol_0_4, null);
-                    				
-
-                    }
-                    break;
-                case 5 :
-                    // InternalRinform.g:779:5: lv_symbol_0_5= '-'
-                    {
-                    lv_symbol_0_5=(Token)match(input,22,FOLLOW_2); 
-
-                    					newLeafNode(lv_symbol_0_5, grammarAccess.getSymbolAccess().getSymbolHyphenMinusKeyword_0_4());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSymbolRule());
-                    					}
-                    					setWithLastConsumed(current, "symbol", lv_symbol_0_5, null);
-                    				
-
-                    }
-                    break;
-                case 6 :
-                    // InternalRinform.g:790:5: lv_symbol_0_6= '!'
-                    {
-                    lv_symbol_0_6=(Token)match(input,23,FOLLOW_2); 
-
-                    					newLeafNode(lv_symbol_0_6, grammarAccess.getSymbolAccess().getSymbolExclamationMarkKeyword_0_5());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSymbolRule());
-                    					}
-                    					setWithLastConsumed(current, "symbol", lv_symbol_0_6, null);
-                    				
-
-                    }
-                    break;
-                case 7 :
-                    // InternalRinform.g:801:5: lv_symbol_0_7= '?'
-                    {
-                    lv_symbol_0_7=(Token)match(input,24,FOLLOW_2); 
-
-                    					newLeafNode(lv_symbol_0_7, grammarAccess.getSymbolAccess().getSymbolQuestionMarkKeyword_0_6());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSymbolRule());
-                    					}
-                    					setWithLastConsumed(current, "symbol", lv_symbol_0_7, null);
-                    				
-
-                    }
-                    break;
-                case 8 :
-                    // InternalRinform.g:812:5: lv_symbol_0_8= '\\''
-                    {
-                    lv_symbol_0_8=(Token)match(input,25,FOLLOW_2); 
-
-                    					newLeafNode(lv_symbol_0_8, grammarAccess.getSymbolAccess().getSymbolApostropheKeyword_0_7());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSymbolRule());
-                    					}
-                    					setWithLastConsumed(current, "symbol", lv_symbol_0_8, null);
-                    				
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleSymbol"
-
-
     // $ANTLR start "ruleDirection"
-    // InternalRinform.g:828:1: ruleDirection returns [Enumerator current=null] : ( (enumLiteral_0= 'South' ) | (enumLiteral_1= 'North' ) | (enumLiteral_2= 'East' ) | (enumLiteral_3= 'West' ) | (enumLiteral_4= 'Below' ) | (enumLiteral_5= 'Above' ) ) ;
+    // InternalRinform.g:880:1: ruleDirection returns [Enumerator current=null] : ( (enumLiteral_0= 'South' ) | (enumLiteral_1= 'North' ) | (enumLiteral_2= 'East' ) | (enumLiteral_3= 'West' ) | (enumLiteral_4= 'Below' ) | (enumLiteral_5= 'Above' ) ) ;
     public final Enumerator ruleDirection() throws RecognitionException {
         Enumerator current = null;
 
@@ -2078,38 +2221,38 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalRinform.g:834:2: ( ( (enumLiteral_0= 'South' ) | (enumLiteral_1= 'North' ) | (enumLiteral_2= 'East' ) | (enumLiteral_3= 'West' ) | (enumLiteral_4= 'Below' ) | (enumLiteral_5= 'Above' ) ) )
-            // InternalRinform.g:835:2: ( (enumLiteral_0= 'South' ) | (enumLiteral_1= 'North' ) | (enumLiteral_2= 'East' ) | (enumLiteral_3= 'West' ) | (enumLiteral_4= 'Below' ) | (enumLiteral_5= 'Above' ) )
+            // InternalRinform.g:886:2: ( ( (enumLiteral_0= 'South' ) | (enumLiteral_1= 'North' ) | (enumLiteral_2= 'East' ) | (enumLiteral_3= 'West' ) | (enumLiteral_4= 'Below' ) | (enumLiteral_5= 'Above' ) ) )
+            // InternalRinform.g:887:2: ( (enumLiteral_0= 'South' ) | (enumLiteral_1= 'North' ) | (enumLiteral_2= 'East' ) | (enumLiteral_3= 'West' ) | (enumLiteral_4= 'Below' ) | (enumLiteral_5= 'Above' ) )
             {
-            // InternalRinform.g:835:2: ( (enumLiteral_0= 'South' ) | (enumLiteral_1= 'North' ) | (enumLiteral_2= 'East' ) | (enumLiteral_3= 'West' ) | (enumLiteral_4= 'Below' ) | (enumLiteral_5= 'Above' ) )
+            // InternalRinform.g:887:2: ( (enumLiteral_0= 'South' ) | (enumLiteral_1= 'North' ) | (enumLiteral_2= 'East' ) | (enumLiteral_3= 'West' ) | (enumLiteral_4= 'Below' ) | (enumLiteral_5= 'Above' ) )
             int alt9=6;
             switch ( input.LA(1) ) {
-            case 26:
+            case 19:
                 {
                 alt9=1;
                 }
                 break;
-            case 27:
+            case 20:
                 {
                 alt9=2;
                 }
                 break;
-            case 28:
+            case 21:
                 {
                 alt9=3;
                 }
                 break;
-            case 29:
+            case 22:
                 {
                 alt9=4;
                 }
                 break;
-            case 30:
+            case 23:
                 {
                 alt9=5;
                 }
                 break;
-            case 31:
+            case 24:
                 {
                 alt9=6;
                 }
@@ -2123,12 +2266,12 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
             switch (alt9) {
                 case 1 :
-                    // InternalRinform.g:836:3: (enumLiteral_0= 'South' )
+                    // InternalRinform.g:888:3: (enumLiteral_0= 'South' )
                     {
-                    // InternalRinform.g:836:3: (enumLiteral_0= 'South' )
-                    // InternalRinform.g:837:4: enumLiteral_0= 'South'
+                    // InternalRinform.g:888:3: (enumLiteral_0= 'South' )
+                    // InternalRinform.g:889:4: enumLiteral_0= 'South'
                     {
-                    enumLiteral_0=(Token)match(input,26,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,19,FOLLOW_2); 
 
                     				current = grammarAccess.getDirectionAccess().getSouthEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getDirectionAccess().getSouthEnumLiteralDeclaration_0());
@@ -2140,12 +2283,12 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalRinform.g:844:3: (enumLiteral_1= 'North' )
+                    // InternalRinform.g:896:3: (enumLiteral_1= 'North' )
                     {
-                    // InternalRinform.g:844:3: (enumLiteral_1= 'North' )
-                    // InternalRinform.g:845:4: enumLiteral_1= 'North'
+                    // InternalRinform.g:896:3: (enumLiteral_1= 'North' )
+                    // InternalRinform.g:897:4: enumLiteral_1= 'North'
                     {
-                    enumLiteral_1=(Token)match(input,27,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,20,FOLLOW_2); 
 
                     				current = grammarAccess.getDirectionAccess().getNorthEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getDirectionAccess().getNorthEnumLiteralDeclaration_1());
@@ -2157,12 +2300,12 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalRinform.g:852:3: (enumLiteral_2= 'East' )
+                    // InternalRinform.g:904:3: (enumLiteral_2= 'East' )
                     {
-                    // InternalRinform.g:852:3: (enumLiteral_2= 'East' )
-                    // InternalRinform.g:853:4: enumLiteral_2= 'East'
+                    // InternalRinform.g:904:3: (enumLiteral_2= 'East' )
+                    // InternalRinform.g:905:4: enumLiteral_2= 'East'
                     {
-                    enumLiteral_2=(Token)match(input,28,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,21,FOLLOW_2); 
 
                     				current = grammarAccess.getDirectionAccess().getEastEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getDirectionAccess().getEastEnumLiteralDeclaration_2());
@@ -2174,12 +2317,12 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalRinform.g:860:3: (enumLiteral_3= 'West' )
+                    // InternalRinform.g:912:3: (enumLiteral_3= 'West' )
                     {
-                    // InternalRinform.g:860:3: (enumLiteral_3= 'West' )
-                    // InternalRinform.g:861:4: enumLiteral_3= 'West'
+                    // InternalRinform.g:912:3: (enumLiteral_3= 'West' )
+                    // InternalRinform.g:913:4: enumLiteral_3= 'West'
                     {
-                    enumLiteral_3=(Token)match(input,29,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,22,FOLLOW_2); 
 
                     				current = grammarAccess.getDirectionAccess().getWestEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getDirectionAccess().getWestEnumLiteralDeclaration_3());
@@ -2191,12 +2334,12 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalRinform.g:868:3: (enumLiteral_4= 'Below' )
+                    // InternalRinform.g:920:3: (enumLiteral_4= 'Below' )
                     {
-                    // InternalRinform.g:868:3: (enumLiteral_4= 'Below' )
-                    // InternalRinform.g:869:4: enumLiteral_4= 'Below'
+                    // InternalRinform.g:920:3: (enumLiteral_4= 'Below' )
+                    // InternalRinform.g:921:4: enumLiteral_4= 'Below'
                     {
-                    enumLiteral_4=(Token)match(input,30,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,23,FOLLOW_2); 
 
                     				current = grammarAccess.getDirectionAccess().getBelowEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getDirectionAccess().getBelowEnumLiteralDeclaration_4());
@@ -2208,12 +2351,12 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalRinform.g:876:3: (enumLiteral_5= 'Above' )
+                    // InternalRinform.g:928:3: (enumLiteral_5= 'Above' )
                     {
-                    // InternalRinform.g:876:3: (enumLiteral_5= 'Above' )
-                    // InternalRinform.g:877:4: enumLiteral_5= 'Above'
+                    // InternalRinform.g:928:3: (enumLiteral_5= 'Above' )
+                    // InternalRinform.g:929:4: enumLiteral_5= 'Above'
                     {
-                    enumLiteral_5=(Token)match(input,31,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,24,FOLLOW_2); 
 
                     				current = grammarAccess.getDirectionAccess().getAboveEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getDirectionAccess().getAboveEnumLiteralDeclaration_5());
@@ -2250,24 +2393,25 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
 
     protected DFA2 dfa2 = new DFA2(this);
     protected DFA4 dfa4 = new DFA4(this);
-    static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\4\1\uffff\1\4\4\uffff\2\4\2\uffff\1\4";
-    static final String dfa_3s = "\1\31\1\uffff\1\4\4\uffff\1\17\1\4\2\uffff\1\17";
-    static final String dfa_4s = "\1\uffff\1\1\1\uffff\1\3\1\5\1\6\1\7\2\uffff\1\2\1\4\1\uffff";
-    static final String dfa_5s = "\14\uffff}>";
+    static final String dfa_1s = "\15\uffff";
+    static final String dfa_2s = "\1\4\1\uffff\1\4\4\uffff\2\4\3\uffff\1\4";
+    static final String dfa_3s = "\1\21\1\uffff\1\4\4\uffff\1\20\1\4\3\uffff\1\20";
+    static final String dfa_4s = "\1\uffff\1\1\1\uffff\1\3\1\5\1\7\1\10\2\uffff\1\4\1\6\1\2\1\uffff";
+    static final String dfa_5s = "\15\uffff}>";
     static final String[] dfa_6s = {
-            "\1\4\6\uffff\1\1\1\2\1\uffff\2\3\1\6\1\uffff\10\5",
+            "\1\5\6\uffff\1\1\1\2\1\uffff\2\3\1\4\1\6",
             "",
             "\1\7",
             "",
             "",
             "",
             "",
-            "\1\7\1\10\5\uffff\1\11\3\uffff\1\12",
-            "\1\13",
+            "\1\7\1\10\5\uffff\1\13\3\uffff\1\11\1\12",
+            "\1\14",
             "",
             "",
-            "\1\7\1\10\5\uffff\1\11\3\uffff\1\12"
+            "",
+            "\1\7\1\10\5\uffff\1\13\3\uffff\1\11\1\12"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -2291,23 +2435,23 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "115:2: (this_RoomDeclaration_0= ruleRoomDeclaration | this_RoomDescription_1= ruleRoomDescription | this_ItemDeclaration_2= ruleItemDeclaration | this_ItemDescription_3= ruleItemDescription | this_Words_4= ruleWords | this_Symbol_5= ruleSymbol | this_DirectionStatement_6= ruleDirectionStatement )";
+            return "115:2: (this_RoomDeclaration_0= ruleRoomDeclaration | this_RoomDescription_1= ruleRoomDescription | this_ItemDeclaration_2= ruleItemDeclaration | this_ItemDescription_3= ruleItemDescription | this_PersonDeclaration_4= rulePersonDeclaration | this_PersonDescription_5= rulePersonDescription | this_Words_6= ruleWords | this_DirectionStatement_7= ruleDirectionStatement )";
         }
     }
     static final String dfa_7s = "\10\uffff";
     static final String dfa_8s = "\1\16\1\4\1\uffff\1\5\1\4\2\uffff\1\5";
     static final String dfa_9s = "\1\17\1\4\1\uffff\1\16\1\4\2\uffff\1\16";
-    static final String dfa_10s = "\2\uffff\1\3\2\uffff\1\1\1\2\1\uffff";
+    static final String dfa_10s = "\2\uffff\1\2\2\uffff\1\3\1\1\1\uffff";
     static final String dfa_11s = "\10\uffff}>";
     static final String[] dfa_12s = {
             "\1\2\1\1",
             "\1\3",
             "",
-            "\1\4\5\uffff\1\5\2\uffff\1\6",
+            "\1\4\5\uffff\1\6\2\uffff\1\5",
             "\1\7",
             "",
             "",
-            "\1\4\5\uffff\1\5\2\uffff\1\6"
+            "\1\4\5\uffff\1\6\2\uffff\1\5"
     };
 
     static final short[] dfa_7 = DFA.unpackEncodedString(dfa_7s);
@@ -2331,23 +2475,24 @@ public class InternalRinformParser extends AbstractInternalAntlrParser {
             this.transition = dfa_12;
         }
         public String getDescription() {
-            return "428:2: ( (otherlv_0= '-i' ( (lv_name_1_0= ruleText ) ) otherlv_2= '-r' ( ( ruleText ) ) ) | this_ItemInContainerDeclaration_4= ruleItemInContainerDeclaration | this_ContainerDeclaration_5= ruleContainerDeclaration )";
+            return "499:2: (this_ItemInRoomDeclaration_0= ruleItemInRoomDeclaration | this_ContainerDeclaration_1= ruleContainerDeclaration | this_ItemInContainerDeclaration_2= ruleItemInContainerDeclaration )";
         }
     }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000003FDD812L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000000003D812L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000810L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008010L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000FC000000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010010L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000001F80000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000012L});
 
 }
