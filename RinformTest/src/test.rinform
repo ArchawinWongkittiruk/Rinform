@@ -5,4 +5,4 @@ Upstairs there is a small -r attic.
 -c Cupboard -r LivingRoom
 -i bread -c Cupboard
 <attic Below kitchen>
-<LivingRoom East kitchen> 
+<LivingRoom East kitchen>
