@@ -32,16 +32,20 @@ RoomDescription:
 	 "("roomDescription += (Text)+ "-r" room = [RoomDeclaration|Text] ")"
 ;
 
+ContainerDeclaration:
+	"-c" name = Text "-r" room = [RoomDeclaration|Text]
+;
+
 ItemInRoomDeclaration:
 	"-i" name = Text "-r" room = [RoomDeclaration|Text]
 ;
 
 ItemInContainerDeclaration:
-	"-i" name = Text "-c" container = [ItemInRoomDeclaration|Text]
+	"-i" name = Text "-c" container = [ContainerDeclaration|Text]
 ;
 
 ItemDeclaration:
-	ItemInRoomDeclaration | ItemInContainerDeclaration
+	ItemInRoomDeclaration | ContainerDeclaration | ItemInContainerDeclaration
 ;
 
 ItemDescription:

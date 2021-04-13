@@ -21,6 +21,7 @@ import uk.ac.kcl.mde.rinform.PersonDescription
 import uk.ac.kcl.mde.rinform.DirectionStatement
 import uk.ac.kcl.mde.rinform.SentencePart
 import uk.ac.kcl.mde.rinform.Direction
+import uk.ac.kcl.mde.rinform.ContainerDeclaration
 import uk.ac.kcl.mde.rinform.ItemInRoomDeclaration
 import uk.ac.kcl.mde.rinform.ItemInContainerDeclaration
 import java.util.Map
@@ -85,7 +86,10 @@ class RinformGenerator extends AbstractGenerator {
 		if(!declaredItems.contains(stmt.item)) {
 			declaredItems.add(stmt.item)
 		
-			if (stmt.item instanceof ItemInRoomDeclaration) {
+			if (stmt.item instanceof ContainerDeclaration) {
+				var item = stmt.item as ContainerDeclaration
+				'''«item.name.toFirstUpper» is in «item.room.name.toFirstUpper». "«stmt.itemDescription.getString.toFirstUpper»"'''
+			} else if (stmt.item instanceof ItemInRoomDeclaration) {
 				var item = stmt.item as ItemInRoomDeclaration
 				'''«item.name.toFirstUpper» is in «item.room.name.toFirstUpper». "«stmt.itemDescription.getString.toFirstUpper»"'''
 			} else {
@@ -99,7 +103,10 @@ class RinformGenerator extends AbstractGenerator {
 		if (!declaredItems.contains(stmt)) {
 			declaredItems.add(stmt)
 			
-			if (stmt instanceof ItemInRoomDeclaration) {
+			if (stmt instanceof ContainerDeclaration) {
+				var item = stmt as ContainerDeclaration
+				'''«item.name.toFirstUpper» is in «item.room.name.toFirstUpper».'''
+			} else if (stmt instanceof ItemInRoomDeclaration) {
 				var item = stmt as ItemInRoomDeclaration
 				'''«item.name.toFirstUpper» is in «item.room.name.toFirstUpper».'''
 			} else {

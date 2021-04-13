@@ -1,9 +1,0 @@
-Kitchen is a Room. "The ceiling is only about a foot above Frodo"
-
-Corridor is a Room. 
-Ring is in Cupboard. "The ring is shiny and has some strange writing on it"
-Cupboard is in Kitchen.
-
-Gandalf is in Corridor. "Gandalf wears grey robes and a long beard"
-
-East of Corridor is Kitchen

@@ -29,6 +29,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//RoomDescription/roomDescription"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//RoomDescription/room"/>
     </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//ContainerDeclaration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//ContainerDeclaration/room"/>
+    </genClasses>
     <genClasses ecoreClass="Rinform.ecore#//ItemInRoomDeclaration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//ItemInRoomDeclaration/room"/>
     </genClasses>

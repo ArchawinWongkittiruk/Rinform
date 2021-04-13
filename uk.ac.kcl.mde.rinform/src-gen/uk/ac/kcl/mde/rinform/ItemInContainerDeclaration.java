@@ -27,12 +27,12 @@ public interface ItemInContainerDeclaration extends ItemDeclaration
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Container</em>' reference.
-   * @see #setContainer(ItemInRoomDeclaration)
+   * @see #setContainer(ContainerDeclaration)
    * @see uk.ac.kcl.mde.rinform.RinformPackage#getItemInContainerDeclaration_Container()
    * @model
    * @generated
    */
-  ItemInRoomDeclaration getContainer();
+  ContainerDeclaration getContainer();
 
   /**
    * Sets the value of the '{@link uk.ac.kcl.mde.rinform.ItemInContainerDeclaration#getContainer <em>Container</em>}' reference.
@@ -42,6 +42,6 @@ public interface ItemInContainerDeclaration extends ItemDeclaration
    * @see #getContainer()
    * @generated
    */
-  void setContainer(ItemInRoomDeclaration value);
+  void setContainer(ContainerDeclaration value);
 
 } // ItemInContainerDeclaration
