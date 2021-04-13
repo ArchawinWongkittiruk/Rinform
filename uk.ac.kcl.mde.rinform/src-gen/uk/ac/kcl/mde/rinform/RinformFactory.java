@@ -69,15 +69,6 @@ public interface RinformFactory extends EFactory
   RoomDescription createRoomDescription();
 
   /**
-   * Returns a new object of class '<em>Container Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Container Declaration</em>'.
-   * @generated
-   */
-  ContainerDeclaration createContainerDeclaration();
-
-  /**
    * Returns a new object of class '<em>Item In Room Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -1,10 +1,10 @@
 I walked into the -r Kitchen. It was (a dimly lit room with a low ceiling -r Kitchen). 
 A massive -i knife -r Kitchen is (lying on the table -i knife), in my head I wonder what it is used for. 
-Upstairs there is a small -r Attic.
+Upstairs there is a small -r Attic. 
 -r Bedroom
 -r Bedroom -a sleeproom bunkroom  
 -r LivingRoom 
--c Cupboard -r LivingRoom (big -i Cupboard) 
+-i Cupboard -r LivingRoom (big -i Cupboard) 
 -i bread -c Cupboard (crunchy -i bread)
 -i toast -c Cupboard 
 -i chair -r Kitchen (has four legs -i chair)

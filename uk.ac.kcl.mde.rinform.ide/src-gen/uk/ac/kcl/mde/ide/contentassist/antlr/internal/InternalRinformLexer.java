@@ -430,10 +430,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:29:7: ( '-c' )
-            // InternalRinform.g:29:9: '-c'
+            // InternalRinform.g:29:7: ( '-i' )
+            // InternalRinform.g:29:9: '-i'
             {
-            match("-c"); 
+            match("-i"); 
 
 
             }
@@ -451,10 +451,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:30:7: ( '-i' )
-            // InternalRinform.g:30:9: '-i'
+            // InternalRinform.g:30:7: ( '-c' )
+            // InternalRinform.g:30:9: '-c'
             {
-            match("-i"); 
+            match("-c"); 
 
 
             }
@@ -533,10 +533,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:2328:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalRinform.g:2328:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalRinform.g:2155:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalRinform.g:2155:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalRinform.g:2328:11: ( '^' )?
+            // InternalRinform.g:2155:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -545,7 +545,7 @@ public class InternalRinformLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalRinform.g:2328:11: '^'
+                    // InternalRinform.g:2155:11: '^'
                     {
                     match('^'); 
 
@@ -563,7 +563,7 @@ public class InternalRinformLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalRinform.g:2328:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalRinform.g:2155:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -612,10 +612,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:2330:10: ( ( '0' .. '9' )+ )
-            // InternalRinform.g:2330:12: ( '0' .. '9' )+
+            // InternalRinform.g:2157:10: ( ( '0' .. '9' )+ )
+            // InternalRinform.g:2157:12: ( '0' .. '9' )+
             {
-            // InternalRinform.g:2330:12: ( '0' .. '9' )+
+            // InternalRinform.g:2157:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -629,7 +629,7 @@ public class InternalRinformLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalRinform.g:2330:13: '0' .. '9'
+            	    // InternalRinform.g:2157:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -661,10 +661,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:2332:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalRinform.g:2332:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalRinform.g:2159:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalRinform.g:2159:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalRinform.g:2332:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalRinform.g:2159:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -682,10 +682,10 @@ public class InternalRinformLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalRinform.g:2332:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalRinform.g:2159:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalRinform.g:2332:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalRinform.g:2159:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -701,7 +701,7 @@ public class InternalRinformLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalRinform.g:2332:21: '\\\\' .
+                    	    // InternalRinform.g:2159:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -709,7 +709,7 @@ public class InternalRinformLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRinform.g:2332:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalRinform.g:2159:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -734,10 +734,10 @@ public class InternalRinformLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRinform.g:2332:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalRinform.g:2159:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalRinform.g:2332:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalRinform.g:2159:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -753,7 +753,7 @@ public class InternalRinformLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalRinform.g:2332:54: '\\\\' .
+                    	    // InternalRinform.g:2159:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -761,7 +761,7 @@ public class InternalRinformLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRinform.g:2332:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalRinform.g:2159:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -804,12 +804,12 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:2334:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalRinform.g:2334:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalRinform.g:2161:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalRinform.g:2161:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalRinform.g:2334:24: ( options {greedy=false; } : . )*
+            // InternalRinform.g:2161:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -834,7 +834,7 @@ public class InternalRinformLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalRinform.g:2334:52: .
+            	    // InternalRinform.g:2161:52: .
             	    {
             	    matchAny(); 
 
@@ -864,12 +864,12 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:2336:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalRinform.g:2336:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalRinform.g:2163:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalRinform.g:2163:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalRinform.g:2336:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalRinform.g:2163:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -882,7 +882,7 @@ public class InternalRinformLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalRinform.g:2336:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalRinform.g:2163:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -902,7 +902,7 @@ public class InternalRinformLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalRinform.g:2336:40: ( ( '\\r' )? '\\n' )?
+            // InternalRinform.g:2163:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -911,9 +911,9 @@ public class InternalRinformLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalRinform.g:2336:41: ( '\\r' )? '\\n'
+                    // InternalRinform.g:2163:41: ( '\\r' )? '\\n'
                     {
-                    // InternalRinform.g:2336:41: ( '\\r' )?
+                    // InternalRinform.g:2163:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -922,7 +922,7 @@ public class InternalRinformLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalRinform.g:2336:41: '\\r'
+                            // InternalRinform.g:2163:41: '\\r'
                             {
                             match('\r'); 
 
@@ -954,10 +954,10 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:2338:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalRinform.g:2338:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRinform.g:2165:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalRinform.g:2165:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalRinform.g:2338:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRinform.g:2165:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1011,8 +1011,8 @@ public class InternalRinformLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRinform.g:2340:16: ( . )
-            // InternalRinform.g:2340:18: .
+            // InternalRinform.g:2167:16: ( . )
+            // InternalRinform.g:2167:18: .
             {
             matchAny(); 
 
@@ -1266,7 +1266,7 @@ public class InternalRinformLexer extends Lexer {
             "",
             "",
             "",
-            "\1\37\1\uffff\1\40\5\uffff\1\41\6\uffff\1\42\1\uffff\1\36",
+            "\1\37\1\uffff\1\41\5\uffff\1\40\6\uffff\1\42\1\uffff\1\36",
             "",
             "",
             "\0\47",

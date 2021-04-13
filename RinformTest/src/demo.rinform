@@ -1,0 +1,18 @@
+-r Kitchen
+
+(The ceiling is only about a foot above Frodo -r Kitchen)
+
+-i Cupboard -r Kitchen 
+
+-i Ring -c Cupboard
+
+(The ring is shiny and has some strange writing on it -i Ring)
+
+-r Corridor
+
+-p Gandalf -r Corridor
+
+(Gandalf wears grey robes and a long beard -p Gandalf)
+
+<Corridor East Kitchen>
+

@@ -215,7 +215,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getItemDeclaration()
    * @generated
    */
-  int ITEM_DECLARATION = 8;
+  int ITEM_DECLARATION = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -236,43 +236,6 @@ public interface RinformPackage extends EPackage
   int ITEM_DECLARATION_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.mde.rinform.impl.ContainerDeclarationImpl <em>Container Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.mde.rinform.impl.ContainerDeclarationImpl
-   * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getContainerDeclaration()
-   * @generated
-   */
-  int CONTAINER_DECLARATION = 5;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTAINER_DECLARATION__NAME = ITEM_DECLARATION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Room</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTAINER_DECLARATION__ROOM = ITEM_DECLARATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Container Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTAINER_DECLARATION_FEATURE_COUNT = ITEM_DECLARATION_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link uk.ac.kcl.mde.rinform.impl.ItemInRoomDeclarationImpl <em>Item In Room Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -280,7 +243,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getItemInRoomDeclaration()
    * @generated
    */
-  int ITEM_IN_ROOM_DECLARATION = 6;
+  int ITEM_IN_ROOM_DECLARATION = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -317,7 +280,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getItemInContainerDeclaration()
    * @generated
    */
-  int ITEM_IN_CONTAINER_DECLARATION = 7;
+  int ITEM_IN_CONTAINER_DECLARATION = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -354,7 +317,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getItemDescription()
    * @generated
    */
-  int ITEM_DESCRIPTION = 9;
+  int ITEM_DESCRIPTION = 8;
 
   /**
    * The feature id for the '<em><b>Item Description</b></em>' attribute list.
@@ -391,7 +354,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getPersonDeclaration()
    * @generated
    */
-  int PERSON_DECLARATION = 10;
+  int PERSON_DECLARATION = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -428,7 +391,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getPersonDescription()
    * @generated
    */
-  int PERSON_DESCRIPTION = 11;
+  int PERSON_DESCRIPTION = 10;
 
   /**
    * The feature id for the '<em><b>Person Description</b></em>' attribute list.
@@ -465,7 +428,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getDirectionStatement()
    * @generated
    */
-  int DIRECTION_STATEMENT = 12;
+  int DIRECTION_STATEMENT = 11;
 
   /**
    * The feature id for the '<em><b>Room1</b></em>' reference.
@@ -511,7 +474,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getWords()
    * @generated
    */
-  int WORDS = 13;
+  int WORDS = 12;
 
   /**
    * The feature id for the '<em><b>Words</b></em>' attribute list.
@@ -539,7 +502,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getSymbol()
    * @generated
    */
-  int SYMBOL = 14;
+  int SYMBOL = 13;
 
   /**
    * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -567,7 +530,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getDirection()
    * @generated
    */
-  int DIRECTION = 15;
+  int DIRECTION = 14;
 
 
   /**
@@ -685,27 +648,6 @@ public interface RinformPackage extends EPackage
    * @generated
    */
   EReference getRoomDescription_Room();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.ContainerDeclaration <em>Container Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Container Declaration</em>'.
-   * @see uk.ac.kcl.mde.rinform.ContainerDeclaration
-   * @generated
-   */
-  EClass getContainerDeclaration();
-
-  /**
-   * Returns the meta object for the reference '{@link uk.ac.kcl.mde.rinform.ContainerDeclaration#getRoom <em>Room</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Room</em>'.
-   * @see uk.ac.kcl.mde.rinform.ContainerDeclaration#getRoom()
-   * @see #getContainerDeclaration()
-   * @generated
-   */
-  EReference getContainerDeclaration_Room();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.ItemInRoomDeclaration <em>Item In Room Declaration</em>}'.
@@ -1081,24 +1023,6 @@ public interface RinformPackage extends EPackage
      * @generated
      */
     EReference ROOM_DESCRIPTION__ROOM = eINSTANCE.getRoomDescription_Room();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.ContainerDeclarationImpl <em>Container Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.mde.rinform.impl.ContainerDeclarationImpl
-     * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getContainerDeclaration()
-     * @generated
-     */
-    EClass CONTAINER_DECLARATION = eINSTANCE.getContainerDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Room</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONTAINER_DECLARATION__ROOM = eINSTANCE.getContainerDeclaration_Room();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.ItemInRoomDeclarationImpl <em>Item In Room Declaration</em>}' class.

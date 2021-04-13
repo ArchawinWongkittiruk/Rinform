@@ -372,68 +372,6 @@ ruleRoomDescription returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleContainerDeclaration
-entryRuleContainerDeclaration returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getContainerDeclarationRule()); }
-	iv_ruleContainerDeclaration=ruleContainerDeclaration
-	{ $current=$iv_ruleContainerDeclaration.current; }
-	EOF;
-
-// Rule ContainerDeclaration
-ruleContainerDeclaration returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='-c'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getContainerDeclarationAccess().getCKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getContainerDeclarationAccess().getNameTextParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleText
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getContainerDeclarationRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"uk.ac.kcl.mde.Rinform.Text");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='-r'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getContainerDeclarationAccess().getRKeyword_2());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getContainerDeclarationRule());
-					}
-				}
-				{
-					newCompositeNode(grammarAccess.getContainerDeclarationAccess().getRoomRoomDeclarationCrossReference_3_0());
-				}
-				ruleText
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
 // Entry rule entryRuleItemInRoomDeclaration
 entryRuleItemInRoomDeclaration returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getItemInRoomDeclarationRule()); }
@@ -547,7 +485,7 @@ ruleItemInContainerDeclaration returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getItemInContainerDeclarationAccess().getContainerContainerDeclarationCrossReference_3_0());
+					newCompositeNode(grammarAccess.getItemInContainerDeclarationAccess().getContainerItemInRoomDeclarationCrossReference_3_0());
 				}
 				ruleText
 				{
@@ -584,20 +522,11 @@ ruleItemDeclaration returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getItemDeclarationAccess().getContainerDeclarationParserRuleCall_1());
+			newCompositeNode(grammarAccess.getItemDeclarationAccess().getItemInContainerDeclarationParserRuleCall_1());
 		}
-		this_ContainerDeclaration_1=ruleContainerDeclaration
+		this_ItemInContainerDeclaration_1=ruleItemInContainerDeclaration
 		{
-			$current = $this_ContainerDeclaration_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getItemDeclarationAccess().getItemInContainerDeclarationParserRuleCall_2());
-		}
-		this_ItemInContainerDeclaration_2=ruleItemInContainerDeclaration
-		{
-			$current = $this_ItemInContainerDeclaration_2.current;
+			$current = $this_ItemInContainerDeclaration_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)

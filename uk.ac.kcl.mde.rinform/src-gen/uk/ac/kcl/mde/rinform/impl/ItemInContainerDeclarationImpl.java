@@ -10,8 +10,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.kcl.mde.rinform.ContainerDeclaration;
 import uk.ac.kcl.mde.rinform.ItemInContainerDeclaration;
+import uk.ac.kcl.mde.rinform.ItemInRoomDeclaration;
 import uk.ac.kcl.mde.rinform.RinformPackage;
 
 /**
@@ -37,7 +37,7 @@ public class ItemInContainerDeclarationImpl extends ItemDeclarationImpl implemen
    * @generated
    * @ordered
    */
-  protected ContainerDeclaration container;
+  protected ItemInRoomDeclaration container;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,12 +66,12 @@ public class ItemInContainerDeclarationImpl extends ItemDeclarationImpl implemen
    * @generated
    */
   @Override
-  public ContainerDeclaration getContainer()
+  public ItemInRoomDeclaration getContainer()
   {
     if (container != null && container.eIsProxy())
     {
       InternalEObject oldContainer = (InternalEObject)container;
-      container = (ContainerDeclaration)eResolveProxy(oldContainer);
+      container = (ItemInRoomDeclaration)eResolveProxy(oldContainer);
       if (container != oldContainer)
       {
         if (eNotificationRequired())
@@ -86,7 +86,7 @@ public class ItemInContainerDeclarationImpl extends ItemDeclarationImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public ContainerDeclaration basicGetContainer()
+  public ItemInRoomDeclaration basicGetContainer()
   {
     return container;
   }
@@ -97,9 +97,9 @@ public class ItemInContainerDeclarationImpl extends ItemDeclarationImpl implemen
    * @generated
    */
   @Override
-  public void setContainer(ContainerDeclaration newContainer)
+  public void setContainer(ItemInRoomDeclaration newContainer)
   {
-    ContainerDeclaration oldContainer = container;
+    ItemInRoomDeclaration oldContainer = container;
     container = newContainer;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.ITEM_IN_CONTAINER_DECLARATION__CONTAINER, oldContainer, container));
@@ -133,7 +133,7 @@ public class ItemInContainerDeclarationImpl extends ItemDeclarationImpl implemen
     switch (featureID)
     {
       case RinformPackage.ITEM_IN_CONTAINER_DECLARATION__CONTAINER:
-        setContainer((ContainerDeclaration)newValue);
+        setContainer((ItemInRoomDeclaration)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -150,7 +150,7 @@ public class ItemInContainerDeclarationImpl extends ItemDeclarationImpl implemen
     switch (featureID)
     {
       case RinformPackage.ITEM_IN_CONTAINER_DECLARATION__CONTAINER:
-        setContainer((ContainerDeclaration)null);
+        setContainer((ItemInRoomDeclaration)null);
         return;
     }
     super.eUnset(featureID);
