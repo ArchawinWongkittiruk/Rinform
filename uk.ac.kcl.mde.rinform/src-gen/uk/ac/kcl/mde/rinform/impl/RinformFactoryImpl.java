@@ -69,6 +69,7 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
       case RinformPackage.REVERSE_INFORM_PROGRAM: return createReverseInformProgram();
       case RinformPackage.SENTENCE_PART: return createSentencePart();
       case RinformPackage.ROOM_DECLARATION: return createRoomDeclaration();
+      case RinformPackage.ROOM_ALIAS: return createRoomAlias();
       case RinformPackage.ROOM_DESCRIPTION: return createRoomDescription();
       case RinformPackage.CONTAINER_DECLARATION: return createContainerDeclaration();
       case RinformPackage.ITEM_IN_ROOM_DECLARATION: return createItemInRoomDeclaration();
@@ -153,6 +154,18 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
   {
     RoomDeclarationImpl roomDeclaration = new RoomDeclarationImpl();
     return roomDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RoomAlias createRoomAlias()
+  {
+    RoomAliasImpl roomAlias = new RoomAliasImpl();
+    return roomAlias;
   }
 
   /**

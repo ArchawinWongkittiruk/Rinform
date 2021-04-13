@@ -23,6 +23,7 @@ import uk.ac.kcl.mde.rinform.PersonDescription;
 import uk.ac.kcl.mde.rinform.ReverseInformProgram;
 import uk.ac.kcl.mde.rinform.RinformFactory;
 import uk.ac.kcl.mde.rinform.RinformPackage;
+import uk.ac.kcl.mde.rinform.RoomAlias;
 import uk.ac.kcl.mde.rinform.RoomDeclaration;
 import uk.ac.kcl.mde.rinform.RoomDescription;
 import uk.ac.kcl.mde.rinform.SentencePart;
@@ -57,6 +58,13 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   private EClass roomDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass roomAliasEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -258,6 +266,39 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
   public EAttribute getRoomDeclaration_Name()
   {
     return (EAttribute)roomDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRoomAlias()
+  {
+    return roomAliasEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRoomAlias_Room()
+  {
+    return (EReference)roomAliasEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRoomAlias_Aliases()
+  {
+    return (EAttribute)roomAliasEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -618,6 +659,10 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
     roomDeclarationEClass = createEClass(ROOM_DECLARATION);
     createEAttribute(roomDeclarationEClass, ROOM_DECLARATION__NAME);
 
+    roomAliasEClass = createEClass(ROOM_ALIAS);
+    createEReference(roomAliasEClass, ROOM_ALIAS__ROOM);
+    createEAttribute(roomAliasEClass, ROOM_ALIAS__ALIASES);
+
     roomDescriptionEClass = createEClass(ROOM_DESCRIPTION);
     createEAttribute(roomDescriptionEClass, ROOM_DESCRIPTION__ROOM_DESCRIPTION);
     createEReference(roomDescriptionEClass, ROOM_DESCRIPTION__ROOM);
@@ -691,6 +736,7 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
 
     // Add supertypes to classes
     roomDeclarationEClass.getESuperTypes().add(this.getSentencePart());
+    roomAliasEClass.getESuperTypes().add(this.getSentencePart());
     roomDescriptionEClass.getESuperTypes().add(this.getSentencePart());
     containerDeclarationEClass.getESuperTypes().add(this.getItemDeclaration());
     itemInRoomDeclarationEClass.getESuperTypes().add(this.getItemDeclaration());
@@ -701,6 +747,7 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
     personDescriptionEClass.getESuperTypes().add(this.getSentencePart());
     directionStatementEClass.getESuperTypes().add(this.getSentencePart());
     wordsEClass.getESuperTypes().add(this.getSentencePart());
+    symbolEClass.getESuperTypes().add(this.getSentencePart());
 
     // Initialize classes and features; add operations and parameters
     initEClass(reverseInformProgramEClass, ReverseInformProgram.class, "ReverseInformProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -710,6 +757,10 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
 
     initEClass(roomDeclarationEClass, RoomDeclaration.class, "RoomDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRoomDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, RoomDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(roomAliasEClass, RoomAlias.class, "RoomAlias", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRoomAlias_Room(), this.getRoomDeclaration(), null, "room", null, 0, 1, RoomAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRoomAlias_Aliases(), ecorePackage.getEString(), "aliases", null, 0, -1, RoomAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(roomDescriptionEClass, RoomDescription.class, "RoomDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRoomDescription_RoomDescription(), ecorePackage.getEString(), "roomDescription", null, 0, -1, RoomDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

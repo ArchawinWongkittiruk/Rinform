@@ -51,6 +51,15 @@ public interface RinformFactory extends EFactory
   RoomDeclaration createRoomDeclaration();
 
   /**
+   * Returns a new object of class '<em>Room Alias</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Room Alias</em>'.
+   * @generated
+   */
+  RoomAlias createRoomAlias();
+
+  /**
    * Returns a new object of class '<em>Room Description</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

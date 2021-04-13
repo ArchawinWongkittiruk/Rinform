@@ -21,6 +21,10 @@
     <genClasses ecoreClass="Rinform.ecore#//RoomDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//RoomDeclaration/name"/>
     </genClasses>
+    <genClasses ecoreClass="Rinform.ecore#//RoomAlias">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//RoomAlias/room"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//RoomAlias/aliases"/>
+    </genClasses>
     <genClasses ecoreClass="Rinform.ecore#//RoomDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//RoomDescription/roomDescription"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//RoomDescription/room"/>

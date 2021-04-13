@@ -23,6 +23,7 @@ import uk.ac.kcl.mde.rinform.PersonDeclaration;
 import uk.ac.kcl.mde.rinform.PersonDescription;
 import uk.ac.kcl.mde.rinform.ReverseInformProgram;
 import uk.ac.kcl.mde.rinform.RinformPackage;
+import uk.ac.kcl.mde.rinform.RoomAlias;
 import uk.ac.kcl.mde.rinform.RoomDeclaration;
 import uk.ac.kcl.mde.rinform.RoomDescription;
 import uk.ac.kcl.mde.rinform.Symbol;
@@ -66,6 +67,9 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case RinformPackage.REVERSE_INFORM_PROGRAM:
 				sequence_ReverseInformProgram(context, (ReverseInformProgram) semanticObject); 
+				return; 
+			case RinformPackage.ROOM_ALIAS:
+				sequence_RoomAlias(context, (RoomAlias) semanticObject); 
 				return; 
 			case RinformPackage.ROOM_DECLARATION:
 				sequence_RoomDeclaration(context, (RoomDeclaration) semanticObject); 
@@ -240,6 +244,19 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     SentencePart returns RoomAlias
+	 *     RoomAlias returns RoomAlias
+	 *
+	 * Constraint:
+	 *     (room=[RoomDeclaration|ID] aliases+=Text+)
+	 */
+	protected void sequence_RoomAlias(ISerializationContext context, RoomAlias semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     SentencePart returns RoomDeclaration
 	 *     RoomDeclaration returns RoomDeclaration
 	 *
@@ -272,6 +289,7 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     SentencePart returns Symbol
 	 *     Symbol returns Symbol
 	 *
 	 * Constraint:

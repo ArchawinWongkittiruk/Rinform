@@ -9,6 +9,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="RoomDeclaration" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoomAlias" eSuperTypes="#//SentencePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//RoomDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aliases" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoomDescription" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomDescription" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -57,7 +62,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="words" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Symbol">
+  <eClassifiers xsi:type="ecore:EClass" name="Symbol" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

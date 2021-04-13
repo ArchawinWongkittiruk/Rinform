@@ -24,6 +24,9 @@ import uk.ac.kcl.mde.rinform.Direction
 import uk.ac.kcl.mde.rinform.ContainerDeclaration
 import uk.ac.kcl.mde.rinform.ItemInRoomDeclaration
 import uk.ac.kcl.mde.rinform.ItemInContainerDeclaration
+import java.util.Map
+import java.util.HashMap
+import uk.ac.kcl.mde.rinform.RoomAlias
 
 /**
  * Generates code from your model files on save.
@@ -35,6 +38,10 @@ class RinformGenerator extends AbstractGenerator {
 	List<RoomDeclaration> declaredRooms = new ArrayList<RoomDeclaration>()
 	List<ItemDeclaration> declaredItems = new ArrayList<ItemDeclaration>()
 	List<PersonDeclaration> declaredPeople = new ArrayList<PersonDeclaration>()
+	
+	def operator_diamond(HashMap<Object, Object> map) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val model = resource.contents.head as ReverseInformProgram
@@ -49,6 +56,7 @@ class RinformGenerator extends AbstractGenerator {
 		'''
 		«m.sentences.filter(RoomDescription).map[generateInformCode].join('\n')»
 		«m.sentences.filter(RoomDeclaration).map[generateInformCode].join('\n')»
+		«m.sentences.filter(RoomAlias).map[generateInformCode].join('\n')»
 		«m.sentences.filter(ItemDescription).map[generateInformCode].join('\n')»
 		«m.sentences.filter(ItemDeclaration).map[generateInformCode].join('\n')»
 		«m.sentences.filter(PersonDescription).map[generateInformCode].join('\n')»
@@ -68,6 +76,10 @@ class RinformGenerator extends AbstractGenerator {
 		if (!declaredRooms.contains(stmt)){
 			stmt.declareRoom
 		} else '''`'''	
+	}
+	
+	dispatch def generateInformCode(RoomAlias stmt) {
+		'''Understand «FOR alias : stmt.aliases SEPARATOR 'and '»"«alias»" «ENDFOR»as «stmt.room.name».'''
 	}
 	
 	dispatch def generateInformCode(ItemDescription stmt){

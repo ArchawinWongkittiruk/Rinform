@@ -134,6 +134,43 @@ public interface RinformPackage extends EPackage
   int ROOM_DECLARATION_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link uk.ac.kcl.mde.rinform.impl.RoomAliasImpl <em>Room Alias</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.mde.rinform.impl.RoomAliasImpl
+   * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getRoomAlias()
+   * @generated
+   */
+  int ROOM_ALIAS = 3;
+
+  /**
+   * The feature id for the '<em><b>Room</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOM_ALIAS__ROOM = SENTENCE_PART_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Aliases</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOM_ALIAS__ALIASES = SENTENCE_PART_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Room Alias</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOM_ALIAS_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link uk.ac.kcl.mde.rinform.impl.RoomDescriptionImpl <em>Room Description</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -141,7 +178,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getRoomDescription()
    * @generated
    */
-  int ROOM_DESCRIPTION = 3;
+  int ROOM_DESCRIPTION = 4;
 
   /**
    * The feature id for the '<em><b>Room Description</b></em>' attribute list.
@@ -178,7 +215,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getItemDeclaration()
    * @generated
    */
-  int ITEM_DECLARATION = 7;
+  int ITEM_DECLARATION = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -206,7 +243,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getContainerDeclaration()
    * @generated
    */
-  int CONTAINER_DECLARATION = 4;
+  int CONTAINER_DECLARATION = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -243,7 +280,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getItemInRoomDeclaration()
    * @generated
    */
-  int ITEM_IN_ROOM_DECLARATION = 5;
+  int ITEM_IN_ROOM_DECLARATION = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -280,7 +317,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getItemInContainerDeclaration()
    * @generated
    */
-  int ITEM_IN_CONTAINER_DECLARATION = 6;
+  int ITEM_IN_CONTAINER_DECLARATION = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -317,7 +354,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getItemDescription()
    * @generated
    */
-  int ITEM_DESCRIPTION = 8;
+  int ITEM_DESCRIPTION = 9;
 
   /**
    * The feature id for the '<em><b>Item Description</b></em>' attribute list.
@@ -354,7 +391,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getPersonDeclaration()
    * @generated
    */
-  int PERSON_DECLARATION = 9;
+  int PERSON_DECLARATION = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -391,7 +428,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getPersonDescription()
    * @generated
    */
-  int PERSON_DESCRIPTION = 10;
+  int PERSON_DESCRIPTION = 11;
 
   /**
    * The feature id for the '<em><b>Person Description</b></em>' attribute list.
@@ -428,7 +465,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getDirectionStatement()
    * @generated
    */
-  int DIRECTION_STATEMENT = 11;
+  int DIRECTION_STATEMENT = 12;
 
   /**
    * The feature id for the '<em><b>Room1</b></em>' reference.
@@ -474,7 +511,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getWords()
    * @generated
    */
-  int WORDS = 12;
+  int WORDS = 13;
 
   /**
    * The feature id for the '<em><b>Words</b></em>' attribute list.
@@ -502,7 +539,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getSymbol()
    * @generated
    */
-  int SYMBOL = 13;
+  int SYMBOL = 14;
 
   /**
    * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -511,7 +548,7 @@ public interface RinformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYMBOL__SYMBOL = 0;
+  int SYMBOL__SYMBOL = SENTENCE_PART_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Symbol</em>' class.
@@ -520,7 +557,7 @@ public interface RinformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYMBOL_FEATURE_COUNT = 1;
+  int SYMBOL_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.mde.rinform.Direction <em>Direction</em>}' enum.
@@ -530,7 +567,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getDirection()
    * @generated
    */
-  int DIRECTION = 14;
+  int DIRECTION = 15;
 
 
   /**
@@ -584,6 +621,38 @@ public interface RinformPackage extends EPackage
    * @generated
    */
   EAttribute getRoomDeclaration_Name();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.RoomAlias <em>Room Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Room Alias</em>'.
+   * @see uk.ac.kcl.mde.rinform.RoomAlias
+   * @generated
+   */
+  EClass getRoomAlias();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.kcl.mde.rinform.RoomAlias#getRoom <em>Room</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Room</em>'.
+   * @see uk.ac.kcl.mde.rinform.RoomAlias#getRoom()
+   * @see #getRoomAlias()
+   * @generated
+   */
+  EReference getRoomAlias_Room();
+
+  /**
+   * Returns the meta object for the attribute list '{@link uk.ac.kcl.mde.rinform.RoomAlias#getAliases <em>Aliases</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Aliases</em>'.
+   * @see uk.ac.kcl.mde.rinform.RoomAlias#getAliases()
+   * @see #getRoomAlias()
+   * @generated
+   */
+  EAttribute getRoomAlias_Aliases();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.RoomDescription <em>Room Description</em>}'.
@@ -960,6 +1029,32 @@ public interface RinformPackage extends EPackage
      * @generated
      */
     EAttribute ROOM_DECLARATION__NAME = eINSTANCE.getRoomDeclaration_Name();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.RoomAliasImpl <em>Room Alias</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.mde.rinform.impl.RoomAliasImpl
+     * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getRoomAlias()
+     * @generated
+     */
+    EClass ROOM_ALIAS = eINSTANCE.getRoomAlias();
+
+    /**
+     * The meta object literal for the '<em><b>Room</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROOM_ALIAS__ROOM = eINSTANCE.getRoomAlias_Room();
+
+    /**
+     * The meta object literal for the '<em><b>Aliases</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ROOM_ALIAS__ALIASES = eINSTANCE.getRoomAlias_Aliases();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.RoomDescriptionImpl <em>Room Description</em>}' class.

@@ -10,17 +10,22 @@ ReverseInformProgram:
 
 SentencePart:
 	RoomDeclaration | 
+	RoomAlias |
 	RoomDescription |
 	ItemDeclaration |
 	ItemDescription |
 	PersonDeclaration |
 	PersonDescription |
-	Words |
+	Words | Symbol |
 	DirectionStatement
 ;
 
 RoomDeclaration:
 	"-r" name = Text 
+;
+
+RoomAlias:
+	"-r" room = [RoomDeclaration] "-a" aliases += Text+
 ;
 
 RoomDescription:

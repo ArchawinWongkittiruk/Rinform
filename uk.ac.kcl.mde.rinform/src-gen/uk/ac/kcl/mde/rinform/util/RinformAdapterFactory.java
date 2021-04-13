@@ -91,6 +91,11 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
         return createRoomDeclarationAdapter();
       }
       @Override
+      public Adapter caseRoomAlias(RoomAlias object)
+      {
+        return createRoomAliasAdapter();
+      }
+      @Override
       public Adapter caseRoomDescription(RoomDescription object)
       {
         return createRoomDescriptionAdapter();
@@ -208,6 +213,21 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRoomDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.RoomAlias <em>Room Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.RoomAlias
+   * @generated
+   */
+  public Adapter createRoomAliasAdapter()
   {
     return null;
   }

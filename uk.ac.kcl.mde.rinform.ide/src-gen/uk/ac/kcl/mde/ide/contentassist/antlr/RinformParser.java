@@ -36,6 +36,7 @@ public class RinformParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSymbolAccess().getSymbolAlternatives_0(), "rule__Symbol__SymbolAlternatives_0");
 			builder.put(grammarAccess.getDirectionAccess().getAlternatives(), "rule__Direction__Alternatives");
 			builder.put(grammarAccess.getRoomDeclarationAccess().getGroup(), "rule__RoomDeclaration__Group__0");
+			builder.put(grammarAccess.getRoomAliasAccess().getGroup(), "rule__RoomAlias__Group__0");
 			builder.put(grammarAccess.getRoomDescriptionAccess().getGroup(), "rule__RoomDescription__Group__0");
 			builder.put(grammarAccess.getContainerDeclarationAccess().getGroup(), "rule__ContainerDeclaration__Group__0");
 			builder.put(grammarAccess.getItemInRoomDeclarationAccess().getGroup(), "rule__ItemInRoomDeclaration__Group__0");
@@ -48,6 +49,8 @@ public class RinformParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTextAccess().getGroup_1(), "rule__Text__Group_1__0");
 			builder.put(grammarAccess.getReverseInformProgramAccess().getSentencesAssignment(), "rule__ReverseInformProgram__SentencesAssignment");
 			builder.put(grammarAccess.getRoomDeclarationAccess().getNameAssignment_1(), "rule__RoomDeclaration__NameAssignment_1");
+			builder.put(grammarAccess.getRoomAliasAccess().getRoomAssignment_1(), "rule__RoomAlias__RoomAssignment_1");
+			builder.put(grammarAccess.getRoomAliasAccess().getAliasesAssignment_3(), "rule__RoomAlias__AliasesAssignment_3");
 			builder.put(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionAssignment_1(), "rule__RoomDescription__RoomDescriptionAssignment_1");
 			builder.put(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_3(), "rule__RoomDescription__RoomAssignment_3");
 			builder.put(grammarAccess.getContainerDeclarationAccess().getNameAssignment_1(), "rule__ContainerDeclaration__NameAssignment_1");
