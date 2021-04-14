@@ -8,8 +8,6 @@ Bread is in Cupboard. "Crunchy".
 Chair is in Kitchen. "Has four legs".
 Cupboard is a container.
 Cupboard is in Living Room.
-Cupboard is a container.
-Cupboard is in Living Room.
 Toast is in Cupboard.
 Understand "butcher knife" or "big knife" as knife.
 Frodo is a Person.
