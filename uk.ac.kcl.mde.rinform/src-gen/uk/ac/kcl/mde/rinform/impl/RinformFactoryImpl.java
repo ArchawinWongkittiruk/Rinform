@@ -76,11 +76,10 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
       case RinformPackage.ITEM_IN_CONTAINER_DECLARATION: return createItemInContainerDeclaration();
       case RinformPackage.ITEM_DECLARATION: return createItemDeclaration();
       case RinformPackage.ITEM_DESCRIPTION: return createItemDescription();
-      case RinformPackage.PERSON_DECLARATION: return createPersonDeclaration();
-      case RinformPackage.PERSON_DESCRIPTION: return createPersonDescription();
+      case RinformPackage.CHARACTER_DECLARATION: return createCharacterDeclaration();
+      case RinformPackage.CHARACTER_DESCRIPTION: return createCharacterDescription();
       case RinformPackage.DIRECTION_STATEMENT: return createDirectionStatement();
       case RinformPackage.WORDS: return createWords();
-      case RinformPackage.SYMBOL: return createSymbol();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -246,10 +245,10 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * @generated
    */
   @Override
-  public PersonDeclaration createPersonDeclaration()
+  public CharacterDeclaration createCharacterDeclaration()
   {
-    PersonDeclarationImpl personDeclaration = new PersonDeclarationImpl();
-    return personDeclaration;
+    CharacterDeclarationImpl characterDeclaration = new CharacterDeclarationImpl();
+    return characterDeclaration;
   }
 
   /**
@@ -258,10 +257,10 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * @generated
    */
   @Override
-  public PersonDescription createPersonDescription()
+  public CharacterDescription createCharacterDescription()
   {
-    PersonDescriptionImpl personDescription = new PersonDescriptionImpl();
-    return personDescription;
+    CharacterDescriptionImpl characterDescription = new CharacterDescriptionImpl();
+    return characterDescription;
   }
 
   /**
@@ -286,18 +285,6 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
   {
     WordsImpl words = new WordsImpl();
     return words;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Symbol createSymbol()
-  {
-    SymbolImpl symbol = new SymbolImpl();
-    return symbol;
   }
 
   /**

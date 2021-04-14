@@ -11,6 +11,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.kcl.mde.rinform.CharacterDeclaration;
+import uk.ac.kcl.mde.rinform.CharacterDescription;
 import uk.ac.kcl.mde.rinform.ContainerDeclaration;
 import uk.ac.kcl.mde.rinform.Direction;
 import uk.ac.kcl.mde.rinform.DirectionStatement;
@@ -18,8 +20,6 @@ import uk.ac.kcl.mde.rinform.ItemDeclaration;
 import uk.ac.kcl.mde.rinform.ItemDescription;
 import uk.ac.kcl.mde.rinform.ItemInContainerDeclaration;
 import uk.ac.kcl.mde.rinform.ItemInRoomDeclaration;
-import uk.ac.kcl.mde.rinform.PersonDeclaration;
-import uk.ac.kcl.mde.rinform.PersonDescription;
 import uk.ac.kcl.mde.rinform.ReverseInformProgram;
 import uk.ac.kcl.mde.rinform.RinformFactory;
 import uk.ac.kcl.mde.rinform.RinformPackage;
@@ -27,7 +27,6 @@ import uk.ac.kcl.mde.rinform.RoomAlias;
 import uk.ac.kcl.mde.rinform.RoomDeclaration;
 import uk.ac.kcl.mde.rinform.RoomDescription;
 import uk.ac.kcl.mde.rinform.SentencePart;
-import uk.ac.kcl.mde.rinform.Symbol;
 import uk.ac.kcl.mde.rinform.Words;
 
 /**
@@ -113,14 +112,14 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass personDeclarationEClass = null;
+  private EClass characterDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass personDescriptionEClass = null;
+  private EClass characterDescriptionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -135,13 +134,6 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   private EClass wordsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass symbolEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -461,9 +453,9 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   @Override
-  public EClass getPersonDeclaration()
+  public EClass getCharacterDeclaration()
   {
-    return personDeclarationEClass;
+    return characterDeclarationEClass;
   }
 
   /**
@@ -472,9 +464,9 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   @Override
-  public EAttribute getPersonDeclaration_Name()
+  public EAttribute getCharacterDeclaration_Name()
   {
-    return (EAttribute)personDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)characterDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -483,9 +475,9 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   @Override
-  public EReference getPersonDeclaration_Room()
+  public EReference getCharacterDeclaration_Room()
   {
-    return (EReference)personDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)characterDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -494,9 +486,9 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   @Override
-  public EClass getPersonDescription()
+  public EClass getCharacterDescription()
   {
-    return personDescriptionEClass;
+    return characterDescriptionEClass;
   }
 
   /**
@@ -505,9 +497,9 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   @Override
-  public EAttribute getPersonDescription_PersonDescription()
+  public EAttribute getCharacterDescription_PersonDescription()
   {
-    return (EAttribute)personDescriptionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)characterDescriptionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -516,9 +508,9 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
    * @generated
    */
   @Override
-  public EReference getPersonDescription_Person()
+  public EReference getCharacterDescription_Person()
   {
-    return (EReference)personDescriptionEClass.getEStructuralFeatures().get(1);
+    return (EReference)characterDescriptionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -585,28 +577,6 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
   public EAttribute getWords_Words()
   {
     return (EAttribute)wordsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getSymbol()
-  {
-    return symbolEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getSymbol_Symbol()
-  {
-    return (EAttribute)symbolEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -683,13 +653,13 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
     createEAttribute(itemDescriptionEClass, ITEM_DESCRIPTION__ITEM_DESCRIPTION);
     createEReference(itemDescriptionEClass, ITEM_DESCRIPTION__ITEM);
 
-    personDeclarationEClass = createEClass(PERSON_DECLARATION);
-    createEAttribute(personDeclarationEClass, PERSON_DECLARATION__NAME);
-    createEReference(personDeclarationEClass, PERSON_DECLARATION__ROOM);
+    characterDeclarationEClass = createEClass(CHARACTER_DECLARATION);
+    createEAttribute(characterDeclarationEClass, CHARACTER_DECLARATION__NAME);
+    createEReference(characterDeclarationEClass, CHARACTER_DECLARATION__ROOM);
 
-    personDescriptionEClass = createEClass(PERSON_DESCRIPTION);
-    createEAttribute(personDescriptionEClass, PERSON_DESCRIPTION__PERSON_DESCRIPTION);
-    createEReference(personDescriptionEClass, PERSON_DESCRIPTION__PERSON);
+    characterDescriptionEClass = createEClass(CHARACTER_DESCRIPTION);
+    createEAttribute(characterDescriptionEClass, CHARACTER_DESCRIPTION__PERSON_DESCRIPTION);
+    createEReference(characterDescriptionEClass, CHARACTER_DESCRIPTION__PERSON);
 
     directionStatementEClass = createEClass(DIRECTION_STATEMENT);
     createEReference(directionStatementEClass, DIRECTION_STATEMENT__ROOM1);
@@ -698,9 +668,6 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
 
     wordsEClass = createEClass(WORDS);
     createEAttribute(wordsEClass, WORDS__WORDS);
-
-    symbolEClass = createEClass(SYMBOL);
-    createEAttribute(symbolEClass, SYMBOL__SYMBOL);
 
     // Create enums
     directionEEnum = createEEnum(DIRECTION);
@@ -743,11 +710,10 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
     itemInContainerDeclarationEClass.getESuperTypes().add(this.getItemDeclaration());
     itemDeclarationEClass.getESuperTypes().add(this.getSentencePart());
     itemDescriptionEClass.getESuperTypes().add(this.getSentencePart());
-    personDeclarationEClass.getESuperTypes().add(this.getSentencePart());
-    personDescriptionEClass.getESuperTypes().add(this.getSentencePart());
+    characterDeclarationEClass.getESuperTypes().add(this.getSentencePart());
+    characterDescriptionEClass.getESuperTypes().add(this.getSentencePart());
     directionStatementEClass.getESuperTypes().add(this.getSentencePart());
     wordsEClass.getESuperTypes().add(this.getSentencePart());
-    symbolEClass.getESuperTypes().add(this.getSentencePart());
 
     // Initialize classes and features; add operations and parameters
     initEClass(reverseInformProgramEClass, ReverseInformProgram.class, "ReverseInformProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -782,13 +748,13 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
     initEAttribute(getItemDescription_ItemDescription(), ecorePackage.getEString(), "itemDescription", null, 0, -1, ItemDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getItemDescription_Item(), this.getItemDeclaration(), null, "item", null, 0, 1, ItemDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(personDeclarationEClass, PersonDeclaration.class, "PersonDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPersonDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, PersonDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPersonDeclaration_Room(), this.getRoomDeclaration(), null, "room", null, 0, 1, PersonDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(characterDeclarationEClass, CharacterDeclaration.class, "CharacterDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCharacterDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, CharacterDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCharacterDeclaration_Room(), this.getRoomDeclaration(), null, "room", null, 0, 1, CharacterDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(personDescriptionEClass, PersonDescription.class, "PersonDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPersonDescription_PersonDescription(), ecorePackage.getEString(), "personDescription", null, 0, -1, PersonDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPersonDescription_Person(), this.getPersonDeclaration(), null, "person", null, 0, 1, PersonDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(characterDescriptionEClass, CharacterDescription.class, "CharacterDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCharacterDescription_PersonDescription(), ecorePackage.getEString(), "personDescription", null, 0, -1, CharacterDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCharacterDescription_Person(), this.getCharacterDeclaration(), null, "person", null, 0, 1, CharacterDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(directionStatementEClass, DirectionStatement.class, "DirectionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDirectionStatement_Room1(), this.getRoomDeclaration(), null, "room1", null, 0, 1, DirectionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -797,9 +763,6 @@ public class RinformPackageImpl extends EPackageImpl implements RinformPackage
 
     initEClass(wordsEClass, Words.class, "Words", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWords_Words(), ecorePackage.getEString(), "words", null, 0, -1, Words.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(symbolEClass, Symbol.class, "Symbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSymbol_Symbol(), ecorePackage.getEString(), "symbol", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(directionEEnum, Direction.class, "Direction");

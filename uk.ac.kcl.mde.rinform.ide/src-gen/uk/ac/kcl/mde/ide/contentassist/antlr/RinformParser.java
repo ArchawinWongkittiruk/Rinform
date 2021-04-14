@@ -33,7 +33,8 @@ public class RinformParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, RinformGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getSentencePartAccess().getAlternatives(), "rule__SentencePart__Alternatives");
 			builder.put(grammarAccess.getItemDeclarationAccess().getAlternatives(), "rule__ItemDeclaration__Alternatives");
-			builder.put(grammarAccess.getSymbolAccess().getSymbolAlternatives_0(), "rule__Symbol__SymbolAlternatives_0");
+			builder.put(grammarAccess.getTextAccess().getAlternatives(), "rule__Text__Alternatives");
+			builder.put(grammarAccess.getSYMBOLAccess().getAlternatives(), "rule__SYMBOL__Alternatives");
 			builder.put(grammarAccess.getDirectionAccess().getAlternatives(), "rule__Direction__Alternatives");
 			builder.put(grammarAccess.getRoomDeclarationAccess().getGroup(), "rule__RoomDeclaration__Group__0");
 			builder.put(grammarAccess.getRoomAliasAccess().getGroup(), "rule__RoomAlias__Group__0");
@@ -42,34 +43,31 @@ public class RinformParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getItemInRoomDeclarationAccess().getGroup(), "rule__ItemInRoomDeclaration__Group__0");
 			builder.put(grammarAccess.getItemInContainerDeclarationAccess().getGroup(), "rule__ItemInContainerDeclaration__Group__0");
 			builder.put(grammarAccess.getItemDescriptionAccess().getGroup(), "rule__ItemDescription__Group__0");
-			builder.put(grammarAccess.getPersonDeclarationAccess().getGroup(), "rule__PersonDeclaration__Group__0");
-			builder.put(grammarAccess.getPersonDescriptionAccess().getGroup(), "rule__PersonDescription__Group__0");
+			builder.put(grammarAccess.getCharacterDeclarationAccess().getGroup(), "rule__CharacterDeclaration__Group__0");
+			builder.put(grammarAccess.getCharacterDescriptionAccess().getGroup(), "rule__CharacterDescription__Group__0");
 			builder.put(grammarAccess.getDirectionStatementAccess().getGroup(), "rule__DirectionStatement__Group__0");
-			builder.put(grammarAccess.getTextAccess().getGroup(), "rule__Text__Group__0");
-			builder.put(grammarAccess.getTextAccess().getGroup_1(), "rule__Text__Group_1__0");
 			builder.put(grammarAccess.getReverseInformProgramAccess().getSentencesAssignment(), "rule__ReverseInformProgram__SentencesAssignment");
 			builder.put(grammarAccess.getRoomDeclarationAccess().getNameAssignment_1(), "rule__RoomDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getRoomAliasAccess().getRoomAssignment_1(), "rule__RoomAlias__RoomAssignment_1");
 			builder.put(grammarAccess.getRoomAliasAccess().getAliasesAssignment_3(), "rule__RoomAlias__AliasesAssignment_3");
 			builder.put(grammarAccess.getRoomDescriptionAccess().getRoomDescriptionAssignment_1(), "rule__RoomDescription__RoomDescriptionAssignment_1");
-			builder.put(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_3(), "rule__RoomDescription__RoomAssignment_3");
+			builder.put(grammarAccess.getRoomDescriptionAccess().getRoomAssignment_4(), "rule__RoomDescription__RoomAssignment_4");
 			builder.put(grammarAccess.getContainerDeclarationAccess().getNameAssignment_1(), "rule__ContainerDeclaration__NameAssignment_1");
-			builder.put(grammarAccess.getContainerDeclarationAccess().getRoomAssignment_3(), "rule__ContainerDeclaration__RoomAssignment_3");
+			builder.put(grammarAccess.getContainerDeclarationAccess().getRoomAssignment_5(), "rule__ContainerDeclaration__RoomAssignment_5");
 			builder.put(grammarAccess.getItemInRoomDeclarationAccess().getNameAssignment_1(), "rule__ItemInRoomDeclaration__NameAssignment_1");
-			builder.put(grammarAccess.getItemInRoomDeclarationAccess().getRoomAssignment_3(), "rule__ItemInRoomDeclaration__RoomAssignment_3");
+			builder.put(grammarAccess.getItemInRoomDeclarationAccess().getRoomAssignment_5(), "rule__ItemInRoomDeclaration__RoomAssignment_5");
 			builder.put(grammarAccess.getItemInContainerDeclarationAccess().getNameAssignment_1(), "rule__ItemInContainerDeclaration__NameAssignment_1");
-			builder.put(grammarAccess.getItemInContainerDeclarationAccess().getContainerAssignment_3(), "rule__ItemInContainerDeclaration__ContainerAssignment_3");
+			builder.put(grammarAccess.getItemInContainerDeclarationAccess().getContainerAssignment_5(), "rule__ItemInContainerDeclaration__ContainerAssignment_5");
 			builder.put(grammarAccess.getItemDescriptionAccess().getItemDescriptionAssignment_1(), "rule__ItemDescription__ItemDescriptionAssignment_1");
-			builder.put(grammarAccess.getItemDescriptionAccess().getItemAssignment_3(), "rule__ItemDescription__ItemAssignment_3");
-			builder.put(grammarAccess.getPersonDeclarationAccess().getNameAssignment_1(), "rule__PersonDeclaration__NameAssignment_1");
-			builder.put(grammarAccess.getPersonDeclarationAccess().getRoomAssignment_3(), "rule__PersonDeclaration__RoomAssignment_3");
-			builder.put(grammarAccess.getPersonDescriptionAccess().getPersonDescriptionAssignment_1(), "rule__PersonDescription__PersonDescriptionAssignment_1");
-			builder.put(grammarAccess.getPersonDescriptionAccess().getPersonAssignment_3(), "rule__PersonDescription__PersonAssignment_3");
+			builder.put(grammarAccess.getItemDescriptionAccess().getItemAssignment_4(), "rule__ItemDescription__ItemAssignment_4");
+			builder.put(grammarAccess.getCharacterDeclarationAccess().getNameAssignment_1(), "rule__CharacterDeclaration__NameAssignment_1");
+			builder.put(grammarAccess.getCharacterDeclarationAccess().getRoomAssignment_5(), "rule__CharacterDeclaration__RoomAssignment_5");
+			builder.put(grammarAccess.getCharacterDescriptionAccess().getPersonDescriptionAssignment_1(), "rule__CharacterDescription__PersonDescriptionAssignment_1");
+			builder.put(grammarAccess.getCharacterDescriptionAccess().getPersonAssignment_4(), "rule__CharacterDescription__PersonAssignment_4");
 			builder.put(grammarAccess.getDirectionStatementAccess().getRoom1Assignment_1(), "rule__DirectionStatement__Room1Assignment_1");
 			builder.put(grammarAccess.getDirectionStatementAccess().getDirectionAssignment_2(), "rule__DirectionStatement__DirectionAssignment_2");
 			builder.put(grammarAccess.getDirectionStatementAccess().getRoom2Assignment_3(), "rule__DirectionStatement__Room2Assignment_3");
 			builder.put(grammarAccess.getWordsAccess().getWordsAssignment(), "rule__Words__WordsAssignment");
-			builder.put(grammarAccess.getSymbolAccess().getSymbolAssignment(), "rule__Symbol__SymbolAssignment");
 		}
 	}
 	

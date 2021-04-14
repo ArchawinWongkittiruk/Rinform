@@ -10,25 +10,25 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.kcl.mde.rinform.PersonDeclaration;
+import uk.ac.kcl.mde.rinform.CharacterDeclaration;
 import uk.ac.kcl.mde.rinform.RinformPackage;
 import uk.ac.kcl.mde.rinform.RoomDeclaration;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Person Declaration</b></em>'.
+ * An implementation of the model object '<em><b>Character Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.PersonDeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.PersonDeclarationImpl#getRoom <em>Room</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.CharacterDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.CharacterDeclarationImpl#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PersonDeclarationImpl extends SentencePartImpl implements PersonDeclaration
+public class CharacterDeclarationImpl extends SentencePartImpl implements CharacterDeclaration
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -65,7 +65,7 @@ public class PersonDeclarationImpl extends SentencePartImpl implements PersonDec
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PersonDeclarationImpl()
+  protected CharacterDeclarationImpl()
   {
     super();
   }
@@ -78,7 +78,7 @@ public class PersonDeclarationImpl extends SentencePartImpl implements PersonDec
   @Override
   protected EClass eStaticClass()
   {
-    return RinformPackage.Literals.PERSON_DECLARATION;
+    return RinformPackage.Literals.CHARACTER_DECLARATION;
   }
 
   /**
@@ -103,7 +103,7 @@ public class PersonDeclarationImpl extends SentencePartImpl implements PersonDec
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.PERSON_DECLARATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.CHARACTER_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -121,7 +121,7 @@ public class PersonDeclarationImpl extends SentencePartImpl implements PersonDec
       if (room != oldRoom)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RinformPackage.PERSON_DECLARATION__ROOM, oldRoom, room));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RinformPackage.CHARACTER_DECLARATION__ROOM, oldRoom, room));
       }
     }
     return room;
@@ -148,7 +148,7 @@ public class PersonDeclarationImpl extends SentencePartImpl implements PersonDec
     RoomDeclaration oldRoom = room;
     room = newRoom;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.PERSON_DECLARATION__ROOM, oldRoom, room));
+      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.CHARACTER_DECLARATION__ROOM, oldRoom, room));
   }
 
   /**
@@ -161,9 +161,9 @@ public class PersonDeclarationImpl extends SentencePartImpl implements PersonDec
   {
     switch (featureID)
     {
-      case RinformPackage.PERSON_DECLARATION__NAME:
+      case RinformPackage.CHARACTER_DECLARATION__NAME:
         return getName();
-      case RinformPackage.PERSON_DECLARATION__ROOM:
+      case RinformPackage.CHARACTER_DECLARATION__ROOM:
         if (resolve) return getRoom();
         return basicGetRoom();
     }
@@ -180,10 +180,10 @@ public class PersonDeclarationImpl extends SentencePartImpl implements PersonDec
   {
     switch (featureID)
     {
-      case RinformPackage.PERSON_DECLARATION__NAME:
+      case RinformPackage.CHARACTER_DECLARATION__NAME:
         setName((String)newValue);
         return;
-      case RinformPackage.PERSON_DECLARATION__ROOM:
+      case RinformPackage.CHARACTER_DECLARATION__ROOM:
         setRoom((RoomDeclaration)newValue);
         return;
     }
@@ -200,10 +200,10 @@ public class PersonDeclarationImpl extends SentencePartImpl implements PersonDec
   {
     switch (featureID)
     {
-      case RinformPackage.PERSON_DECLARATION__NAME:
+      case RinformPackage.CHARACTER_DECLARATION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case RinformPackage.PERSON_DECLARATION__ROOM:
+      case RinformPackage.CHARACTER_DECLARATION__ROOM:
         setRoom((RoomDeclaration)null);
         return;
     }
@@ -220,9 +220,9 @@ public class PersonDeclarationImpl extends SentencePartImpl implements PersonDec
   {
     switch (featureID)
     {
-      case RinformPackage.PERSON_DECLARATION__NAME:
+      case RinformPackage.CHARACTER_DECLARATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case RinformPackage.PERSON_DECLARATION__ROOM:
+      case RinformPackage.CHARACTER_DECLARATION__ROOM:
         return room != null;
     }
     return super.eIsSet(featureID);
@@ -245,4 +245,4 @@ public class PersonDeclarationImpl extends SentencePartImpl implements PersonDec
     return result.toString();
   }
 
-} //PersonDeclarationImpl
+} //CharacterDeclarationImpl

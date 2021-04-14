@@ -114,22 +114,22 @@ public interface RinformFactory extends EFactory
   ItemDescription createItemDescription();
 
   /**
-   * Returns a new object of class '<em>Person Declaration</em>'.
+   * Returns a new object of class '<em>Character Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Person Declaration</em>'.
+   * @return a new object of class '<em>Character Declaration</em>'.
    * @generated
    */
-  PersonDeclaration createPersonDeclaration();
+  CharacterDeclaration createCharacterDeclaration();
 
   /**
-   * Returns a new object of class '<em>Person Description</em>'.
+   * Returns a new object of class '<em>Character Description</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Person Description</em>'.
+   * @return a new object of class '<em>Character Description</em>'.
    * @generated
    */
-  PersonDescription createPersonDescription();
+  CharacterDescription createCharacterDescription();
 
   /**
    * Returns a new object of class '<em>Direction Statement</em>'.
@@ -148,15 +148,6 @@ public interface RinformFactory extends EFactory
    * @generated
    */
   Words createWords();
-
-  /**
-   * Returns a new object of class '<em>Symbol</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Symbol</em>'.
-   * @generated
-   */
-  Symbol createSymbol();
 
   /**
    * Returns the package supported by this factory.

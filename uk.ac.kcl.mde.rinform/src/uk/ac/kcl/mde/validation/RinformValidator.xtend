@@ -3,8 +3,6 @@
  */
 package uk.ac.kcl.mde.validation;
 
-import java.util.ArrayList;
-
 import uk.ac.kcl.mde.rinform.DirectionStatement;
 import uk.ac.kcl.mde.rinform.ReverseInformProgram;
 import org.eclipse.xtext.validation.Check
@@ -12,6 +10,10 @@ import uk.ac.kcl.mde.rinform.SentencePart
 import uk.ac.kcl.mde.rinform.RoomDeclaration
 import java.util.HashSet
 import uk.ac.kcl.mde.rinform.RinformPackage
+import uk.ac.kcl.mde.rinform.ItemDeclaration
+import uk.ac.kcl.mde.rinform.CharacterDeclaration
+import uk.ac.kcl.mde.rinform.ItemInRoomDeclaration
+import uk.ac.kcl.mde.rinform.ContainerDeclaration
 
 /**
  * This class contains custom validation rules. 
@@ -20,28 +22,25 @@ import uk.ac.kcl.mde.rinform.RinformPackage
  */
 class RinformValidator extends AbstractRinformValidator {
 	
-	public static val UNREACHABLE_ROOM = "UnreachableRoom";
-	public static val NON_CAPITAL_NAME = "NonCapitalName";
+	public static val UNREACHABLE_ROOM = "UNREACHABLE_ROOM";
+	public static val NON_CAPITAL_NAME = "NON_CAPITAL_NAME";
+	public static val ROOM_ALREADY_DECLARED = "ROOM_ALREADY_DECLARED";
+	public static val ITEM_IN_ROOM_ALREADY_DECLARED = "ITEM_IN_ROOM_ALREADY_DECLARED";
+	public static val CONTAINER_ALREADY_DECLARED = "CONTAINER_ALREADY_DECLARED";
+	public static val ITEM_IN_CONTAINER_ALREADY_DECLARED = "ITEM_IN_CONTAINER_ALREADY_DECLARED";
+	public static val CHARACTER_ALREADY_DECLARED = "CHARACTER_ALREADY_DECLARED";
 
-//	@Check
-//	public void checkPersonNameStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					RinformPackage.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
 	
 	@Check
-	def checkRoomNameStartsWithCapital(RoomDeclaration room) {
-		if (!Character.isUpperCase(room.getName().charAt(0))) {
-			warning("Name should start with a capital",
-					RinformPackage.Literals.ROOM_DECLARATION__NAME,
+	def checkRoomNameStartsWithCapital(CharacterDeclaration character) {
+		if (!Character.isUpperCase(character.getName().charAt(0))) {
+			warning("A character's name should start with a capital",
+					RinformPackage.Literals.CHARACTER_DECLARATION__NAME,
 					NON_CAPITAL_NAME);
 		}
 	}
 	
-	@Check
+	@Check(NORMAL)
 	def checkAllRoomsAreReachable(ReverseInformProgram program) {
 		var directions = new HashSet<DirectionStatement>();
 		for(SentencePart s: program.sentences){
@@ -51,21 +50,23 @@ class RinformValidator extends AbstractRinformValidator {
 		}
 		var roomDeclarations = program.eAllContents.filter(RoomDeclaration).toSet
 		val reachedRooms = new HashSet<RoomDeclaration>
-		var firstRoom = roomDeclarations.get(0)
-		reachedRooms.add(firstRoom)
-		firstRoom.getReachableRooms(reachedRooms, directions, new HashSet<DirectionStatement>)
-		
-		if(reachedRooms.size != roomDeclarations.size){
-			for(RoomDeclaration stmt: roomDeclarations){
-				if(!reachedRooms.contains(stmt)){
-					warning('This room is unreachable', stmt, 
-						RinformPackage.Literals.ROOM_DECLARATION__NAME, UNREACHABLE_ROOM)
+		if(roomDeclarations.size > 0){
+			var firstRoom = roomDeclarations.get(0)
+			reachedRooms.add(firstRoom)
+			firstRoom.getReachableRooms(reachedRooms, directions, new HashSet<DirectionStatement>)
+			
+			if(reachedRooms.size != roomDeclarations.size){
+				for(RoomDeclaration stmt: roomDeclarations){
+					if(!reachedRooms.contains(stmt)){
+						warning('This room is unreachable', stmt, 
+							RinformPackage.Literals.ROOM_DECLARATION__NAME, UNREACHABLE_ROOM)
+					}
 				}
 			}
 		}
 	}
 	
-	def getReachableRooms(RoomDeclaration room, HashSet<RoomDeclaration> reachedRooms, HashSet<DirectionStatement> directions, HashSet<DirectionStatement> usedDirections){
+	def void getReachableRooms(RoomDeclaration room, HashSet<RoomDeclaration> reachedRooms, HashSet<DirectionStatement> directions, HashSet<DirectionStatement> usedDirections){
 		for(DirectionStatement stmt: directions){
 			if(!usedDirections.contains(stmt)){
 				if(stmt.room1 == room && !reachedRooms.contains(stmt.room2)){
@@ -80,5 +81,54 @@ class RinformValidator extends AbstractRinformValidator {
 				}
 			}
 		}	
+	}
+	
+	@Check
+	def checkRepeatingRoomDeclarations(ReverseInformProgram program) {
+		val declaredRooms = new HashSet<String>
+		for(RoomDeclaration room: program.eAllContents.filter(RoomDeclaration).toSet){
+			if(declaredRooms.contains(room.name)){
+				warning('This room is already declared', room,
+					RinformPackage.Literals.ROOM_DECLARATION__NAME, ROOM_ALREADY_DECLARED)
+			}
+			else{
+				declaredRooms.add(room.name)
+			}
+		}
+	}
+	
+	@Check
+	def checkRepeatingItemDeclarations(ReverseInformProgram program) {
+		val declaredItems = new HashSet<String>
+		for(ItemDeclaration item: program.eAllContents.filter(ItemDeclaration).toSet){
+			if(declaredItems.contains(item.name)){
+				if(item instanceof ItemInRoomDeclaration)
+				warning('This item is already declared', item,
+					RinformPackage.Literals.ITEM_DECLARATION__NAME, ITEM_IN_ROOM_ALREADY_DECLARED)
+				else if(item instanceof ContainerDeclaration)
+				warning('This item is already declared', item,
+					RinformPackage.Literals.ITEM_DECLARATION__NAME, CONTAINER_ALREADY_DECLARED)
+				else
+				warning('This item is already declared', item,
+					RinformPackage.Literals.ITEM_DECLARATION__NAME, ITEM_IN_CONTAINER_ALREADY_DECLARED)
+			}
+			else{
+				declaredItems.add(item.name)
+			}
+		}
+	}
+	
+	@Check
+	def checkRepeatingPeopleDeclarations(ReverseInformProgram program) {
+		val declaredPeople = new HashSet<String>
+		for(CharacterDeclaration character: program.eAllContents.filter(CharacterDeclaration).toSet){
+			if(declaredPeople.contains(character.name)){
+				warning('This person is already declared', character,
+					RinformPackage.Literals.CHARACTER_DECLARATION__NAME, CHARACTER_ALREADY_DECLARED)
+			}
+			else{
+				declaredPeople.add(character.name)
+			}
+		}
 	}
 }

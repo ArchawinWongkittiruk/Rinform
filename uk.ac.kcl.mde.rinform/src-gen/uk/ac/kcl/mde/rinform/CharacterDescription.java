@@ -7,22 +7,22 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Person Description</b></em>'.
+ * A representation of the model object '<em><b>Character Description</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.mde.rinform.PersonDescription#getPersonDescription <em>Person Description</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.PersonDescription#getPerson <em>Person</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.CharacterDescription#getPersonDescription <em>Person Description</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.CharacterDescription#getPerson <em>Person</em>}</li>
  * </ul>
  *
- * @see uk.ac.kcl.mde.rinform.RinformPackage#getPersonDescription()
+ * @see uk.ac.kcl.mde.rinform.RinformPackage#getCharacterDescription()
  * @model
  * @generated
  */
-public interface PersonDescription extends SentencePart
+public interface CharacterDescription extends SentencePart
 {
   /**
    * Returns the value of the '<em><b>Person Description</b></em>' attribute list.
@@ -30,7 +30,7 @@ public interface PersonDescription extends SentencePart
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Person Description</em>' attribute list.
-   * @see uk.ac.kcl.mde.rinform.RinformPackage#getPersonDescription_PersonDescription()
+   * @see uk.ac.kcl.mde.rinform.RinformPackage#getCharacterDescription_PersonDescription()
    * @model unique="false"
    * @generated
    */
@@ -41,21 +41,21 @@ public interface PersonDescription extends SentencePart
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Person</em>' reference.
-   * @see #setPerson(PersonDeclaration)
-   * @see uk.ac.kcl.mde.rinform.RinformPackage#getPersonDescription_Person()
+   * @see #setPerson(CharacterDeclaration)
+   * @see uk.ac.kcl.mde.rinform.RinformPackage#getCharacterDescription_Person()
    * @model
    * @generated
    */
-  PersonDeclaration getPerson();
+  CharacterDeclaration getPerson();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.PersonDescription#getPerson <em>Person</em>}' reference.
+   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.CharacterDescription#getPerson <em>Person</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Person</em>' reference.
    * @see #getPerson()
    * @generated
    */
-  void setPerson(PersonDeclaration value);
+  void setPerson(CharacterDeclaration value);
 
-} // PersonDescription
+} // CharacterDescription

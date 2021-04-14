@@ -126,14 +126,14 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
         return createItemDescriptionAdapter();
       }
       @Override
-      public Adapter casePersonDeclaration(PersonDeclaration object)
+      public Adapter caseCharacterDeclaration(CharacterDeclaration object)
       {
-        return createPersonDeclarationAdapter();
+        return createCharacterDeclarationAdapter();
       }
       @Override
-      public Adapter casePersonDescription(PersonDescription object)
+      public Adapter caseCharacterDescription(CharacterDescription object)
       {
-        return createPersonDescriptionAdapter();
+        return createCharacterDescriptionAdapter();
       }
       @Override
       public Adapter caseDirectionStatement(DirectionStatement object)
@@ -144,11 +144,6 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
       public Adapter caseWords(Words object)
       {
         return createWordsAdapter();
-      }
-      @Override
-      public Adapter caseSymbol(Symbol object)
-      {
-        return createSymbolAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -323,31 +318,31 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.PersonDeclaration <em>Person Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.CharacterDeclaration <em>Character Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.mde.rinform.PersonDeclaration
+   * @see uk.ac.kcl.mde.rinform.CharacterDeclaration
    * @generated
    */
-  public Adapter createPersonDeclarationAdapter()
+  public Adapter createCharacterDeclarationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.PersonDescription <em>Person Description</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.CharacterDescription <em>Character Description</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.mde.rinform.PersonDescription
+   * @see uk.ac.kcl.mde.rinform.CharacterDescription
    * @generated
    */
-  public Adapter createPersonDescriptionAdapter()
+  public Adapter createCharacterDescriptionAdapter()
   {
     return null;
   }
@@ -378,21 +373,6 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createWordsAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.Symbol <em>Symbol</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.mde.rinform.Symbol
-   * @generated
-   */
-  public Adapter createSymbolAdapter()
   {
     return null;
   }

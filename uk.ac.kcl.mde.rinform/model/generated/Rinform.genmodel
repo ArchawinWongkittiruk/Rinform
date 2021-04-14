@@ -45,13 +45,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//ItemDescription/itemDescription"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//ItemDescription/item"/>
     </genClasses>
-    <genClasses ecoreClass="Rinform.ecore#//PersonDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//PersonDeclaration/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//PersonDeclaration/room"/>
+    <genClasses ecoreClass="Rinform.ecore#//CharacterDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//CharacterDeclaration/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//CharacterDeclaration/room"/>
     </genClasses>
-    <genClasses ecoreClass="Rinform.ecore#//PersonDescription">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//PersonDescription/personDescription"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//PersonDescription/person"/>
+    <genClasses ecoreClass="Rinform.ecore#//CharacterDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//CharacterDescription/personDescription"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//CharacterDescription/person"/>
     </genClasses>
     <genClasses ecoreClass="Rinform.ecore#//DirectionStatement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rinform.ecore#//DirectionStatement/room1"/>
@@ -60,9 +60,6 @@
     </genClasses>
     <genClasses ecoreClass="Rinform.ecore#//Words">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//Words/words"/>
-    </genClasses>
-    <genClasses ecoreClass="Rinform.ecore#//Symbol">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rinform.ecore#//Symbol/symbol"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

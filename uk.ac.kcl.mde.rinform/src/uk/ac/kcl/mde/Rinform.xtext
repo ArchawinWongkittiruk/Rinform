@@ -14,14 +14,14 @@ SentencePart:
 	RoomDescription |
 	ItemDeclaration |
 	ItemDescription |
-	PersonDeclaration |
-	PersonDescription |
-	Words | Symbol |
+	CharacterDeclaration |
+	CharacterDescription |
+	Words |
 	DirectionStatement
 ;
 
 RoomDeclaration:
-	"-r" name = Text 
+	"r-" name = Text "-r"
 ;
 
 RoomAlias:
@@ -29,19 +29,19 @@ RoomAlias:
 ;
 
 RoomDescription:
-	 "("roomDescription += (Text)+ "-r" room = [RoomDeclaration|Text] ")"
+	 "{"roomDescription += (Text)+ "!r""[" room = [RoomDeclaration|Text] "]""}"
 ;
 
 ContainerDeclaration:
-	"-c" name = Text "-r" room = [RoomDeclaration|Text]
+	"c-" name = Text "-c" "!r" "[" room = [RoomDeclaration|Text] "]"
 ;
 
 ItemInRoomDeclaration:
-	"-i" name = Text "-r" room = [RoomDeclaration|Text]
+	"i-" name = Text "-i" "!r" "[" room = [RoomDeclaration|Text] "]"
 ;
 
 ItemInContainerDeclaration:
-	"-i" name = Text "-c" container = [ContainerDeclaration|Text]
+	"i-" name = Text "-i" "!c" "[" container = [ContainerDeclaration] "]"
 ;
 
 ItemDeclaration:
@@ -49,15 +49,15 @@ ItemDeclaration:
 ;
 
 ItemDescription:
-	"("itemDescription += (Text)+ "-i" item = [ItemDeclaration|Text] ")"
+	"{"itemDescription += (Text)+ "!i" "[" item = [ItemDeclaration|Text] "]" "}"
 ;
 
-PersonDeclaration:
-	"-p" name = Text "-r" room = [RoomDeclaration|Text]
+CharacterDeclaration:
+	"p-" name = Text "-p" "!r" "[" room = [RoomDeclaration|Text] "]"
 ;
 
-PersonDescription:
-	"("personDescription += (Text)+ "-p" person = [PersonDeclaration|Text] ")"
+CharacterDescription:
+	"{"personDescription += (Text)+ "!p" "[" person = [CharacterDeclaration|Text] "]" "}"
 ;
 
 DirectionStatement:
@@ -69,13 +69,13 @@ enum Direction:
 ;
 
 Text returns ecore::EString:
-	ID (WS ID)*
+	(ID | WS | SYMBOL)+
 ;
 
 Words: 
 	words += Text+
 ;
 
-Symbol:
-	symbol = ('.' | ',' | ';' | ':' | '-' | '!' | '?' | '\'')
+SYMBOL returns ecore::EString hidden():
+	('.' | ',' | ';' | ':' | '-' | '!' | '?' | '\'' | '(' | ')' | '\"')
 ;

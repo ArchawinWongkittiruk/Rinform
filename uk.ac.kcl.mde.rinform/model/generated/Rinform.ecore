@@ -36,14 +36,14 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="item" eType="#//ItemDeclaration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PersonDeclaration" eSuperTypes="#//SentencePart">
+  <eClassifiers xsi:type="ecore:EClass" name="CharacterDeclaration" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//RoomDeclaration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PersonDescription" eSuperTypes="#//SentencePart">
+  <eClassifiers xsi:type="ecore:EClass" name="CharacterDescription" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="personDescription" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//PersonDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//CharacterDeclaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DirectionStatement" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="room1" eType="#//RoomDeclaration"/>
@@ -61,8 +61,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="Words" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="words" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Symbol" eSuperTypes="#//SentencePart">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

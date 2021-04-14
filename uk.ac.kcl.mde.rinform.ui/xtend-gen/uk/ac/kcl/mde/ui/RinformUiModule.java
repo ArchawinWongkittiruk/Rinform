@@ -14,7 +14,6 @@ import uk.ac.kcl.mde.ui.AbstractRinformUiModule;
 @SuppressWarnings("all")
 public class RinformUiModule extends AbstractRinformUiModule {
   public RinformUiModule(final AbstractUIPlugin plugin) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe type RinformUiModule is already defined in RinformUiModule.java.");
+    super(plugin);
   }
 }

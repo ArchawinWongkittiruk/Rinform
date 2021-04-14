@@ -6,22 +6,22 @@ package uk.ac.kcl.mde.rinform;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Person Declaration</b></em>'.
+ * A representation of the model object '<em><b>Character Declaration</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.mde.rinform.PersonDeclaration#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.PersonDeclaration#getRoom <em>Room</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.CharacterDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.CharacterDeclaration#getRoom <em>Room</em>}</li>
  * </ul>
  *
- * @see uk.ac.kcl.mde.rinform.RinformPackage#getPersonDeclaration()
+ * @see uk.ac.kcl.mde.rinform.RinformPackage#getCharacterDeclaration()
  * @model
  * @generated
  */
-public interface PersonDeclaration extends SentencePart
+public interface CharacterDeclaration extends SentencePart
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface PersonDeclaration extends SentencePart
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see uk.ac.kcl.mde.rinform.RinformPackage#getPersonDeclaration_Name()
+   * @see uk.ac.kcl.mde.rinform.RinformPackage#getCharacterDeclaration_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.PersonDeclaration#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.CharacterDeclaration#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -51,14 +51,14 @@ public interface PersonDeclaration extends SentencePart
    * <!-- end-user-doc -->
    * @return the value of the '<em>Room</em>' reference.
    * @see #setRoom(RoomDeclaration)
-   * @see uk.ac.kcl.mde.rinform.RinformPackage#getPersonDeclaration_Room()
+   * @see uk.ac.kcl.mde.rinform.RinformPackage#getCharacterDeclaration_Room()
    * @model
    * @generated
    */
   RoomDeclaration getRoom();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.PersonDeclaration#getRoom <em>Room</em>}' reference.
+   * Sets the value of the '{@link uk.ac.kcl.mde.rinform.CharacterDeclaration#getRoom <em>Room</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Room</em>' reference.
@@ -67,4 +67,4 @@ public interface PersonDeclaration extends SentencePart
    */
   void setRoom(RoomDeclaration value);
 
-} // PersonDeclaration
+} // CharacterDeclaration

@@ -384,14 +384,14 @@ public interface RinformPackage extends EPackage
   int ITEM_DESCRIPTION_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.mde.rinform.impl.PersonDeclarationImpl <em>Person Declaration</em>}' class.
+   * The meta object id for the '{@link uk.ac.kcl.mde.rinform.impl.CharacterDeclarationImpl <em>Character Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.mde.rinform.impl.PersonDeclarationImpl
-   * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getPersonDeclaration()
+   * @see uk.ac.kcl.mde.rinform.impl.CharacterDeclarationImpl
+   * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getCharacterDeclaration()
    * @generated
    */
-  int PERSON_DECLARATION = 10;
+  int CHARACTER_DECLARATION = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -400,7 +400,7 @@ public interface RinformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERSON_DECLARATION__NAME = SENTENCE_PART_FEATURE_COUNT + 0;
+  int CHARACTER_DECLARATION__NAME = SENTENCE_PART_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Room</b></em>' reference.
@@ -409,26 +409,26 @@ public interface RinformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERSON_DECLARATION__ROOM = SENTENCE_PART_FEATURE_COUNT + 1;
+  int CHARACTER_DECLARATION__ROOM = SENTENCE_PART_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Person Declaration</em>' class.
+   * The number of structural features of the '<em>Character Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PERSON_DECLARATION_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 2;
+  int CHARACTER_DECLARATION_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.mde.rinform.impl.PersonDescriptionImpl <em>Person Description</em>}' class.
+   * The meta object id for the '{@link uk.ac.kcl.mde.rinform.impl.CharacterDescriptionImpl <em>Character Description</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.mde.rinform.impl.PersonDescriptionImpl
-   * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getPersonDescription()
+   * @see uk.ac.kcl.mde.rinform.impl.CharacterDescriptionImpl
+   * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getCharacterDescription()
    * @generated
    */
-  int PERSON_DESCRIPTION = 11;
+  int CHARACTER_DESCRIPTION = 11;
 
   /**
    * The feature id for the '<em><b>Person Description</b></em>' attribute list.
@@ -437,7 +437,7 @@ public interface RinformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERSON_DESCRIPTION__PERSON_DESCRIPTION = SENTENCE_PART_FEATURE_COUNT + 0;
+  int CHARACTER_DESCRIPTION__PERSON_DESCRIPTION = SENTENCE_PART_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Person</b></em>' reference.
@@ -446,16 +446,16 @@ public interface RinformPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERSON_DESCRIPTION__PERSON = SENTENCE_PART_FEATURE_COUNT + 1;
+  int CHARACTER_DESCRIPTION__PERSON = SENTENCE_PART_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Person Description</em>' class.
+   * The number of structural features of the '<em>Character Description</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PERSON_DESCRIPTION_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 2;
+  int CHARACTER_DESCRIPTION_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.mde.rinform.impl.DirectionStatementImpl <em>Direction Statement</em>}' class.
@@ -532,34 +532,6 @@ public interface RinformPackage extends EPackage
   int WORDS_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.mde.rinform.impl.SymbolImpl <em>Symbol</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.mde.rinform.impl.SymbolImpl
-   * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getSymbol()
-   * @generated
-   */
-  int SYMBOL = 14;
-
-  /**
-   * The feature id for the '<em><b>Symbol</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SYMBOL__SYMBOL = SENTENCE_PART_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Symbol</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SYMBOL_FEATURE_COUNT = SENTENCE_PART_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link uk.ac.kcl.mde.rinform.Direction <em>Direction</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -567,7 +539,7 @@ public interface RinformPackage extends EPackage
    * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getDirection()
    * @generated
    */
-  int DIRECTION = 15;
+  int DIRECTION = 14;
 
 
   /**
@@ -803,68 +775,68 @@ public interface RinformPackage extends EPackage
   EReference getItemDescription_Item();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.PersonDeclaration <em>Person Declaration</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.CharacterDeclaration <em>Character Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Person Declaration</em>'.
-   * @see uk.ac.kcl.mde.rinform.PersonDeclaration
+   * @return the meta object for class '<em>Character Declaration</em>'.
+   * @see uk.ac.kcl.mde.rinform.CharacterDeclaration
    * @generated
    */
-  EClass getPersonDeclaration();
+  EClass getCharacterDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.mde.rinform.PersonDeclaration#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.mde.rinform.CharacterDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.kcl.mde.rinform.PersonDeclaration#getName()
-   * @see #getPersonDeclaration()
+   * @see uk.ac.kcl.mde.rinform.CharacterDeclaration#getName()
+   * @see #getCharacterDeclaration()
    * @generated
    */
-  EAttribute getPersonDeclaration_Name();
+  EAttribute getCharacterDeclaration_Name();
 
   /**
-   * Returns the meta object for the reference '{@link uk.ac.kcl.mde.rinform.PersonDeclaration#getRoom <em>Room</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.kcl.mde.rinform.CharacterDeclaration#getRoom <em>Room</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Room</em>'.
-   * @see uk.ac.kcl.mde.rinform.PersonDeclaration#getRoom()
-   * @see #getPersonDeclaration()
+   * @see uk.ac.kcl.mde.rinform.CharacterDeclaration#getRoom()
+   * @see #getCharacterDeclaration()
    * @generated
    */
-  EReference getPersonDeclaration_Room();
+  EReference getCharacterDeclaration_Room();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.PersonDescription <em>Person Description</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.CharacterDescription <em>Character Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Person Description</em>'.
-   * @see uk.ac.kcl.mde.rinform.PersonDescription
+   * @return the meta object for class '<em>Character Description</em>'.
+   * @see uk.ac.kcl.mde.rinform.CharacterDescription
    * @generated
    */
-  EClass getPersonDescription();
+  EClass getCharacterDescription();
 
   /**
-   * Returns the meta object for the attribute list '{@link uk.ac.kcl.mde.rinform.PersonDescription#getPersonDescription <em>Person Description</em>}'.
+   * Returns the meta object for the attribute list '{@link uk.ac.kcl.mde.rinform.CharacterDescription#getPersonDescription <em>Person Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Person Description</em>'.
-   * @see uk.ac.kcl.mde.rinform.PersonDescription#getPersonDescription()
-   * @see #getPersonDescription()
+   * @see uk.ac.kcl.mde.rinform.CharacterDescription#getPersonDescription()
+   * @see #getCharacterDescription()
    * @generated
    */
-  EAttribute getPersonDescription_PersonDescription();
+  EAttribute getCharacterDescription_PersonDescription();
 
   /**
-   * Returns the meta object for the reference '{@link uk.ac.kcl.mde.rinform.PersonDescription#getPerson <em>Person</em>}'.
+   * Returns the meta object for the reference '{@link uk.ac.kcl.mde.rinform.CharacterDescription#getPerson <em>Person</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Person</em>'.
-   * @see uk.ac.kcl.mde.rinform.PersonDescription#getPerson()
-   * @see #getPersonDescription()
+   * @see uk.ac.kcl.mde.rinform.CharacterDescription#getPerson()
+   * @see #getCharacterDescription()
    * @generated
    */
-  EReference getPersonDescription_Person();
+  EReference getCharacterDescription_Person();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.DirectionStatement <em>Direction Statement</em>}'.
@@ -929,27 +901,6 @@ public interface RinformPackage extends EPackage
    * @generated
    */
   EAttribute getWords_Words();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.kcl.mde.rinform.Symbol <em>Symbol</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Symbol</em>'.
-   * @see uk.ac.kcl.mde.rinform.Symbol
-   * @generated
-   */
-  EClass getSymbol();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.mde.rinform.Symbol#getSymbol <em>Symbol</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Symbol</em>'.
-   * @see uk.ac.kcl.mde.rinform.Symbol#getSymbol()
-   * @see #getSymbol()
-   * @generated
-   */
-  EAttribute getSymbol_Symbol();
 
   /**
    * Returns the meta object for enum '{@link uk.ac.kcl.mde.rinform.Direction <em>Direction</em>}'.
@@ -1181,14 +1132,14 @@ public interface RinformPackage extends EPackage
     EReference ITEM_DESCRIPTION__ITEM = eINSTANCE.getItemDescription_Item();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.PersonDeclarationImpl <em>Person Declaration</em>}' class.
+     * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.CharacterDeclarationImpl <em>Character Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.mde.rinform.impl.PersonDeclarationImpl
-     * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getPersonDeclaration()
+     * @see uk.ac.kcl.mde.rinform.impl.CharacterDeclarationImpl
+     * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getCharacterDeclaration()
      * @generated
      */
-    EClass PERSON_DECLARATION = eINSTANCE.getPersonDeclaration();
+    EClass CHARACTER_DECLARATION = eINSTANCE.getCharacterDeclaration();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1196,7 +1147,7 @@ public interface RinformPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PERSON_DECLARATION__NAME = eINSTANCE.getPersonDeclaration_Name();
+    EAttribute CHARACTER_DECLARATION__NAME = eINSTANCE.getCharacterDeclaration_Name();
 
     /**
      * The meta object literal for the '<em><b>Room</b></em>' reference feature.
@@ -1204,17 +1155,17 @@ public interface RinformPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PERSON_DECLARATION__ROOM = eINSTANCE.getPersonDeclaration_Room();
+    EReference CHARACTER_DECLARATION__ROOM = eINSTANCE.getCharacterDeclaration_Room();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.PersonDescriptionImpl <em>Person Description</em>}' class.
+     * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.CharacterDescriptionImpl <em>Character Description</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.mde.rinform.impl.PersonDescriptionImpl
-     * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getPersonDescription()
+     * @see uk.ac.kcl.mde.rinform.impl.CharacterDescriptionImpl
+     * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getCharacterDescription()
      * @generated
      */
-    EClass PERSON_DESCRIPTION = eINSTANCE.getPersonDescription();
+    EClass CHARACTER_DESCRIPTION = eINSTANCE.getCharacterDescription();
 
     /**
      * The meta object literal for the '<em><b>Person Description</b></em>' attribute list feature.
@@ -1222,7 +1173,7 @@ public interface RinformPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PERSON_DESCRIPTION__PERSON_DESCRIPTION = eINSTANCE.getPersonDescription_PersonDescription();
+    EAttribute CHARACTER_DESCRIPTION__PERSON_DESCRIPTION = eINSTANCE.getCharacterDescription_PersonDescription();
 
     /**
      * The meta object literal for the '<em><b>Person</b></em>' reference feature.
@@ -1230,7 +1181,7 @@ public interface RinformPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PERSON_DESCRIPTION__PERSON = eINSTANCE.getPersonDescription_Person();
+    EReference CHARACTER_DESCRIPTION__PERSON = eINSTANCE.getCharacterDescription_Person();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.DirectionStatementImpl <em>Direction Statement</em>}' class.
@@ -1283,24 +1234,6 @@ public interface RinformPackage extends EPackage
      * @generated
      */
     EAttribute WORDS__WORDS = eINSTANCE.getWords_Words();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.impl.SymbolImpl <em>Symbol</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.mde.rinform.impl.SymbolImpl
-     * @see uk.ac.kcl.mde.rinform.impl.RinformPackageImpl#getSymbol()
-     * @generated
-     */
-    EClass SYMBOL = eINSTANCE.getSymbol();
-
-    /**
-     * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SYMBOL__SYMBOL = eINSTANCE.getSymbol_Symbol();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.mde.rinform.Direction <em>Direction</em>}' enum.

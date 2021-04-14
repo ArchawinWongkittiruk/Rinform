@@ -16,25 +16,25 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
-import uk.ac.kcl.mde.rinform.PersonDeclaration;
-import uk.ac.kcl.mde.rinform.PersonDescription;
+import uk.ac.kcl.mde.rinform.CharacterDeclaration;
+import uk.ac.kcl.mde.rinform.CharacterDescription;
 import uk.ac.kcl.mde.rinform.RinformPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Person Description</b></em>'.
+ * An implementation of the model object '<em><b>Character Description</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.PersonDescriptionImpl#getPersonDescription <em>Person Description</em>}</li>
- *   <li>{@link uk.ac.kcl.mde.rinform.impl.PersonDescriptionImpl#getPerson <em>Person</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.CharacterDescriptionImpl#getPersonDescription <em>Person Description</em>}</li>
+ *   <li>{@link uk.ac.kcl.mde.rinform.impl.CharacterDescriptionImpl#getPerson <em>Person</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PersonDescriptionImpl extends SentencePartImpl implements PersonDescription
+public class CharacterDescriptionImpl extends SentencePartImpl implements CharacterDescription
 {
   /**
    * The cached value of the '{@link #getPersonDescription() <em>Person Description</em>}' attribute list.
@@ -54,14 +54,14 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
    * @generated
    * @ordered
    */
-  protected PersonDeclaration person;
+  protected CharacterDeclaration person;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PersonDescriptionImpl()
+  protected CharacterDescriptionImpl()
   {
     super();
   }
@@ -74,7 +74,7 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
   @Override
   protected EClass eStaticClass()
   {
-    return RinformPackage.Literals.PERSON_DESCRIPTION;
+    return RinformPackage.Literals.CHARACTER_DESCRIPTION;
   }
 
   /**
@@ -87,7 +87,7 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
   {
     if (personDescription == null)
     {
-      personDescription = new EDataTypeEList<String>(String.class, this, RinformPackage.PERSON_DESCRIPTION__PERSON_DESCRIPTION);
+      personDescription = new EDataTypeEList<String>(String.class, this, RinformPackage.CHARACTER_DESCRIPTION__PERSON_DESCRIPTION);
     }
     return personDescription;
   }
@@ -98,16 +98,16 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
    * @generated
    */
   @Override
-  public PersonDeclaration getPerson()
+  public CharacterDeclaration getPerson()
   {
     if (person != null && person.eIsProxy())
     {
       InternalEObject oldPerson = (InternalEObject)person;
-      person = (PersonDeclaration)eResolveProxy(oldPerson);
+      person = (CharacterDeclaration)eResolveProxy(oldPerson);
       if (person != oldPerson)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RinformPackage.PERSON_DESCRIPTION__PERSON, oldPerson, person));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RinformPackage.CHARACTER_DESCRIPTION__PERSON, oldPerson, person));
       }
     }
     return person;
@@ -118,7 +118,7 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
    * <!-- end-user-doc -->
    * @generated
    */
-  public PersonDeclaration basicGetPerson()
+  public CharacterDeclaration basicGetPerson()
   {
     return person;
   }
@@ -129,12 +129,12 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
    * @generated
    */
   @Override
-  public void setPerson(PersonDeclaration newPerson)
+  public void setPerson(CharacterDeclaration newPerson)
   {
-    PersonDeclaration oldPerson = person;
+    CharacterDeclaration oldPerson = person;
     person = newPerson;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.PERSON_DESCRIPTION__PERSON, oldPerson, person));
+      eNotify(new ENotificationImpl(this, Notification.SET, RinformPackage.CHARACTER_DESCRIPTION__PERSON, oldPerson, person));
   }
 
   /**
@@ -147,9 +147,9 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
   {
     switch (featureID)
     {
-      case RinformPackage.PERSON_DESCRIPTION__PERSON_DESCRIPTION:
+      case RinformPackage.CHARACTER_DESCRIPTION__PERSON_DESCRIPTION:
         return getPersonDescription();
-      case RinformPackage.PERSON_DESCRIPTION__PERSON:
+      case RinformPackage.CHARACTER_DESCRIPTION__PERSON:
         if (resolve) return getPerson();
         return basicGetPerson();
     }
@@ -167,12 +167,12 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
   {
     switch (featureID)
     {
-      case RinformPackage.PERSON_DESCRIPTION__PERSON_DESCRIPTION:
+      case RinformPackage.CHARACTER_DESCRIPTION__PERSON_DESCRIPTION:
         getPersonDescription().clear();
         getPersonDescription().addAll((Collection<? extends String>)newValue);
         return;
-      case RinformPackage.PERSON_DESCRIPTION__PERSON:
-        setPerson((PersonDeclaration)newValue);
+      case RinformPackage.CHARACTER_DESCRIPTION__PERSON:
+        setPerson((CharacterDeclaration)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +188,11 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
   {
     switch (featureID)
     {
-      case RinformPackage.PERSON_DESCRIPTION__PERSON_DESCRIPTION:
+      case RinformPackage.CHARACTER_DESCRIPTION__PERSON_DESCRIPTION:
         getPersonDescription().clear();
         return;
-      case RinformPackage.PERSON_DESCRIPTION__PERSON:
-        setPerson((PersonDeclaration)null);
+      case RinformPackage.CHARACTER_DESCRIPTION__PERSON:
+        setPerson((CharacterDeclaration)null);
         return;
     }
     super.eUnset(featureID);
@@ -208,9 +208,9 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
   {
     switch (featureID)
     {
-      case RinformPackage.PERSON_DESCRIPTION__PERSON_DESCRIPTION:
+      case RinformPackage.CHARACTER_DESCRIPTION__PERSON_DESCRIPTION:
         return personDescription != null && !personDescription.isEmpty();
-      case RinformPackage.PERSON_DESCRIPTION__PERSON:
+      case RinformPackage.CHARACTER_DESCRIPTION__PERSON:
         return person != null;
     }
     return super.eIsSet(featureID);
@@ -233,4 +233,4 @@ public class PersonDescriptionImpl extends SentencePartImpl implements PersonDes
     return result.toString();
   }
 
-} //PersonDescriptionImpl
+} //CharacterDescriptionImpl
