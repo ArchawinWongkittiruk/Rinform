@@ -65,4 +65,18 @@ public class RinformQuickfixProvider extends DefaultQuickfixProvider {
     };
     acceptor.accept(issue, "Remove declaration", "Delete the duplicate declaration", null, _function);
   }
+  
+  @Fix(RinformValidator.INVALID_DIRECTION)
+  public void removeInvalidDirection(final Issue issue, final IssueResolutionAcceptor acceptor) {
+    final IModification _function = (IModificationContext context) -> {
+      final IXtextDocument xtextDocument = context.getXtextDocument();
+      final String documentString = xtextDocument.get();
+      final int subStrEnd = Math.min(documentString.indexOf(" "), documentString.indexOf(">"));
+      Integer _offset = issue.getOffset();
+      Integer _offset_1 = issue.getOffset();
+      int _minus = (subStrEnd - (_offset_1).intValue());
+      xtextDocument.replace((_offset).intValue(), _minus, "");
+    };
+    acceptor.accept(issue, "Fix statement", "Delete the second room reference", null, _function);
+  }
 }

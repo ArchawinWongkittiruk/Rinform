@@ -10,6 +10,9 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import uk.ac.kcl.mde.services.RinformGrammarAccess;
@@ -18,10 +21,16 @@ import uk.ac.kcl.mde.services.RinformGrammarAccess;
 public class RinformSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected RinformGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_CharacterAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q;
+	protected AbstractElementAlias match_ItemAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q;
+	protected AbstractElementAlias match_RoomAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (RinformGrammarAccess) access;
+		match_CharacterAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCharacterAliasAccess().getRightSquareBracketKeyword_5_2()), new TokenAlias(false, false, grammarAccess.getCharacterAliasAccess().getEqualsSignKeyword_5_3()), new TokenAlias(false, false, grammarAccess.getCharacterAliasAccess().getLeftSquareBracketKeyword_5_0()));
+		match_ItemAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getItemAliasAccess().getRightSquareBracketKeyword_5_2()), new TokenAlias(false, false, grammarAccess.getItemAliasAccess().getEqualsSignKeyword_5_3()), new TokenAlias(false, false, grammarAccess.getItemAliasAccess().getLeftSquareBracketKeyword_5_0()));
+		match_RoomAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRoomAliasAccess().getRightSquareBracketKeyword_5_2()), new TokenAlias(false, false, grammarAccess.getRoomAliasAccess().getEqualsSignKeyword_5_3()), new TokenAlias(false, false, grammarAccess.getRoomAliasAccess().getLeftSquareBracketKeyword_5_0()));
 	}
 	
 	@Override
@@ -36,8 +45,47 @@ public class RinformSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_CharacterAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q.equals(syntax))
+				emit_CharacterAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ItemAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q.equals(syntax))
+				emit_ItemAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RoomAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q.equals(syntax))
+				emit_RoomAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     (']' '=' '[')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     aliases+=Text (ambiguity) aliases+=Text
+	 */
+	protected void emit_CharacterAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (']' '=' '[')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     aliases+=Text (ambiguity) aliases+=Text
+	 */
+	protected void emit_ItemAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (']' '=' '[')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     aliases+=Text (ambiguity) aliases+=Text
+	 */
+	protected void emit_RoomAlias___RightSquareBracketKeyword_5_2_EqualsSignKeyword_5_3_LeftSquareBracketKeyword_5_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

@@ -25,6 +25,8 @@ import uk.ac.kcl.mde.rinform.ContainerDeclaration
 import uk.ac.kcl.mde.rinform.ItemInRoomDeclaration
 import uk.ac.kcl.mde.rinform.ItemInContainerDeclaration
 import uk.ac.kcl.mde.rinform.RoomAlias
+import uk.ac.kcl.mde.rinform.ItemAlias
+import uk.ac.kcl.mde.rinform.CharacterAlias
 
 /**
  * Generates code from your model files on save.
@@ -50,10 +52,13 @@ class RinformGenerator extends AbstractGenerator {
 		'''
 		«m.sentences.filter(RoomDescription).map[generateInformCode].filter[str | str !== null ].join('\n')»
 		«m.sentences.filter(RoomDeclaration).map[generateInformCode].filter[str | str !== null ].join('\n')»
+		«m.sentences.filter(RoomAlias).map[generateInformCode].filter[str | str !== null ].join('\n')»
 		«m.sentences.filter(ItemDescription).map[generateInformCode].filter[str | str !== null ].join('\n')»
 		«m.sentences.filter(ItemDeclaration).map[generateInformCode].filter[str | str !== null ].join('\n')»
+		«m.sentences.filter(ItemAlias).map[generateInformCode].filter[str | str !== null ].join('\n')»
 		«m.sentences.filter(CharacterDescription).map[generateInformCode].filter[str | str !== null ].join('\n')»
 		«m.sentences.filter(CharacterDeclaration).map[generateInformCode].filter[str | str !== null ].join('\n')»
+		«m.sentences.filter(CharacterAlias).map[generateInformCode].filter[str | str !== null ].join('\n')»
 		«m.sentences.filter(DirectionStatement).map[generateInformCode].filter[str | str !== null ].join('\n')»
 		'''
 	}
@@ -73,7 +78,15 @@ class RinformGenerator extends AbstractGenerator {
 	}
 	
 	dispatch def generateInformCode(RoomAlias stmt) {
-		'''Understand «FOR alias : stmt.aliases SEPARATOR 'and '»"«alias»" «ENDFOR»as «stmt.room.name».'''
+		'''Understand «FOR alias : stmt.aliases SEPARATOR 'or '»"«alias.toFirstUpper»" «ENDFOR»as «stmt.room.name.toFirstUpper».'''
+	}
+	
+	dispatch def generateInformCode(ItemAlias stmt) {
+		'''Understand «FOR alias : stmt.aliases SEPARATOR 'or '»"«alias.toFirstUpper»" «ENDFOR»as «stmt.item.name.toFirstUpper».'''
+	}
+	
+	dispatch def generateInformCode(CharacterAlias stmt) {
+		'''Understand «FOR alias : stmt.aliases SEPARATOR 'or '»"«alias.toFirstUpper»" «ENDFOR»as «stmt.character.name.toFirstUpper».'''
 	}
 	
 	dispatch def generateInformCode(ItemDescription stmt){
@@ -116,12 +129,16 @@ class RinformGenerator extends AbstractGenerator {
 	
 	dispatch def generateInformCode(CharacterDescription stmt){
 		declaredCharacters.add(stmt.person)
-		'''«stmt.person.name.toFirstUpper» is in «stmt.person.room.name.toFirstUpper». "«stmt.personDescription.getString.toFirstUpper»".'''
+		'''
+		«stmt.person.name.toFirstUpper» is a Person.
+		«stmt.person.name.toFirstUpper» is in «stmt.person.room.name.toFirstUpper». "«stmt.personDescription.getString.toFirstUpper»".'''
 	}
 	
 	dispatch def generateInformCode(CharacterDeclaration stmt) {
 		if (!declaredCharacters.contains(stmt)) {
-			'''«stmt.name.toFirstUpper» is in «stmt.room.name».'''
+			'''
+			«stmt.name.toFirstUpper» is a Person.
+			«stmt.name.toFirstUpper» is in «stmt.room.name».'''
 		} 
 	}
 	
@@ -139,6 +156,7 @@ class RinformGenerator extends AbstractGenerator {
 			'''«stmt.direction» of «stmt.room1.name.toFirstUpper» is «stmt.room2.name.toFirstUpper».'''
 		}		
 	}
+	
 	
 	def declareRoom(RoomDeclaration stmt){
 		declaredRooms.add(stmt)

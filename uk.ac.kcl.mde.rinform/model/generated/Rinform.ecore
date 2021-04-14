@@ -9,15 +9,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="RoomDeclaration" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoomDescription" eSuperTypes="#//SentencePart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomDescription" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//RoomDeclaration"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoomAlias" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//RoomDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="aliases" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RoomDescription" eSuperTypes="#//SentencePart">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomDescription" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//RoomDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemDeclaration" eSuperTypes="#//SentencePart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContainerDeclaration" eSuperTypes="#//ItemDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="#//RoomDeclaration"/>
@@ -28,13 +31,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="ItemInContainerDeclaration" eSuperTypes="#//ItemDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//ContainerDeclaration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemDeclaration" eSuperTypes="#//SentencePart">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ItemDescription" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemDescription" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="item" eType="#//ItemDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemAlias" eSuperTypes="#//SentencePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" eType="#//ItemDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aliases" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CharacterDeclaration" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -44,6 +49,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="personDescription" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//CharacterDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CharacterAlias" eSuperTypes="#//SentencePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="character" eType="#//CharacterDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aliases" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DirectionStatement" eSuperTypes="#//SentencePart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="room1" eType="#//RoomDeclaration"/>

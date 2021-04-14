@@ -10,26 +10,32 @@ ReverseInformProgram:
 
 SentencePart:
 	RoomDeclaration | 
-	RoomAlias |
-	RoomDescription |
 	ItemDeclaration |
-	ItemDescription |
 	CharacterDeclaration |
+	RoomDescription | 
+	ItemDescription | 
 	CharacterDescription |
-	Words |
-	DirectionStatement
+	RoomAlias | 
+	ItemAlias | 
+	CharacterAlias |
+	DirectionStatement |
+	Words 
 ;
 
 RoomDeclaration:
 	"r-" name = Text "-r"
 ;
 
-RoomAlias:
-	"-r" room = [RoomDeclaration] "-a" aliases += Text+
-;
-
 RoomDescription:
 	 "{"roomDescription += (Text)+ "!r""[" room = [RoomDeclaration|Text] "]""}"
+;
+
+RoomAlias:
+	"!r""[" room = [RoomDeclaration|Text] "]" "=" ("[" aliases += (Text)+ "]" "=")* ("[" aliases += (Text)+ "]")
+;
+
+ItemDeclaration:
+	ItemInRoomDeclaration | ContainerDeclaration | ItemInContainerDeclaration
 ;
 
 ContainerDeclaration:
@@ -41,15 +47,15 @@ ItemInRoomDeclaration:
 ;
 
 ItemInContainerDeclaration:
-	"i-" name = Text "-i" "!c" "[" container = [ContainerDeclaration] "]"
-;
-
-ItemDeclaration:
-	ItemInRoomDeclaration | ContainerDeclaration | ItemInContainerDeclaration
+	"i-" name = Text "-i" "!c" "[" container = [ContainerDeclaration|Text] "]"
 ;
 
 ItemDescription:
 	"{"itemDescription += (Text)+ "!i" "[" item = [ItemDeclaration|Text] "]" "}"
+;
+
+ItemAlias:
+	"!i""[" item = [ItemDeclaration|Text] "]" "=" ("[" aliases += (Text)+ "]" "=")* ("[" aliases += (Text)+ "]")
 ;
 
 CharacterDeclaration:
@@ -58,6 +64,10 @@ CharacterDeclaration:
 
 CharacterDescription:
 	"{"personDescription += (Text)+ "!p" "[" person = [CharacterDeclaration|Text] "]" "}"
+;
+
+CharacterAlias:
+	"!p""[" character = [CharacterDeclaration|Text] "]" "=" ("[" aliases += (Text)+ "]" "=")* ("[" aliases += (Text)+ "]")
 ;
 
 DirectionStatement:

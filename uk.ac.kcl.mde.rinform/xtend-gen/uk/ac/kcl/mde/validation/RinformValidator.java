@@ -44,6 +44,8 @@ public class RinformValidator extends AbstractRinformValidator {
   
   public static final String CHARACTER_ALREADY_DECLARED = "CHARACTER_ALREADY_DECLARED";
   
+  public static final String INVALID_DIRECTION = "INVALID_DIRECTION";
+  
   @Check
   public void checkRoomNameStartsWithCapital(final CharacterDeclaration character) {
     boolean _isUpperCase = Character.isUpperCase(character.getName().charAt(0));
@@ -162,6 +164,15 @@ public class RinformValidator extends AbstractRinformValidator {
       } else {
         declaredPeople.add(character.getName());
       }
+    }
+  }
+  
+  @Check
+  public void checkDirectionStatementValidity(final DirectionStatement stmt) {
+    boolean _equals = stmt.getRoom1().getName().equals(stmt.getRoom2().getName());
+    if (_equals) {
+      this.warning("Invalid direction", stmt, 
+        RinformPackage.Literals.DIRECTION_STATEMENT__ROOM2, RinformValidator.INVALID_DIRECTION);
     }
   }
 }

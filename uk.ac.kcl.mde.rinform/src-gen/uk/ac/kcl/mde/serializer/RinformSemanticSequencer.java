@@ -14,10 +14,12 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import uk.ac.kcl.mde.rinform.CharacterAlias;
 import uk.ac.kcl.mde.rinform.CharacterDeclaration;
 import uk.ac.kcl.mde.rinform.CharacterDescription;
 import uk.ac.kcl.mde.rinform.ContainerDeclaration;
 import uk.ac.kcl.mde.rinform.DirectionStatement;
+import uk.ac.kcl.mde.rinform.ItemAlias;
 import uk.ac.kcl.mde.rinform.ItemDescription;
 import uk.ac.kcl.mde.rinform.ItemInContainerDeclaration;
 import uk.ac.kcl.mde.rinform.ItemInRoomDeclaration;
@@ -43,6 +45,9 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == RinformPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case RinformPackage.CHARACTER_ALIAS:
+				sequence_CharacterAlias(context, (CharacterAlias) semanticObject); 
+				return; 
 			case RinformPackage.CHARACTER_DECLARATION:
 				sequence_CharacterDeclaration(context, (CharacterDeclaration) semanticObject); 
 				return; 
@@ -54,6 +59,9 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case RinformPackage.DIRECTION_STATEMENT:
 				sequence_DirectionStatement(context, (DirectionStatement) semanticObject); 
+				return; 
+			case RinformPackage.ITEM_ALIAS:
+				sequence_ItemAlias(context, (ItemAlias) semanticObject); 
 				return; 
 			case RinformPackage.ITEM_DESCRIPTION:
 				sequence_ItemDescription(context, (ItemDescription) semanticObject); 
@@ -83,6 +91,19 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     SentencePart returns CharacterAlias
+	 *     CharacterAlias returns CharacterAlias
+	 *
+	 * Constraint:
+	 *     (character=[CharacterDeclaration|Text] aliases+=Text* aliases+=Text+)
+	 */
+	protected void sequence_CharacterAlias(ISerializationContext context, CharacterAlias semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -122,8 +143,8 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     SentencePart returns ContainerDeclaration
-	 *     ContainerDeclaration returns ContainerDeclaration
 	 *     ItemDeclaration returns ContainerDeclaration
+	 *     ContainerDeclaration returns ContainerDeclaration
 	 *
 	 * Constraint:
 	 *     (name=Text room=[RoomDeclaration|Text])
@@ -169,6 +190,19 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     SentencePart returns ItemAlias
+	 *     ItemAlias returns ItemAlias
+	 *
+	 * Constraint:
+	 *     (item=[ItemDeclaration|Text] aliases+=Text* aliases+=Text+)
+	 */
+	protected void sequence_ItemAlias(ISerializationContext context, ItemAlias semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     SentencePart returns ItemDescription
 	 *     ItemDescription returns ItemDescription
 	 *
@@ -183,11 +217,11 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     SentencePart returns ItemInContainerDeclaration
-	 *     ItemInContainerDeclaration returns ItemInContainerDeclaration
 	 *     ItemDeclaration returns ItemInContainerDeclaration
+	 *     ItemInContainerDeclaration returns ItemInContainerDeclaration
 	 *
 	 * Constraint:
-	 *     (name=Text container=[ContainerDeclaration|ID])
+	 *     (name=Text container=[ContainerDeclaration|Text])
 	 */
 	protected void sequence_ItemInContainerDeclaration(ISerializationContext context, ItemInContainerDeclaration semanticObject) {
 		if (errorAcceptor != null) {
@@ -198,7 +232,7 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getItemInContainerDeclarationAccess().getNameTextParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getItemInContainerDeclarationAccess().getContainerContainerDeclarationIDTerminalRuleCall_5_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_IN_CONTAINER_DECLARATION__CONTAINER, false));
+		feeder.accept(grammarAccess.getItemInContainerDeclarationAccess().getContainerContainerDeclarationTextParserRuleCall_5_0_1(), semanticObject.eGet(RinformPackage.Literals.ITEM_IN_CONTAINER_DECLARATION__CONTAINER, false));
 		feeder.finish();
 	}
 	
@@ -206,8 +240,8 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     SentencePart returns ItemInRoomDeclaration
-	 *     ItemInRoomDeclaration returns ItemInRoomDeclaration
 	 *     ItemDeclaration returns ItemInRoomDeclaration
+	 *     ItemInRoomDeclaration returns ItemInRoomDeclaration
 	 *
 	 * Constraint:
 	 *     (name=Text room=[RoomDeclaration|Text])
@@ -244,7 +278,7 @@ public class RinformSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     RoomAlias returns RoomAlias
 	 *
 	 * Constraint:
-	 *     (room=[RoomDeclaration|ID] aliases+=Text+)
+	 *     (room=[RoomDeclaration|Text] aliases+=Text* aliases+=Text+)
 	 */
 	protected void sequence_RoomAlias(ISerializationContext context, RoomAlias semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

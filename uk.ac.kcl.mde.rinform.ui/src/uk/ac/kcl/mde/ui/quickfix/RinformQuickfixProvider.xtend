@@ -61,5 +61,14 @@ class RinformQuickfixProvider extends DefaultQuickfixProvider {
 		]
 	}
 	
-
+	@Fix(RinformValidator.INVALID_DIRECTION)
+	def removeInvalidDirection(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue, 'Fix statement', 'Delete the second room reference', null) [
+			context |
+			val xtextDocument = context.xtextDocument
+			val documentString = xtextDocument.get
+			val subStrEnd = Math.min(documentString.indexOf(" "), documentString.indexOf(">"))
+			xtextDocument.replace(issue.offset, subStrEnd - issue.offset, "")
+		]
+	}
 }

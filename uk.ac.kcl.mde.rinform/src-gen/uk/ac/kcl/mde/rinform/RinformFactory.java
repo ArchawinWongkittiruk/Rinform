@@ -51,6 +51,15 @@ public interface RinformFactory extends EFactory
   RoomDeclaration createRoomDeclaration();
 
   /**
+   * Returns a new object of class '<em>Room Description</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Room Description</em>'.
+   * @generated
+   */
+  RoomDescription createRoomDescription();
+
+  /**
    * Returns a new object of class '<em>Room Alias</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -60,13 +69,13 @@ public interface RinformFactory extends EFactory
   RoomAlias createRoomAlias();
 
   /**
-   * Returns a new object of class '<em>Room Description</em>'.
+   * Returns a new object of class '<em>Item Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Room Description</em>'.
+   * @return a new object of class '<em>Item Declaration</em>'.
    * @generated
    */
-  RoomDescription createRoomDescription();
+  ItemDeclaration createItemDeclaration();
 
   /**
    * Returns a new object of class '<em>Container Declaration</em>'.
@@ -96,15 +105,6 @@ public interface RinformFactory extends EFactory
   ItemInContainerDeclaration createItemInContainerDeclaration();
 
   /**
-   * Returns a new object of class '<em>Item Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Item Declaration</em>'.
-   * @generated
-   */
-  ItemDeclaration createItemDeclaration();
-
-  /**
    * Returns a new object of class '<em>Item Description</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -112,6 +112,15 @@ public interface RinformFactory extends EFactory
    * @generated
    */
   ItemDescription createItemDescription();
+
+  /**
+   * Returns a new object of class '<em>Item Alias</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Alias</em>'.
+   * @generated
+   */
+  ItemAlias createItemAlias();
 
   /**
    * Returns a new object of class '<em>Character Declaration</em>'.
@@ -130,6 +139,15 @@ public interface RinformFactory extends EFactory
    * @generated
    */
   CharacterDescription createCharacterDescription();
+
+  /**
+   * Returns a new object of class '<em>Character Alias</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Character Alias</em>'.
+   * @generated
+   */
+  CharacterAlias createCharacterAlias();
 
   /**
    * Returns a new object of class '<em>Direction Statement</em>'.

@@ -91,14 +91,19 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
         return createRoomDeclarationAdapter();
       }
       @Override
+      public Adapter caseRoomDescription(RoomDescription object)
+      {
+        return createRoomDescriptionAdapter();
+      }
+      @Override
       public Adapter caseRoomAlias(RoomAlias object)
       {
         return createRoomAliasAdapter();
       }
       @Override
-      public Adapter caseRoomDescription(RoomDescription object)
+      public Adapter caseItemDeclaration(ItemDeclaration object)
       {
-        return createRoomDescriptionAdapter();
+        return createItemDeclarationAdapter();
       }
       @Override
       public Adapter caseContainerDeclaration(ContainerDeclaration object)
@@ -116,14 +121,14 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
         return createItemInContainerDeclarationAdapter();
       }
       @Override
-      public Adapter caseItemDeclaration(ItemDeclaration object)
-      {
-        return createItemDeclarationAdapter();
-      }
-      @Override
       public Adapter caseItemDescription(ItemDescription object)
       {
         return createItemDescriptionAdapter();
+      }
+      @Override
+      public Adapter caseItemAlias(ItemAlias object)
+      {
+        return createItemAliasAdapter();
       }
       @Override
       public Adapter caseCharacterDeclaration(CharacterDeclaration object)
@@ -134,6 +139,11 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
       public Adapter caseCharacterDescription(CharacterDescription object)
       {
         return createCharacterDescriptionAdapter();
+      }
+      @Override
+      public Adapter caseCharacterAlias(CharacterAlias object)
+      {
+        return createCharacterAliasAdapter();
       }
       @Override
       public Adapter caseDirectionStatement(DirectionStatement object)
@@ -213,6 +223,21 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.RoomDescription <em>Room Description</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.RoomDescription
+   * @generated
+   */
+  public Adapter createRoomDescriptionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.RoomAlias <em>Room Alias</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -228,16 +253,16 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.RoomDescription <em>Room Description</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.ItemDeclaration <em>Item Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.mde.rinform.RoomDescription
+   * @see uk.ac.kcl.mde.rinform.ItemDeclaration
    * @generated
    */
-  public Adapter createRoomDescriptionAdapter()
+  public Adapter createItemDeclarationAdapter()
   {
     return null;
   }
@@ -288,21 +313,6 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.ItemDeclaration <em>Item Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.mde.rinform.ItemDeclaration
-   * @generated
-   */
-  public Adapter createItemDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.ItemDescription <em>Item Description</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -313,6 +323,21 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createItemDescriptionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.ItemAlias <em>Item Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.ItemAlias
+   * @generated
+   */
+  public Adapter createItemAliasAdapter()
   {
     return null;
   }
@@ -343,6 +368,21 @@ public class RinformAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCharacterDescriptionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.mde.rinform.CharacterAlias <em>Character Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.mde.rinform.CharacterAlias
+   * @generated
+   */
+  public Adapter createCharacterAliasAdapter()
   {
     return null;
   }

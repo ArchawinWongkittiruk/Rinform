@@ -11,3 +11,9 @@ i-chair-i !r[kitchen] {has four legs !i [chair]}
 I look at p-Frodo-p !r[Living Room] {has blue eyes !p[Frodo]}
 <attic Below kitchen>
 <Living Room East kitchen>
+
+<Bedroom Below kitchen>
+
+!r[attic] = [upper room] = [some room]
+!i[knife] = [butcher knife] = [big knife] 
+!p[Frodo] = [Hobbit]

@@ -69,15 +69,17 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
       case RinformPackage.REVERSE_INFORM_PROGRAM: return createReverseInformProgram();
       case RinformPackage.SENTENCE_PART: return createSentencePart();
       case RinformPackage.ROOM_DECLARATION: return createRoomDeclaration();
-      case RinformPackage.ROOM_ALIAS: return createRoomAlias();
       case RinformPackage.ROOM_DESCRIPTION: return createRoomDescription();
+      case RinformPackage.ROOM_ALIAS: return createRoomAlias();
+      case RinformPackage.ITEM_DECLARATION: return createItemDeclaration();
       case RinformPackage.CONTAINER_DECLARATION: return createContainerDeclaration();
       case RinformPackage.ITEM_IN_ROOM_DECLARATION: return createItemInRoomDeclaration();
       case RinformPackage.ITEM_IN_CONTAINER_DECLARATION: return createItemInContainerDeclaration();
-      case RinformPackage.ITEM_DECLARATION: return createItemDeclaration();
       case RinformPackage.ITEM_DESCRIPTION: return createItemDescription();
+      case RinformPackage.ITEM_ALIAS: return createItemAlias();
       case RinformPackage.CHARACTER_DECLARATION: return createCharacterDeclaration();
       case RinformPackage.CHARACTER_DESCRIPTION: return createCharacterDescription();
+      case RinformPackage.CHARACTER_ALIAS: return createCharacterAlias();
       case RinformPackage.DIRECTION_STATEMENT: return createDirectionStatement();
       case RinformPackage.WORDS: return createWords();
       default:
@@ -161,6 +163,18 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * @generated
    */
   @Override
+  public RoomDescription createRoomDescription()
+  {
+    RoomDescriptionImpl roomDescription = new RoomDescriptionImpl();
+    return roomDescription;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public RoomAlias createRoomAlias()
   {
     RoomAliasImpl roomAlias = new RoomAliasImpl();
@@ -173,10 +187,10 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * @generated
    */
   @Override
-  public RoomDescription createRoomDescription()
+  public ItemDeclaration createItemDeclaration()
   {
-    RoomDescriptionImpl roomDescription = new RoomDescriptionImpl();
-    return roomDescription;
+    ItemDeclarationImpl itemDeclaration = new ItemDeclarationImpl();
+    return itemDeclaration;
   }
 
   /**
@@ -221,10 +235,10 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * @generated
    */
   @Override
-  public ItemDeclaration createItemDeclaration()
+  public ItemDescription createItemDescription()
   {
-    ItemDeclarationImpl itemDeclaration = new ItemDeclarationImpl();
-    return itemDeclaration;
+    ItemDescriptionImpl itemDescription = new ItemDescriptionImpl();
+    return itemDescription;
   }
 
   /**
@@ -233,10 +247,10 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
    * @generated
    */
   @Override
-  public ItemDescription createItemDescription()
+  public ItemAlias createItemAlias()
   {
-    ItemDescriptionImpl itemDescription = new ItemDescriptionImpl();
-    return itemDescription;
+    ItemAliasImpl itemAlias = new ItemAliasImpl();
+    return itemAlias;
   }
 
   /**
@@ -261,6 +275,18 @@ public class RinformFactoryImpl extends EFactoryImpl implements RinformFactory
   {
     CharacterDescriptionImpl characterDescription = new CharacterDescriptionImpl();
     return characterDescription;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CharacterAlias createCharacterAlias()
+  {
+    CharacterAliasImpl characterAlias = new CharacterAliasImpl();
+    return characterAlias;
   }
 
   /**

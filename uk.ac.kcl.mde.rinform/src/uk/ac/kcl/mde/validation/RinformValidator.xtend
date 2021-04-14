@@ -29,6 +29,7 @@ class RinformValidator extends AbstractRinformValidator {
 	public static val CONTAINER_ALREADY_DECLARED = "CONTAINER_ALREADY_DECLARED";
 	public static val ITEM_IN_CONTAINER_ALREADY_DECLARED = "ITEM_IN_CONTAINER_ALREADY_DECLARED";
 	public static val CHARACTER_ALREADY_DECLARED = "CHARACTER_ALREADY_DECLARED";
+	public static val INVALID_DIRECTION = "INVALID_DIRECTION";
 
 	
 	@Check
@@ -129,6 +130,14 @@ class RinformValidator extends AbstractRinformValidator {
 			else{
 				declaredPeople.add(character.name)
 			}
+		}
+	}
+	
+	@Check
+	def checkDirectionStatementValidity(DirectionStatement stmt){
+		if(stmt.room1.name.equals(stmt.room2.name)){
+			warning('Invalid direction', stmt,
+				RinformPackage.Literals.DIRECTION_STATEMENT__ROOM2, INVALID_DIRECTION)
 		}
 	}
 }

@@ -95,6 +95,14 @@ public class RinformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RinformPackage.ROOM_DESCRIPTION:
+      {
+        RoomDescription roomDescription = (RoomDescription)theEObject;
+        T result = caseRoomDescription(roomDescription);
+        if (result == null) result = caseSentencePart(roomDescription);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case RinformPackage.ROOM_ALIAS:
       {
         RoomAlias roomAlias = (RoomAlias)theEObject;
@@ -103,11 +111,11 @@ public class RinformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RinformPackage.ROOM_DESCRIPTION:
+      case RinformPackage.ITEM_DECLARATION:
       {
-        RoomDescription roomDescription = (RoomDescription)theEObject;
-        T result = caseRoomDescription(roomDescription);
-        if (result == null) result = caseSentencePart(roomDescription);
+        ItemDeclaration itemDeclaration = (ItemDeclaration)theEObject;
+        T result = caseItemDeclaration(itemDeclaration);
+        if (result == null) result = caseSentencePart(itemDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -138,19 +146,19 @@ public class RinformSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RinformPackage.ITEM_DECLARATION:
-      {
-        ItemDeclaration itemDeclaration = (ItemDeclaration)theEObject;
-        T result = caseItemDeclaration(itemDeclaration);
-        if (result == null) result = caseSentencePart(itemDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case RinformPackage.ITEM_DESCRIPTION:
       {
         ItemDescription itemDescription = (ItemDescription)theEObject;
         T result = caseItemDescription(itemDescription);
         if (result == null) result = caseSentencePart(itemDescription);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.ITEM_ALIAS:
+      {
+        ItemAlias itemAlias = (ItemAlias)theEObject;
+        T result = caseItemAlias(itemAlias);
+        if (result == null) result = caseSentencePart(itemAlias);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -167,6 +175,14 @@ public class RinformSwitch<T> extends Switch<T>
         CharacterDescription characterDescription = (CharacterDescription)theEObject;
         T result = caseCharacterDescription(characterDescription);
         if (result == null) result = caseSentencePart(characterDescription);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RinformPackage.CHARACTER_ALIAS:
+      {
+        CharacterAlias characterAlias = (CharacterAlias)theEObject;
+        T result = caseCharacterAlias(characterAlias);
+        if (result == null) result = caseSentencePart(characterAlias);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -239,6 +255,22 @@ public class RinformSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Room Description</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Room Description</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRoomDescription(RoomDescription object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Room Alias</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -255,17 +287,17 @@ public class RinformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Room Description</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Item Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Room Description</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Item Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRoomDescription(RoomDescription object)
+  public T caseItemDeclaration(ItemDeclaration object)
   {
     return null;
   }
@@ -319,22 +351,6 @@ public class RinformSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Item Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Item Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseItemDeclaration(ItemDeclaration object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Item Description</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -346,6 +362,22 @@ public class RinformSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseItemDescription(ItemDescription object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Item Alias</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item Alias</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItemAlias(ItemAlias object)
   {
     return null;
   }
@@ -378,6 +410,22 @@ public class RinformSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCharacterDescription(CharacterDescription object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Character Alias</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Character Alias</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCharacterAlias(CharacterAlias object)
   {
     return null;
   }
