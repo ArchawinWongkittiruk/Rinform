@@ -15,7 +15,7 @@ class RinformQuickfixProvider extends DefaultQuickfixProvider {
 			context |
 			val xtextDocument = context.xtextDocument
 			val documentString = xtextDocument.get
-			val subStrEnd = Math.min(documentString.indexOf(' ', issue.offset), documentString.indexOf('\n', issue.offset))
+			val subStrEnd = documentString.indexOf('-', issue.offset)
 			val roomName = documentString.substring(issue.offset, subStrEnd).trim
 			//add <RoomName > at the end of the document
 			xtextDocument.set(documentString + '\n' + "<" + roomName + " >")
@@ -37,9 +37,10 @@ class RinformQuickfixProvider extends DefaultQuickfixProvider {
 			context |
 			val xtextDocument = context.xtextDocument
 			val documentString = xtextDocument.get
-			val subStrStart = documentString.substring(0, issue.offset).lastIndexOf("-")
-			//remove the -r flag
-			xtextDocument.replace(subStrStart, 3, "")
+			//remove the r flags
+			xtextDocument.replace(documentString.substring(0, issue.offset).lastIndexOf("r-"), 2, "")
+			xtextDocument.replace(documentString.indexOf("-r", issue.offset), 2, "")
+			
 		]
 	}
 	
@@ -52,17 +53,11 @@ class RinformQuickfixProvider extends DefaultQuickfixProvider {
 			context |
 			val xtextDocument = context.xtextDocument
 			val documentString = xtextDocument.get
-			var subStrStart = documentString.substring(0, issue.offset).lastIndexOf("-")
-			xtextDocument.replace(subStrStart, 3, "")
-			subStrStart = documentString.indexOf("-", issue.offset) - 1
-			var subStrEnd = subStrStart + 3
-			//find the end index of the room/container name, accounting for the possibility of
-			//several spaces in between -r/-c and the name
-			while (documentString.charAt(subStrEnd).toString.equals(" ")){
-				subStrEnd++
-			}
-			subStrEnd = Math.min(documentString.indexOf(" ", subStrEnd), documentString.indexOf('\n', subStrEnd))
-			xtextDocument.replace(subStrStart - 3, subStrEnd - subStrStart, "")
+			var subStrStart = documentString.substring(0, issue.offset).lastIndexOf("c-")
+			xtextDocument.replace(subStrStart, 2, "")
+			subStrStart = documentString.indexOf("-c", issue.offset) - 1
+			val subStrEnd = documentString.indexOf("]", issue.offset)
+			xtextDocument.replace(subStrStart, subStrEnd - subStrStart, "")
 		]
 	}
 	

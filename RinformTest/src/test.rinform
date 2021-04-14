@@ -4,6 +4,7 @@ Upstairs there is a small r-attic-r.
 r-Bedroom-r 
 r-Living Room-r  
 c-Cupboard-c !r[Living Room]
+c-Cupboard-c !r[Living Room]
 i-bread-i !c[Cupboard] {crunchy !i[bread]}
 i-toast-i !c[Cupboard]
 i-chair-i !r[kitchen] {has four legs !i [chair]}

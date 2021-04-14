@@ -24,8 +24,6 @@ import uk.ac.kcl.mde.rinform.Direction
 import uk.ac.kcl.mde.rinform.ContainerDeclaration
 import uk.ac.kcl.mde.rinform.ItemInRoomDeclaration
 import uk.ac.kcl.mde.rinform.ItemInContainerDeclaration
-import java.util.Map
-import java.util.HashMap
 import uk.ac.kcl.mde.rinform.RoomAlias
 
 /**

@@ -20,7 +20,7 @@ public class RinformQuickfixProvider extends DefaultQuickfixProvider {
     final IModification _function = (IModificationContext context) -> {
       final IXtextDocument xtextDocument = context.getXtextDocument();
       final String documentString = xtextDocument.get();
-      final int subStrEnd = Math.min(documentString.indexOf(" ", (issue.getOffset()).intValue()), documentString.indexOf("\n", (issue.getOffset()).intValue()));
+      final int subStrEnd = documentString.indexOf("-", (issue.getOffset()).intValue());
       final String roomName = documentString.substring((issue.getOffset()).intValue(), subStrEnd).trim();
       xtextDocument.set(((((documentString + "\n") + "<") + roomName) + " >"));
     };
@@ -41,8 +41,8 @@ public class RinformQuickfixProvider extends DefaultQuickfixProvider {
     final IModification _function = (IModificationContext context) -> {
       final IXtextDocument xtextDocument = context.getXtextDocument();
       final String documentString = xtextDocument.get();
-      final int subStrStart = documentString.substring(0, (issue.getOffset()).intValue()).lastIndexOf("-");
-      xtextDocument.replace(subStrStart, 3, "");
+      xtextDocument.replace(documentString.substring(0, (issue.getOffset()).intValue()).lastIndexOf("r-"), 2, "");
+      xtextDocument.replace(documentString.indexOf("-r", (issue.getOffset()).intValue()), 2, "");
     };
     acceptor.accept(issue, "Remove declaration", "Delete the duplicate declaration", null, _function);
   }
@@ -55,17 +55,13 @@ public class RinformQuickfixProvider extends DefaultQuickfixProvider {
     final IModification _function = (IModificationContext context) -> {
       final IXtextDocument xtextDocument = context.getXtextDocument();
       final String documentString = xtextDocument.get();
-      int subStrStart = documentString.substring(0, (issue.getOffset()).intValue()).lastIndexOf("-");
-      xtextDocument.replace(subStrStart, 3, "");
-      int _indexOf = documentString.indexOf("-", (issue.getOffset()).intValue());
+      int subStrStart = documentString.substring(0, (issue.getOffset()).intValue()).lastIndexOf("c-");
+      xtextDocument.replace(subStrStart, 2, "");
+      int _indexOf = documentString.indexOf("-c", (issue.getOffset()).intValue());
       int _minus = (_indexOf - 1);
       subStrStart = _minus;
-      int subStrEnd = (subStrStart + 3);
-      while (Character.valueOf(documentString.charAt(subStrEnd)).toString().equals(" ")) {
-        subStrEnd++;
-      }
-      subStrEnd = Math.min(documentString.indexOf(" ", subStrEnd), documentString.indexOf("\n", subStrEnd));
-      xtextDocument.replace((subStrStart - 3), (subStrEnd - subStrStart), "");
+      final int subStrEnd = documentString.indexOf("]", (issue.getOffset()).intValue());
+      xtextDocument.replace(subStrStart, (subStrEnd - subStrStart), "");
     };
     acceptor.accept(issue, "Remove declaration", "Delete the duplicate declaration", null, _function);
   }
