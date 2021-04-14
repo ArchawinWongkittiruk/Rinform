@@ -17,6 +17,7 @@ import org.junit.runner.RunWith;
 	ScopingTest.class,
 	ValidationTest.class
 })
+
 @RunWith(XpectRunner.class)
 public class XPectTests extends GeneratorTest {
 	

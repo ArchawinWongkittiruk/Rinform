@@ -1,19 +1,33 @@
 /* XPECT_SETUP uk.ac.kcl.mde.rinform.xpect.XPectTests END_SETUP*/
 /*
 XPECT generated ---
-Kitchen is a Room. "A dimly lit room with a low ceiling"
-null
-Attic is a Room. 
-LivingRoom is a Room. 
-Knife is in Kitchen. "Lying on the table"
-Below Attic is Kitchen
-East of LivingRoom is Kitchen
+Kitchen is a Room. "A dimly lit room with a low ceiling".
+Attic is a Room.
+Bedroom is a Room.
+Living Room is a Room.
+Knife is in Kitchen. "Lying on the table".
+Bread is in Cupboard. "Crunchy".
+Chair is in Kitchen. "Has four legs".
+Cupboard is a container.
+Cupboard is in Living Room.
+Toast is in Cupboard.
+Frodo is in Living Room. "Has blue eyes".
+Below Attic is Kitchen.
+East of Living Room is Kitchen.
+Above Bedroom is Kitchen.
 ---   
  */
 
-I walked into the -r kitchen. It was (a dimly lit room with a low ceiling -r kitchen). 
-A massive -i knife -r kitchen is (lying on the table -i knife), in my head I wonder what it is used for. 
-Upstairs there is a small -r attic.
--r LivingRoom
+I walked into the r- kitchen -r. It was {a dimly lit room with a low ceiling !r[kitchen]}. 
+A massive i- knife -i !r[kitchen] is {lying on the table !i[knife]}, in my head I wonder what it is used for. 
+Upstairs there is a small r-attic-r.
+r-Bedroom-r
+r-Living Room-r  
+c-Cupboard-c !r[Living Room]
+i-bread-i !c[Cupboard] {crunchy !i[bread]}
+i-toast-i !c[Cupboard]
+i-chair-i !r[kitchen] {has four legs !i [chair]}
+I look at p-Frodo-p !r[Living Room] {has blue eyes !p[Frodo]}
 <attic Below kitchen>
-<LivingRoom East kitchen> 
+<Living Room East kitchen>
+<Bedroom Above kitchen>
