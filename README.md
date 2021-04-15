@@ -23,7 +23,7 @@ Rinform sythax:
 Sample project:
 
 r- Armour Gallery -r
-<Armour Gallery East Trophy Room>
+\<Armour Gallery East Trophy Room>
 The r-Trophy Room-r was where awards, trophies, cups, plates, shields, 
 statues, and i-medals-i !c[crystal glass displays] were kept 
 in c-crystal glass displays-c !r[Trophy Room]. This room 
