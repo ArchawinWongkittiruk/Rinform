@@ -21,6 +21,7 @@ Rinform sythax:
 - To add aliases: “!i[Ring] = [The One Ring] = [The Ring] 
 
 Sample project:
+
 r- Armour Gallery -r
 <Armour Gallery East Trophy Room>
 The r-Trophy Room-r was where awards, trophies, cups, plates, shields, 
