@@ -17,7 +17,7 @@ Rinform sythax:
 - To describe items/containers: “{The ring is shiny and has some strange writing on it i- [Ring]}” 
 - To declare characters: “p- Gandalf -p !r[Corridor].” 
 - To describe characters: “{Gandalf wears grey robes and a long beard !p[Gandalf]}” 
-- To set directions: “<Corridor East Kitchen>”  
+- To set directions: “\<Corridor East Kitchen>”  
 - To add aliases: “!i[Ring] = [The One Ring] = [The Ring] 
 
 Sample project:
