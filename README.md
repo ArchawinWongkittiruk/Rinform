@@ -20,7 +20,8 @@ Rinform sythax:
 - To set directions: “\<Corridor East Kitchen>”  
 - To add aliases: “!i[Ring] = [The One Ring] = [The Ring] 
 
-Sample project:
+Sample project (please note that to escape GitHub's markdown character, a backslash is
+added before the direction declaration, that will not be recognised by Rinform)
 
 r- Armour Gallery -r
 \<Armour Gallery East Trophy Room>
