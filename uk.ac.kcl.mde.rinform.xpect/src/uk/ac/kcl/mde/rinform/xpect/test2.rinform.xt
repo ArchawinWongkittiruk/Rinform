@@ -1,0 +1,28 @@
+/* 
+The Hogwarts kitchen was located directly under the Great Hall,
+down the same staircase that led to the Hufflepuff Common Room. 
+It contained tables identical to those in the Great Hall and 
+were directly below them; food had to simply be placed on the tables
+in the kitchens, and it magically appeared in the Great Hall.
+    
+https://harrypotter.fandom.com/wiki/Hogwarts_Castle#Dungeons
+ */
+
+/* XPECT_SETUP uk.ac.kcl.mde.rinform.xpect.XPectTests END_SETUP*/
+/*
+XPECT generated ---
+Kitchen is a Room.
+Great Hall is a Room.
+Food is in Tables. "Had to simply be placed on the tables in the kitchens".
+Tables is a container.
+Tables is in Kitchen.
+Below Great Hall is Kitchen.
+---   
+ */
+
+The Hogwarts r- kitchen -r was located directly under the r- Great Hall -r,
+down the same staircase that led to the Hufflepuff Common Room. 
+It contained c- tables -c !r[kitchen] identical to those in the Great Hall and 
+were directly below them; i- food -i !c[tables] {had to simply be placed on the tables
+in the kitchens !i[food]}, and it magically appeared in the Great Hall.
+<Great Hall Below kitchen>

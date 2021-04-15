@@ -1,0 +1,14 @@
+/* XPECT_SETUP uk.ac.kcl.mde.rinform.xpect.XPectTests END_SETUP*/
+/*
+XPECT generated ---
+Kitchen is a Room.
+Toast is in Toaster. "The toast is looking a little burnt".
+Toaster is a container.
+Toaster is in Kitchen.
+---   
+ */
+
+I go into the r- Kitchen -r.
+I go to the c- toaster -c !r[Kitchen] in the kitchen.
+I grab the i- toast -i !c[toaster] from the toaster.
+{the toast is looking a little burnt !i[toast]}

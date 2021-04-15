@@ -1,0 +1,20 @@
+/* XPECT_SETUP uk.ac.kcl.mde.rinform.xpect.XPectTests END_SETUP*/
+/*
+XPECT generated ---
+Bedroom is a Room.
+Understand "The bedroom" or "The bunk room" or "Sleepchamber" as Bedroom.
+Bed is in Bedroom.
+Understand "The bed" or "The bunk" as Bed.
+Bob is a Person.
+Bob is in Bedroom.
+Understand "Bob the man" or "Bob McBobFace" or "Bob the Builder" as Bob.
+---   
+ */
+
+r- Bedroom -r 
+i- Bed -i !r[Bedroom] 
+p- Bob -p !r[Bedroom]
+
+!r [Bedroom] = [the bedroom] = [the bunk room] = [sleepchamber] 
+!i [Bed] = [the bed] = [the bunk]
+!p [Bob] = [Bob the man] = [Bob McBobFace] = [Bob the Builder]

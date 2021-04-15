@@ -1,0 +1,32 @@
+/* 
+The Chamber of Secrets was home to an ancient Basilisk, 
+which, according to legend, was intended to be used to 
+purge the area of Muggle-born students. The Chamber was 
+flanked with towering pillars that were entwined with 
+carved wood, and the Statue of Slytherin was at the far end. 
+The Basilisk resided within the mouth of Slytherins Statue, 
+which possibly symbolised Slytherins ability to speak Parseltongue.
+
+https://harrypotter.fandom.com/wiki/Chamber_of_Secrets 
+*/
+
+/* XPECT_SETUP uk.ac.kcl.mde.rinform.xpect.XPectTests END_SETUP*/
+/*
+XPECT generated ---
+The Chamber of Secrets is a Room. "The Chamber was flanked with towering pillars".
+Statue of Slytherin is a container.
+Statue of Slytherin is in The Chamber of Secrets.
+The Basilisk is in Statue of Slytherin.
+---   
+ */
+ 
+r- The Chamber of Secrets -r was home to an ancient Basilisk, 
+which, according to legend, was intended to be used to 
+purge the area of Muggle-born students. {The Chamber was 
+flanked with towering pillars !r[The Chamber of Secrets]} that were entwined with 
+carved wood, and the c- Statue of Slytherin -c !r[The Chamber of Secrets] was at the far end. 
+i- The Basilisk -i !c[Statue of Slytherin] resided within the mouth of Slytherins Statue, 
+which possibly symbolised Slytherins ability to speak Parseltongue.
+
+
+

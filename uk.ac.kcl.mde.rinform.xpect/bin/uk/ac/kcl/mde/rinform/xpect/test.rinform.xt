@@ -11,6 +11,7 @@ Chair is in Kitchen. "Has four legs".
 Cupboard is a container.
 Cupboard is in Living Room.
 Toast is in Cupboard.
+Frodo is a Person.
 Frodo is in Living Room. "Has blue eyes".
 Below Attic is Kitchen.
 East of Living Room is Kitchen.

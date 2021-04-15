@@ -1,0 +1,12 @@
+/* XPECT_SETUP uk.ac.kcl.mde.rinform.xpect.XPectTests END_SETUP*/
+/*
+XPECT generated ---
+Mordor is a Room.
+Boromir is a Person.
+Boromir is in Mordor.
+---   
+ */
+
+r- Mordor -r
+
+p- Boromir -p !r[Mordor]
