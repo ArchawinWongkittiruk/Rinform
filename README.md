@@ -24,7 +24,9 @@ Sample project (please note that to escape GitHub's markdown character, a backsl
 added before the direction declaration, that will not be recognised by Rinform)
 
 r- Armour Gallery -r
+
 \<Armour Gallery East Trophy Room>
+
 The r-Trophy Room-r was where awards, trophies, cups, plates, shields, 
 statues, and i-medals-i !c[crystal glass displays] were kept 
 in c-crystal glass displays-c !r[Trophy Room]. This room 
